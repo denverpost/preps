@@ -12,7 +12,7 @@ wget \
 
 # Get the files
 #cut webtemplate.ids.txt -f1 | head -n 1 | xargs -i wget --load-cookies cookies.txt \
-cut webtemplate.ids.txt -f1 | xargs -i wget --load-cookies cookies.txt \
+cut -f1 webtemplate.ids.txt | xargs -i wget --load-cookies cookies.txt \
     --keep-session-cookies \
     --user-agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)" \
     -SN -O{} 'http://denver.newsengin.com/teamplayer/ui/item.php?type=WebTemplate&action=edit&ID={}'
