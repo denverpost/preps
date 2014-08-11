@@ -12,10 +12,12 @@ wget \
 
 # Get the files
 #cut webtemplate.ids.txt -f1 | head -n 1 | xargs -i wget --load-cookies cookies.txt \
-cut -f1 webtemplate.ids.txt | xargs -i wget --load-cookies cookies.txt \
+for ID in `cut -f1 webtemplate.ids.txt`; do
+    wget --load-cookies cookies.txt \
     --keep-session-cookies \
     --user-agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)" \
-    -SN -O{} 'http://denver.newsengin.com/teamplayer/ui/item.php?type=WebTemplate&action=edit&ID={}'
+    -SN -O$ID 'http://denver.newsengin.com/teamplayer/ui/item.php?type=WebTemplate&action=edit&ID='$ID
+done
 
 
 # Run the python script that parses out the editable text and
