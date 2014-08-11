@@ -1,7 +1,7 @@
 #! /bin/bash
 # Parse and upload a file to NewsEngin
 # Example command:
-# $ ./upload.bash TeamStats_Soccer---131.php
+# $ ./upload.bash ./files/webtemplates/TeamStats_Soccer---131.php
 
 echo $1
 ENCODED=`php -q rawurlencode.php $1`
