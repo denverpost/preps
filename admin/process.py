@@ -1,9 +1,6 @@
-#/usr/bin/python2.4
-
-'''
-Take a list of id's and filename slugs, 
-rename, move and parse out the appropriate text in the ids.
-'''
+#!/usr/bin/env python
+# Take a list of id's and filename slugs, 
+# rename, move and parse out the appropriate text in the ids.
 import os
 import re
 
@@ -39,4 +36,3 @@ try:
         os.remove('./' + id)
 finally:
     f.close()
-
