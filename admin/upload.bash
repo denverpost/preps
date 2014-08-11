@@ -53,7 +53,7 @@ wget --load-cookies cookies.txt \
 
 
 
-POSTDATA="action=save&WebTemplateID="$ID"&DocID="$ID"&DocElem=WebTemplate&WebTemplateName="$NAME"&WebTemplateActive=1&WebTemplateSite=default&WebTemplateDisplayMethod=Javascript&WebTemplateTemplate="$ENCODED"&formLoaded=yes"
+POSTDATA="action=save&WebTemplateID="$ID"&DocID="$ID"&DocElem=WebTemplate&WebTemplateName="$NAME"&WebTemplateActive=1&WebTemplateSite=default&WebTemplateDisplayMethod=Ajax&WebTemplateTemplate="$ENCODED"&formLoaded=yes"
 
 echo $POSTDATA > tmp
 
