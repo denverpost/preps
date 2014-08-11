@@ -2,22 +2,22 @@
 <table cellpadding="0" cellspacing="0" class="teamStatTable deluxe">
     <tbody>
         <tr class="teamStatsHeader">
-            <th scope="col" abbr="" align="right">Win %</th>
-            <th scope="col" abbr="" align="right">Avg.</th>
-            <th scope="col" abbr="" align="right">Slug %</th>
-            <th scope="col" abbr="" align="right">H</th>
-            <th scope="col" abbr="" align="right">2B</th>
-            <th scope="col" abbr="" align="right">3B</th>
-            <th scope="col" abbr="" align="right">HR</th>
-            <th scope="col" abbr="" align="right">RBI</td>
-            <th scope="col" abbr="" align="right">SB</th>
-            <th scope="col" abbr="" align="right">ERA</th>
-            <th scope="col" abbr="" align="right">W</th>
-            <th scope="col" abbr="" align="right">SV</th>
-            <th scope="col" abbr="" align="right">SHO</th>
-            <th scope="col" abbr="" align="right">E</th>
-            <th scope="col" abbr="" align="right">K</th>
-            <th scope="col" abbr="" align="right">BB</th>
+            <th scope="col" abbr="" align="center">Win %</th>
+            <th scope="col" abbr="" align="center">Avg.</th>
+            <th scope="col" abbr="" align="center">Slug %</th>
+            <th scope="col" abbr="" align="center">H</th>
+            <th scope="col" abbr="" align="center">2B</th>
+            <th scope="col" abbr="" align="center">3B</th>
+            <th scope="col" abbr="" align="center">HR</th>
+            <th scope="col" abbr="" align="center">RBI</td>
+            <th scope="col" abbr="" align="center">SB</th>
+            <th scope="col" abbr="" align="center">ERA</th>
+            <th scope="col" abbr="" align="center">W</th>
+            <th scope="col" abbr="" align="center">SV</th>
+            <th scope="col" abbr="" align="center">SHO</th>
+            <th scope="col" abbr="" align="center">E</th>
+            <th scope="col" abbr="" align="center">K</th>
+            <th scope="col" abbr="" align="center">BB</th>
         </tr>
         <tr class="resultsText">
 <VAR $winPct = trailingZeroes(round($TeamSeasonStats_WinningPercentage,3),3,true)>
@@ -63,22 +63,22 @@
 </IFEQUAL>
 
 
-<td align="right">{$wnPct}</td>
-<td align="right">{$btAvg}</td>
-<td align="right">{$sPct}</td>
-<td align="right">{$TeamSeasonStats_TotalHits}</td>
-<td align="right">{$TeamSeasonStats_Doubles}</td>
-<td align="right">{$TeamSeasonStats_Triples}</td>
-<td align="right">{$TeamSeasonStats_HomeRuns}</td>
-<td align="right">{$TeamSeasonStats_RunsBattedIn}</td>
-<td align="right">{$TeamSeasonStats_StolenBases}</td>
-<td align="right">{$era}</td>
-<td align="right">{$TeamSeasonStats_TotalWins}</td>
-<td align="right">{$TeamSeasonStats_Save}</td>
-<td align="right">{$TeamSeasonStats_Shutout}</td>
-<td align="right">{$TeamSeasonStats_TotalErrors}</td>
-<td align="right">{$TeamSeasonStats_StrikeoutsPitched}</td>
-<td align="right">{$TeamSeasonStats_WalksAllowed}</td>
+<td align="center">{$wnPct}</td>
+<td align="center">{$btAvg}</td>
+<td align="center">{$sPct}</td>
+<td align="center">{$TeamSeasonStats_TotalHits}</td>
+<td align="center">{$TeamSeasonStats_Doubles}</td>
+<td align="center">{$TeamSeasonStats_Triples}</td>
+<td align="center">{$TeamSeasonStats_HomeRuns}</td>
+<td align="center">{$TeamSeasonStats_RunsBattedIn}</td>
+<td align="center">{$TeamSeasonStats_StolenBases}</td>
+<td align="center">{$era}</td>
+<td align="center">{$TeamSeasonStats_Win}</td>
+<td align="center">{$TeamSeasonStats_Save}</td>
+<td align="center">{$TeamSeasonStats_Shutout}</td>
+<td align="center">{$TeamSeasonStats_TotalErrors}</td>
+<td align="center">{$TeamSeasonStats_StrikeoutsPitched}</td>
+<td align="center">{$TeamSeasonStats_WalksAllowed}</td>
 </td>
         </tr>
     </tbody>

@@ -20,6 +20,7 @@
 <VAR $MeetTeamStats_TeamName = fixApostrophes($MeetTeamStats_TeamName)>
                 <a href="{$externalURL}site=default&tpl=Team&TeamID={$MeetTeamStats_TeamID}">
                     {$MeetTeamStats_TeamName}</a></td>
+            <? $MeetTeamStats_AllAround = sprintf("%.3f", $MeetTeamStats_AllAround) ?>
             <td align="right">{$MeetTeamStats_AllAround}</td>
         </tr>
 <IFEQUAL $rowClass "boxscoreRow trRow">
@@ -59,6 +60,7 @@ $scoreField = str_replace(" ","",$eventName); ?>
         <tr class="{$rowClass}">
             <td><a href="{$externalURL}site=default&tpl=Player&ID={$PlayerStats_PlayerID}">{$playerName}</a></td>
             <td><a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerStats_TeamID}">{$teamName}</a></td>
+<? $PlayerStats_Score = sprintf("%.3f", $PlayerStats_Score) ?>
             <td>{$PlayerStats_Score}</td>
         </tr>
 <IFEQUAL $rowClass "boxscoreRow trRow">

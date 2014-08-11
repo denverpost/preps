@@ -1,4 +1,4 @@
-<h3>Player Stats</h3>
+<h2>{$Player_PlayerFirstName} {$Player_PlayerLastName}'s Match-by-Match {$sportName} Results</h2>
 <h4>Meets</h4>
 <table cellpadding="0" cellspacing="0" class="schedTable deluxe">
     <tbody>

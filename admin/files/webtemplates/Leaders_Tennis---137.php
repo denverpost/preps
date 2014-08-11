@@ -1,3 +1,15 @@
+<h2>Colorado Tennis Leaders</h2>
+
+<VAR $tpl = "Leaders">
+<IFNOTEMPTY $form_ConferenceID>
+<VAR $selector = "&ConferenceID=".$form_ConferenceID>
+<VAR $tpl = "Conference">
+</IFNOTEMPTY>
+<IFNOTEMPTY $form_ClassID>
+<VAR $selector = "&ClassID=".$form_ClassID>
+<VAR $tpl = "Class">
+</IFNOTEMPTY>
+
 <IFEQUAL $form_ConferenceID "all"><VAR $ConferenceID = ""></IFEQUAL>  
 <form name="leaderForm" action="home.html" method="get">
 <input type="hidden" name="tpl" id="tpl" value="{$form_tpl}" />
@@ -33,12 +45,14 @@
 <tr id="header-sub" class="resultsText">
     <th scope="col" abbr="">Name</th>
     <th scope="col" abbr="">Team</th>
-    <th scope="col" abbr=""><a href="{$beginLink}Singles" onmouseover="highlightKey('keySingles')" onmouseout = "unHighlightKey('keySingles')">Singles</a></th>
-    <th scope="col" abbr=""><a href="{$beginLink}Doubles" onmouseover="highlightKey('keyDoubles')" onmouseout = "unHighlightKey('keyDoubles')">Doubles</a></th>
+    <th scope="col" abbr=""><a href="{$beginLink}SinglesWins" onmouseover="highlightKey('keySinglesWins')" onmouseout = "unHighlightKey('keySinglesWins')">Singles Wins</a></th>
+    <th scope="col" abbr=""><a href="{$beginLink}SinglesLosses" onmouseover="highlightKey('keySinglesLosses')" onmouseout = "unHighlightKey('keySinglesLosses')">Singles Losses</a></th>
+    <th scope="col" abbr=""><a href="{$beginLink}DoublesWins" onmouseover="highlightKey('keyDoubles')" onmouseout = "unHighlightKey('keyDoublesWins')">Doubles Wins</a></th>
+    <th scope="col" abbr=""><a href="{$beginLink}DoublesLosses" onmouseover="highlightKey('keyDoublesLosses')" onmouseout = "unHighlightKey('keyDoubles')">Doubles Losses</a></th>
 </tr>
 
 <IFGREATER count($Leaders_rows) 0>
-<VAR $rowClass="leadersRow">
+<VAR $rowClass="leadersRow trRow">
 <RESULTS list=Leaders_rows prefix=Leader>
 <tr class="{$rowClass}">
 <td>
@@ -55,20 +69,26 @@
 {$Leader_TeamName}</a></td>
 <td>
 <a href="{$externalURL}site=default&tpl=Team&TeamID={$Leader_TeamID}" CLASS="leadersTeamLink">
-{$single_win}-{$single_loss}</a>
+{$Leader_SinglesWins}</a>
+</td>
+<td><a href="{$externalURL}site=default&tpl=Team&TeamID={$Leader_TeamID}" CLASS="leadersTeamLink">
+{$single_loss}</a>
 </td>
 <td> <a href="{$externalURL}site=default&tpl=Team&TeamID={$Leader_TeamID}" CLASS="leadersTeamLink">
-{$double_win}-{$double_loss}
+{$double_win}
+</td>
+<td> <a href="{$externalURL}site=default&tpl=Team&TeamID={$Leader_TeamID}" CLASS="leadersTeamLink">
+{$double_loss}
 </td>
 <!-- <ROW NAME=LeaderCol STATFIELD="Singles" STAT={$plyrWins[$ID_PlayerID]["Singles"]}-{$plyrLosses[$ID_PlayerID]["Singles"]}>
 <ROW NAME=LeaderCol STATFIELD="Doubles" STAT={$plyrWins[$ID_PlayerID]["Doubles"]}-{$plyrLosses[$ID_PlayerID]["Doubles"]}>  -->
 
 </td>
 </tr>
-<IFEQUAL $rowClass "leadersRow">
-<VAR $rowClass = "leadersRowAlternate">
+<IFEQUAL $rowClass "leadersRow trRow">
+<VAR $rowClass = "leadersRowAlternate trAlt">
 <ELSE>
-<VAR $rowClass = "leadersRow">
+<VAR $rowClass = "leadersRow trRow">
 </IFEQUAL>
 </RESULTS>
 </IFGREATER>

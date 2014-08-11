@@ -7,41 +7,50 @@
 
 <IFEQUAL $sportName "Baseball">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2009">
+<VAR $standingSeason = "2013">
 <ELSE>
 <VAR $winPct = "WinPercentage">
-<VAR $standingSeason = "2009">
+<VAR $standingSeason = "2013">
 </IFEQUAL>
 <IFEQUAL $sportName "Football">
-<VAR $standingSeason = "2009">
+<VAR $standingSeason = "2013">
 </IFEQUAL>
 <IFEQUAL $sportName "Girls Lacrosse">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2009">
+<VAR $standingSeason = "2013">
 </IFEQUAL>
 <IFEQUAL $sportName "Boys Lacrosse">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2009">
+<VAR $standingSeason = "2013">
 </IFEQUAL>
 <IFEQUAL $sportName "Girls Soccer">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2009">
+<VAR $standingSeason = "2013">
 </IFEQUAL>
 <IFEQUAL $sportName "Softball">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2009">
+<VAR $standingSeason = "2013">
 </IFEQUAL>
 <IFEQUAL $sportName "Boys Soccer">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2009">
+<VAR $standingSeason = "2013">
 </IFEQUAL>
 <IFEQUAL $sportName "Girls Volleyball">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2009">
+<VAR $standingSeason = "2013">
 </IFEQUAL>
 <IFEQUAL $sportName "Field Hockey">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2009">
+<VAR $standingSeason = "2013">
+</IFEQUAL>
+<IFEQUAL $sportName "Boys Basketball">
+<VAR $standingSeason = "2013">
+</IFEQUAL>
+<IFEQUAL $sportName "Girls Basketball">
+<VAR $standingSeason = "2013">
+</IFEQUAL>
+<IFEQUAL $sportName "Ice Hockey">
+<VAR $standingSeason = "2013">
 </IFEQUAL>
 
 ### If $standingSeason is empty, then we don't have a sport we can compute standings on. ###
@@ -71,100 +80,110 @@ LEFT JOIN seasonteam".$sqlSportName." AS away ON away.SeasonTeamTeamID = q_team.
 <IFTRUE $showStandings>
 <QUERY name=Standings SPORTNAME=$sqlSportName CONFERENCE=$form_ConferenceID SELECTCLAUSE=$selectClause JOINCLAUSE=$joinClause SORT=$sortOrder WHERECLAUSE=$whereClause>
 ###query: {$Standings_query}###
-<h3>Standings</h3>
+<h3>Regular Season</h3>
 <table class="standingsTable deluxe" cellpadding="0" cellspacing="0">
-<tbody><tr id="header-main">
+<tbody><tr id="header-sub">
 
-<IFTRUE $sqlSportName == "girlssoccer" || $sqlSportName == "boyssoccer" || $sqlSportName == "boyslacrosse"  || $sqlSportName == "girlslacrosse" || $sqlSportName == "softball">
+<IFTRUE $sqlSportName == "girlssoccer" || $sqlSportName == "boyssoccer" || $sqlSportName == "softball" || $sqlSportName == "fieldhockey" || $sqlSportName == "icehockey">
 
-<th scope="col" abbr="" rowspan="2">Team</th>
-<th scope="col" abbr="" colspan="4">Overall</th>
-<th scope="col" abbr="" colspan="4">Conference</th>
-<th scope="col" abbr="" colspan="4">Home</th>
-<th scope="col" abbr="" colspan="4">Away</th>
+<th scope="col" abbr="">Standings</th>
+<th scope="col" abbr="" colspan="4" align="center">Overall</th>
+<th scope="col" abbr="" colspan="4" align="center">Conference</th>
+<th scope="col" abbr="" colspan="4" align="center">Home</th>
+<th scope="col" abbr="" colspan="4" align="center">Away</th>
 </tr>
 <tr id="header-sub">
-<th scope="col" abbr="Wins">W</th>
-<th scope="col" abbr="Losses">L</th>
-<th scope="col" abbr="Ties">T</th>
-<th scope="col" abbr="Win Percentage">PCT</th>
-<th scope="col" abbr="Wins">W</th>
-<th scope="col" abbr="Losses">L</th>
-<th scope="col" abbr="Ties">T</th>
-<th scope="col" abbr="Win Percentage">PCT</th>
-<th scope="col" abbr="Wins">W</th>
-<th scope="col" abbr="Losses">L</th>
-<th scope="col" abbr="Ties">T</th>
-<th scope="col" abbr="Win Percentage">PCT</th>
-<th scope="col" abbr="Wins">W</th>
-<th scope="col" abbr="Losses">L</th>
-<th scope="col" abbr="Ties">T</th>
-<th scope="col" abbr="Win Percentage">PCT</th>
+<th scope="col" abbr="">Team</th>
+<th scope="col" abbr="Wins" align="center">W</th>
+<th scope="col" abbr="Losses" align="center">L</th>
+<th scope="col" abbr="Ties" align="center">T</th>
+<th scope="col" abbr="Win Percentage" align="center">PCT</th>
+<th scope="col" abbr="Wins" align="center">W</th>
+<th scope="col" abbr="Losses" align="center">L</th>
+<th scope="col" abbr="Ties" align="center">T</th>
+<th scope="col" abbr="Win Percentage" align="center">PCT</th>
+<th scope="col" abbr="Wins" align="center">W</th>
+<th scope="col" abbr="Losses" align="center">L</th>
+<th scope="col" abbr="Ties" align="center">T</th>
+<th scope="col" abbr="Win Percentage" align="center">PCT</th>
+<th scope="col" abbr="Wins" align="center">W</th>
+<th scope="col" abbr="Losses" align="center">L</th>
+<th scope="col" abbr="Ties" align="center">T</th>
+<th scope="col" abbr="Win Percentage" align="center">PCT</th>
 </tr>
 <ELSE>
-<th scope="col" abbr="" rowspan="2">Team</th>
-<th scope="col" abbr="" colspan="3">Overall</th>
-<th scope="col" abbr="" colspan="3">Conference</th>
-<th scope="col" abbr="" colspan="3">Home</th>
-<th scope="col" abbr="" colspan="3">Away</th>
+<th scope="col" abbr="">Standings</th>
+<th scope="col" abbr="" colspan="3" align="center">Overall</th>
+<th scope="col" abbr="" colspan="3" align="center">Conference</th>
+<th scope="col" abbr="" colspan="3" align="center">Home</th>
+<th scope="col" abbr="" colspan="3" align="center">Away</th>
 </tr>
 <tr id="header-sub">
-<th scope="col" abbr="Wins">W</th>
-<th scope="col" abbr="Losses">L</th>
-<th scope="col" abbr="Win Percentage">PCT</th>
-<th scope="col" abbr="Wins">W</th>
-<th scope="col" abbr="Losses">L</th>
-<th scope="col" abbr="Win Percentage">PCT</th>
-<th scope="col" abbr="Wins">W</th>
-<th scope="col" abbr="Losses">L</th>
-<th scope="col" abbr="Win Percentage">PCT</th>
-<th scope="col" abbr="Wins">W</th>
-<th scope="col" abbr="Losses">L</th>
-<th scope="col" abbr="Win Percentage">PCT</th>
+<th scope="col" abbr="">Team</th>
+<th scope="col" abbr="Wins" align="center">W</th>
+<th scope="col" abbr="Losses" align="center">L</th>
+<th scope="col" abbr="Win Percentage" align="center">PCT</th>
+<th scope="col" abbr="Wins" align="center">W</th>
+<th scope="col" abbr="Losses" align="center">L</th>
+<th scope="col" abbr="Win Percentage" align="center">PCT</th>
+<th scope="col" abbr="Wins" align="center">W</th>
+<th scope="col" abbr="Losses" align="center">L</th>
+<th scope="col" abbr="Win Percentage" align="center">PCT</th>
+<th scope="col" abbr="Wins" align="center">W</th>
+<th scope="col" abbr="Losses" align="center">L</th>
+<th scope="col" abbr="Win Percentage" align="center">PCT</th>
 </tr>
 </IFTRUE>
 <IFGREATER count($Standings_rows) 0>
 <VAR $rowClass = "standingsRow trRow">
 <RESULTS list=Standings_rows prefix=Standings>
 <tr class="{$rowClass}">
-<th scope="row" abbr="{$Standings_TeamName}">
+<td scope="row" align="left" abbr="{$Standings_TeamName}">
 <a href="{$externalURL}site=default&tpl=Team&TeamID={$Standings_TeamID}">
 {$Standings_TeamName}
 </a>
-</th>
+</td>
 
-<IFTRUE $sqlSportName == "girlssoccer" || $sqlSportName == "boyssoccer" || $sqlSportName == "boyslacrosse"  || $sqlSportName == "girlslacrosse" || $sqlSportName == "softball">
+<IFTRUE $sqlSportName == "girlssoccer" || $sqlSportName == "boyssoccer" || $sqlSportName == "softball" || $sqlSportName == "fieldhockey" || $sqlSportName == "icehockey">
 
-<td align="right">{$Standings_OverallWin}</td>
-<td align="right">{$Standings_OverallLoss}</td>
-<td align="right">{$Standings_OverallTie}</td>
-<td align="right"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_OverallPct,3),3,".",""))>{$pct}</td>
-<td align="right">{$Standings_ConfWin}</td>
-<td align="right">{$Standings_ConfLoss}</td>
-<td align="right">{$Standings_ConfTie}</td>
-<td align="right"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_ConfPct,3),3,".",""))>{$pct}</td>
-<td align="right"><IFNOTEMPTY $Standings_HomeWin>{$Standings_HomeWin}<ELSE>0</IFNOTEMPTY></td>
-<td align="right"><IFNOTEMPTY $Standings_HomeLoss>{$Standings_HomeLoss}<ELSE>0</IFNOTEMPTY></td>
-<td align="right"><IFNOTEMPTY $Standings_HomeTie>{$Standings_HomeTie}<ELSE>0</IFNOTEMPTY></td>
-<td align="right"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_HomePct,3),3,".",""))>{$pct}</td>
-<td align="right"><IFNOTEMPTY $Standings_AwayWin>{$Standings_AwayWin}<ELSE>0</IFNOTEMPTY></td>
-<td align="right"><IFNOTEMPTY $Standings_AwayLoss>{$Standings_AwayLoss}<ELSE>0</IFNOTEMPTY></td>
-<td align="right"><IFNOTEMPTY $Standings_AwayTie>{$Standings_AwayTie}<ELSE>0</IFNOTEMPTY></td>
-<td align="right"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_AwayPct,3),3,".",""))>{$pct}</td>
+<td align="center">{$Standings_OverallWin}</td>
+<td align="center">{$Standings_OverallLoss}</td>
+<td align="center">{$Standings_OverallTie}</td>
+
+<?php
+if( 1.0 == $Standings_OverallPct) {
+  $pct = "1.000";
+} else {
+  $pct = (sprintf( "%05.3f", $Standings_OverallPct));
+}
+?>
+<td align="center">###<VAR $pct = str_replace("0.", ".", number_format(round($Standings_OverallPct,3),3,".",""))>###{$pct}</td>
+<td align="center">{$Standings_ConfWin}</td>
+<td align="center">{$Standings_ConfLoss}</td>
+<td align="center">{$Standings_ConfTie}</td>
+<td align="center"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_ConfPct,3),3,".",""))>{$pct}</td>
+<td align="center"><IFNOTEMPTY $Standings_HomeWin>{$Standings_HomeWin}<ELSE>0</IFNOTEMPTY></td>
+<td align="center"><IFNOTEMPTY $Standings_HomeLoss>{$Standings_HomeLoss}<ELSE>0</IFNOTEMPTY></td>
+<td align="center"><IFNOTEMPTY $Standings_HomeTie>{$Standings_HomeTie}<ELSE>0</IFNOTEMPTY></td>
+<td align="center"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_HomePct,3),3,".",""))>{$pct}</td>
+<td align="center"><IFNOTEMPTY $Standings_AwayWin>{$Standings_AwayWin}<ELSE>0</IFNOTEMPTY></td>
+<td align="center"><IFNOTEMPTY $Standings_AwayLoss>{$Standings_AwayLoss}<ELSE>0</IFNOTEMPTY></td>
+<td align="center"><IFNOTEMPTY $Standings_AwayTie>{$Standings_AwayTie}<ELSE>0</IFNOTEMPTY></td>
+<td align="center"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_AwayPct,3),3,".",""))>{$pct}</td>
 
 <ELSE>
-<td align="right">{$Standings_OverallWin}</td>
-<td align="right">{$Standings_OverallLoss}</td>
-<td align="right"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_OverallPct,3),3,".",""))>{$pct}</td>
-<td align="right">{$Standings_ConfWin}</td>
-<td align="right">{$Standings_ConfLoss}</td>
-<td align="right"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_ConfPct,3),3,".",""))>{$pct}</td>
-<td align="right"><IFNOTEMPTY $Standings_HomeWin>{$Standings_HomeWin}<ELSE>0</IFNOTEMPTY></td>
-<td align="right"><IFNOTEMPTY $Standings_HomeLoss>{$Standings_HomeLoss}<ELSE>0</IFNOTEMPTY></td>
-<td align="right"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_HomePct,3),3,".",""))>{$pct}</td>
-<td align="right"><IFNOTEMPTY $Standings_AwayWin>{$Standings_AwayWin}<ELSE>0</IFNOTEMPTY></td>
-<td align="right"><IFNOTEMPTY $Standings_AwayLoss>{$Standings_AwayLoss}<ELSE>0</IFNOTEMPTY></td>
-<td align="right"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_AwayPct,3),3,".",""))>{$pct}</td>
+<td align="center">{$Standings_OverallWin}</td>
+<td align="center">{$Standings_OverallLoss}</td>
+<td align="center"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_OverallPct,3),3,".",""))>{$pct}</td>
+<td align="center">{$Standings_ConfWin}</td>
+<td align="center">{$Standings_ConfLoss}</td>
+<td align="center"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_ConfPct,3),3,".",""))>{$pct}</td>
+<td align="center"><IFNOTEMPTY $Standings_HomeWin>{$Standings_HomeWin}<ELSE>0</IFNOTEMPTY></td>
+<td align="center"><IFNOTEMPTY $Standings_HomeLoss>{$Standings_HomeLoss}<ELSE>0</IFNOTEMPTY></td>
+<td align="center"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_HomePct,3),3,".",""))>{$pct}</td>
+<td align="center"><IFNOTEMPTY $Standings_AwayWin>{$Standings_AwayWin}<ELSE>0</IFNOTEMPTY></td>
+<td align="center"><IFNOTEMPTY $Standings_AwayLoss>{$Standings_AwayLoss}<ELSE>0</IFNOTEMPTY></td>
+<td align="center"><VAR $pct = str_replace("0.", ".", number_format(round($Standings_AwayPct,3),3,".",""))>{$pct}</td>
 </IFTRUE>
 
 </tr>

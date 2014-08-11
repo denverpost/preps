@@ -1,14 +1,16 @@
 <!-- TeamPlayer search box begin -->
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
+<VAR $externalDomain = "http://preps.denverpost.com">
 <VAR $TeamInitialCharacter = "A">
 <VAR $ConferenceInitialCharacter = "5">
+<INCLUDE site=default tpl=SportSeasons>
 
 <QUERY name=Sports>
 <!-- Note 1:
 	We've got so many high schools, we have to organize them by the first letter of their name.
 	This template logic looks at the first letter, compares it with the previous letter,
 	and if there's a difference between the two it outputs some markup.
-	
+
 	Also, if we're on the first letter of the list or the last letter of the list the template
 	works differently.
 -->
@@ -31,7 +33,7 @@
 							<li><a href="#">{$TeamInitialCharacter}</a>
 								<ul class="doubleDrop">	<!-- Tier 4 -->
 								<RESULTS list=SportTeams_dev_rows prefix=Team>
-									
+
 
 									<VAR $IndexLetter = $newIndexLetter>
 									<VAR $newIndexLetter = strtoupper(substr($Team_TeamName, 0, 1))>
@@ -44,7 +46,7 @@
 										</IFNOTEQUAL>
 									</IFNOTEQUAL>
 									</IFNOTEQUAL>
-									
+
 									<li><a href="{$externalURL}site=default&tpl=Team&Sport={$Sport_SportID}&TeamID={$Team_TeamID}&source=prepnav">{$Team_TeamName}</a></li>
 								</RESULTS>
 
@@ -58,7 +60,7 @@
 ### Schools ###
 ### ------------------------------------------------------------------------ ###
 			<QUERY name=Schools>
-			<li id="navschools"><a href="{$externalURL}site=default&tpl=School&School&source=prepnav-schools" title="Prep sport team listings, by school">Schools</a>
+			<li id="navschools"><a href="{$externalDomain}/schools/" title="Prep sport team listings, by school">Schools</a>
 				<ul class="dropDown">	<!-- Tier 2 -->
 					<VAR $IndexLetter = "">
 					<VAR $newIndexLetter = "">
@@ -77,8 +79,10 @@
 							</IFNOTEQUAL>
 							</IFNOTEQUAL>
 
-
-							<li><a href="{$externalURL}site=default&tpl=School&School={$School_SchoolID}&source=prepnav-schools">{$School_SchoolName}</a></li>
+<IFEQUAL $School_SchoolState "CO">
+<?PHP $slug = slugify($School_SchoolName); ?>
+							<li><a href="{$externalDomain}/schools/{$slug}/{$School_SchoolID}/">{$School_SchoolName}</a></li>
+</IFEQUAL>
 						</RESULTS>
 						</ul></li>	<!-- /Tier 3 -->
 				</ul></li>	<!-- /Tier 2 -->
@@ -122,29 +126,33 @@
 ### ------------------------------------------------------------------------ ###
 			<li id="navsports"><a href="{$externalURL}site=default&tpl=Sport&Sport&source=prepnav-sports" title="Sports and Results">Results + Sports</a>
 				<ul class="dropDown">	<!-- Tier 2 -->
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=13&source=prepnav-sports">Boys Cross Country</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=14&source=prepnav-sports">Girls Cross Country</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=32&source=prepnav-sports">Field Hockey</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=1&source=prepnav-sports">Football</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=18&source=prepnav-sports">Boys Golf</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=33&source=prepnav-sports">Girls Gymnastics</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=12&source=prepnav-sports">Boys Soccer</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=30&source=prepnav-sports">Softball</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=27&source=prepnav-sports">Boys Tennis</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=11&source=prepnav-sports">Girls Volleyball</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=29&source=prepnav-sports">Baseball</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=6&source=prepnav-sports">Boys Basketball</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=35&source=prepnav-sports">Boys Lacrosse</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=16&source=prepnav-sports">Boys Swimming and Diving</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=21&source=prepnav-sports">Girls Basketball</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=19&source=prepnav-sports">Girls Golf</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=36&source=prepnav-sports">Girls Lacrosse</a></li>
 
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=15&source=prepnav-sports">Girls Soccer</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=17&source=prepnav">Girls Swimming and Diving</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=31&source=prepnav-sports">Girls Tennis</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=34&source=prepnav-sports">Ice Hockey</a></li>
-<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=23&source=prepnav-sports">Wrestling</a></li>
+<li><a href="http://preps.denverpost.com/sport/boys-cross-country/">Boys Cross Country</a></li>
+<li><a href="http://preps.denverpost.com/sport/girls-cross-country/">Girls Cross Country</a></li>
+<li><a href="http://preps.denverpost.com/sport/field-hockey/">Field Hockey</a></li>
+<li><a href="http://preps.denverpost.com/sport/football/">Football</a></li>
+<li><a href="http://preps.denverpost.com/sport/boys-golf/">Boys Golf</a></li>
+<li><a href="http://preps.denverpost.com/sport/girls-gymnastics/">Girls Gymnastics</a></li>
+<li><a href="http://preps.denverpost.com/sport/boys-soccer/">Boys Soccer</a></li>
+<li><a href="http://preps.denverpost.com/sport/softball/">Softball</a></li>
+<li><a href="http://preps.denverpost.com/sport/boys-tennis/">Boys Tennis</a></li>
+<li><a href="http://preps.denverpost.com/sport/girls-volleyball/">Girls Volleyball</a></li>
+
+<li><a href="http://preps.denverpost.com/sport/boys-basketball/">Boys Basketball</a></li>
+<li><a href="http://preps.denverpost.com/sport/girls-basketball/">Girls Basketball</a></li>
+<li><a href="http://preps.denverpost.com/sport/ice-hockey/">Ice Hockey</a></li>
+<li><a href="http://preps.denverpost.com/sport/girls-swimming-diving/">Girls Swimming and Diving</a></li>
+<li><a href="http://preps.denverpost.com/sport/wrestling/">Wrestling</a></li>
+
+<li><a href="http://preps.denverpost.com/sport/baseball/">Baseball</a></li>
+<li><a href="http://preps.denverpost.com/sport/boys-lacrosse/">Boys Lacrosse</a></li>
+<li><a href="http://preps.denverpost.com/sport/boys-swimming-diving/">Boys Swimming and Diving</a></li>
+<li><a href="http://preps.denverpost.com/sport/girls-golf/">Girls Golf</a></li>
+<li><a href="http://preps.denverpost.com/sport/girls-lacrosse/">Girls Lacrosse</a></li>
+<li><a href="http://preps.denverpost.com/sport/girls-soccer/">Girls Soccer</a></li>
+<li><a href="http://preps.denverpost.com/sport/girls-tennis/">Girls Tennis</a></li>
+<li><a href="http://preps.denverpost.com/sport/boys-track/">Boys Track</a></li>
+<li><a href="http://preps.denverpost.com/sport/girls-track/">Girls Track</a></li>
 
 ### Commented out, hard-coding allows us to organize by season.					<RESULTS list=Sports_rows prefix=Sport>
 					<li><a href="{$externalURL}site=default&tpl=Sport&Sport={$Sport_SportID}&source=prepnav-sports">{$Sport_SportName}</a></li>
@@ -166,8 +174,10 @@
 		</ul>	<!-- /Tier 1 -->
 	</div>
 
-<div id="prepssearchbox" align="center">
-<h5>Search Player, School and Team Names</h5>
+<div id="prepssearchbox" align="center" style="margin-top:40px!important;">
+<h5>
+<!-- <a href="http://preps.denverpost.com/home.html?site=default&tpl=scoreboard">LIVE FOOTBALL SCORES</a> || 
+-->Search Player, School and Team Names</h5>
 <form action="http://preps.denverpost.com/home.html" method="get">
 	<input name="Query" value="" type="text">
 	<input name="site" value="default" type="hidden">
@@ -177,6 +187,3 @@
 </div>
 
 </div>
-
-
-

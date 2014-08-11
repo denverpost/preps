@@ -27,6 +27,15 @@
 <VAR $strDateDisplay = date("m/d/Y")>
 </IFNOTEMPTY>
 
+###insert php code block here###
+
+<?PHP if ($sportName == "Football" || $sportName == "Boys Basketball" || $sportName == "Girls Basketball") { ?>
+
+<VAR $pointsClause = ",awayteamstats.TotalPoints as AwayTeamPoints,hometeamstats.TotalPoints as HomeTeamPoints">
+
+<?PHP } ?>
+
+
 <QUERY name=TodaySchedule>
 <VAR $gameCount = count($Schedule_rows)>
 <RUN setPreviousNextPageLinks($form_start,$form_count,$gameCount,$total_Schedule) >
@@ -35,6 +44,7 @@
 <RUN $beginPrevNextURL .= "&SearchDate=".$form_SearchDate>
 <RUN $beginPrevNextURL .= "&SearchDateEnd=".$form_SearchDateEnd>
 <table>
+
 <h3>Schedule</h3>
 <tr>
 <td colspan="50" align="left" valign="top">

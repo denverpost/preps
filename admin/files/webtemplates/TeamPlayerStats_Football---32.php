@@ -1,8 +1,9 @@
+<VAR $sportYear = "2013">
 <h3>Player Stats <span id="showKey"><a href="javascript:showKey('statKey')" class="keyButton">Show key</a></span>
 <span id="hideKey" style="display:none"><a href="javascript:hideKey('statKey')" class="keyButton">Hide key</a></span></h3>
 
 <table cellpadding="0" cellspacing="0" class="leadersTable" width="100%">
-<tr><td COLSPAN=50>
+<tr><td COLSPAN=75>
 <div id="statKey" style="display:none">
 <table class="keyTable" cellpadding="0" cellspacing="0">
 <tr class="statKeyRow">
@@ -52,17 +53,23 @@
 <ELSE>
 <VAR $sortClause = $form_sort." DESC">
 </IFEMPTY>
-<QUERY name=TeamPlayerStats SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause TEAMID=$form_TeamID>
+<QUERY name=TeamPlayerStats SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause TEAMID=$form_TeamID SPORTYEAR=$sportYear>
+<IFNOTEMPTY $form_debug>
+query: {$TeamPlayerStats_query}
+</IFNOTEMPTY>
+###query: {$TeamPlayerStats_query}###
+
+
 <h4>Passing</h4>
 <table cellpadding="0" cellspacing="0" class="teamStatTable deluxe wide400">
 <tbody><tr id="header-sub">
-<th scope="col" abbr="">Name</th>
-<th scope="col" abbr="">Comp</th>
-<th scope="col" abbr="">Att</th>
-<th scope="col" abbr="">Pct</th>
-<th scope="col" abbr="">Yds</th>
-<th scope="col" abbr="">TD</th>
-<th scope="col" abbr="">INT</th>
+<th scope="col" abbr="" align="left">Name</th>
+<th scope="col" abbr="" align="center">Comp</th>
+<th scope="col" abbr="" align="center">Att</th>
+<th scope="col" abbr="" align="center">Pct</th>
+<th scope="col" abbr="" align="center">Yds</th>
+<th scope="col" abbr="" align="center">TD</th>
+<th scope="col" abbr=""align="center">INT</th>
 </tr>
 <IFGREATER count($TeamPlayerStats_rows) 0>
 <VAR $rowClass="leadersRow trRow">
@@ -70,16 +77,26 @@
 
 <IFGREATER ($Passing_PassAttempts) 0>
 ###here###
+
  <VAR $lastName = fixApostrophes($Passing_PlayerLastName)>
 <tr class="{$rowClass}">
-<th scope="row" abbr="Player Name">
+<td scope="row" abbr="Player Name" align="left">
 <a href="home.html?site=default&tpl=Player&ID={$Passing_PlayerID}" class="leadersNameLink">### target="_blank">###
-{$Passing_PlayerFirstName} {$lastName}</a></th>
+{$Passing_PlayerFirstName} {$lastName}</a></td>
 <VAR $compPct = round($Passing_PassCompletionPercentage,1)>
+<? $compPct = sprintf("%.1f", $compPct) ?>
 <ROW NAME=LeaderFootballCol STATFIELD="PassCompletions" STAT=$Passing_PassCompletions>
 <ROW NAME=LeaderFootballCol STATFIELD="PassAttempts" STAT=$Passing_PassAttempts>
 <ROW NAME=LeaderFootballCol STATFIELD="PassCompletionPercentage" STAT=$compPct>
-<ROW NAME=LeaderFootballCol STATFIELD="PassingYards" STAT=$Passing_PassingYards>
+
+<?php
+$passingYardsFormatted =  $Passing_PassingYards;
+$passingYardsFormatted = number_format($passingYardsFormatted);
+$passingYardsFormatted = sprintf("%s", $passingYardsFormatted);
+?>
+
+<ROW NAME=LeaderFootballCol STATFIELD="PassingYards" STAT=$passingYardsFormatted>
+###<ROW NAME=LeaderFootballCol STATFIELD="PassingYards" STAT=$Passing_PassingYards>###
 <ROW NAME=LeaderFootballCol STATFIELD="PassingTouchdowns" STAT=$Passing_PassingTouchdowns>
 <ROW NAME=LeaderFootballCol STATFIELD="PassingInterceptions" STAT=$Passing_PassingInterceptions>
 </tr>
@@ -104,16 +121,19 @@
 <ELSE>
 <VAR $sortClause = $form_sort." DESC">
 </IFEMPTY>
-<QUERY name=TeamPlayerStats SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause TEAMID=$form_TeamID>
+<QUERY name=TeamPlayerStats SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause TEAMID=$form_TeamID SPORTYEAR=$sportYear>
+<IFNOTEMPTY $form_debug>
+query: {$TeamPlayerStats_query}
+</IFNOTEMPTY>
 <h4>Rushing</h4>
 <table cellpadding="0" cellspacing="0" class="teamStatTable deluxe wide400">
 <tbody><tr id="header-sub">
-<th scope="col" abbr="">Name</th>
-<th scope="col" abbr="">Att</th>
-<th scope="col" abbr="">Yards</th>
-<th scope="col" abbr="">Yds/Att</th>
-<th scope="col" abbr="">Long</th>
-<th scope="col" abbr="">TD</th>
+<th scope="col" abbr="" align="left">Name</th>
+<th scope="col" abbr="" align="center">Att</th>
+<th scope="col" abbr="" align="center">Yards</th>
+<th scope="col" abbr="" align="center">Yds/Att</th>
+<th scope="col" abbr="" align="center">Long</th>
+<th scope="col" abbr="" align="center">TD</th>
 </tr>
 <IFGREATER count($TeamPlayerStats_rows) 0>
 <VAR $rowClass = "leadersRow trRow">
@@ -121,16 +141,23 @@
 
 <IFGREATER ($Rushing_RushingAttempts) 0>
 
-
-
 <VAR $lastName = fixApostrophes($Rushing_PlayerLastName)>
 <tr class="{$rowClass}">
-<th scope="row" abbr="Player Name">
+<td scope="row" abbr="Player Name" align="left">
 <a href="home.html?site=default&tpl=Player&ID={$Rushing_PlayerID}" class="leadersNameLink">
-{$Rushing_PlayerFirstName} {$lastName}</a></th>
+{$Rushing_PlayerFirstName} {$lastName}</a></td>
 <VAR $yardsAtt = round($Rushing_RushingYardsPerAttempt,1)>
+<? $yardsAtt = sprintf("%.1f", $yardsAtt) ?>
 <ROW NAME=LeaderFootballCol STATFIELD="RushingAttempts" STAT=$Rushing_RushingAttempts>
-<ROW NAME=LeaderFootballCol STATFIELD="RushingYards" STAT=$Rushing_RushingYards>
+
+<?php
+$rushingYardsFormatted =  $Rushing_RushingYards;
+$rushingYardsFormatted = number_format($rushingYardsFormatted);
+$rushingYardsFormatted = sprintf("%s", $rushingYardsFormatted);
+?>
+
+<ROW NAME=LeaderFootballCol STATFIELD="RushingYards" STAT=$rushingYardsFormatted>
+
 <ROW NAME=LeaderFootballCol STATFIELD="RushingYardsPerAttempt" STAT=$yardsAtt>
 <ROW NAME=LeaderFootballCol STATFIELD="RushingLong" STAT=$Rushing_RushingLong>
 <ROW NAME=LeaderFootballCol STATFIELD="RushingTouchdowns" STAT=$Rushing_RushingTouchdowns>
@@ -157,35 +184,42 @@
 <ELSE>
 <VAR $sortClause = $form_sort." DESC">
 </IFEMPTY>
-<QUERY name=TeamPlayerStats SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause TEAMID=$form_TeamID>
+<QUERY name=TeamPlayerStats SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause TEAMID=$form_TeamID SPORTYEAR=$sportYear>
+<IFNOTEMPTY $form_debug>
+query: {$TeamPlayerStats_query}
+</IFNOTEMPTY>
 <h4>Receiving</h4>
 <table cellpadding="0" cellspacing="0" class="teamStatTable deluxe wide400">
 <tbody><tr id="header-sub">
-<th scope="col" abbr="">Name</th>
-<th scope="col" abbr="">Rec</th>
-<th scope="col" abbr="">Yds</th>
-<th scope="col" abbr="">Yds/Catch</th>
-<th scope="col" abbr="">Long</th>
-<th scope="col" abbr="">TD</th>
+<th scope="col" abbr="" align="left">Name</th>
+<th scope="col" abbr="" align="center">Rec</th>
+<th scope="col" abbr="" align="center">Yds</th>
+<th scope="col" abbr="" align="center">Yds/Catch</th>
+<th scope="col" abbr="" align="center">Long</th>
+<th scope="col" abbr="" align="center">TD</th>
 </tr>
 <IFGREATER count($TeamPlayerStats_rows) 0>
 <VAR $rowClass = "leadersRow trRow">
 <RESULTS list=TeamPlayerStats_rows prefix=Receiving>
 
 <IFGREATER ($Receiving_Receptions) 0>
-
-
-
  <VAR $lastName = fixApostrophes($Receiving_PlayerLastName)>
 <tr class="{$rowClass}">
-<th scope="row" abbr="Player Name">
+<td scope="row" abbr="Player Name" align="left">
 <a href="home.html?site=default&tpl=Player&ID={$Receiving_PlayerID}" class="leadersNameLink">
-{$Receiving_PlayerFirstName} {$lastName}</a></th>
-<VAR $yardsCatch = round($Receiving_YardsPerCatch)>
+{$Receiving_PlayerFirstName} {$lastName}</a></td>
+###<VAR $yardsCatch = round($Receiving_YardsPerCatch)>###
 <ROW NAME=LeaderFootballCol STATFIELD="Receptions" STAT=$Receiving_Receptions>
-<ROW NAME=LeaderFootballCol STATFIELD="ReceivingYards" STAT=$Receiving_ReceivingYards>
+<?php
+$receivingYardsFormatted =  $Receiving_ReceivingYards;
+$receivingYardsFormatted = number_format($receivingYardsFormatted);
+$receivingYardsFormatted = sprintf("%s", $receivingYardsFormatted);
+?>
+
+<ROW NAME=LeaderFootballCol STATFIELD="ReceivingYards" STAT=$receivingYardsFormatted>
 
 <VAR $yardsCatch = round($Receiving_YardsPerCatch,1)>
+<? $yardsCatch = sprintf("%.1f", $yardsCatch) ?>
 
 <ROW NAME=LeaderFootballCol STATFIELD="YardsPerCatch" STAT=$yardsCatch>
 <ROW NAME=LeaderFootballCol STATFIELD="ReceptionLong" STAT=$Receiving_ReceptionLong>
@@ -210,22 +244,21 @@
 <ELSE>
 <VAR $sortClause = $form_sort." DESC">
 </IFEMPTY>
-<QUERY name=TeamPlayerStats SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause TEAMID=$form_TeamID>
+<QUERY name=TeamPlayerStats SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause TEAMID=$form_TeamID SPORTYEAR=$sportYear>
+<IFNOTEMPTY $form_debug>
+query: {$TeamPlayerStats_query}
+</IFNOTEMPTY>
 <a name="placekicking"></a>
 <h4>Placekicking</h4>
 <table cellpadding="0" cellspacing="0" class="teamStatTable deluxe wide400">
     <tbody>
-        <tr id="header-main">
-            <th scope="col" abbr="" rowspan="2">Name</th>
-            <th scope="col" abbr="XP" colspan="2">Extra Points</th>
-            <th scope="col" abbr="FG" colspan="3">Field Goals</th>
-        </tr>
         <tr id="header-sub">
-            <th scope="col" abbr="XP-A">Attempted</th>
-            <th scope="col" abbr="XP-M">Made</th>
-            <th scope="col" abbr="FG-A">Attempted</th>
-            <th scope="col" abbr="FG-M">Made</th>
-            <th scope="col" abbr="FG-L">Long</th>
+            <th scope="col" abbr="" align="left">Name</th>
+            <th scope="col" abbr="XP-M" align="center">XP Made</th>
+            <th scope="col" abbr="XP-A" align="center">XP Att</th>
+            <th scope="col" abbr="FG-M" align="center">FG Made</th>
+            <th scope="col" abbr="FG-A" align="center">FG Att</th>
+            <th scope="col" abbr="FG-L" align="center">Long</th>
         </tr>
 <IFGREATER count($TeamPlayerStats_rows) 0>
 <VAR $rowClass = "leadersRow trRow">
@@ -235,13 +268,13 @@
 
 <VAR $lastName = fixApostrophes($Placekicking_PlayerLastName)>
         <tr class="{$rowClass}">
-            <th scope="row" abbr="Player Name">
+            <td scope="row" abbr="Player Name" align="left">
                 <a href="home.html?site=default&tpl=Player&ID={$Placekicking_PlayerID}" class="leadersNameLink">
-                    {$Placekicking_PlayerFirstName} {$lastName}</a></th>
-<ROW NAME=LeaderFootballCol STATFIELD="PointAfterTouchdownAttempts" STAT=$Placekicking_PointAfterTouchdownAttempts>
+                    {$Placekicking_PlayerFirstName} {$lastName}</a></td>
 <ROW NAME=LeaderFootballCol STATFIELD="PointAfterTouchdown" STAT=$Placekicking_PointAfterTouchdown>
-<ROW NAME=LeaderFootballCol STATFIELD="FieldGoalsAttempted" STAT=$Placekicking_FieldGoalsAttempted>
+<ROW NAME=LeaderFootballCol STATFIELD="PointAfterTouchdownAttempts" STAT=$Placekicking_PointAfterTouchdownAttempts>
 <ROW NAME=LeaderFootballCol STATFIELD="FieldGoalsMade" STAT=$Placekicking_FieldGoalsMade>
+<ROW NAME=LeaderFootballCol STATFIELD="FieldGoalsAttempted" STAT=$Placekicking_FieldGoalsAttempted>
 <ROW NAME=LeaderFootballCol STATFIELD="FieldGoalLong" STAT=$Placekicking_FieldGoalLong>
         </tr>
 <IFEQUAL $rowClass "leadersRow trRow">
@@ -251,6 +284,7 @@
 </IFEQUAL>
 
 </IFTRUE>
+###</RESULTS>###
 
 </RESULTS>
 <ELSE>
@@ -266,17 +300,20 @@
 <ELSE>
 <VAR $sortClause = $form_sort." DESC">
 </IFEMPTY>
-<QUERY name=TeamPlayerStats SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause TEAMID=$form_TeamID>
+<QUERY name=TeamPlayerStats SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause TEAMID=$form_TeamID SPORTYEAR=$sportYear>
+<IFNOTEMPTY $form_debug>
+query: {$TeamPlayerStats_query}
+</IFNOTEMPTY>
 <a name="punting"></a>
 <h4>Punting</h4>
 <table cellpadding="0" cellspacing="0" class="teamStatTable deluxe wide400">
     <tbody>
         <tr id="header-sub">
-            <th scope="col" abbr="">Name</th>
-            <th scope="col" abbr=""># of Punts</th>
-            <th scope="col" abbr="">Average Yards</th>
-            <th scope="col" abbr="">Blocked Punts</th>
-            <th scope="col" abbr="">Long</th>
+            <th scope="col" abbr="" align="left">Name</th>
+            <th scope="col" abbr="" align="center"># of Punts</th>
+            <th scope="col" abbr="" align="center">Average</th>
+            <th scope="col" abbr="" align="center">Blocked</th>
+            <th scope="col" abbr="" align="center">Long</th>
         </tr>
 <IFGREATER count($TeamPlayerStats_rows) 0>
 <VAR $rowClass = "leadersRow trRow">
@@ -286,11 +323,14 @@
 
 <VAR $lastName = fixApostrophes($Punting_PlayerLastName)>
         <tr class="{$rowClass}">
-            <th scope="row" abbr="Player Name">
+            <td scope="row" abbr="Player Name" align="left">
                 <a href="home.html?site=default&tpl=Player&ID={$Punting_PlayerID}" class="leadersNameLink">
-                    {$Punting_PlayerFirstName} {$lastName}</a></th>
+                    {$Punting_PlayerFirstName} {$lastName}</a></td>
 <ROW NAME=LeaderFootballCol STATFIELD="Punts" STAT=$Punting_Punts>
-<ROW NAME=LeaderFootballCol STATFIELD="PuntingAverage" STAT=$Punting_PuntingAverage>
+<VAR $puntAvg = round($Punting_PuntingAverage,1)>
+<? $puntAvg = sprintf("%.1f", $puntAvg) ?>
+
+<ROW NAME=LeaderFootballCol STATFIELD="PuntingAverage" STAT=$puntAvg>
 <ROW NAME=LeaderFootballCol STATFIELD="PuntsBlocked" STAT=$Punting_PuntsBlocked>
 <ROW NAME=LeaderFootballCol STATFIELD="PuntingLong" STAT=$Punting_PuntingLong>
         </tr>
@@ -310,25 +350,32 @@
 
 
 <VAR $whereClause = " AND ( Tackles ".chr(62)." 0 OR DefensiveInterceptions ".chr(62)." 0 )">
+<VAR $lastName = fixApostrophes($Defense_PlayerLastName)>
 <IFEMPTY $form_sort>
-<VAR $sortClause = "DefensiveInterceptions DESC">
+<VAR $sortClause = "Tackles DESC">
+###<VAR $sortClause = "Name ASC">###
 <ELSE>
 <VAR $sortClause = $form_sort." DESC">
 </IFEMPTY>
-<QUERY name=TeamPlayerStats SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause TEAMID=$form_TeamID>
+<QUERY name=TeamPlayerStats SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause TEAMID=$form_TeamID SPORTYEAR=$sportYear>
+<IFNOTEMPTY $form_debug>
+query: {$TeamPlayerStats_query}
+</IFNOTEMPTY>
 <a name="defense"></a>
 <h4>Defense</h4>
-<table cellpadding="0" cellspacing="0" class="teamStatTable deluxe wide500">
+<table cellpadding="0" cellspacing="0" class="teamStatTable deluxe">
     <tbody>
         <tr id="header-sub">
-            <th scope="col" abbr="">Name</th>
-            <th scope="col" abbr="">Interceptions</th>
-            <th scope="col" abbr="">Interception Return Yards</th>
-            <th scope="col" abbr="">Fumble Recoveries</th>
-            <th scope="col" abbr="">Fumble Return Yards</th>
-            <th scope="col" abbr="">Tackles</th>
-            <th scope="col" abbr="">Sacks</th>
-            <th scope="col" abbr="">Sack Yards</th>
+            <th scope="col" abbr="" align="left">Name</th>
+            <th scope="col" abbr="" align="center">Int</th>
+            <th scope="col" abbr="" align="center">Int Yds</th>
+            <th scope="col" abbr="" align="center">Fum Rec</th>
+            <th scope="col" abbr="" align="center">Fum Yds</th>
+            <th scope="col" abbr="" align="center">Tkls</th>
+            <th scope="col" abbr="" align="center">Asst tkl</th>
+            <th scope="col" abbr="" align="center">Tot Tkls</th>
+            <th scope="col" abbr="" align="center">Sacks</th>
+            <th scope="col" abbr="" align="center">Sack Yds</th>
         </tr>
 <IFGREATER count($TeamPlayerStats_rows) 0>
 <VAR $rowClass = "leadersRow trRow">
@@ -338,14 +385,16 @@
 
 <VAR $lastName = fixApostrophes($Defense_PlayerLastName)>
         <tr class="{$rowClass}">
-            <th scope="row" abbr="Player Name">
+            <td scope="row" abbr="Player Name" align="left">
                 <a href="home.html?site=default&tpl=Player&ID={$Defense_PlayerID}" class="leadersNameLink">
-                    {$Defense_PlayerFirstName}&nbsp;{$lastName}</a></th>
+                    {$Defense_PlayerFirstName}  {$lastName}</a></td>
 <ROW NAME=LeaderFootballCol STATFIELD="DefensiveInterceptions" STAT=$Defense_DefensiveInterceptions>
 <ROW NAME=LeaderFootballCol STATFIELD="InterceptionYards" STAT=$Defense_InterceptionYards>
 <ROW NAME=LeaderFootballCol STATFIELD="FumbleRecoveries" STAT=$Defense_FumbleRecoveries>
 <ROW NAME=LeaderFootballCol STATFIELD="FumbleRecYards" STAT=$Defense_FumbleRecYards>
 <ROW NAME=LeaderFootballCol STATFIELD="Tackles" STAT=$Defense_Tackles>
+<ROW NAME=LeaderFootballCol STATFIELD="Assists" STAT=$Defense_Assists>
+<ROW NAME=LeaderFootballCol STATFIELD="TotalTackles" STAT=$Defense_TotalTackles>
 <ROW NAME=LeaderFootballCol STATFIELD="Sacks" STAT=$Defense_Sacks>
 <ROW NAME=LeaderFootballCol STATFIELD="SackYards" STAT=$Defense_SackYards>
         </tr>

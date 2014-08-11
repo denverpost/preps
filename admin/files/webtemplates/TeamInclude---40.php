@@ -195,7 +195,7 @@ Assistant coaches: {$assistantCoaches}
 </th>
 <td valign="top">
 <IFNOTEQUAL $Game_AwayTeamID $form_TeamID>
-<A HREF="{$externalURL}site=default&tpl=Team&TeamID={$Game_AwayTeamID}&SearchType=Teams">
+<A HREF="{$externalURL}site=default&tpl=Team&TeamID={$Game_AwayTeamID}&Sport={$form_Sport}&SearchType=Teams">
 </IFNOTEQUAL>
 <?PHP if ($Game_GameStatStatus == "3") { ?>
 <IFGREATER $Game_AwayTeamPoints $Game_HomeTeamPoints>

@@ -7,9 +7,9 @@
 <QUERY name=Sport prefix=Sport SPORTID=$form_Sport>
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
-    &rsaquo; <a href="{$externalURL}site=default&tpl=Sport&Sport">Sports</a>
-    &rsaquo; <a href="{$externalURL}site=default&tpl=Sport&Sport={$form_Sport}">{$Sport_SportName}</a>
-<IFNOTEMPTY $form_ConferenceID>    &rsaquo; <a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$form_ConferenceID}">{$Conference_ConferenceName} Conference</a></IFNOTEMPTY>
+    › <a href="{$externalURL}site=default&tpl=Sport&Sport">Sports</a>
+    › <a href="{$externalURL}site=default&tpl=Sport&Sport={$form_Sport}">{$Sport_SportName}</a>
+<IFNOTEMPTY $form_ConferenceID>    › <a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$form_ConferenceID}">{$Conference_ConferenceName} Conference</a></IFNOTEMPTY>
 </div>
 <h1>
 <IFNOTEMPTY $form_ConferenceID>    {$Conference_ConferenceName}</IFNOTEMPTY>
@@ -21,7 +21,8 @@
 
 <INCLUDE site=default tpl=ScheduleInclude>
 
-
+<IFTRUE $Sport_SportName == "Girls Swimming and Diving" || $Sport_SportName == "Field Hockey">
+<ELSE>
 <IFEMPTY $form_ConferenceID>
 <h2>View {$Sport_SportName} schedules by conference</h2>
 <QUERY name=ConferencesForSport SPORTID=$Sport_SportID>
@@ -31,7 +32,7 @@
 <h2 class="list twocolumns"><a href="<?PHP echo $_SERVER["HTTP_REFERER"]; ?>&ConferenceID={$Conf_ConferenceID}"><?PHP $name = str_replace(" ($Sport_SportName)", "", $Conf_ConferenceName); $name = preg_replace("|\(? ?$Sport_SportName\)?|i", "", $name); echo $name; ?></a></h2>
 </RESULTS>
 </IFEMPTY>
-
+</IFTRUE>
 
 
 ### Display a link back to the main schedule for this sport ###

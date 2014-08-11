@@ -1,203 +1,194 @@
-<VAR $myCounter=0>
+<VAR $statType = "conf">
+<VAR $dash = chr(151)>
+<VAR $period = ".">
+<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType>
+<VAR $homeConfWins = $TeamSeasonStats_Win>
+<VAR $homeConfLosses = $TeamSeasonStats_Loss>
 
-<h1>{$Away_TeamName} at {$Home_TeamName}</h1>
-<VAR $dateTimeDisplay = date("l F j, Y",strtotime($Game_GameDate))." ".date("g:ia",strtotime($Game_GameTime))>
-<h2 class="list">{$dateTimeDisplay}</h2>
-<h3 class="timestamp grey">Last updated: {$updateTimeDisplay}</h3>
+<VAR $TeamSeasonStats_query = "TeamSeasonStats">
+<VAR $statType = "conf">
 
-<table class="boxscoreStatTable" width="100%">
-<tr><td>
-<font class="pageTitle">Boxscore</font>
-<!-- <span id="showKey"><a href="javascript:showKey('statKey')" class="keyButton">Show key</a></span> -->
-<span id="hideKey" style="display:none"><a href="javascript:hideKey('statKey')" class="keyButton">Hide key</a></span></td></tr>
-<tr><td colspan="50">
-<div id="statKey" style="display:none">
-<table class="keyTable" cellpadding="0" cellspacing="0">
-<tr class="statKeyRow">
-<td id="keyPoints">Pts: Points</td>
-<td id="keyOffensiveRebounds">OREB: Offensive rebounds</td>
-</tr>
-<tr class="statKeyRowAlt">
-<td id="keyFieldGoalsMade">FGM: Field goals made</td>
-<td id="keyOffensiveRebounds">DREB: Defensive rebounds</td>
-</tr>
-<tr class="statKeyRow">
-<td id="keyFieldGoalsAttempted">FGA: Field goals attempted</td>
-<td id="keyAssists">AST: Assists</td>
-</tr>
-<tr class="statKeyRowAlt">
-<td id="keyThreePointersMade">3PM: Three pointers made</td>
-<td id="keySteals">STL: Steals</td>
-</tr>
-<tr class="statKeyRow">
-<td id="keyThreePointersAttempted">3PA: Three pointers attempted</td>
-<td id="keyBlockedShots">BLK: Blocked shots</td>
-</tr>
-<tr class="statKeyRowAlt">
-<td id="keyFreeThrowsMade">FTM: Free throws made</td>
-<td id="keyTurnovers">TO: Turnovers</td>
-</tr>
-<tr class="statKeyRow">
-<td id="keyFreeThrowsAttempted">FTA: Free throws attempted</td>
-<td id="keyPersonalFouls">PF: Personal fouls</td>
-</tr>
-<tr class="statKeyRowAlt">
-<td id="keyFieldGoalPercentage">FGPCT: Field goal percentage</td>
-<td id="keyThreePointerPercentage">3PPCT: Three pointer percentage</td>
-</tr>
-<tr class="statKeyRow">
-<td id="keyFreeThrowPercentage">FTPCT: Free throw percentage</td>
-<td id="keyPointsPerGame">PPG: Points per game</td>
-</tr>
+<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType>
+<VAR $awayConfWins = $TeamSeasonStats_Win>
+<VAR $awayConfLosses = $TeamSeasonStats_Loss>
+<VAR $TeamSeasonStats_query = "">
+<VAR $statType = "overall">
+<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType>
+<VAR $homeOverallWins = $TeamSeasonStats_Win>
+<VAR $homeOverallLosses = $TeamSeasonStats_Loss>
+
+<VAR $TeamSeasonStats_query = "">
+<VAR $statType = "overall">
+<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType>
+<VAR $awayOverallWins = $TeamSeasonStats_Win>
+<VAR $awayOverallLosses = $TeamSeasonStats_Loss>
+
+
+
+<h1>
+<IFGREATER $Home_TotalPoints $Away_TotalPoints>
+{$Home_TeamName} {$Home_TotalPoints}, {$Away_TeamName} {$Away_TotalPoints}
+<ELSE>
+{$Away_TeamName} {$Away_TotalPoints}, {$Home_TeamName} {$Home_TotalPoints}
+</IFGREATER>
+<IFEQUAL $Game_GameScoreIsFinal 1>
+- Final
+<ELSE>
+</IFEQUAL>
+</h1>
+<VAR $timeDateDisplay = date("g:i a",strtotime($Game_GameTime))." ".date("l, F j, Y",strtotime($Game_GameDate))>
+<h2 class="list">{$timeDateDisplay}</h2>
+<table class="boxscoreStatTable deluxe" cellpadding="0" cellspacing="0">
+         <tbody>
+	<tr>
+         	<td>{$Away_TeamName}</td>
+		<td>Overall: {$awayOverallWins}-{$awayOverallLosses} </td>
+		<td>Conference: {$awayConfWins}-{$awayConfLosses}</td>
+	</tr>
+	        <tr class="trAlt">
+		<td>{$Home_TeamName}</td>
+		<td>Overall: {$homeOverallWins}-{$homeOverallLosses} </td>
+		<td>Conference: {$homeConfWins}-{$homeConfLosses}</td>
+	</tr>
+    </tbody>
 </table>
-</div>
-</td></tr></table>
+<h4>Boxscore</h4>
+<table class="boxscoreStatTable deluxe wide400" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr id="header-sub" class="resultsText">
+            <th scope="col" abbr="">Team</th>
+            <th scope="col" abbr="">1</th>
+            <th scope="col" abbr="">2</th>
+            <th scope="col" abbr="">3</th>
+            <th scope="col" abbr="">4</th>
+<IFTRUE $Away_OvertimePoints !=0 || $Home_OvertimePoints !=0>
+            <th scope="col" abbr="">OT</th>
+<ELSE>
+</IFTRUE>
+<IFTRUE $Away_Overtime2Points !=0 || $Home_Overtime2Points !=0>
+            <th scope="col" abbr="">2OT</th>
+<ELSE>
+</IFTRUE>
+            <th scope="col" abbr="">Total</th>
+</tr>
+        <tr>
+            <td>
+                <a href="{$externalURL}site=default&tpl=Team&TeamID={$Away_TeamID}">
+                <strong>{$Away_TeamName}</strong></a></td>
+            <td align="right">{$Away_FirstQuarterPoints}</td>
+            <td align="right">{$Away_SecondQuarterPoints}</td>
+            <td align="right">{$Away_ThirdQuarterPoints}</td>
+            <td align="right">{$Away_FourthQuarterPoints}</td>
+<IFEMPTY $Away_OvertimePoints>
+<$VAR $Away_OvertimePoints = 0>
+<ELSE>
+</IFEMPTY>
+<IFEMPTY $Away_Overtime2Points>
+<$VAR $Away_Overtime2Points = 0>
+<ELSE>
+</IFEMPTY>
+<IFEMPTY $Home_OvertimePoints>
+<$VAR $Home_OvertimePoints = 0>
+<ELSE>
+</IFEMPTY>
+<IFEMPTY $Home_Overtime2Points>
+<$VAR $Home_Overtime2Points = 0>
+<ELSE>
+</IFEMPTY>
+<IFTRUE $Away_OvertimePoints != 0 || $Home_OvertimePoints !=0>
+            <td align="right">{$Away_OvertimePoints}</td>
+<ELSE>
+</IFTRUE>
+<IFTRUE $Away_Overtime2Points !=0 || $Home_Overtime2Points !=0>
+            <td align="right">{$Away_Overtime2Points}</td>
+<ELSE>
+</IFTRUE>
+            <td align="right">{$Away_TotalPoints}</td>
+        </tr>
+        <tr>
+        <tr class="trAlt">
+        <td>
+                <a href="{$externalURL}site=default&tpl=Team&TeamID={$Home_TeamID}">
+                <strong>{$Home_TeamName}</strong></a></td>
+            <td align="right">{$Home_FirstQuarterPoints}</td>
+            <td align="right">{$Home_SecondQuarterPoints}</td>
+            <td align="right">{$Home_ThirdQuarterPoints}</td>
+            <td align="right">{$Home_FourthQuarterPoints}</td>
+<IFTRUE $Away_OvertimePoints !=0 || $Home_OvertimePoints !=0>
+            <td align="right">{$Home_OvertimePoints}</td>
+<ELSE>
+</IFTRUE>
+<IFTRUE $Away_Overtime2Points !=0 || $Home_Overtime2Points !=0>
+            <td align="right">{$Home_Overtime2Points}</td>
+<ELSE>
+</IFTRUE>
 
-<table class="boxscoreStatTable">
-<tr>
-<td> </td>
-<td align="right"><strong>1</strong></td>
-<td align="right"><strong>2</strong></td>
-<td align="right"><strong>3</strong></td>
-<td align="right"><strong>4<strong></td>
-<td align="right"><strong>OT<strong></td>
-<td align="right"><strong>Total<strong></td>
-</tr>
-<tr>
-<td>
-<a href="{$externalURL}site=default&tpl=Team&TeamID={$Away_TeamID}">
-<VAR $Away_TeamName = fixApostrophes($Away_TeamName)>
-<strong>{$Away_TeamName}</strong></a></td>
-<td align="right">{$Away_FirstQuarterPoints}</td>
-<td align="right">{$Away_SecondQuarterPoints}</td>
-<td align="right">{$Away_ThirdQuarterPoints}</td>
-<td align="right">{$Away_FourthQuarterPoints}</td>
-<td align="right">{$Away_OvertimePoints}</td>
-<td align="right">{$Away_TotalPoints}</td>
-</tr>
-<tr>
-<td>
-<a href="{$externalURL}site=default&tpl=Team&TeamID={$Home_TeamID}">
-<VAR $Home_TeamName = fixApostrophes($Home_TeamName)>
-<strong>{$Home_TeamName}<strong></a></td>
-<td align="right">{$Home_FirstQuarterPoints}</td>
-<td align="right">{$Home_SecondQuarterPoints}</td>
-<td align="right">{$Home_ThirdQuarterPoints}</td>
-<td align="right">{$Home_FourthQuarterPoints}</td>
-<td align="right">{$Home_OvertimePoints}</td>
-<td align="right">{$Home_TotalPoints}</td>
-</tr>
+
+
+            <td align="right">{$Home_TotalPoints}</td>
+        </tr>
+    </tbody>
 </table>
-<br />
-
-
 
 
 <VAR $teamIDs = array($awayTeamID,$homeTeamID)>
-<VAR $Game_AwayTeamName = fixApostrophes($Game_AwayTeamName)>
-<VAR $Game_HomeTeamName = fixApostrophes($Game_HomeTeamName)>
 <VAR $teamNames = array($Game_AwayTeamName,$Game_HomeTeamName)>
 
 <?PHP foreach($teamIDs as $teamKey => $teamID) { ?>
-<table class="boxscoreStatTable" cellpadding="0" cellspacing="0">
-<tr>
-<td class="pageTitle">Player stats - {$teamNames[$teamKey]}</td></tr></table>
+<h3>{$teamNames[$teamKey]} Player Stats</h3>
 <QUERY name=GamePlayerStats GAMEID=$form_ID TEAMID=$teamID SPORTNAME=$sqlSportName>
 <IFGREATER count(GamePlayerStats_rows) 0>
-<table class="boxscoreStatTable" cellpadding="0" cellspacing="0">
-<tr>
-<td width="110"><strong>Name</strong></td>
-<!-- <td>Min</td> -->
-<td onmouseover="highlightKey('keyPoints')" onmouseout = "unHighlightKey('keyPoints')"><strong><strong>Points</strong></td>
-<td onmouseover="highlightKey('keyFieldGoalsMade')" onmouseout = "unHighlightKey('keyFieldGoalsMade')"><strong>FG Md</strong></td>
-<!-- <td onmouseover="highlightKey('keyFieldGoalsAttempted')" onmouseout = "unHighlightKey('keyFieldGoalsAttempted')">FGA</td> -->
-<!-- <td onmouseover="highlightKey('keyFieldGoalPercentage')" onmouseout = "unHighlightKey('keyFieldGoalPercentage')">FGPCT</td> -->
-<td onmouseover="highlightKey('keyThreePointersMade')" onmouseout = "unHighlightKey('keyThreePointersMade')"><strong>3Pt Md</strong></td>
-<!-- <td onmouseover="highlightKey('keyThreePointersAttempted')" onmouseout = "unHighlightKey('keyThreePointersAttempted')">3PA</td> -->
-<!-- <td onmouseover="highlightKey('keyThreePointerPercentage')" onmouseout = "unHighlightKey('keyThreePointerPercentage')">3PPCT</td> -->
-<td onmouseover="highlightKey('keyFreeThrowsMade')" onmouseout = "unHighlightKey('keyFreeThrowsMade')"><strong>FT Md</strong></td>
-<td onmouseover="highlightKey('keyFreeThrowsAttempted')" onmouseout = "unHighlightKey('keyFreeThrowsAttempted')"><strong>FT Att</strong></td>
-<td onmouseover="highlightKey('keyFreeThrowPercentage')" onmouseout = "unHighlightKey('keyFreeThrowPercentage')"><strong>FT%</strong></td>
-<!-- <td onmouseover="highlightKey('keyOffensiveRebounds')" onmouseout = "unHighlightKey('keyOffensiveRebounds')">OREB</td> -->
-<!-- <td onmouseover="highlightKey('keyDefensiveRebounds')" onmouseout = "unHighlightKey('keyDefensiveRebounds')">DREB</td> -->
-<!-- <td onmouseover="highlightKey('keyAssists')" onmouseout = "unHighlightKey('keyAssists')">AST</td> -->
-<!-- <td onmouseover="highlightKey('keySteals')" onmouseout = "unHighlightKey('keySteals')">STL</td> -->
-<!-- <td onmouseout = "unHighlightKey('keyBlockedShots')">BLK</td> -->
-<!-- <td onmouseout = "unHighlightKey('keyTurnovers')">TO</td> -->
-<!-- <td onmouseover="highlightKey('keyPersonalFouls')" onmouseout = "unHighlightKey('keyPersonalFouls')">PF</td> -->
-</tr>
+<table class="boxscoreStatTable deluxe wide600" WIDTH=600 CELLPADDING=0 CELLSPACING=0>
+    <tbody>
+        <tr id="header-sub" class="resultsText">
+            <th scope="col" abbr="">Name</th>
+            <th scope="col" abbr="" align="right">Pts</th>
+            <th scope="col" abbr="" align="right">FG</th>
+            <th scope="col" abbr="" align="right">3P</th>
+            <th scope="col" abbr="" align="right">FT</th>
+            <th scope="col" abbr="" align="right">Reb</th>
+            <th scope="col" abbr="" align="right">PF</th>
+            <th scope="col" abbr="" align="right">TF</Att</th>
+            <th scope="col" abbr="" align="right">Asst</th>
+            <th scope="col" abbr="" align="right">ST</th>
+            <th scope="col" abbr="" align="right">BS</th>
+            <th scope="col" abbr="" align="right">TO</th>
+        </tr>
 <VAR $rowClass = "boxscoreRow trRow">
-<RESULTS list=GamePlayerStats_rows prefix=Player>
-###<IFGREATER $Player_Minutes 0>###
-<tr class="{$rowClass}">
-<td width="110">
-<a href="{$externalURL}site=default&tpl=Player&ID={$Player_PlayerID}">
-<VAR $Player_PlayerFirstName = fixApostrophes($Player_PlayerFirstName)>
-<VAR $Player_PlayerLastName = fixApostrophes($Player_PlayerLastName)>
-{$Player_PlayerFirstName} {$Player_PlayerLastName}
-</A>
-</td>
-<!-- <td align="right">{$Player_Minutes}</td> -->
-<td align="right">{$Player_Points}</td>
-<td align="right">{$Player_FieldGoalsMade}</td>
-<!-- <td align="right">{$Player_FieldGoalsAttempted}</td> -->
-<VAR $fgpct = round($Player_FieldGoalPercentage,1)>
-<!-- <td align="right">{$fgpct}</td> -->
-<td align="right">{$Player_ThreePointersMade}</td>
-<!-- <td align="right">{$Player_ThreePointersAttempted}</td> -->
-<VAR $tppct = round($Player_ThreePointerPercentage,1)>
-<!-- <td align="right">{$tppct}</td> -->
-<td align="right">{$Player_FreeThrowsMade}</td>
-<td align="right">{$Player_FreeThrowsAttempted}</td>
-<VAR $ftpct = round($Player_FreeThrowPercentage,1)>
-<? $ftpct = sprintf("%.1f", $ftpct) ?>
-<td align="right">{$ftpct}</td>
-<!-- <td align="right">{$Player_OffensiveRebounds}</td> -->
-<!-- <td align="right">{$Player_DefensiveRebounds}</td> -->
-<!-- <td align="right">{$Player_Assists}</td> -->
-<!-- <td align="right">{$Player_Steals}</td> -->
-<!-- <td align="right">{$Player_BlockedShots}</td> -->
-<!-- <td align="right">{$Player_Turnovers}</td> -->
-<!-- <td align="right">{$Player_PersonalFouls}</td> -->
-</td>
-</tr>
+<RESULTS list=GamePlayerStats_rows prefix=Scoring>
+
+<IFTRUE $Scoring_FieldGoalsAttempted != 0 || $Scoring_ThreePointersAttempted != 0  || $Scoring_FreeThrowsAttempted != 0 || $Scoring_Assists != 0 || $Scoring_PersonalFouls != 0 || $Scoring_Technicals != 0 || $Scoring_TotalRebounds != 0 || $Scoring_Steals != 0 || $Scoring_BlockedShots != 0 || $Scoring_Turnovers != 0 || $Scoring_Played !=0 || $Scoring_Points !=0> 
+        <tr class="{$rowClass}">
+            <td width="120">
+                <a href="{$externalURL}site=default&tpl=Player&ID={$Scoring_PlayerID}">
+<VAR $LastName = fixApostrophes($Scoring_PlayerLastName)>
+                    {$Scoring_PlayerFirstName} {$LastName}
+                </a>
+            </td>
+            <td align="right">{$Scoring_Points}</td>
+            <td align="right">{$Scoring_FieldGoalsMade}-{$Scoring_FieldGoalsAttempted}</td>
+            <td align="right"> {$Scoring_ThreePointersMade}-{$Scoring_ThreePointersAttempted}</td>
+            <td align="right">{$Scoring_FreeThrowsMade}-{$Scoring_FreeThrowsAttempted}</td>
+            <td align="right">{$Scoring_TotalRebounds}</td>
+            <td align="right">{$Scoring_PersonalFouls}</td>
+            <td align="right">{$Scoring_Technicals}</td>
+            <td align="right">{$Scoring_Assists}</td>
+            <td align="right">{$Scoring_Steals}</td>
+            <td align="right">{$Scoring_BlockedShots}</td>
+            <td align="right">{$Scoring_Turnovers}</td>
+        </tr>
 <IFEQUAL $rowClass "boxscoreRow trRow">
 <VAR $rowClass = "boxscoreRowAlternate trAlt">
 <ELSE>
 <VAR $rowClass = "boxscoreRow trRow">
 </IFEQUAL>
-###</IFGREATER>###
+</IFTRUE>
 </RESULTS>
-###</table>###
-</IFGREATER>
-###</table>###
-</td>
-<td align="left"colspan=7><hr></td>
-</tr>
-<td align="left"><strong>Totals</strong></td>
-<IFGREATER $myCounter 0>
-<td align="right">{$Home_TotalPoints}</td>
-<td align="right">{$Home_FieldGoalsMade}</td>
-<td align="right">{$Home_ThreePointersMade}</td>
-<td align="right">{$Home_FreeThrowsMade}</td>
-<td align="right">{$Home_FreeThrowsAttempted}</td>
-<VAR $ftpct = round($Home_FreeThrowPercentage,1)>
-<? $ftpct = sprintf("%.1f", $ftpct) ?>
-<td align="right">{$ftpct}</td>
-<ELSE>
-<td align="right">{$Away_TotalPoints}</td>
-<td align="right">{$Away_FieldGoalsMade}</td>
-<td align="right">{$Away_ThreePointersMade}</td>
-<td align="right">{$Away_FreeThrowsMade}</td>
-<td align="right">{$Away_FreeThrowsAttempted}</td>
-<VAR $ftpct = round($Away_FreeThrowPercentage,1)>
-<VAR $tppct = round($Player_ThreePointerPercentage,1)>
-<!-- <td align="right">{$tppct}</td> -->
-<? $ftpct = sprintf("%.1f", $ftpct) ?>
-<td align="right">{$ftpct}</td>
-
-</IFGREATER>
-<VAR $myCounter = $myCounter+1>
-</tr>
+    </tbody>
 </table>
+
+###</IFTRUE>###
+###</RESULTS>###
+###</table>###
 <?PHP } ?>
+</IFGREATER>

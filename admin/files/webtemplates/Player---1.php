@@ -1,6 +1,7 @@
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <VAR $webURL = "http://denver-tpweb.newsengin.com/web/graphics/player/">
 <VAR $rightSingleQuote = chr(38)."rsaquo;">
+<VAR $dash = chr(151)>
 <QUERY name=Player ID=$form_ID>
 <QUERY name=PlayerTeams ID=$form_ID>
 <VAR $teamCount=count($PlayerTeams_rows)>
@@ -13,23 +14,42 @@
 <VAR $sportName = $PlayerTeams_SportName>
 </RESULTS>
 
-<div id="breadcrumbs">
+<div id="breadcrumbs" style="width: 500px">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
     {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Sport&Sport={$PlayerTeams_SportID}">{$sportName}</a>
     {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=School&School={$Player_SchoolID}">{$Player_SchoolName}</a>
-    {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerTeams_TeamRosterTeamID}">{$Player_SchoolName} {$sportName} Roster</a>
+    {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerTeams_TeamRosterTeamID}">{$PlayerTeams_SchoolName} 
+
+{$sportName} Roster</a>
 </div>
 
-
-<h1>{$Player_PlayerFirstName} {$Player_PlayerLastName}, <IFNOTEMPTY $Player_PlayerYear>{$Player_PlayerYear} at </IFNOTEMPTY>{$Player_SchoolName}</h1>
+<div id="preps-section-player">
+<h1>
+{$Player_PlayerFirstName} {$Player_PlayerLastName}, <IFNOTEMPTY $Player_PlayerYear>{$Player_PlayerYear} at 
+</IFNOTEMPTY>{$Player_SchoolName}</h1>
+<IFGREATER $Player_PlayerHeightInches 1>
+<VAR $inchWord = "inches">
+<ELSE>
+<VAR $inchWord = "inch">
+</IFGREATER>
+<strong>Height:</strong> <IFGREATER $Player_PlayerHeightFeet 0>{$Player_PlayerHeightFeet} feet<IFGREATER $Player_PlayerHeightInches 0>, {$Player_PlayerHeightInches} {$inchWord}.
+</IFGREATER>
+<ELSE>N/A
+</IFGREATER>
+<strong> Weight: </strong><IFGREATER $Player_PlayerWeight 0>
+{$Player_PlayerWeight}
+<ELSE>
+N/A
+</IFGREATER>
 <h2 class="list">
 <IFGREATER $teamCount 0>
-Sports Played: 
+<strong>Sports Played:</strong><br>
 <RESULTS list=PlayerTeams_rows prefix=PlayerTeams>
 <A HREF="{$externalURL}site=default&tpl=Team&TeamID={$PlayerTeams_TeamRosterTeamID}">
-{$Player_SchoolName} {$PlayerTeams_SportName}</A><IFNOTEMPTY $PlayerTeams_TeamRosterPosition>{$PlayerTeams_TeamRosterPosition}<IFNOTEMPTY $PlayerTeams_TeamRosterAdditionalPositions>, {$PlayerTeams_TeamRosterAdditionalPositions}</IFNOTEMPTY></IFNOTEMPTY><IFGREATER $teamCount 1>, </IFGREATER>
+{$PlayerTeams_SportName}</A> <IFEMPTY $PlayerTeams_TeamRosterPosition> <ELSE>{$dash}  <IFNOTEMPTY $PlayerTeams_TeamRosterAdditionalPositions>
+<strong>Positions:</strong> <ELSE> <strong>Position: </strong></IFNOTEMPTY>{$PlayerTeams_TeamRosterPosition}<IFNOTEMPTY $PlayerTeams_TeamRosterAdditionalPositions>, {$PlayerTeams_TeamRosterAdditionalPositions}</IFEMPTY>###</IFNOTEMPTY>###</IFNOTEMPTY><IFGREATER $teamCount 1> </IFGREATER><br>
 </RESULTS>
-</IFGREATER>    
+</IFGREATER>
 </h2><!-- SCHOOLQUERY -->
 
 <QUERY name=PlayerPhoto ID=$form_ID>
@@ -41,7 +61,9 @@ Sports Played:
 <IFEQUAL $sportName "Football">
     <img src="http://denver-tpweb.newsengin.com/web/graphics/nophotofootball.jpg" alt="" />
 <ELSE>
-    <div style="width:190px; height:150px; overflow:hidden;"><img src="http://denver-tpweb.newsengin.com/web/graphics/nophoto.jpg" alt="" style="margin-top:-20px;"/></div>
+    <div style="width:190px; height:150px; overflow:hidden;"><img src="http://denver-tpweb.newsengin.com/web/graphics/nophoto.jpg" 
+
+alt="" style="margin-top:-20px;"/></div>
 </IFEQUAL>
 </IFNOTEMPTY>
 </div>
@@ -62,7 +84,7 @@ Sports Played:
 <div class="clear"></div>
 
 <RESULTS list=PlayerTeams_rows prefix=PlayerTeams>
-    
+
 <VAR $teamID = "">
 <IFEMPTY $form_TeamID>
 <IFGREATER $teamCount 0>
@@ -86,14 +108,22 @@ Sports Played:
             <QUERY name=PlayerTennisStats SPORTNAME=$sqlSportName PLAYERID=$form_ID>
         <ELSE>
             <QUERY name=PlayerMeetNoEventStats SPORTNAME=$sqlSportName PLAYERID=$form_ID>
+                <!-- Query: {$PlayerMeetNoEventStats_query} -->
         </IFTRUE>
     <ELSE>
-        <QUERY name=PlayerMeetStats SPORTNAME=$sqlSportName PLAYERID=$form_ID> <!-- error -->
+        <QUERY name=PlayerMeetStats SPORTNAME=$sqlSportName PLAYERID=$form_ID>
+<!--                Query: {$PlayerMeetStats_query} -->
     </IFEQUAL>
 <ELSE>
+###<VAR $seasonYear = "2011">###
     <QUERY name=PlayerSeasonStats SPORTNAME=$sqlSportName PLAYERID=$form_ID>
+    <QUERY name=PlayerGameStats SPORTNAME=$sqlSportName PLAYERID=$form_ID>
+<!--                Query2: {$PlayerSeasonStats_query} -->
 </IFEQUAL>
 
+<IFEQUAL $sportName "Girls Basketball">
+<INCLUDE site=default tpl=PlayerStats_GirlsBasketball>
+</IFEQUAL>
 <IFEQUAL $sportName "Boys Basketball">
 <INCLUDE site=default tpl=PlayerStats_BoysBasketball>
 </IFEQUAL>
@@ -121,6 +151,15 @@ Sports Played:
 <IFEQUAL $sportName "Field Hockey">
 <INCLUDE site=default tpl=PlayerStats_FieldHockey>
 </IFEQUAL>
+<IFEQUAL $sportName "Boys Lacrosse">
+<INCLUDE site=default tpl=PlayerStats_FieldHockey>
+</IFEQUAL>
+<IFEQUAL $sportName "Girls Lacrosse">
+<INCLUDE site=default tpl=PlayerStats_FieldHockey>
+</IFEQUAL>
+<IFEQUAL $sportName "Ice Hockey">
+<INCLUDE site=default tpl=PlayerStats_Hockey>
+</IFEQUAL>
 <IFEQUAL $sportName "Girls Soccer">
 <INCLUDE site=default tpl=PlayerStats_Soccer>
 </IFEQUAL>
@@ -133,123 +172,15 @@ Sports Played:
 <IFEQUAL $sportName "Baseball">
 <INCLUDE site=default tpl=PlayerStats_Baseball>
 </IFEQUAL>
+<IFEQUAL $sportName "Girls Volleyball">
+<INCLUDE site=default tpl=PlayerStats_Volleyball>
+</IFEQUAL>
+<IFEQUAL $sportName "Girls Swimming and Diving">
+<INCLUDE site=default tpl=PlayerStats_swimming>
+</IFEQUAL>
 </IFNOTEMPTY>
 
 
 </RESULTS>
 
-<!-- BEGIN SIDEBAR -->
-<!--
-<h2 class="teamTitleText">
-    {$Team_TeamName} {$Team_TeamNickname}
-</h2>
-<QUERY name=TeamPhoto prefix=TeamLogo ID=$form_TeamID PATHID=2>
-<IFNOTEMPTY $TeamLogo_UploadFile>
-<img src="http://denver-tpweb.newsengin.com/web/graphics/team/{$TeamLogo_UploadFile}" alt="{$Team_TeamName} {$Team_TeamNickname} Logo" style="float:left; margin-right:5px;" />
-<ELSE>
-<IFEQUAL $sportName "Football">
-<img src="{$webURL}graphics/nophotofootball.jpg" height="100" width="100" />
-<ELSE>
-<img src="{$webURL}graphics/nophoto.jpg" height="50" width="50" />
-</IFEQUAL>
-</IFNOTEMPTY>
-<div id="team_color_wrapper">
-    <div class="team_color_margin" style="border-color:{$marginColor}" >
-        <div class="team_color" style="background-color:{$primaryColor}" ></div>
-        <div class="team_color" style="background-color:{$secondaryColor}" ></div>
-    </div>
 </div>
-
-</div>
--->
-<!-- END SIDEBAR -->
-
-
-
-
-<!--
-<h3>Player info</h3>
-<table>
-<tr><td valign="top" class="playerLabelText">
-Friends:
-</td>
-<td valign="top" class="playerFieldText">
-<?PHP $playerFriends = explode("\r\n",$Player_PlayerFriends); ?>
-<?PHP foreach ($playerFriends as $friendURL) { ?>
-<A HREF="{$friendURL}" TARGET="_blank"><?PHP echo(str_replace("http://","",$friendURL)) ?></A><BR>
-<?PHP } ?>
-</td>
-</tr>
-
-<tr><td valign="top" class="playerLabelText">
-Planned college:
-</td>
-<td valign="top" class="playerFieldText">
-{$Player_PlayerPlannedCollege}
-</td>
-</tr>
-<tr><td valign="top" class="playerLabelText">
-Favorite band:
-</td>
-<td valign="top" class="playerFieldText">
-{$Player_PlayerFavoriteBand}
-</td>
-</tr>
-<tr><td valign="top" class="playerLabelText">
-Favorite book:
-</td>
-<td valign="top" class="playerFieldText">
-{$Player_PlayerFavoriteBook}
-</td>
-</tr>
-<tr><td valign="top" class="playerLabelText">
-Favorite movie:
-</td>
-<td valign="top" class="playerFieldText">
-{$Player_PlayerFavoriteMovie}
-</td>
-</tr>
-<tr><td valign="top" class="playerLabelText">
-Dream person to date:
-</td>
-<td valign="top" class="playerFieldText">
-{$Player_PlayerDreamPersonToDate}
-</td>
-</tr>
-<tr><td valign="top" class="playerLabelText">
-Favorite junk food:
-</td>
-<td valign="top" class="playerFieldText">
-{$Player_PlayerFavoriteJunkFood}
-</td>
-</tr>
-<tr><td valign="top" class="playerLabelText">
-Sports idol:
-</td>
-<td valign="top" class="playerFieldText">
-{$Player_PlayerSportsIdol}
-</td>
-</tr>
-<tr><td valign="top" class="playerLabelText">
-Pet peeve:
-</td>
-<td valign="top" class="playerFieldText">
-{$Player_PlayerPetPeeve}
-</td>
-</tr>
-<tr><td valign="top" class="playerLabelText">
-Favorite high school moment:
-</td>
-<td valign="top" class="playerFieldText">
-{$Player_PlayerFavoriteHighSchoolMoment}
-</td>
-</tr>
-<tr><td valign="top" class="playerLabelText">
-Goals:
-</td>
-<td valign="top" class="playerFieldText">
-{$Player_PlayerGoals}
-</td>
-</tr>
-</table>
--->

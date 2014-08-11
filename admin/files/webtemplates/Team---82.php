@@ -1,11 +1,16 @@
+<VAR $sportYear = "2013">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <VAR $webURL = "http://denver-tpweb.newsengin.com/web/graphics/team/">
 <VAR $rightSingleQuote = chr(38)."rsaquo;">
+<VAR $gt = chr(62)>
 
 <IFEMPTY $form_TeamID>
 <font class="pageText">Please select a team in the search box above. </font>
-<?PHP exit() ?>
+<?PHP exit(); ?>
 </IFEMPTY>
+
+### Validate Input ###
+<VAR $form_TeamID = intval($form_TeamID) >
 
 <QUERY name=Team ID=$form_TeamID>
 <VAR $sportName = $Team_SportName>
@@ -26,43 +31,29 @@
     {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Sport&Sport={$Team_SportID}">{$sportName}</a>
 </div>
 
-
-###<IFEQUAL $sqlSportName baseball || $sqlSportName Girls Soccer || $sqlSportName Girls Lacrosse || $sqlSportName Boys Lacrosse || $sqlSportName Boys Swimming and Diving || $sqlSportName Girls Tennis>
-<VAR $sportyear = 2009>
-<ELSE>
-<VAR $sportyear = 2009>
-</IFEQUAL>###
-
-<?PHP if ($sqlSportName=="baseball" || $sqlSportName=="girlssoccer" || $sqlSportName=="girlslacrosse" || $sqlSportName=="boyslacrosse" || $sqlSportName=="boysswimminganddiving" || $sqlSportName=="girlstennis" ||  $sqlSportName=="girlsgymnastics")
-{ ?>
-<VAR $sportyear = 2009>
-<?PHP } else { ?>
-<VAR $sportyear = 2009>
-<?PHP }  ?>
-
+<IFEMPTY $Team_TeamID>
+<?PHP exit; ?>
+</IFEMPTY>
 <VAR $statType = "conf">
-<QUERY name=TeamSeasonStats ID=$form_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportyear>
-###<!--query: {$TeamSeasonStats_query} -->###
+<QUERY name=TeamSeasonStats ID=$form_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR=$sportYear>
+###query: {$TeamSeasonStats_query}###
 <VAR $confWins = $TeamSeasonStats_Win>
 <VAR $confLosses = $TeamSeasonStats_Loss>
 <VAR $confTies = $TeamSeasonStats_Tie>
 
-
-
-
 <VAR $statType = "overall">
 <VAR $TeamSeasonStats_query = "">
-<QUERY name=TeamSeasonStats ID=$form_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportyear>
+<QUERY name=TeamSeasonStats ID=$form_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType>
 <VAR $overallWins = $TeamSeasonStats_Win>
 <VAR $overallLosses = $TeamSeasonStats_Loss>
 <VAR $overallTies = $TeamSeasonStats_Tie>
-    
+
 <VAR $Team_TeamHeadCoach = fixApostrophes($Team_TeamHeadCoach)>
 <VAR $Team_TeamAssistantCoaches = fixApostrophes($Team_TeamAssistantCoaches)>
 
 
-<h1>{$Team_TeamName} {$Team_TeamNickname} Prep {$Team_SportName} {$sportyear}</h1>
-<IFNOTEMPTY $Team_TeamHeadCoach><h3>Head coach {$Team_TeamHeadCoach}</h3></IFNOTEMPTY>
+<h1>{$Team_TeamName} {$Team_TeamNickname} Prep {$Team_SportName} </h1>
+<IFNOTEMPTY $Team_TeamHeadCoach><h3>{$Team_TeamName} Head coach: {$Team_TeamHeadCoach}</h3></IFNOTEMPTY>
 <IFNOTEMPTY $Team_TeamAssistantCoaches>
 <VAR $assistantCoaches = str_replace("\r\n",", ",trim($Team_TeamAssistantCoaches))>
 <h5>Assistant coaches: {$assistantCoaches}</h5>
@@ -75,13 +66,11 @@
 
 <DIV align="left">
 <QUERY name=TeamPhoto ID=$form_TeamID PATHID=3>
-<div id="team_photo" class="photo">
 <IFNOTEMPTY $TeamPhoto_UploadFile>
+<div id="team_photo" class="photo">
 <img src="{$webURL}{$TeamPhoto_UploadFile}" alt="" />
-<ELSE>
-No Team Photo
-</IFNOTEMPTY>
 </div>
+</IFNOTEMPTY>
 
 <div id="team_info" class="info">
     <div>
@@ -103,20 +92,35 @@ No Team Photo
         </dl>
 
         <div class="clear"></div>
-
 <IFNOTEQUAL $sportType 1>
         <dl class="lineitem">
             <?PHP if ($overallWins != "" && $overallLosses != "") { ?>
             <dt>Current record:</dt>
             <dd>{$overallWins}-{$overallLosses}<IFNOTEQUAL $overallTies 0>-{$overallTies}</IFNOTEQUAL> <IFNOTEMPTY $TeamSeasonStats_WinPercentage>(<?PHP echo str_replace("0.", ".", number_format(round($TeamSeasonStats_WinPercentage,3),3,".","")); ?>)</IFNOTEMPTY></dd>
+
+<?PHP } else { ?>
+             <dt>Current record:</dt> <dd>0-0</dd>
+
             <?PHP } ?>
 
-            <?PHP if ($confWins != "" && $confLosses != "") { ?>
+      <IFTRUE $confWins == "0" && $confLosses == "0">
+            <VAR $confWins = "">
+            <VAR $confLosses = "">
+       </IFTRUE>
+
+            <?PHP if ($confWins != "" || $confLosses != ""){ ?>
             <dt>Conference record:</dt>
             <dd><a href="{$externalURL}site=default&tpl=Conference&Sport={$Team_TeamSportID}&ConferenceID={$Team_TeamConferenceID}#standings">
-{$confWins}-{$confLosses}<IFNOTEQUAL $confTies 0>-{$confTies}</IFNOTEQUAL></a></dd>
+{$confWins}-{$confLosses}<IFNOTEQUAL $confTies 0>-{$confTies}</IFNOTEQUAL></a> (<?PHP echo str_replace("0.", ".", number_format(round($confWins / ($confWins + $confLosses),3),3,".",""));?>)
+</dd>
+<?PHP } else { ?>
+             <dt>Conference record:</dt> <dd>0-0 (.000)</dd>
+
             <?PHP } ?>
 </IFNOTEQUAL>
+
+
+###<?PHP echo str_replace("0.", ".", number_format(round($confWins / ($confWins + $confLosses),3),3,".",""));?>###
 
 <IFNOTEMPTY $TeamSeasonStats_TotalGoals>
 <IFNOTEQUAL $TeamSeasonStats_TotalGoals 0>
@@ -129,6 +133,8 @@ No Team Photo
             <dd>{$TeamSeasonStats_GoalsAllowed}</dd>
 </IFNOTEMPTY>
 
+<IFEQUAL $sportName "Football">
+
 <IFNOTEMPTY $TeamSeasonStats_TotalPoints>
 <IFNOTEQUAL $TeamSeasonStats_TotalPoints 0>
             <dt>Points Scored:</dt>
@@ -139,9 +145,12 @@ No Team Photo
             <dt>Points Allowed:</dt>
             <dd>{$TeamSeasonStats_PointsAllowed}</dd>
 </IFNOTEMPTY>
+<ELSE>
+</IFEQUAL>
+
 
             <div class="clear"></div>
-            
+
     </div>
 </div>
 
@@ -164,7 +173,7 @@ No Team Photo
         <tr id="header-sub" class="resultsText">
             <th scope="col" abbr="">Date</th>
             <th scope="col" abbr="">Meet name</th>
-    <?PHP if ($sportName == "Boys Tennis" || $sportName == "Girls Tennis" || $sportName == "Wrestling" || $sportName == "Boys Swimming and Diving" || $sportName == "Girls Swimming and Diving" || $sportName == "Girls Gymnastics") { ?>
+    <?PHP if ($sportName == "Boys Tennis" || $sportName == "Girls Tennis" || $sportName == "Wrestling" || $sportName == "Boys Swimming and Diving" || $sportName == "Girls Swimming and Diving" || $sportName == "Girls Gymnastics" || $sportName == "Boys Track and Field" || $sportName == "Girls Track and Field") { ?>
     <?PHP } else { ?>
             <th scope="col" abbr="">Score</th>
     <?PHP } ?>
@@ -176,8 +185,14 @@ No Team Photo
 <VAR $Meet_SchoolName = fixApostrophes($Meet_SchoolName)>
         <tr class="{$rowClass}">
             <td><VAR $gameDate = date("D n/d",strtotime($Meet_GameDate))>{$gameDate}<br />
-                <VAR $gameTime = date("g:i a",strtotime($Meet_GameTime))>{$gameTime}</td>
-            <td valign="top">
+###                <VAR $gameTime = date("g:i a",strtotime($Meet_GameTime))>{$gameTime}</td>###
+                <VAR $gameTime = date("g:i a",strtotime($Game_GameTime))>
+                <IFEQUAL $Meet_GameTimeTBD 1>
+                <VAR $gameTime = "TBD">
+                <ELSE>
+                </IFEQUAL>
+                {$gameTime}</td>
+                <td valign="top">
                 <a href="{$externalURL}site=default&tpl=Boxscore&ID={$Meet_GameID}">{$Meet_GameMeetName}</a>
 <IFNOTEMPTY $Meet_SchoolName>
                 <br />at {$Meet_SchoolName}
@@ -211,7 +226,7 @@ No Team Photo
 </IFGREATER>
 
 <ELSE>
-
+<br>
 <VAR $pointsClause = "">
 <?PHP if ($sportName == "Football" || $sportName == "Boys Basketball" || $sportName == "Girls Basketball") { ?>
 <VAR $pointsClause = ",awayteamstats.TotalPoints as AwayTeamPoints,hometeamstats.TotalPoints as HomeTeamPoints">
@@ -223,7 +238,7 @@ No Team Photo
 <VAR $pointsClause = ",awayteamstats.FinalScore as AwayTeamPoints,hometeamstats.FinalScore as HomeTeamPoints">
 <?PHP } ?>
 <QUERY name=TeamSchedule TEAMID=$form_TeamID SPORTNAME=$sqlSportName POINTSCLAUSE=$pointsClause>
-<!--query: {$TeamSchedule_query} -->
+###query: {$TeamSchedule_query}###
 <VAR $gameCount = count($TeamSchedule_rows)>
 <IFGREATER $gameCount 0>
 <DIV CLASS="schedDiv">
@@ -242,14 +257,18 @@ No Team Photo
         <tr class="{$rowClass}">
             <td><VAR $gameDate = date("D n/d",strtotime($Game_GameDate))>
                 {$gameDate}<br />
-                <VAR $gameTime = date("g:i a",strtotime($Game_GameTime))>
+<VAR $gameTime = date("g:i a",strtotime($Game_GameTime))>
+                <IFEQUAL $Game_GameTimeTBD 1>
+                <VAR $gameTime = "TBD">
+                <ELSE>
+                </IFEQUAL>
                 {$gameTime}
             </td>
 <VAR $Game_AwayTeamName = fixApostrophes($Game_AwayTeamName)>
 <VAR $Game_HomeTeamName = fixApostrophes($Game_HomeTeamName)>
             <td valign="top">
 <IFNOTEQUAL $Game_AwayTeamID $form_TeamID>
-                <A HREF="{$externalURL}site=default&tpl=Team&TeamID={$Game_AwayTeamID}">
+                <A HREF="{$externalURL}site=default&tpl=Team&TeamID={$Game_AwayTeamID}&Sport={$form_Sport}">
 </IFNOTEQUAL>
 <?PHP if ($Game_GameStatStatus == "3") { ?>
 <IFGREATER $Game_AwayTeamPoints $Game_HomeTeamPoints>
@@ -269,7 +288,7 @@ No Team Photo
             </td>
             <td valign="top">
 <IFNOTEQUAL $Game_HomeTeamID $form_TeamID>
-                <A HREF="{$externalURL}site=default&tpl=Team&TeamID={$Game_HomeTeamID}">
+                <A HREF="{$externalURL}site=default&tpl=Team&TeamID={$Game_HomeTeamID}&Sport={$form_Sport}">
 </IFNOTEQUAL>
 <?PHP if ($Game_GameStatStatus == "3") { ?>
 <IFGREATER $Game_HomeTeamPoints $Game_AwayTeamPoints>
@@ -318,7 +337,7 @@ No Team Photo
 </IFEQUAL>
 
 
-
+<br>
 <a name="stats"></a>
 <h2>{$Team_TeamName} {$Team_TeamNickname} Statistics</h2>
 <IFEQUAL $sportName "Football">
@@ -345,9 +364,20 @@ No Team Photo
 <IFEQUAL $sportName "Boys Soccer">
 <INCLUDE site=default tpl=TeamStats_Soccer>
 </IFEQUAL>
+<IFEQUAL $sportName "Ice Hockey">
+<INCLUDE site=default tpl=TeamStats_Hockey>
+</IFEQUAL>
 <IFEQUAL $sportName "Field Hockey">
 <INCLUDE site=default tpl=TeamStats_FieldHockey>
 </IFEQUAL>
+<IFEQUAL $sportName "Boys Lacrosse">
+<INCLUDE site=default tpl=TeamStats_BoysLacrosse>
+</IFEQUAL>
+<IFEQUAL $sportName "Girls Lacrosse">
+<INCLUDE site=default tpl=TeamStats_GirlsLacrosse>
+</IFEQUAL>
+
+
 <br />
 <IFEQUAL $sportName "Boys Basketball">
 <INCLUDE site=default tpl=TeamPlayerStats_Basketball>
@@ -391,22 +421,30 @@ No Team Photo
 <IFEQUAL $sportName "Field Hockey">
 <INCLUDE site=default tpl=TeamPlayerStats_FieldHockey>
 </IFEQUAL>
+<IFEQUAL $sportName "Ice Hockey">
+<INCLUDE site=default tpl=TeamPlayerStats_Hockey>
+</IFEQUAL>
 <IFEQUAL $sportName "Girls Soccer">
 <INCLUDE site=default tpl=TeamPlayerStats_Soccer>
 </IFEQUAL>
 <IFEQUAL $sportName "Boys Soccer">
 <INCLUDE site=default tpl=TeamPlayerStats_Soccer>
 </IFEQUAL>
+<IFEQUAL $sportName "Boys Lacrosse">
+<INCLUDE site=default tpl=TeamPlayerStats_BoysLacrosse>
+</IFEQUAL>
+<IFEQUAL $sportName "Girls Lacrosse">
+<INCLUDE site=default tpl=TeamPlayerStats_GirlsLacrosse>
+</IFEQUAL>
 
-
-
-<br /><br />
+<br />
 <a name="roster"></a>
-<h2>{$Team_TeamName} {$Team_TeamNickname} Team Roster</h2>
+<h2>{$Team_TeamName} {$Team_TeamNickname} Team Roster</h2><br>
 <QUERY name=TeamRoster ID=$form_TeamID>
+###query: {$TeamRoster_query}<br>###
 <VAR $rosterCount = count($TeamRoster_rows)>
 <IFGREATER $rosterCount 0>
-<h4>Roster</h4>
+###<h4>Roster:</h4>###
 <table cellpadding="0" cellspacing="0" class="teamRosterTable deluxe wide400">
     <tbody>
         <tr id="header-sub" class="resultsText">
@@ -423,15 +461,13 @@ No Team Photo
 <IFNOTEQUAL $sportType 1>            <td>{$Roster_TeamRosterPlayerNumber}</td></IFNOTEQUAL>
             <td>
 <VAR $playerName = fixApostrophes($Roster_PlayerFirstName." ".$Roster_PlayerLastName)>
-                <a href="home.html?site=default&tpl=Player&ID={$Roster_PlayerID}">{$playerName}</a></td>
+                <a href="/home.html?site=default&tpl=Player&ID={$Roster_PlayerID}">{$playerName}</a></td>
             <td><IFNOTEQUAL $Roster_PlayerHeightFeet 0>{$Roster_PlayerHeightFeet}'</IFNOTEQUAL>
 <IFNOTEQUAL $Roster_PlayerHeightInches 0>{$Roster_PlayerHeightInches}"</IFNOTEQUAL>
             </td>
             <td><IFNOTEQUAL $Roster_PlayerWeight 0>{$Roster_PlayerWeight}</IFNOTEQUAL></td>
             <td>{$Roster_PlayerYear}</td>
-<IFNOTEQUAL $sportType 1>           <td>{$Roster_TeamRosterPosition}
-<IFNOTEMPTY $Roster_TeamRosterAdditionalPositions>
-,{$Roster_TeamRosterAdditionalPositions}</IFNOTEMPTY></td>
+<IFNOTEQUAL $sportType 1><td>{$Roster_TeamRosterPosition}<IFNOTEMPTY $Roster_TeamRosterAdditionalPositions>, {$Roster_TeamRosterAdditionalPositions}</IFNOTEMPTY></td>
 </IFNOTEQUAL>
         </tr>
 <IFEQUAL $rowClass "rosterRow trRow">
@@ -494,7 +530,7 @@ $Map_Address = str_replace(" ", "+", trim($Team_SchoolAddress) . "&csz=" . trim(
 
 <IFNOTEMPTY $Team_SchoolURL>
 <a href="{$Team_SchoolURL}">{$Team_SchoolURL}</a>
-</IFNOTEMPTY> 
+</IFNOTEMPTY>
 </span>
 
 <IFNOTEMPTY $Team_SchoolEmailAddress>

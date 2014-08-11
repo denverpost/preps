@@ -1,12 +1,47 @@
+<VAR $timeDateDisplay = date("g:i a",strtotime($Game_GameTime))." ".date("l, F j, Y",strtotime($Game_GameDate))>
 
-<h3 class="timestamp grey">Last updated: {$updateTimeDisplay}</h3>
-<h4>Boxscore</h4>
+<QUERY name=Game_preview GAMEID=$form_ID>
+<VAR $Home_TeamID = $Game_preview_GameHomeTeamID>
+<VAR $Away_TeamID = $Game_preview_GameAwayTeamID>
 
+
+
+
+<VAR $gameHour = date("g",strtotime($Game_GameTime))>
+<VAR $gameMinute = date("i",strtotime($Game_GameTime))>
+<VAR $gameSecond = date("s",strtotime($Game_GameTime))>
+<VAR $meridian = date("a",strtotime($Game_GameTime))>
+<VAR $gameDay = date("l",strtotime($Game_GameDate))>
+<VAR $gameMonth = date("F",strtotime($Game_GameDate))>
+<VAR $gameDate = date("j",strtotime($Game_GameDate))>
+<VAR $gameYear = date("Y",strtotime($Game_GameDate))>
+
+<IFTRUE $meridian == "pm">
+<VAR $meridian = "p.m.">
+<ELSE>
+<VAR $meridian = "a.m.">
+</IFTRUE>
+
+
+
+
+
+<VAR $dateTimeDisplay = date("l, F j, Y",strtotime($Game_GameDate))>
+<h1>{$Game_GameMeetName}</h1>
+
+<IFEQUAL $Game_preview_GameTimeTBD 1>
+<VAR $timeDateDisplay = date("l, F j, Y",strtotime($Game_GameDate))>
+<h3 class="list">TBD, {$gameDay}, {$gameMonth}, {$gameDate} {$gameYear}###{$timeDateDisplay}###</h3>
+<ELSE>
+###<VAR $timeDateDisplay = date("g:i a",strtotime($Game_GameTime))." ".date("l, F j, Y",strtotime($Game_GameDate))>###
+<h3 class="list">{$gameHour}:{$gameMinute} {$meridian} {$gameDay} {$gameMonth} {$gameDate}, {$gameYear}</h3>
+</IFEQUAL>
+
+###GSS: {$Game_GameStatStatus}###
+<IFEQUAL $Game_GameStatStatus 0>
+<ELSE>
+<h4>###{$Game_GameMeetName}### Meet Summary</h4>
 <table class="boxscoreStatTable" cellpadding="0" cellspacing="0">
-<tr><td colspan="50">
-<VAR $dateTimeDisplay = date("l F j, Y",strtotime($Game_GameDate))." ".date("g:ia",strtotime($Game_GameTime))>
-{$Game_GameMeetName} {$dateTimeDisplay}<br />
-</td></tr>
 <tr>
 <td> </td>
 <td align="right">Score</td>
@@ -59,6 +94,7 @@
 <VAR $teamIDs = array()>
 <VAR $teamTimes = array()>
 <VAR $teamDispTimes = array()>
+<VAR $sqt = array()>
 <RESULTS list=MeetTeamEventStats_rows prefix=TeamStats>
 <VAR $teamNames[] = fixApostrophes($TeamStats_TeamName)>
 <VAR $teamIDs[] = $TeamStats_TeamID>
@@ -108,16 +144,20 @@
 </IFTRUE>
 </tr>
 <VAR $playerNames = array()>
+<VAR $playerFirstNames = array()>
 <VAR $playerIDs = array()>
 <VAR $teamNames = array()>
 <VAR $teamIDs = array()>
 <VAR $playerTimes = array()>
 <VAR $playerDispTimes = array()>
+<VAR $sqt = array()>
 <RESULTS list=MeetPlayerStats_rows prefix=PlayerStats>
 <VAR $playerIDs[] = $PlayerStats_PlayerID>
 <VAR $playerNames[] = fixApostrophes($PlayerStats_PlayerLastName)>
+<VAR $playerFirstNames[] = fixApostrophes($PlayerStats_PlayerFirstName)>
 <VAR $teamNames[] = fixApostrophes($PlayerStats_TeamName)>
 <VAR $teamIDs[] = $PlayerStats_TeamID>
+<VAR $sqt[] = $PlayerStats_StateQualifyingTime>
 <IFTRUE $isDiving>
 <VAR $playerTimes[] = $PlayerStats_Points>
 <VAR $playerDispTimes[] = $PlayerStats_Points>
@@ -131,13 +171,13 @@
 <EACH list=playerTimes prefix=PT>
 <tr class="{$rowClass}">
 <td>
-<a href="{$externalURL}site=default&tpl=Player&ID={$playerIDs[$PTkey]}">{$playerNames[$PTkey]}</a>
+<a href="{$externalURL}site=default&tpl=Player&ID={$playerIDs[$PTkey]}">{$playerFirstNames[$PTkey]} {$playerNames[$PTkey]}</a>
 </td>
 <td align="left">
 <a href="{$externalURL}site=default&tpl=Team&TeamID={$teamIDs[$PTkey]}">{$teamNames[$PTkey]}</a>
 </td>
 <td align="right">
-{$playerDispTimes[$PTkey]}
+{$playerDispTimes[$PTkey]}<IFEQUAL $sqt[$PTkey] 1>*<ELSE></IFEQUAL>
 </td>
 </tr>
 <IFEQUAL $rowClass "boxscoreRow trRow">
@@ -153,3 +193,5 @@
 </EACH>
 </IFNOTEMPTY>
 </IFGREATER>
+* = State Qualifying Time or Dive Score
+</IFEQUAL>

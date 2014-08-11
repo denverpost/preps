@@ -33,14 +33,12 @@
 {$Away_TeamName} {$Away_Runs}, 
 {$Home_TeamName} {$Home_Runs}
 </IFGREATER>
- &mdash;&nbsp; <IFEQUAL $Game_GameScoreIsFinal 1>
-Final
-<ELSE>
-In progress
-</IFEQUAL>
 </h1>
-<VAR $dateTimeDisplay = date("l F j, Y",strtotime($Game_GameDate))." ".date("g:ia",strtotime($Game_GameTime))>
-<h2 class="list">Prep Softball game played {$dateTimeDisplay}</h2>
+
+<VAR $dateTimeDisplay = date("g:i a",strtotime($Game_GameTime))." ".date("l, F j, Y",strtotime($Game_GameDate))>
+
+###<VAR $dateTimeDisplay = date("l F j, Y",strtotime($Game_GameDate))." ".date("g:ia",strtotime($Game_GameTime))>###
+<h2 class="list">{$dateTimeDisplay}</h2>
 
 <table class="boxscoreStatTable" cellpadding="0" cellspacing="0">
 <tr><td><b><a href="{$externalURL}site=default&tpl=Team&TeamID={$Away_TeamID}">
@@ -54,7 +52,7 @@ In progress
 </table>
 
 
-<h4>Game Boxscore</h4>
+<h4>Boxscore</h4>
 <table class="boxscoreStatTable deluxe" cellpadding="0" cellspacing="0">
     <tbody>
         <tr id="header-sub" class="resultsText">

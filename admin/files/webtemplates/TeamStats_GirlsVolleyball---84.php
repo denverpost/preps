@@ -6,36 +6,36 @@
 </IFGREATER>
 <table cellpadding="0" cellspacing="0" class="teamStatTable deluxe">
 <tbody><tr id="header-sub">
-<th scope="col" abbr="">GP</th>
-<th scope="col" abbr="">K</th>
-<th scope="col" abbr="">E</th>
-<th scope="col" abbr="">TotAtt</th>
-<th scope="col" abbr="">H%</th>
-<th scope="col" abbr="">Asst</th>
-<th scope="col" abbr="">SA</th>
-<th scope="col" abbr="">SvcErr</th>
-<th scope="col" abbr="">RecErr</th>
-<th scope="col" abbr="">Digs</th>
-<th scope="col" abbr="">BlkSolos</th>
-<th scope="col" abbr="">BlkAsst</th>
-<th scope="col" abbr="">BlkErr</th>
-<th scope="col" abbr="">BHE</th>
+<th scope="col" abbr="" align="center">Matches</th>
+<th scope="col" abbr="" align="center">Kill</th>
+<th scope="col" abbr="" align="center">Err</th>
+<th scope="col" abbr="" align="center">Att</th>
+<th scope="col" abbr="" align="center">H%</th>
+<th scope="col" abbr="" align="center">Asst</th>
+<th scope="col" abbr="" align="center">Ace</th>
+<th scope="col" abbr="" align="center">SvcErr</th>
+<th scope="col" abbr="" align="center">RecErr</th>
+<th scope="col" abbr="" align="center">Digs</th>
+<th scope="col" abbr="" align="center">BlkSolo</th>
+<th scope="col" abbr="" align="center">BlkAsst</th>
+<th scope="col" abbr="" align="center">BlkErr</th>
+<th scope="col" abbr="" align="center">BHE</th>
 </tr>
 <tr class="resultsText">
-<td align="right">{$TeamSeasonStats_TeamGames}</td>
-<td align="right">{$TeamSeasonStats_TotalKills}</td>
-<td align="right">{$TeamSeasonStats_TotalErrors}</td>
-<td align="right">{$TeamSeasonStats_TotalAttempts}</td>
-<td align="right">{$hitPercentage}</td>
-<td align="right">{$TeamSeasonStats_Assists}</td>
-<td align="right">{$TeamSeasonStats_ServiceAces}</td>
-<td align="right">{$TeamSeasonStats_ServiceErrors}</td>
-<td align="right">{$TeamSeasonStats_ReceivingErrors}</td>
-<td align="right">{$TeamSeasonStats_Digs}</td>
-<td align="right">{$TeamSeasonStats_BlockSolos}</td>
-<td align="right">{$TeamSeasonStats_BlockAssists}</td>
-<td align="right">{$TeamSeasonStats_BlockErrors}</td>
-<td align="right">{$TeamSeasonStats_BallHandlingErrors}</td>
+<td align="center">{$TeamSeasonStats_TeamGames}</td>
+<td align="center">{$TeamSeasonStats_TotalKills}</td>
+<td align="center">{$TeamSeasonStats_TotalErrors}</td>
+<td align="center">{$TeamSeasonStats_TotalAttempts}</td>
+<td align="center">{$hitPercentage}</td>
+<td align="center">{$TeamSeasonStats_Assists}</td>
+<td align="center">{$TeamSeasonStats_ServiceAces}</td>
+<td align="center">{$TeamSeasonStats_ServiceErrors}</td>
+<td align="center">{$TeamSeasonStats_ReceivingErrors}</td>
+<td align="center">{$TeamSeasonStats_Digs}</td>
+<td align="center">{$TeamSeasonStats_BlockSolos}</td>
+<td align="center">{$TeamSeasonStats_BlockAssists}</td>
+<td align="center">{$TeamSeasonStats_BlockErrors}</td>
+<td align="center">{$TeamSeasonStats_BallHandlingErrors}</td>
 </tr>
 </tbody>
 </table>

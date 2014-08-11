@@ -1,3 +1,4 @@
+<VAR $pointer = ›>
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <VAR $form_ConferenceID = intval($form_ConferenceID)>
 <VAR $form_Sport = intval($form_Sport)>
@@ -20,14 +21,14 @@
 
 <QUERY name=Conference prefix=Conference CONFERENCEID=$form_ConferenceID>
 <div id="breadcrumbs">
-    <INCLUDE site=default tpl=TemplateBreadcrumbs>
-    &rsaquo; <a href="{$externalURL}site=default&tpl=Conference&ConferenceID">Conferences</a>
+<INCLUDE site=default tpl=TemplateBreadcrumbs> 
+<a href="{$externalURL}site=default&tpl=Conference&ConferenceID" Conferences</a>
 </div>
 
 <h1>{$Conference_ConferenceName} Sports</h1>
 <QUERY name=SportsForConference CONFERENCEID=$form_ConferenceID>
 <RESULTS list=SportsForConference_rows prefix=Sport>
-<h2 class="list"><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Sport_SportID}">{$Sport_SportName}</a></h2>
+<h2 class="list"><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Sport_SportID}" &amp;#62; {$Sport_SportName}</a></h2>
 </RESULTS>
 
 </IFEMPTY>
@@ -37,22 +38,49 @@
 <QUERY name=Conference prefix=Conference CONFERENCEID=$form_ConferenceID>
 <QUERY name=Sport prefix=Sport SPORTID=$form_Sport>
 
+<VAR $confName=$Conference_ConferenceName>
+
+<IFTRUE $Sport_SportName == "Ice Hockey"  || $form_Sport == "34">
+<?php
+$confName = preg_replace("/(\w+)\s(\(Ice hockey\))/", "$1", "$Conference_ConferenceName");
+?>
+</IFTRUE>
+
+<IFTRUE $Sport_SportName == "Boys Lacrosse"  || $form_Sport == "35">
+<?php
+$confName = preg_replace("/(\w+)\s(\(Boys lacrosse\))/", "$1", "$Conference_ConferenceName");
+?>
+</IFTRUE>
+<IFTRUE $Sport_SportName == "Girls Lacrosse"  || $form_Sport == "36">
+<?php
+$confName = preg_replace("/(\w+)\s(\(Girls lacrosse\))/", "$1", "$Conference_ConferenceName");
+?>
+</IFTRUE>
+
+
+
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
-    &rsaquo; <a href="{$externalURL}site=default&tpl=Conference&ConferenceID">Conferences</a>
-    &rsaquo; <a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$form_ConferenceID}">{$Conference_ConferenceName}</a>
+    &amp;#62; <a href="{$externalURL}site=default&tpl=Conference&ConferenceID">Conferences</a>
+&amp;#62; <a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$form_ConferenceID}"> {$confName}</a>
 </div>
-<h1>{$Conference_ConferenceName} {$Sport_SportName} Schedule and Standings</h1>
+<h1>{$confName} {$Sport_SportName} Schedule and Standings</h1>
 <ul id="subnav">
-    <li><a href="#results">{$Conference_ConferenceName} Results</a></li>
-    <li><a href="#schedule">{$Conference_ConferenceName} Schedule</a></li>
-    <li><a href="#standings">{$Conference_ConferenceName} Standings</a></li>
+    <li><a href="#results">{$confName} Results</a></li>
+    <li><a href="#schedule">{$confName} Schedule</a></li>
+    <li><a href="#standings">{$confName} Standings</a></li>
 </ul>
 
-
-
+<IFEQUAL $Sport_SportName "Girls Gymnastics">
+<VAR $Conference_ConferenceName = "">
+<ELSE>
+</IFEQUAL>
 <a name="results"></a>
-<h2>Recent {$Conference_ConferenceName} Prep {$Sport_SportName} Results</h2>
+<IFEQUAL $Sport_SportName "Field Hockey">
+<h2>Recent Prep {$Sport_SportName} Results</h2>
+<ELSE>
+<h2>Recent {$confName} Prep {$Sport_SportName} Results</h2>
+</IFEQUAL>
 <VAR $form_SearchDate>
 <IFEMPTY $form_SearchDateEnd><VAR $form_SearchDateEnd = date("m/d/Y")></IFEMPTY>
 <VAR $schedule_type = "results">
@@ -61,7 +89,11 @@
 
 
 <a name="schedule"></a>
-<h2>This week's {$Conference_ConferenceName} {$Sport_SportName} Schedule</h2>
+<IFEQUAL $Sport_SportName "Field Hockey">
+<h2>This week's {$Sport_SportName} Schedule</h2>
+<ELSE>
+<h2>This week's {$confName} {$Sport_SportName} Schedule</h2>
+</IFEQUAL>
 <VAR $form_count = 250>
 <VAR $count = 250>
 <VAR $form_SearchDate = date("m/d/Y")>
@@ -80,8 +112,12 @@ $saturday_date = strtotime("+$days_until_saturday days");
 
 
 <a name="standings"></a>
-<h2>{$Conference_ConferenceName} {$Sport_SportName} Standings</h2>
-<IFTRUE $Sport_SportName != "Boys Golf" && $Sport_SportName != "Girls Golf" && $Sport_SportName != "Boys Cross Country" && $Sport_SportName != "Girls Cross Country" && $Sport_SportName != "Boys Tennis" && $Sport_SportName != "Girls Tennis"  && $Sport_SportName != "Wrestling" >
+<IFEQUAL $Sport_SportName "Field Hockey">
+<h2>{$Sport_SportName} Standings</h2>
+<ELSE>
+<h2>{$$confName} {$Sport_SportName} Standings</h2>
+</IFEQUAL>
+<IFTRUE $Sport_SportName != "Boys Golf" && $Sport_SportName != "Girls Golf" && $Sport_SportName != "Boys Cross Country" && $Sport_SportName != "Girls Cross Country" && $Sport_SportName != "Boys Tennis" && $Sport_SportName != "Girls Tennis"  && $Sport_SportName != "Wrestling" && $Sport_SportName != "Girls Gymnastics" && $Sport_SportName != "Girls Swimming and Diving" && $Sport_SportName != "Boys Swimming and Diving" && $Sport_SportName != "Girls Track and Field" && $Sport_SportName != "Boys Track and Field">
 <INCLUDE site=default tpl=Standings>
 <ELSE>
 <h3>{$Sport_SportName} does not have standings, though it does have leaders. <a href="{$externalURL}site=default&tpl=Class&Sport={$form_Sport}">View {$Sport_SportName} leaders here</a>.</h3>

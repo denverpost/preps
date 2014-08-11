@@ -20,6 +20,15 @@ $form_Query = str_replace(
           "mtn",
           "mountian",
           "aurira",
+          "smokey",
+          "coalridge",
+          "standly",
+          "praire",
+          "coalridge",
+          "daysprings",
+          "chaparrel",
+          "jeseph",
+          "greely",
           ),
     array(
           "ffort",
@@ -31,6 +40,15 @@ $form_Query = str_replace(
           "mountain",
           "mountain",
           "aurora",
+          "smoky",
+          "coal ridge",
+          "standley",
+          "prarie",
+          "coal ridge",
+          "dayspring",
+          "chaparral",
+          "joseph",
+          "greeley",
           ),
     $form_Query);
 ?>
@@ -163,13 +181,15 @@ if ( isset($class_id) )
 {
     $canned_searches .= "<h2 class=\"note\"><a href=" . $externalURL . "site=default&tpl=Class&Sport=" . $sport_id . "&ClassID=" . $class_id .">Class " . $form_Query_canned . " " . $query_two_canned . " information is here.</a></h2>";
 }
+
 ?>
 
+###code goes just before here###
 
 
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
-    &rsaquo; <a href="{$externalURL}site=default&tpl=SearchResults">Search</a>
+    › <a href="{$externalURL}site=default&tpl=SearchResults">Search</a>
 </div>
 
 <IFNOTEMPTY $canned_searches>
@@ -188,12 +208,9 @@ if ( isset($class_id) )
 
 <QUERY name=SearchTeam QUERY=$form_Query>
 <VAR $team_count=count($SearchTeam_rows)>
-
 <?PHP
 $total_count = $player_count + $school_count + $team_count;
 ?>
-
-
 ### ------------------------------------------------------------------------ ###
 ### If we get zero results and we can refine the query, do so ###
 ### ------------------------------------------------------------------------ ###
@@ -213,7 +230,7 @@ if ( $total_count == 0 && isset($query_one) )
 
 <QUERY name=SearchTeam QUERY=$form_Query_new>
 <VAR $team_count=count($SearchTeam_rows)>
-<?
+<?php
     $total_count_new = $player_count + $school_count + $team_count;
 }
 ?>
@@ -235,12 +252,12 @@ if ( $total_count == 0 && isset($query_one) )
 
 <ol>
 <RESULTS list=SearchPlayer_rows prefix=Player>
-	<li><a href="{$externalURL}site=default&amp;tpl=Player&amp;ID={$Player_PlayerID}">{$Player_PlayerFirstName} {$Player_PlayerLastName}</a> 
+	<li><a href="{$externalURL}site=default&tpl=Player&ID={$Player_PlayerID}">{$Player_PlayerFirstName} {$Player_PlayerLastName}</a>
 <QUERY name=PlayerTeams ID=$Player_PlayerID>
 <IFGREATER count($PlayerTeams_rows) 0>
 		<span>(
 <RESULTS list=PlayerTeams_rows prefix=PlayerTeams>
-		<a href="{$externalURL}site=default&amp;tpl=Team&amp;TeamID={$PlayerTeams_TeamRosterTeamID}">{$PlayerTeams_TeamName} {$PlayerTeams_SportName}</a>
+		<a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerTeams_TeamRosterTeamID}">{$PlayerTeams_TeamName} {$PlayerTeams_SportName}</a>
 </RESULTS>
 		)</span>
 </IFGREATER>
@@ -263,7 +280,7 @@ if ( $total_count == 0 && isset($query_one) )
 
 <ol>
 <RESULTS list=SearchSchool_rows prefix=School>
-    <li><a href="{$externalURL}site=default&amp;tpl=School&amp;School={$School_SchoolID}">{$School_SchoolName}</a></li>
+    <li><a href="{$externalURL}site=default&tpl=School&School={$School_SchoolID}">{$School_SchoolName}</a></li>
 </RESULTS>
 </ol>
 <ELSE>
@@ -278,7 +295,7 @@ if ( $total_count == 0 && isset($query_one) )
 
 <ol>
 <RESULTS list=SearchTeam_rows prefix=Team>
-    <li><a href="{$externalURL}site=default&amp;tpl=Team&amp;TeamID={$Team_TeamID}">{$Team_TeamName} {$Team_TeamNickname} ({$Team_SportName})</a></li>
+    <li><a href="{$externalURL}site=default&tpl=Team&TeamID={$Team_TeamID}">{$Team_TeamName} {$Team_TeamNickname} ({$Team_SportName})</a></li>
 </RESULTS>
 </ol>
 <ELSE>

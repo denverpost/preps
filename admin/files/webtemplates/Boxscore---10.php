@@ -35,6 +35,11 @@
 <IFTRUE $sqlSportName == "boysswimminganddiving" || $sqlSportName == "girlsswimminganddiving">
 <VAR $SORTCLAUSE = "TotalPoints DESC">
 <VAR $FILTERCLAUSE = "AND GameTeamEventType = 0">
+<ELSE>
+<IFTRUE $sqlSportName == "boystrackandfield" || $sqlSportName == "girlstrackandfield">
+<VAR $SORTCLAUSE = "Points DESC">
+<VAR $FILTERCLAUSE = "AND GameTeamEventType = 0">
+</IFTRUE>
 </IFTRUE>
 </IFEQUAL>
 </IFEQUAL>
@@ -102,6 +107,9 @@
 <IFTRUE $sqlSportName == "boysswimminganddiving" || $sqlSportName == "girlsswimminganddiving">
 <INCLUDE site=default tpl=Boxscore_Swimming>
 </IFTRUE>
+<IFTRUE $sqlSportName == "boystrackandfield" || $sqlSportName == "girlstrackandfield">
+<INCLUDE site=default tpl=Boxscore_TrackAndField>
+</IFTRUE>
 <IFTRUE $sqlSportName == "boyshockey" || $sqlSportName == "girlshockey" || $sqlSportName == "icehockey">
 <INCLUDE site=default tpl=Boxscore_Hockey>
 </IFTRUE>
@@ -110,6 +118,12 @@
 </IFTRUE>
 <IFTRUE $sqlSportName == "fieldhockey">
 <INCLUDE site=default tpl=Boxscore_FieldHockey>
+</IFTRUE>
+<IFTRUE $sqlSportName == "boyslacrosse">
+<INCLUDE site=default tpl=Boxscore_BoysLacrosse>
+</IFTRUE>
+<IFTRUE $sqlSportName == "girlslacrosse">
+<INCLUDE site=default tpl=Boxscore_GirlsLacrosse>
 </IFTRUE>
 
 <!-- TeamPlayer box score end -->

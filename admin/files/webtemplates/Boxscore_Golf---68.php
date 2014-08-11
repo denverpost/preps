@@ -1,16 +1,20 @@
 <VAR $SORTCLAUSE = "TotalStrokes">
 
 <VAR $dateTimeDisplay = date("l, F j, Y",strtotime($Game_GameDate))>
-<h1>{$Game_GameMeetName} Prep Golf</h1>
-<h2 class="list">{$dateTimeDisplay}</h2>
-<h3 class="timestamp grey">Last updated: {$updateTimeDisplay}</h3>
+<h1>{$Game_GameMeetName} ###at {$Game_SchoolName}###</h1>
+<h3 class="list">{$dateTimeDisplay}</h3>
+###<h3 class="timestamp grey">Last updated: {$updateTimeDisplay}</h3>###
 
 <h4>{$Game_GameMeetName} Boxscore</h4>
-<table class="boxscoreStatTable deluxe wide300" cellpadding="0" cellspacing="0">
+<table class="boxscoreStatTable deluxe wide400" cellpadding="0" cellspacing="0">
     <tbody>
         <tr id="header-sub" class="resultsText">
             <th scope="col" abbr="">Team</th>
-            <th scope="col" abbr="">Score</th>
+            <th scope="col" abbr="">Rd 1</th>
+            <th scope="col" abbr="">Rd 2</th>
+            <th scope="col" abbr="">Total</th>
+            <th scope="col" abbr="">+/-</th>
+         
         </tr>
 
 <IFGREATER $total_MeetTeamStats 0>
@@ -21,7 +25,10 @@
 <VAR $MeetTeamStats_TeamName = fixApostrophes($MeetTeamStats_TeamName)>
                 <a href="{$externalURL}site=default&tpl=Team&TeamID={$MeetTeamStats_TeamID}">
 {$MeetTeamStats_TeamName}</a></td>
+            <td>{$MeetTeamStats_RoundOneScore}</td>
+            <td>{$MeetTeamStats_RoundTwoScore}</td>
             <td>{$MeetTeamStats_TotalStrokes}</td>
+            <td>{$MeetTeamStats_OverUnderPar}</td>
         </tr>
 <IFEQUAL $rowClass "boxscoreRow trRow">
 <VAR $rowClass = "boxscoreRowAlternate trAlt">
@@ -37,12 +44,15 @@
 <h4>{$Game_GameMeetName} Leaders</h4>
 <QUERY name=MeetGolfPlayerStats GAMEID=$form_ID SPORTNAME=$sqlSportName>
 <IFGREATER $total_MeetGolfPlayerStats 0>
-<table class="boxscoreStatTable deluxe wide300" cellpadding="0" cellspacing="0">
+<table class="boxscoreStatTable deluxe wide400" cellpadding="0" cellspacing="0">
     <tbody>
         <tr id="header-sub" class="resultsText">
             <th scope="col" abbr="">Name</th>
             <th scope="col" abbr="">Team</th>
-            <th scope="col" abbr="">Score</th>
+            <th scope="col" abbr="">Rd 1</th>
+            <th scope="col" abbr="">Rd 2</th>
+            <th scope="col" abbr="">Total</th>
+            <th scope="col" abbr="">+/-</th>
         </tr>
 <VAR $rowClass = "boxscoreRow trRow">
 <RESULTS list=MeetGolfPlayerStats_rows prefix=PlayerStats>
@@ -56,7 +66,16 @@
                 <a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerStats_TeamID}">{$teamName}</a>
             </td>
             <td>
+                {$PlayerStats_RoundOneScore}
+            </td>
+            <td>
+                {$PlayerStats_RoundTwoScore}
+            </td>
+            <td>
                 {$PlayerStats_TotalStrokes}
+            </td>
+            <td>
+                {$PlayerStats_OverUnderPar}
             </td>
         </tr>
 <IFEQUAL $rowClass "boxscoreRow trRow">

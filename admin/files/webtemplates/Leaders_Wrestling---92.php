@@ -5,9 +5,10 @@
 <input type="hidden" name="Sport" id="Sport" value="{$form_Sport}" />
 <input type="hidden" name="SearchType" id="SearchType" value="Leaders" />
 <input type="hidden" name="ConferenceID" id="ConferenceID" value="{$form_ConferenceID}" />
+<input type="hidden" name="ClassID" id="ClassID" value="{$form_ClassID}" />
 <table cellpadding="0" cellspacing="0" class="leadersTable" width="100%">
 <tr><td>
-<font class="pageTitle">Leaders</font>
+<h2>Leaders</h2>
 <select name="meetEventID" id="meetEventID" onchange="document.leaderForm.submit()">
 <option value="">Select</option>
 <QUERY name=SportMeetEvents SPORTID=$form_Sport>
@@ -25,10 +26,10 @@
 <IFNOTEMPTY $MeetEventID>
 <QUERY name=Leaders_Wrestling SPORTNAME=$sqlSportName SORT=$sortClause>
 <table cellpadding="0" cellspacing="0" class="leadersTable">
-<tr class="leadersColumnHeader">
-<td>Name</td>
-<td>Team</td>
-<td align="right">W-L</td>
+<tr id="header-sub" class="resultsText">
+<th>Name</th>
+<th>Team</th>
+<th align="right">W-L</th>
 </tr>
 <IFGREATER count($Leaders_Wrestling_rows) 0>
 <VAR $rowClass="leadersRow trRow">
