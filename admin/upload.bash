@@ -1,5 +1,7 @@
 #! /bin/bash
 # Parse and upload a file to NewsEngin
+# Example command:
+# $ ./upload.bash TeamStats_Soccer---131.php
 
 echo $1
 ENCODED=`php -q rawurlencode.php $1`
@@ -15,7 +17,7 @@ ENCODED=`php -q rawurlencode.php $1`
 #
 # To get the ID out of the filename, we need to run a couple variable 
 # substitution regex's:
-TMP=${1/.*---/}
+TMP=${1/*---/}
 ID=${TMP/\.php/}
 
 # To get the web template out of the filename, we also
