@@ -9,19 +9,17 @@
 <?PHP $defaultDate = $todayDate.$space.$todayMonth.$space.$todayYear;?>
 
 ### YEARCHECK these variables need to be re-set every year. they are the times that various### ###tournaments start###
-<VAR $myEarlyFootballPlayoffTime = strtotime("31 October 2014")>
-<VAR $myLateFootballPlayoffTime = strtotime("11 November 2014")>
-<VAR $mySoftballTime = strtotime("14 October 2014")>
-<VAR $myBoysSoccerTime = strtotime("24 October 2014")>
-<VAR $myFieldHockeyTime = strtotime("18 October 2014")>
-<VAR $myBasketballTime = strtotime("25 February 2015")> ###both boys and girls###
+<VAR $myEarlyFootballPlayoffTime = strtotime("1 November 2014")>
+<VAR $myLateFootballPlayoffTime = strtotime("8 November 2014")>
+<VAR $mySoftballTime = strtotime("11 October 2014")>
+<VAR $myBoysSoccerTime = strtotime("22 October 2014")>
+<VAR $myFieldHockeyTime = strtotime("17 October 2014")>
+<VAR $myBasketballTime = strtotime("24 February 2015")> ###both boys and girls###
 <VAR $myLateBasketballTime = strtotime("25 February 2015")> ###both boys and girls###
-<VAR $myIceHockeyTime = strtotime("17 February 2015")>
-<VAR $myEarlyBaseballTime = strtotime("4 May 2015")>
-<VAR $myLateBaseballTime = strtotime("11 May 2015")>
-<VAR $myGirlsSoccerTime = strtotime("9 May 2015")>
-<VAR $myGirlsLacrosseTime = strtotime("6 May 2015")>
-<VAR $myBoysLacrosseTime = strtotime("6 May 2015")>
+<VAR $myIceHockeyTime = strtotime("27 February 2015")>
+<VAR $myEarlyBaseballTime = strtotime("9 May 2015")>
+<VAR $myLateBaseballTime = strtotime("9 May 2015")>
+<VAR $myGirlsSoccerTime = strtotime("5 May 2015")>
 
 
 <VAR $myDefaulttime = strtotime("$defaultDate")>
