@@ -22,16 +22,16 @@
 <IFEMPTY $form_count><VAR $form_count = 25></IFEMPTY>
 <?PHP $strFutureEnd = time()+(3 * 24 * 60 * 60) ?>
 <?PHP $strNow = time() ?>
-### these variables need to be re-set every year. they are the times that various### ###tournaments start###
-<VAR $myEarlyFootballPlayoffTime = strtotime("1 November 2010")>
-<VAR $myLateFootballPlayoffTime = strtotime("7 November 2010")>
-<VAR $mySoftballTime = strtotime("15 October 2010")>
-<VAR $myBoysSoccerTime = strtotime("26 October 2010")>
-<VAR $myFieldHockeyTime = strtotime("26 October 2010")>
-<VAR $myBasketballTime = strtotime("19 February 2011")> ###both boys and girls###
-<VAR $myIceHockeyTime = strtotime("17 February 2011")>
+### YEARCHECK these variables need to be re-set every year. they are the times that various### ###tournaments start###
+<VAR $myEarlyFootballPlayoffTime = strtotime("1 November 2014")>
+<VAR $myLateFootballPlayoffTime = strtotime("7 November 2014")>
+<VAR $mySoftballTime = strtotime("15 October 2014")>
+<VAR $myBoysSoccerTime = strtotime("26 October 2014")>
+<VAR $myFieldHockeyTime = strtotime("26 October 2014")>
+<VAR $myBasketballTime = strtotime("19 February 2015")> ###both boys and girls###
+<VAR $myIceHockeyTime = strtotime("17 February 2015")>
 
-<VAR $seasonStart = strtotime("27 August 2010")>
+<VAR $seasonStart = strtotime("27 August 2014")>
 
 <?PHP $difference = $strNow - $seasonStart ?>
 
@@ -471,7 +471,7 @@ CLASSID: {$Class_ClassID}<br>###
 <VAR $myTerm = "Tournament">
 </IFEQUAL>
 <IFEQUAL $Sport_SportName "Football">
-<VAR $myTerm = "Playoffs">
+<VAR $myTerm = "Playofs">
 </IFEQUAL>
 <IFEQUAL $Sport_SportName "Softball">
 <VAR $myTerm = "Tournament">

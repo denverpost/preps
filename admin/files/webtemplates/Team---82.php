@@ -1,4 +1,4 @@
-<VAR $sportYear = "2013">
+<VAR $sportYear = "2014">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <VAR $webURL = "http://denver-tpweb.newsengin.com/web/graphics/team/">
 <VAR $rightSingleQuote = chr(38)."rsaquo;">
