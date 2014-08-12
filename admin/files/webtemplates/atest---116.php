@@ -3,6 +3,7 @@
 <VAR $ConferenceInitialCharacter = "5">
 
 ### Set default values for start and count ###
+### TEST2 ###
 <?PHP if ( intval($form_Sport) < 0 ) { $form_Sport = False; } ?>
 <IFEMPTY $form_Sport><VAR $form_Sport="No Search Query Entered"></IFEMPTY>
 
