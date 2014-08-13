@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <QUERY name=Player ID=$form_ID>
 <QUERY name=PlayerTeams ID=$form_ID>

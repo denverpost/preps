@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 ###this was replaced on 3-16-2012 to include fielding leaders###
 ###FORMSPORT: {$form_Sport}###
 

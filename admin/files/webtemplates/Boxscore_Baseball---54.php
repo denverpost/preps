@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $sportyear = 2013>
 <VAR $statType = "conf">
 

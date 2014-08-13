@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <pre>
 <?PHP
 echo file_get_contents("/var/www/denver/tpweb/web/templates/tplatest_default.php");

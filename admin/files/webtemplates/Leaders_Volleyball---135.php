@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <h2>Colorado Prep Volleyball Leaders</h2>
 
 <VAR $tpl = "Leaders">

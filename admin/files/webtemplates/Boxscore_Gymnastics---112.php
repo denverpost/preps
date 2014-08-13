@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <h1>{$Game_GameMeetName}</h1>
 <VAR $dateTimeDisplay = date("g:ia",strtotime($Game_GameTime))."
 ".date("l, F j, Y",strtotime($Game_GameDate))>

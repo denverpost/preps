@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <table cellpadding="0" cellspacing="0" class="leadersTable" width="100%">
 <tr><td>
 <font class="pageTitle">Player Stats</font><span id="showKey"><a href="javascript:showKey('statKey')" class="keyButton">Show key</a></span>

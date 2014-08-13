@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <h2>Colorado Prep Football Leaders</h2>
 <?PHP $strNow = time() ?>
 <VAR $myTime = strtotime("30 November 2010")>

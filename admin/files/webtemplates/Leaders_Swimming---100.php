@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $resultNum = 500>
 <VAR $tpl = "Leaders">
 <IFNOTEMPTY $form_ConferenceID>

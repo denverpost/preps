@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <VAR $rightSingleQuote = chr(38)."rsaquo;">
 <IFNOTEMPTY $form_Sport>

@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $SORTCLAUSE = "TotalStrokes">
 
 <QUERY name=Game_preview GAMEID=$form_ID>

@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <TABLE><TR><TD>
 <form name="teamsearch" method=get action="{$externalURL}">

@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <h2>{$Player_PlayerFirstName} {$Player_PlayerLastName}'s Prep Basketball Season Stats</h2>
 <h4>Per game</h4>
 <table cellpadding="0" cellspacing="0" class="schedTable deluxe">

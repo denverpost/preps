@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <VAR $form_Query = htmlentities($form_Query)>
 <IFEMPTY $form_Query><var $form_Query="nothing"></IFEMPTY>

@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <h3>Team Stats</h3>
 <IFGREATER $TeamSeasonStats_TotalAttempts 0>
 <VAR $hitPercentage = round(($TeamSeasonStats_TotalKills-$TeamSeasonStats_TotalErrors)/$TeamSeasonStats_TotalAttempts,2)>

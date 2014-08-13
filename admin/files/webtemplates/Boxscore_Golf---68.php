@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $SORTCLAUSE = "TotalStrokes">
 
 <VAR $dateTimeDisplay = date("l, F j, Y",strtotime($Game_GameDate))>

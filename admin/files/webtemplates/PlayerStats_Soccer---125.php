@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <h2>{$Player_PlayerFirstName} {$Player_PlayerLastName}'s Prep Soccer Season Stats</h2>
 <table class="playerStatTable deluxe" cellpadding="0" cellspacing="0">
     <tbody>

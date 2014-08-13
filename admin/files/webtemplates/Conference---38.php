@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $pointer = ›>
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <VAR $form_ConferenceID = intval($form_ConferenceID)>

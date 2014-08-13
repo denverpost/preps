@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <h2>{$Player_PlayerFirstName} {$Player_PlayerLastName}'s Football Season Stats</h2>
 <IFGREATER $PlayerSeasonStats_PassAttempts 0>
 <h4>Passing</h4>

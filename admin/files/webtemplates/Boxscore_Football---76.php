@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <IFTRUE $sqlSportName == "football">
 <VAR $sportYear = "2013">
 <ELSE>

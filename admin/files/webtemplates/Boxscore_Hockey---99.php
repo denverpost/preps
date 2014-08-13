@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $blank = "">
 <VAR $space = " ">
 <VAR $dash = chr(151)>

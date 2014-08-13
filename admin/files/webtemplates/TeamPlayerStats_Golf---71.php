@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $whereClauseOrig = " AND Minutes ".chr(62)." 0">
 <VAR $whereClause = "">
 <VAR $sortClause = "TotalStrokes,PlayerLastName,PlayerFirstName">

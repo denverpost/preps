@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <?PHP $strNow = time() ?>
 <VAR $fallTime = strtotime("15 August 2013")>
 <VAR $midNovemberTime = strtotime("15 November 2013")>

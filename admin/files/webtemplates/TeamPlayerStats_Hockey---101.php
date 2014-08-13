@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <h3>Player Stats</h3>
 <VAR $whereClause = " AND Points ".chr(62)." 0">
 

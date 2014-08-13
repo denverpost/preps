@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <!-- TeamPlayer box score begin -->
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <QUERY name=Game ID=$form_ID>

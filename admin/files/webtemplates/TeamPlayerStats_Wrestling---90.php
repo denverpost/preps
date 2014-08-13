@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $whereClause = "">
 <VAR $playerStatIDs = array("WinningWrestler","LosingWrestler")>
 <VAR $playerStatIDWL = array("W","L")>

@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $statType = "conf">
 <VAR $dash = chr(151)>
 <VAR $period = ".">

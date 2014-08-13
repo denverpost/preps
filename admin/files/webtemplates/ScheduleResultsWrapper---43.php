@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <?PHP unset($_REQUEST["SearchDate"]); unset($_REQUEST["SearchDateEnd"]);  ?>
 <?PHP $strPastStart = time()-(28 * 24 * 60 * 60) ?>

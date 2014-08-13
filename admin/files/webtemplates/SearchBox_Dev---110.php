@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <!-- TeamPlayer search box begin -->
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <QUERY name=Sports>

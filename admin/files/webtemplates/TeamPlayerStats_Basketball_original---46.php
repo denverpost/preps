@@ -1,3 +1,4 @@
+<VAR $domainURL = "http://preps.denverpost.com">
 <VAR $whereClause = " AND Minutes ".chr(62)." 0">
 <IFEMPTY $form_sort>
 <VAR $form_sort = "PointsPerGame">
