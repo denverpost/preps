@@ -8,7 +8,7 @@
 <QUERY name=Sport prefix=Sport SPORTID=$form_Sport>
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
-    › <a href="{$externalURL}site=default&tpl=Sport&Sport">Sports</a>
+    › <a href="{$domainURL}/sport/">Sports</a>
     › <a href="{$externalURL}site=default&tpl=Sport&Sport={$form_Sport}">{$Sport_SportName}</a>
 <IFNOTEMPTY $form_ConferenceID>    › <a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$form_ConferenceID}">{$Conference_ConferenceName} Conference</a></IFNOTEMPTY>
 </div>

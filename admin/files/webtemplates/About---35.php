@@ -31,7 +31,7 @@ We've added a lot to our prep sports offerings. Here is some of what's new:
 	<li><a href="{$externalURL}Query=Denver&site=default&tpl=SearchResults">Our new search by player name, school name and team name functionality</a></li>
 	<li><a href="{$externalURL}site=default&tpl=School&School">Indexes of schools organized by name and by the city of the school</a></li>
 	<li><a href="{$externalURL}site=default&tpl=Conference&Sport=1&ConferenceID=126">Improved sport conference pages, with recent results, upcoming games as well as standings</a></li>
-	<li><a href="{$externalURL}site=default&tpl=Sport&Sport">Index of sports organized by season</a></li>
+	<li><a href="{$domainURL}/sport/">Index of sports organized by season</a></li>
 	<li><a href="{$externalURL}site=default&tpl=Sport&Sport=1">Specific prep sport pages with results, schedule, and participating conferences and schools</a></li>
 	<li>Redesigned prep site navigation</li>
 </ul>

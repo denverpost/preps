@@ -58,7 +58,7 @@
 
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
-    {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Sport&Sport" title="Prep Sports in Colorado">Sports</a>
+    {$rightSingleQuote} <a href="{$domainURL}/sport/" title="Prep Sports in Colorado">Sports</a>
     {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Sport&Sport={$Game_SportID}" title="Prep {$sportName} in Colorado">{$sportName}</a>
 </div>
 <VAR $updateTimeDisplay = date("g:ia l, F j, Y", strtotime($Game_GameStatsDateTimeModified))>

@@ -60,7 +60,7 @@
 
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
-    &rsaquo; <a href="{$externalURL}site=default&tpl=Sport&Sport">Sport Results</a>
+    &rsaquo; <a href="{$domainURL}/sport/">Sport Results</a>
 </div>
 <h1>Prep {$Sport_SportName} Results in Colorado</h1>
 <ul id="subnav">
