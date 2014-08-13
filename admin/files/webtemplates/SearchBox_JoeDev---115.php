@@ -124,7 +124,7 @@
 ### ------------------------------------------------------------------------ ###
 ### Sports ###
 ### ------------------------------------------------------------------------ ###
-			<li id="navsports"><a href="{$externalURL}site=default&tpl=Sport&Sport&source=prepnav-sports" title="Sports and Results">Results + Sports</a>
+			<li id="navsports"><a href="http://preps.denverpost.com/sport/" title="Sports and Results">Results + Sports</a>
 				<ul class="dropDown">	<!-- Tier 2 -->
 
 <li><a href="http://preps.denverpost.com/sport/boys-cross-country/">Boys Cross Country</a></li>
