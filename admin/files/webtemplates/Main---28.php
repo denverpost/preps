@@ -1,9 +1,10 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <?PHP $strNow = time() ?>
-<VAR $fallTime = strtotime("15 August 2013")>
-<VAR $midNovemberTime = strtotime("15 November 2013")>
-<VAR $winterTime = strtotime("1 December 2013")>
-<VAR $springTime = strtotime("5 March 2014")>
+###YEARCHECK###
+<VAR $fallTime = strtotime("10 August 2014")>
+<VAR $midNovemberTime = strtotime("15 November 2014")>
+<VAR $winterTime = strtotime("1 December 2014")>
+<VAR $springTime = strtotime("5 March 2015")>
 
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 
@@ -36,7 +37,7 @@ h1#prepphoto { background-image:url(http://extras.mnginteractive.com/live/media/
 <ul class="subnav">
     <li><a href="{$externalURL}site=default&tpl=About">Read our welcome announcement</a></li>
     <li><a href="#today">Skip down to today's game schedule</a></li>
-    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport">Find sports not currently in season</a></li>
+    <li><a href="http://preps.denverpost.com/sport/">Find sports not currently in season</a></li>
 </ul>
 
 
@@ -67,7 +68,7 @@ h1#prepphoto { background-image:url(http://extras.mnginteractive.com/live/media/
 <IFGREATER $strNow  $midNovemberTime>
 <h2>Fall Sports</h2>
 <ul class="subnav">
-    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=1" title="Prep Football in Colorado">State football championships</a></li>
+    <li><a href="http://preps.denverpost.com/sport/football/" title="Prep Football in Colorado">State football championships</a></li>
 </ul>
 <ELSE>
 <h2>Fall Sports</h2>
