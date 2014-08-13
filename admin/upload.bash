@@ -3,7 +3,7 @@
 # Example command:
 # $ ./upload.bash ./files/webtemplates/TeamStats_Soccer---131.php
 # Example upload 'em all:
-# $ for FILE in `ls files/webtemplates/*.php`; do ./upload.bash $FILE; done
+# $ for FILE in `ls files/webtemplates/*.php`; do ./upload.bash ./$FILE; done
 
 echo $1
 ENCODED=`php -q rawurlencode.php $1`
@@ -27,6 +27,7 @@ ID=${TMP/\.php/}
 TMP=${1/\.\/*\//}
 NAME=${TMP%---*}
 
+echo $ID $NAME
 
 # Spoof the opening and editing of the file
 wget --load-cookies cookies.txt \
