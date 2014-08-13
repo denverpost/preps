@@ -1,7 +1,6 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <!-- TeamPlayer search box begin -->
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
-<VAR $externalDomain = "http://preps.denverpost.com">
 <VAR $TeamInitialCharacter = "A">
 <VAR $ConferenceInitialCharacter = "5">
 <INCLUDE site=default tpl=SportSeasons>

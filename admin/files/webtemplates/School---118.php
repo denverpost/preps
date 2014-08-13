@@ -1,6 +1,5 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
-<VAR $domainURL = "http://preps.denverpost.com">
 <INCLUDE site=default tpl=SportSeasons>
 <VAR $dateToCheck = date("n/j")>
 <IFEMPTY $form_Season>
