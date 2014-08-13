@@ -98,12 +98,6 @@ h1#prepphoto { background-image:url(http://extras.mnginteractive.com/live/media/
 </ul>###
 
 
-### 
-###
-
-
-###
-###
 <VAR $form_count = 250>
 <VAR $count = 250>
 
@@ -116,12 +110,6 @@ h1#prepphoto { background-image:url(http://extras.mnginteractive.com/live/media/
 <VAR $form_SearchDateEnd = date("m/d/Y", $yesterday)>
 <INCLUDE site=default tpl=ScheduleResultsWrapper>
 <?PHP
-//include("/var/www/denver/tpweb/web/templates/tplScheduleResultsWrapper_default.php");
-?>
-
-
-
-<?PHP
 unset($_REQUEST);
 ?>
 
@@ -131,8 +119,5 @@ unset($_REQUEST);
 <VAR $form_SearchDate = date("m/d/Y")>
 <VAR $form_SearchDateEnd = date("m/d/Y")>
 
-<?PHP
-//include("/var/www/denver/tpweb/web/templates/tplScheduleInclude_default.php");
-?>
 <INCLUDE site=default tpl=ScheduleInclude>
 ### <INCLUDE site=default tpl=TodaySchedule> ###
