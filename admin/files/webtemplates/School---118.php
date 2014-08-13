@@ -63,7 +63,7 @@
 
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
-    » <a href="{$externalURL}site=default&tpl=School&School">Schools</a>
+    » <a href="{$domainURL}/schools/">Schools</a>
 </div>
 <h1>
     {$School_SchoolName}

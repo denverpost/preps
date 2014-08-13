@@ -16,7 +16,7 @@
 Use the navigation area at the top of the page to find information on:
 </p>
 <ul class="subnav">
-	<li><a href="{$externalURL}site=default&tpl=School&School">Prep teams, by schools</a>,</li>
+	<li><a href="{$domainURL}/schools/">Prep teams, by schools</a>,</li>
 	<li><a href="{$externalURL}site=default&tpl=Conference&ConferenceID">Colorado prep sports by conference</a>,</li>
 	<li><a href="http://www.denverpost.com/preps">Colorado prep sports news</a>,</li>
 	<li><a href="http://blogs.denverpost.com/preps/">Neil Devlin's All Things Colorado Preps blog</a>,</li>
@@ -29,7 +29,7 @@ We've added a lot to our prep sports offerings. Here is some of what's new:
 </p>
 <ul class="subnav">
 	<li><a href="{$externalURL}Query=Denver&site=default&tpl=SearchResults">Our new search by player name, school name and team name functionality</a></li>
-	<li><a href="{$externalURL}site=default&tpl=School&School">Indexes of schools organized by name and by the city of the school</a></li>
+	<li><a href="{$domainURL}/schools/">Indexes of schools organized by name and by the city of the school</a></li>
 	<li><a href="{$externalURL}site=default&tpl=Conference&Sport=1&ConferenceID=126">Improved sport conference pages, with recent results, upcoming games as well as standings</a></li>
 	<li><a href="{$domainURL}/sport/">Index of sports organized by season</a></li>
 	<li><a href="{$externalURL}site=default&tpl=Sport&Sport=1">Specific prep sport pages with results, schedule, and participating conferences and schools</a></li>

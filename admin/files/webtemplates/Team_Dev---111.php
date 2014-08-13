@@ -20,7 +20,7 @@
 
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
-    &rsaquo; <a href="{$externalURL}site=default&tpl=School&School">Schools</a>
+    &rsaquo; <a href="{$domainURL}/schools/">Schools</a>
     &rsaquo; <a href="{$externalURL}site=default&tpl=School&School={$Team_SchoolID}">{$Team_SchoolName}</a>
     &rsaquo; <a href="{$externalURL}site=default&tpl=Sport&Sport={$form_Sport}">{$sportName}</a>
 </div>
