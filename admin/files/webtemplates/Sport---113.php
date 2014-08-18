@@ -17,16 +17,16 @@
 <h1>Prep Sport Results + Schedules in Colorado</h1>
 
 <h2>Fall Prep Sports in Colorado</h2>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=13" title="Prep Boys Cross Country in Colorado">Boys Cross Country</a></h3>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=14" title="Prep Girls Cross Country in Colorado">Girls Cross Country</a></h3>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=32" title="Prep Field Hockey in Colorado">Field Hockey</a></h3>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=1" title="Prep Football in Colorado">Football</a></h3>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=18" title="Prep Boys Golf in Colorado">Boys Golf</a></h3>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=33" title="Prep Girls Gymnastics in Colorado">Girls Gymnastics</a></h3>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=12" title="Prep Boys Soccer in Colorado">Boys Soccer</a></h3>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=30" title="Prep Softball in Colorado">Softball</a></h3>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=27" title="Prep Boys Tennis in Colorado">Boys Tennis</a></h3>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=11" title="Prep Girls Volleyball in Colorado">Girls Volleyball</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/boys-cross-country/" title="Prep Boys Cross Country in Colorado">Boys Cross Country</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/girls-cross-country/" title="Prep Girls Cross Country in Colorado">Girls Cross Country</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/field-hockey/" title="Prep Field Hockey in Colorado">Field Hockey</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/football/" title="Prep Football Scores">Football</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/boys-golf/" title="Prep Boys Golf in Colorado">Boys Golf</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/girls-gymnastics/" title="Prep Girls Gymnastics in Colorado">Girls Gymnastics</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/boys-soccer/" title="Prep Boys Soccer in Colorado">Boys Soccer</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/softball/" title="Prep Softball in Colorado">Softball</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/boys-tennis/" title="Prep Boys Tennis in Colorado">Boys Tennis</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/girls-volleyball/" title="Prep Girls Volleyball in Colorado">Girls Volleyball</a></h3>
 
 <h2>Winter Prep Sports in Colorado</h2>
 <h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=6" title="Prep Boys Basketball in Colorado">Boys Basketball</a></h3>
@@ -53,15 +53,12 @@
 <h2 class="list"><a href="{$externalURL}site=default&tpl=Sport&Sport={$Sport_SportID}" title="Prep {$Sport_SportName} in Colorado">{$Sport_SportName}</a></h2>
 </RESULTS>
 ###
-
 <ELSE>
-
-
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
-    {$rightSingleQuote} <a href="{$domainURL}/sport/">Sport Results</a>
+    {$rightSingleQuote} <a href="{$domainURL}/sport/" title="Prep Scores">Sport Results</a>
 </div>
-<h1>Prep {$Sport_SportName} Results in Colorado</h1>
+<h1>Prep {$Sport_SportName} Scores</h1>
 <ul id="subnav">
 	<li><a href="#results">Prep {$Sport_SportName} recent results</a></li>
 	<li><a href="#games">Prep {$Sport_SportName} schedule</a></li>

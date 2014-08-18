@@ -26,7 +26,8 @@
 <VAR $myDefaulttime = strtotime("$defaultDate")>
 
 ###this is the start of the fall sports season###
-<VAR $seasonStart = strtotime("13 August 2012")>
+### YEARCHECK this one too. ###
+<VAR $seasonStart = strtotime("13 August 2014")>
 <?PHP $difference = $strNow - $seasonStart ?>
 <?PHP $difference = ($difference / 604800) ?>
 
