@@ -194,7 +194,7 @@
                 </IFEQUAL>
                 {$gameTime}</td>
                 <td valign="top">
-                <a href="{$externalURL}site=default&tpl=Boxscore&ID={$Meet_GameID}">{$Meet_GameMeetName}</a>
+                <a href="{$domainURL}/boxscores/{$Meet_GameID}/">{$Meet_GameMeetName}</a>
 <IFNOTEMPTY $Meet_SchoolName>
                 <br />at {$Meet_SchoolName}
 </IFNOTEMPTY></td>
@@ -211,7 +211,7 @@
             </td>
             <td valign="top">
 <?PHP if($Meet_GameStatStatus == "3") { ?>
-                <a href="{$externalURL}site=default&tpl=Boxscore&ID={$Meet_GameID}">Summary</a>
+                <a href="{$domainURL}/boxscores/{$Meet_GameID}/">Summary</a>
 <?PHP } ?>
             </td>
         </tr>

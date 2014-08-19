@@ -351,7 +351,7 @@ echo $nav["day"];
 <IFEMPTY $form_Sport>            <td valign="top"><a href="{$externalURL}site=default&tpl=Sport&Sport={$Game_SportID}">{$Game_SportName}</a></td></IFEMPTY>
 <?PHP if ($sportType == "1") { ?>
             <td valign="top" colspan="4">
-                <a href="{$externalURL}site=default&tpl=Boxscore&ID={$Game_GameID}">{$Game_GameMeetName}</a>
+                <a href="{$domainURL}/boxscores/{$Game_GameID}/">{$Game_GameMeetName}</a>
 <IFNOTEQUAL $Game_GameLocation $Game_HomeTeamID>
 <IFNOTEMPTY $Game_SchoolName>
 <?PHP
@@ -367,7 +367,7 @@ $Map_Address = str_replace(" ", "+", trim($Game_SchoolAddress) . "&csz=" . trim(
 ### Logic for the meet events not already accounted for ###
 <IFNOTEMPTY $Game_GameMeetName>
             <td valign="top" colspan="4">
-                <a href="{$externalURL}site=default&tpl=Boxscore&ID={$Game_GameID}">{$Game_GameMeetName}</a>
+                <a href="{$domainURL}/boxscores/{$Game_GameID}/">{$Game_GameMeetName}</a>
 <IFNOTEMPTY $Game_SchoolName>
 <IFNOTEMPTY $Game_SchoolAddress>
 <?PHP
@@ -420,7 +420,7 @@ $Map_Address = str_replace(" ", "+", trim($Game_SchoolAddress) . "&csz=" . trim(
 <?PHP } ?>
             <td valign="top">
 <?PHP if ($Game_GameStatStatus > 2 ) { ?>
-                <a href="{$externalURL}site=default&tpl=Boxscore&ID={$Game_GameID}">Boxscore</a>
+                <a href="{$domainURL}/boxscores/{$Game_GameID}/">Boxscore</a>
 <?PHP } ?>
             </td>
         </tr>

@@ -143,7 +143,7 @@ No
 </TD>
 <TD VALIGN=TOP>
 <?PHP if ($Game_GameStatus == "Ready for web" || $Game_GameStatus == "Final") { ?>
-<A HREF="{$externalURL}site=default&tpl=Boxscore&ID={$Game_GameID}">Boxscore</A>
+<A HREF="{$domainURL}/boxscores/{$Game_GameID}/">Boxscore</A>
 <?PHP } ?>
 </td>
 </tr>
