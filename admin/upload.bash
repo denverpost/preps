@@ -32,7 +32,7 @@ echo $ID $NAME
 # Spoof the opening and editing of the file
 wget --load-cookies cookies.txt \
     --keep-session-cookies \
-    --user-agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)" \
+    --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125" \
     --header="Keep-Alive: 300" \
     -SN -O- 'http://denver.newsengin.com/teamplayer/ui/ajax/lock.php?action=getLock&options=&DocID='$ID'&DocElem=WebTemplate'
 
@@ -42,7 +42,7 @@ echo
 
 wget --load-cookies cookies.txt \
     --keep-session-cookies \
-    --user-agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)" \
+    --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125" \
     --header="Keep-Alive: 300" \
     -SN -O- 'http://denver.newsengin.com/teamplayer/ui/item.php?type=WebTemplate&action=read&ID='$ID
 
@@ -52,7 +52,7 @@ echo
 
 wget --load-cookies cookies.txt \
     --keep-session-cookies \
-    --user-agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)" \
+    --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125" \
     --header="Keep-Alive: 300" \
     -SN -O- 'http://denver.newsengin.com/teamplayer/ui/item.php?type=WebTemplate&action=edit&ID='$ID
 
@@ -70,6 +70,6 @@ echo
 wget --load-cookies cookies.txt \
     --post-data $POSTDATA \
     --keep-session-cookies \
-    --user-agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)" \
+    --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125" \
     --header="Keep-Alive: 300" \
     -SN -O- 'http://denver.newsengin.com/teamplayer/ui/ajax/justSave.php?type=WebTemplate'
