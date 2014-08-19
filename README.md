@@ -9,3 +9,12 @@ These files should be updated at the beginning of each school year. As early in 
 - ScheduleInclude
 - Main
 - Team
+
+# Dev-specific
+These are commands I used regularly for certain tasks.
+
+Search and replace across templates:
+` cd admin/files/webtemplates/; perl -pi -w -e 's/{\$externalURL}site=default&tpl=Boxscore&ID=/{\$domainURL}\/boxscores\//g;' *.php `
+
+Upload all the templates to the server:
+` cd admin; ./login.bash; for FILE in ``ls files/webtemplates/*.php``; do ./upload.bash ./$FILE; done `
