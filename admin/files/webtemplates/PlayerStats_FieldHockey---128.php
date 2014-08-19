@@ -73,7 +73,7 @@ if( 1.0 == $PlayerSeasonStats_SavePercentage) {
 <tr class="{$rowClass}">
 <VAR $dateDisplay = date("F j",strtotime($PlayerGameStats_GameDate))>
 {$dateTimeDisplay}
-            <td align="left"><a href="{$externalURL}site=default&tpl=Boxscore&ID={$PlayerGameStats_GamePlyrGameID}">{$dateDisplay}</a></td>
+            <td align="left"><a href="{$domainURL}/boxscores/{$PlayerGameStats_GamePlyrGameID}/">{$dateDisplay}</a></td>
 <IFEQUAL $Player_SchoolName $PlayerGameStats_AwayTeamName>
             <td align="left"><a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerGameStats_GameHomeTeamID}">
 <ELSE>
@@ -119,7 +119,7 @@ if( 1.0 == $PlayerSeasonStats_SavePercentage) {
 <VAR $dateDisplay = date("F j",strtotime($PlayerGameStats_GameDate))>
 {$dateTimeDisplay}
         <IFGREATER count($PlayerGameStats_rows) 0>
-            <td align="left"><a href="{$externalURL}site=default&tpl=Boxscore&ID={$PlayerGameStats_GamePlyrGameID}">{$dateDisplay}</a></td>
+            <td align="left"><a href="{$domainURL}/boxscores/{$PlayerGameStats_GamePlyrGameID}/">{$dateDisplay}</a></td>
 <IFEQUAL $Player_SchoolName $PlayerGameStats_AwayTeamName>
             <td align="left"><a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerGameStats_GameHomeTeamID}">
 <ELSE>

@@ -146,10 +146,10 @@ No
 </IFEQUAL>
 </td>
  -->
-<!-- {$externalURL}site=default&tpl=Boxscore&ID={$Game_GameID} -->
+<!-- {$domainURL}/boxscores/{$Game_GameID} -->
 <td valign="top">
 <?PHP if ($Game_GameStatStatus > 2 ) { ?>
-<a href="{$externalURL}site=default&tpl=Boxscore&ID={$Game_GameID}">Boxscore</a>
+<a href="{$domainURL}/boxscores/{$Game_GameID}">Boxscore</a>
 <?PHP } ?>
 </td>
 </tr>

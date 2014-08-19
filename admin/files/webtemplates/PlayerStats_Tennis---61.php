@@ -13,7 +13,7 @@
         <tr class="{$rowClass}">
 <VAR $meetDate = date("m/d/y",strtotime($PlayerMeetStats_GameDate))>
             <td align="left">{$meetDate}</td>
-            <td align="left"><a href="{$externalURL}site=default&tpl=Boxscore&ID={$PlayerMeetStats_GameID}">{$PlayerMeetStats_GameMeetName}</a></td>
+            <td align="left"><a href="{$domainURL}/boxscores/{$PlayerMeetStats_GameID}/">{$PlayerMeetStats_GameMeetName}</a></td>
 <IFEQUAL $PlayerMeetStats_WinningPlayer1 $form_ID>
 <VAR $winLoss = "W"></IFEQUAL>
 <IFEQUAL $PlayerMeetStats_WinningPlayer2 $form_ID>

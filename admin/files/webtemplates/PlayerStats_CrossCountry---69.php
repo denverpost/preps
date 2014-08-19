@@ -16,7 +16,7 @@
             <td align="left">{$meetDate}</td>
 <VAR $PlayerMeetStats_GameMeetName = fixApostrophes($PlayerMeetStats_GameMeetName)>
 <VAR $PlayerMeetStats_MeetEventName = fixApostrophes($PlayerMeetStats_MeetEventName)>
-            <td align="left"><a href="{$externalURL}site=default&tpl=Boxscore&ID={$PlayerMeetStats_GamePlyrGameID}">{$PlayerMeetStats_GameMeetName}</a></td>
+            <td align="left"><a href="{$domainURL}/boxscores/{$PlayerMeetStats_GamePlyrGameID}/">{$PlayerMeetStats_GameMeetName}</a></td>
             <td align="center">{$PlayerMeetStats_Time}</td>
         </tr>
 <IFEQUAL $rowClass "schedRow trRow">

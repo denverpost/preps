@@ -58,7 +58,7 @@
 		<tr class="{$rowClass}">
 <VAR $dateDisplay = date("F j",strtotime($PlayerGameStats_GameDate))>
 {$dateTimeDisplay}
-            <td align="left"><a href="{$externalURL}site=default&tpl=Boxscore&ID={$PlayerGameStats_GamePlyrGameID}">{$dateDisplay}</a></td>
+            <td align="left"><a href="{$domainURL}/boxscores/{$PlayerGameStats_GamePlyrGameID}/">{$dateDisplay}</a></td>
 <IFEQUAL $Player_SchoolName $PlayerGameStats_AwayTeamName>
             <td align="left"><a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerGameStats_GameHomeTeamID}">
 <ELSE>

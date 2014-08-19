@@ -246,7 +246,7 @@ No
 </td>
 <td valign="top">
 <?PHP if($Game_GameStatStatus == "3") { ?>
-<A HREF="{$externalURL}site=default&tpl=Boxscore&ID={$Game_GameID}" title="View the boxscore">Boxscore</a>
+<A HREF="{$domainURL}/boxscores/{$Game_GameID}" title="View the boxscore">Boxscore</a>
 <?PHP } ?>
 </td>
 </tr>

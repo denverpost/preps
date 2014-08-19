@@ -235,7 +235,7 @@ No Team Photo
             </td>
             <td valign="top">
 <?PHP if($Meet_GameStatStatus == "3") { ?>
-                <A HREF="{$externalURL}site=default&tpl=Boxscore&ID={$Meet_GameID}">Summary</a>
+                <A HREF="{$domainURL}/boxscores/{$Meet_GameID}">Summary</a>
 <?PHP } ?>
             </td>
         </tr>
@@ -338,7 +338,7 @@ No Team Photo
             </td>
             <td valign="top">
 <?PHP if($Game_GameStatStatus == "3") { ?>
-                <A HREF="{$externalURL}site=default&tpl=Boxscore&ID={$Game_GameID}">Boxscore</a>
+                <A HREF="{$domainURL}/boxscores/{$Game_GameID}">Boxscore</a>
             </td>
 <?PHP } ?>
         </tr>

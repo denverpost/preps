@@ -770,7 +770,7 @@ $confName = preg_replace("/(\w+)\s(\(Ice hockey\))/", "$1", "$Conference_Confere
 
 <h6>{$gameTime} 
 <?PHP if ($sportType == "1") { ?>
-                <a href="{$externalURL}site=default&tpl=Boxscore&ID={$Game_GameID}">{$Game_GameMeetName}</a>
+                <a href="{$domainURL}/boxscores/{$Game_GameID}">{$Game_GameMeetName}</a>
 <IFNOTEQUAL $Game_GameLocation $Game_HomeTeamID>
 <IFNOTEMPTY $Game_SchoolName>
 <?PHP
@@ -784,7 +784,7 @@ $Map_Address = str_replace(" ", "+", trim($Game_SchoolAddress) . "&csz=" . trim(
 ### Logic for the meet events not already accounted for ###
 <?PHP if ($sportType != "1") { ?>
 <IFNOTEMPTY $Game_GameMeetName>
-                <a href="{$externalURL}site=default&tpl=Boxscore&ID={$Game_GameID}">{$Game_GameMeetName}</a>
+                <a href="{$domainURL}/boxscores/{$Game_GameID}">{$Game_GameMeetName}</a>
 <IFNOTEMPTY $Game_SchoolName>
 <IFNOTEMPTY $Game_SchoolAddress>
 <?PHP
@@ -844,10 +844,10 @@ $Map_Address = str_replace(" ", "+", trim($Game_SchoolAddress) . "&csz=" . trim(
 </IFTRUE>
 
 <?PHP if ($Game_GameStatStatus > 2 ) { ?>
-                <em><a href="{$externalURL}site=default&tpl=Boxscore&ID={$Game_GameID}">Boxscore</a></em>
+                <em><a href="{$domainURL}/boxscores/{$Game_GameID}">Boxscore</a></em>
 <?PHP } ?>
 <?PHP if ($Game_GameStatStatus <= 2 && $sportType == 0 ) { ?>
-                <em><a href="{$externalURL}site=default&tpl=Boxscore&ID={$Game_GameID}">Preview</a></em>
+                <em><a href="{$domainURL}/boxscores/{$Game_GameID}">Preview</a></em>
 <?PHP } ?>
 </h6>
 </RESULTS>

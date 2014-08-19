@@ -169,7 +169,7 @@ $receivingYardsFormatted = sprintf("%s", $receivingYardsFormatted);
 		<tr class="{$rowClass}">
 <VAR $dateDisplay = date("F j",strtotime($PlayerGameStats_GameDate))>
 {$dateTimeDisplay}
-            <td align="left"><a href="{$externalURL}site=default&tpl=Boxscore&ID={$PlayerGameStats_GamePlyrGameID}">{$dateDisplay}</a></td>
+            <td align="left"><a href="{$domainURL}/boxscores/{$PlayerGameStats_GamePlyrGameID}/">{$dateDisplay}</a></td>
 <IFNOTEQUAL trim($Player_SchoolName) trim($PlayerGameStats_AwayTeamName)>
 <VAR $PlayerGameStats_AwayTeamName = trim($PlayerGameStats_AwayTeamName)>
 <td align="left"><a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerGameStats_GameAwayTeamID}">{$PlayerGameStats_AwayTeamName}
@@ -222,7 +222,7 @@ $receivingYardsFormatted = sprintf("%s", $receivingYardsFormatted);
 		<tr class="{$rowClass}">
 <VAR $dateDisplay = date("F j",strtotime($PlayerGameStats_GameDate))>
 {$dateTimeDisplay}
-            <td align="left"><a href="{$externalURL}site=default&tpl=Boxscore&ID={$PlayerGameStats_GamePlyrGameID}">{$dateDisplay}</a></td>
+            <td align="left"><a href="{$domainURL}/boxscores/{$PlayerGameStats_GamePlyrGameID}/">{$dateDisplay}</a></td>
 <IFNOTEQUAL trim($Player_SchoolName) trim($PlayerGameStats_AwayTeamName)>
 <VAR $PlayerGameStats_AwayTeamName = trim($PlayerGameStats_AwayTeamName)>
 <td align="left"><a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerGameStats_GameAwayTeamID}">{$PlayerGameStats_AwayTeamName}
@@ -279,7 +279,7 @@ $receivingYardsFormatted = sprintf("%s", $receivingYardsFormatted);
 		<tr class="{$rowClass}">
 <VAR $dateDisplay = date("F j",strtotime($PlayerGameStats_GameDate))>
 {$dateTimeDisplay}
-            <td align="left"><a href="{$externalURL}site=default&tpl=Boxscore&ID={$PlayerGameStats_GamePlyrGameID}">{$dateDisplay}</a></td>
+            <td align="left"><a href="{$domainURL}/boxscores/{$PlayerGameStats_GamePlyrGameID}/">{$dateDisplay}</a></td>
 <IFNOTEQUAL trim($Player_SchoolName) trim($PlayerGameStats_AwayTeamName)>
 <VAR $PlayerGameStats_AwayTeamName = trim($PlayerGameStats_AwayTeamName)>
 <td align="left"><a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerGameStats_GameAwayTeamID}">{$PlayerGameStats_AwayTeamName}
@@ -333,7 +333,7 @@ $receivingYardsFormatted = sprintf("%s", $receivingYardsFormatted);
 		<tr class="{$rowClass}">
 <VAR $dateDisplay = date("F j",strtotime($PlayerGameStats_GameDate))>
 {$dateTimeDisplay}
-            <td align="left"><a href="{$externalURL}site=default&tpl=Boxscore&ID={$PlayerGameStats_GamePlyrGameID}">{$dateDisplay}</a></td>
+            <td align="left"><a href="{$domainURL}/boxscores/{$PlayerGameStats_GamePlyrGameID}/">{$dateDisplay}</a></td>
 <IFNOTEQUAL trim($Player_SchoolName) trim($PlayerGameStats_AwayTeamName)>
 <VAR $PlayerGameStats_AwayTeamName = trim($PlayerGameStats_AwayTeamName)>
 <td align="left"><a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerGameStats_GameAwayTeamID}">{$PlayerGameStats_AwayTeamName}

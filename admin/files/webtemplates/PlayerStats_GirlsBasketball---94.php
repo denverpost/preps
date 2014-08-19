@@ -120,7 +120,7 @@
             <? $fgPct = sprintf("%.1f", $PlayerGameStats_FieldGoalPercentage) ?>
             <? $tpPct = sprintf("%.1f", $PlayerGameStats_ThreePointerPercentage) ?>
             <? $ftPct = sprintf("%.1f", $PlayerGameStats_FreeThrowPercentage) ?>
-            <td align="left"><a href="{$externalURL}site=default&tpl=Boxscore&ID={$PlayerGameStats_GamePlyrGameID}">{$dateDisplay}</a></td>
+            <td align="left"><a href="{$domainURL}/boxscores/{$PlayerGameStats_GamePlyrGameID}/">{$dateDisplay}</a></td>
 <IFEQUAL $Player_SchoolName $PlayerGameStats_AwayTeamName>
             <td align="left"><a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerGameStats_GameHomeTeamID}">
 <ELSE>
