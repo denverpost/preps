@@ -1,11 +1,9 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <h2>Colorado Prep Football Leaders</h2>
 <?PHP $strNow = time() ?>
-<VAR $myTime = strtotime("30 November 2010")>
-<VAR $seasonStart = strtotime("02 September 2010")>
-
+###YEARCHECK###
+<VAR $seasonStart = strtotime("02 September 2014")>
 <?PHP $difference = $strNow - $seasonStart ?>
-
 <?PHP $difference = round($difference / 604800) ?>
 
 <VAR $tpl = "Leaders">
@@ -95,14 +93,6 @@
 </td></tr>
 </IFNOTEMPTY>
 </table>
-
-###<?PHP $strNow = time() ?>
-<VAR $myTime = strtotime("30 November 2010")>
-<VAR $seasonStart = strtotime("02 September 2010")>
-
-<?PHP $difference = $strNow - $seasonStart ?>
-
-<?PHP $difference = round($difference / 604800) ?>###
 
 <?PHP $minPasses = round($difference * 10) ?>
 <?PHP $minPassGreaterThan = (round($minPasses - 1)) ?>
