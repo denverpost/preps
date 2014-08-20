@@ -91,7 +91,7 @@
 ### Conferences ###
 ### ------------------------------------------------------------------------ ###
 			<QUERY name=Conferences>
-			<li id="navconferences"><a href="{$externalURL}site=default&tpl=Conference&ConferenceID&source=prepnav-conf" title="Colorado Prep Sport Conference Schedules and Standings">Conference Schedules + Standings</a>
+			<li id="navconferences"><a href="{$externalURL}site=default&tpl=Conference&ConferenceID" title="Colorado Prep Sport Conference Schedules and Standings">Conference Schedules + Standings</a>
 				<ul class="dropDown">	<!-- Tier 2 -->
 					<RESULTS list=Sports_rows prefix=Sport>
 					<QUERY name=ConferencesForSport SPORTID=$Sport_SportID>
@@ -103,7 +103,7 @@
 							<RESULTS list=ConferencesForSport_rows prefix=Conf>
 ### This string substitution removes redundancies in the conference names, ###
 ### many of which also include the sport name, which we already know. ###
-							<li><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conf_ConferenceID}&Sport={$Sport_SportID}&source=prepnav-conf"><?PHP $name = str_replace(" ($Sport_SportName)", "", $Conf_ConferenceName); $name = preg_replace("|\(? ?$Sport_SportName\)?|i", "", $name); echo $name; ?></a></li>
+							<li><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conf_ConferenceID}&Sport={$Sport_SportID}"><?PHP $name = str_replace(" ($Sport_SportName)", "", $Conf_ConferenceName); $name = preg_replace("|\(? ?$Sport_SportName\)?|i", "", $name); echo $name; ?></a></li>
 							</RESULTS>
 						</ul></li>	<!-- /Tier 3 -->
 					</IFGREATER>
@@ -112,7 +112,7 @@
 ### ------------------------------------------------------------------------ ###
 ### Classes ###
 ### ------------------------------------------------------------------------ ###
-			<li id="navclasses"><a href="{$externalURL}site=default&tpl=Class&ClassID&source=prepnav-classes">Classes + Leaders</a>
+			<li id="navclasses"><a href="{$externalURL}site=default&tpl=Class&ClassID">Classes + Leaders</a>
 				<ul class="dropDown">	<!-- Tier 2 -->
 					<RESULTS list=Sports_rows prefix=Sport>
                     <?PHP $sportslug = sport_id($Sport_SportID); ?>
@@ -120,7 +120,7 @@
 						<ul class="doubleDrop">	<!-- Tier 3 -->
 							<QUERY name=ClassesForSport SPORTID=$Sport_SportID>
 							<RESULTS list=ClassesForSport_rows prefix=Class>
-							<li><a href="{$externalURL}site=default&tpl=Class&Sport={$Sport_SportID}&ClassID={$Class_ClassID}&source=prepnav-classes">{$Class_ClassName}</a></li></RESULTS>
+							<li><a href="{$externalURL}site=default&tpl=Class&Sport={$Sport_SportID}&ClassID={$Class_ClassID}">{$Class_ClassName}</a></li></RESULTS>
 						</ul></li>	<!-- /Tier 3 -->
 					</RESULTS>
 				</ul></li>	<!-- /Tier 2 -->
@@ -158,21 +158,21 @@
 <li><a href="http://preps.denverpost.com/sport/girls-track/">Girls Track</a></li>
 
 ### Commented out, hard-coding allows us to organize by season.					<RESULTS list=Sports_rows prefix=Sport>
-					<li><a href="{$externalURL}site=default&tpl=Sport&Sport={$Sport_SportID}&source=prepnav-sports">{$Sport_SportName}</a></li>
+					<li><a href="{$externalURL}site=default&tpl=Sport&Sport={$Sport_SportID}">{$Sport_SportName}</a></li>
 					</RESULTS> ###
 ### ------------------------------------------------------------------------ ###
 ### News, misc ###
 ### ------------------------------------------------------------------------ ###
 				</ul></li>	<!-- /Tier 2 -->
-			<li id="navnews"><a href="http://www.denverpost.com/preps?source=prepnav-misc">News, Blogs, Forums, Photos</a>
+			<li id="navnews"><a href="http://www.denverpost.com/preps">News, Blogs, Forums, Photos</a>
 				<ul class="dropDown">	<!-- Tier 2 -->
-					<li><a href="http://www.denverpost.com/preps?source=prepnav-misc">News</a></li>
-					<li><a href="http://www.denverpost.com/prepathletes?source=prepnav-misc">Athletes of the Week</a></li>
-					<li><a href="http://blogs.denverpost.com/preps/?source=prepnav-misc">Prep Blog</a></li>
-					<li><a href="http://www.denverpost.com/preps/ci_6813914?&source=prepnav-misc">Prep Bulletin Board</a></li>
-					<li><a href="http://neighbors.denverpost.com/viewforum.php?f=193&source=prepnav-misc">Prep Discussion Board</a></li>
-					<li><a href="http://www.denverpost.com/prepsvideos?source=prepnav-misc">Prep Videos</a></li>
-					<li><a href="http://photos.denverpost.com/photogalleries/prepimages/?source=prepnav-misc">Prep Photo Galleries</a></li>
+					<li><a href="http://www.denverpost.com/preps">News</a></li>
+					<li><a href="http://www.denverpost.com/prepathletes">Athletes of the Week</a></li>
+					<li><a href="http://blogs.denverpost.com/preps/">Prep Blog</a></li>
+					<li><a href="http://www.denverpost.com/preps/ci_6813914?">Prep Bulletin Board</a></li>
+					<li><a href="http://neighbors.denverpost.com/viewforum.php?f=193">Prep Discussion Board</a></li>
+					<li><a href="http://www.denverpost.com/prepsvideos">Prep Videos</a></li>
+					<li><a href="http://photos.denverpost.com/photogalleries/prepimages/">Prep Photo Galleries</a></li>
 				</ul></li>	<!-- /Tier 2 -->
 		</ul>	<!-- /Tier 1 -->
 	</div>
