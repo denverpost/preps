@@ -139,13 +139,10 @@
 <?PHP $sportslug = slugify($Sport_SportName); ?>
 <IFNOTEQUAL $seasonCheck $priorSeason>
   <tr class= "schedRowAlternate trAlt">
-  <td>{$Sport_SportSeason} Sports</td>
-  <tr class = "schedRow trRow">
-  <td><a href="{$domainURL}/schools/{$schoolslug}/{$sportslug}/{$Sport_TeamID}/" title="{$School_SchoolName} Prep {$Sport_SportName}">{$Sport_SportName}</a></td>
-<ELSE>
-  <tr class = "schedRow trRow">
-  <td><a href="{$domainURL}/schools/{$schoolslug}/{$sportslug}/{$Sport_TeamID}/" title="{$School_SchoolName} Prep {$Sport_SportName}">{$Sport_SportName}</a></td>
+  <td><strong>{$Sport_SportSeason} Sports</strong></td>
 </IFEQUAL>
+  <tr class = "schedRow trRow">
+  <td> &nbsp; <a href="{$domainURL}/schools/{$schoolslug}/{$sportslug}/{$Sport_TeamID}/" title="{$School_SchoolName} Prep {$Sport_SportName}">{$Sport_SportName}</a></td>
 <VAR $priorSeason = $Sport_SportSeason>
 </RESULTS>
     </tbody>
@@ -167,13 +164,10 @@
 <?PHP $sportslug = slugify($Sport_SportName); ?>
 <IFNOTEQUAL $seasonCheck $priorSeason>
   <tr class= "schedRowAlternate trAlt">
-  <td>{$Sport_SportSeason} Sports</td>
-  <tr class = "schedRow trRow">
-  <td><a href="{$domainURL}/schools/{$schoolslug}/{$sportslug}/{$Sport_TeamID}/" title="{$School_SchoolName} Prep {$Sport_SportName}">{$Sport_SportName} </a></td>
-<ELSE>
-  <tr class = "schedRow trRow">
-  <td><a href="{$domainURL}/schools/{$schoolslug}/{$sportslug}/{$Sport_TeamID}/" title="{$School_SchoolName} Prep {$Sport_SportName}">{$Sport_SportName} </a></td>
+  <td><strong>{$Sport_SportSeason} Sports</strong></td>
 </IFEQUAL>
+  <tr class = "schedRow trRow">
+  <td> &nbsp; <a href="{$domainURL}/schools/{$schoolslug}/{$sportslug}/{$Sport_TeamID}/" title="{$School_SchoolName} Prep {$Sport_SportName}">{$Sport_SportName} </a></td>
 <VAR $priorSeason = $Sport_SportSeason>
 </RESULTS>
     </tbody>
