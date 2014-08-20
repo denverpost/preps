@@ -2,8 +2,10 @@
 <!-- TeamPlayer box score begin -->
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <VAR $rightSingleQuote = chr(38)."rsaquo;">
+<INCLUDE site=default tpl=SportSeasons>
 <QUERY name=Game ID=$form_ID>
 <VAR $sportName = $Game_SportName>
+<?PHP $sportslug = slugify($Sport_SportName); ?>
 <VAR $sportType = $Game_SportType>
     
 <VAR $sqlSportName = strtolower(convertForSQL($sportName))>

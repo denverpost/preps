@@ -1,5 +1,11 @@
 <?PHP function tryit() { echo 'tried!'; } ?>
-<?PHP function slugify($value) { return preg_replace('/[^-a-z0-9]/', '', str_replace(' ', '-', strtolower($value))); } ?>
+<?PHP 
+function slugify($value) 
+{ 
+    $value = str_replace('and ', '');
+    return preg_replace('/[^-a-z0-9]/', '', str_replace(' ', '-', strtolower($value))); 
+} 
+?>
 <?PHP
 function sport_id($id)
 {
