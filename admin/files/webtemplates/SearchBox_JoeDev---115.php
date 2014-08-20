@@ -18,12 +18,13 @@
 <div id="prepsnavwrapper" style="height:110px;">
 	<div id="prepsnav" style="height:66px;">
 		<ul id="navinterface" class="MenuBarHorizontal">	<!-- Tier 1 -->
-			<li id="navhome"><a href="http://www.denverpost.com/preps?source=prepnav">Home</a></li>
+			<li id="navhome"><a href="http://www.denverpost.com/preps">Home</a></li>
 ### Commented out teams until proven necessary.
 			<li id="navteams"><a href="" class="MenuBarItemSubmenu">Teams, Scores and Schedules</a>
 				<ul class="dropDown">	<!-- Tier 2 -->
 					<RESULTS list=Sports_rows prefix=Sport>
-					<li><a href="{$externalURL}site=default&tpl=Sport&Sport={$Sport_SportID}&source=prepnav">{$Sport_SportName}</a>
+                    <?PHP $sportslug = sport_id($Sport_SportID); ?>
+					<li><a href="{$domainURL}/sport/{$sportslug}/">{$Sport_SportName}</a>
 						<ul class="doubleDrop">	<!-- Tier 3 -->
 							<VAR $IndexLetter = "">
 							<VAR $newIndexLetter = "">
@@ -95,9 +96,10 @@
 					<RESULTS list=Sports_rows prefix=Sport>
 					<QUERY name=ConferencesForSport SPORTID=$Sport_SportID>
 					<IFGREATER count($ConferencesForSport_rows) 0>
-					<li><a href="{$externalURL}site=default&tpl=Sport&Sport={$Sport_SportID}&source=prepnav-conf">{$Sport_SportName}</a>
+                    <?PHP $sportslug = sport_id($Sport_SportID); ?>
+					<li><a href="{$domainURL}/sport/{$sportslug}/">{$Sport_SportName}</a>
 						<ul class="doubleDrop wide">	<!-- Tier 3 -->
-							<li><a href="{$externalURL}site=default&tpl=Sport&Sport={$Sport_SportID}&source=prepnav-conf">All Conferences</a></li>
+							<li><a href="{$domainURL}/sport/{$sportslug}/">All Conferences</a></li>
 							<RESULTS list=ConferencesForSport_rows prefix=Conf>
 ### This string substitution removes redundancies in the conference names, ###
 ### many of which also include the sport name, which we already know. ###
@@ -113,7 +115,8 @@
 			<li id="navclasses"><a href="{$externalURL}site=default&tpl=Class&ClassID&source=prepnav-classes">Classes + Leaders</a>
 				<ul class="dropDown">	<!-- Tier 2 -->
 					<RESULTS list=Sports_rows prefix=Sport>
-					<li><a href="{$externalURL}site=default&tpl=Sport&Sport={$Sport_SportID}&source=prepnav-classes">{$Sport_SportName}</a>
+                    <?PHP $sportslug = sport_id($Sport_SportID); ?>
+					<li><a href="{$domainURL}/sport/{$sportslug}/">{$Sport_SportName}</a>
 						<ul class="doubleDrop">	<!-- Tier 3 -->
 							<QUERY name=ClassesForSport SPORTID=$Sport_SportID>
 							<RESULTS list=ClassesForSport_rows prefix=Class>

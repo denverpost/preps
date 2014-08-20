@@ -16,7 +16,7 @@
 <h1>Colorado Prep Sport Classes</h1>
 <h2>
 <RESULTS list=Classes_rows prefix=Class>
-<a href="{$externalURL}site=default&tpl=Class&ClassID={$Class_ClassID}" title="Colorado {$Class_ClassName} Class">{$Class_ClassName}</a> � 
+<a href="{$externalURL}site=default&tpl=Class&ClassID={$Class_ClassID}" title="Colorado {$Class_ClassName} Class">{$Class_ClassName}</a> {$rightSingleQuote} 
 </RESULTS>
 </h2>
 
