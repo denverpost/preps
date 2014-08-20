@@ -2,11 +2,10 @@
 <?PHP 
 function slugify($value) 
 { 
-    $value = str_replace('and ', '');
+    $value = str_replace('and ', '', $value);
     return preg_replace('/[^-a-z0-9]/', '', str_replace(' ', '-', strtolower($value))); 
 } 
-?>
-<?PHP
+
 function sport_id($id)
 {
         $lookup = Array(
