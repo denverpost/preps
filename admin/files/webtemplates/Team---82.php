@@ -319,7 +319,7 @@
             </td>
             <td valign="top">
 <?PHP if($Game_GameStatStatus == "3") { ?>
-                <A HREF="{$domainURL}/boxscores/{$Game_GameID}">Boxscore</a>
+                <A HREF="{$domainURL}/boxscores/{$Game_GameID}/">Boxscore</a>
             </td>
 <?PHP } ?>
         </tr>

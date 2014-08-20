@@ -5,7 +5,7 @@
 <INCLUDE site=default tpl=SportSeasons>
 <QUERY name=Game ID=$form_ID>
 <VAR $sportName = $Game_SportName>
-<?PHP $sportslug = slugify($Sport_SportName); ?>
+<?PHP $sportslug = sport_id($Game_SportID); ?>
 <VAR $sportType = $Game_SportType>
     
 <VAR $sqlSportName = strtolower(convertForSQL($sportName))>
@@ -61,7 +61,7 @@
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
     {$rightSingleQuote} <a href="{$domainURL}/sport/" title="Prep Sports in Colorado">Sports</a>
-    {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Sport&Sport={$Game_SportID}" title="Prep {$sportName} in Colorado">{$sportName}</a>
+    {$rightSingleQuote} <a href="{$domainURL}/sport/{$sportslug}/" title="High School {$sportName} in Colorado">{$sportName}</a>
 </div>
 <VAR $updateTimeDisplay = date("g:ia l, F j, Y", strtotime($Game_GameStatsDateTimeModified))>
 

@@ -8,6 +8,8 @@
 <VAR $homeConfLosses = $TeamSeasonStats_softball_Loss>
 <VAR $Home_TeamName = fixApostrophes($Home_TeamName)>
 <VAR $Away_TeamName = fixApostrophes($Away_TeamName)>
+<?PHP $schoolslug_home = slugify($Home_TeamName); ?>
+<?PHP $schoolslug_away = slugify($Away_TeamName); ?>
 
 <VAR $TeamSeasonStats_softball_query = "">
 <VAR $statType = "conf">
@@ -86,14 +88,12 @@
             <th scope="col" abbr="" align="right"><strong>12</strong></th>
 <ELSE>
 </IFGREATER>
-            <th scope="col" abbr="" align="right"><strong>R</strong></th>
-            <th scope="col" abbr="" align="right"><strong>H</strong></th>
-            <th scope="col" abbr="" align="right"><strong>E</strong></th>
+            <th scope="col" abbr="Runs" align="right"><strong>R</strong></th>
+            <th scope="col" abbr="Hits" align="right"><strong>H</strong></th>
+            <th scope="col" abbr="Errors" align="right"><strong>E</strong></th>
         </tr>
         <tr>
-            <td>
-<a href="{$externalURL}site=default&tpl=Team&TeamID={$Away_TeamID}">
-<b>{$Away_TeamName}</b></a></td>
+            <td><a href="{$domainURL}/schools/{$schoolslug_away}/{$sportslug}/{$Away_TeamID}/"><b>{$Away_TeamName}</b></a></td>
 <td align="right">{$Away_Inning1}</td>
 <td align="right">{$Away_Inning2}</td>
 <td align="right">{$Away_Inning3}</td>
@@ -126,9 +126,7 @@
 <td align="right">{$Away_Errors}</td>
 </tr>
 <tr>
-<td>
-<a href="{$externalURL}site=default&tpl=Team&TeamID={$Home_TeamID}">
-<b>{$Home_TeamName}</b></a></td>
+            <td><a href="{$domainURL}/schools/{$schoolslug_home}/{$sportslug}/{$Home_TeamID}/"><b>{$Home_TeamName}</b></a></td>
 <td align="right">{$Home_Inning1}</td>
 <td align="right">{$Home_Inning2}</td>
 <td align="right">{$Home_Inning3}</td>
