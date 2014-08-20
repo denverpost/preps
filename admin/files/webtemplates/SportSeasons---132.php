@@ -6,6 +6,19 @@ function slugify($value)
     return preg_replace('/[^-a-z0-9]/', '', str_replace(' ', '-', strtolower($value))); 
 } 
 
+function class_id($id)
+{
+        $lookup = Array(
+                1 => '4A',
+                2 => '5A',
+                3 => '3A',
+                4 => '2A',
+                5 => '1A',
+                6 => '8-man',
+                7 => '6-man');
+        return $lookup[intval($id)];
+}
+
 function sport_id($id)
 {
         $lookup = Array(
