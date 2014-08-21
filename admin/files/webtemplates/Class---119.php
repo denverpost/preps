@@ -1,5 +1,6 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
+<INCLUDE site=default tpl=SportSeasons>
 <VAR $rightSingleQuote = chr(38)."rsaquo;">
 <VAR $form_ClassID = intval($form_ClassID)>
 <VAR $form_Sport = intval($form_Sport)>
@@ -26,19 +27,24 @@
 ### Class Detail view ###
 ### This template displays when we've got a ClassID but no SportID ###
 <QUERY name=Class prefix=Class CLASSID=$form_ClassID>
+<?PHP $sportslug = sport_id($form_Sport); ?>
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
-    {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Class&ClassID">Classes</a>
-    {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Sport&Sport={$form_Sport}">{$Sport_SportName}</a>
+    {$rightSingleQuote} <a href="{$domainURL}/classes/">Classes</a>
+    {$rightSingleQuote} <a href="{$domainURL}/sports/{$sportslug}/">{$Sport_SportName}</a>
 </div>
 
-<h1>Class {$Class_ClassName} Colorado Sports</h1>
+<h1>Class {$Class_ClassName} Colorado High School Sports</h1>
 <QUERY name=SportsForClass CLASSID=$form_ClassID>
 <IFNOTEMPTY $form_debug>
 SportsForClass query: {$SportsForClass_query}
 </IFNOTEMPTY>
 <RESULTS list=SportsForClass_rows prefix=Sport>
-<h2 class="list"><a href="{$externalURL}site=default&tpl=Class&ClassID={$Class_ClassID}&Sport={$Sport_SportID}" title="{$Class_ClassName} Prep {$Sport_SportName} leaders"><span>{$Class_ClassName} Prep</span> {$Sport_SportName} leaders</a></h2>
+<?PHP
+$sportslug = sport_id($Sport_SportID);
+$classslug = class_id($Class_ClassID);
+?>
+<h2 class="list"><a href="{$domainURL}/classes/{$classslug}/{$sportslug}/site=default&tpl=Class&ClassID={$Class_ClassID}&Sport={$Sport_SportID}" title="{$Class_ClassName} Prep {$Sport_SportName} leaders"><span>{$Class_ClassName} Prep</span> {$Sport_SportName} leaders</a></h2>
 
 
 </RESULTS>

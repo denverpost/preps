@@ -6,7 +6,7 @@ function slugify($value)
     return preg_replace('/[^-a-z0-9]/', '', str_replace(' ', '-', strtolower($value))); 
 } 
 
-function class_id($id)
+function class_id($id, $flip=FALSE)
 {
         $lookup = Array(
                 1 => '4A',
@@ -16,10 +16,12 @@ function class_id($id)
                 5 => '1A',
                 6 => '8-man',
                 7 => '6-man');
-        return $lookup[intval($id)];
+        $flipped = array_flip($lookup);
+        if ( $flip == FALSE ) return $lookup[intval($id)]; 
+        return $flipped[$id];
 }
 
-function sport_id($id)
+function sport_id($id, $flip=FALSE)
 {
         $lookup = Array(
                 1 => 'football',
@@ -46,7 +48,9 @@ function sport_id($id)
                 34 => 'ice-hockey',
                 35 => 'boys-lacrosse',
                 36 => 'girls-lacrosse');
-        return $lookup[intval($id)];
+        $flipped = array_flip($lookup);
+        if ( $flip == FALSE ) return $lookup[intval($id)]; 
+        return $flipped[$id];
 }
 ?>
 <VAR $seasonStart["Football"] = "08/13">
