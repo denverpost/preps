@@ -12,53 +12,53 @@
 <VAR $sportName=$Sport_SportName>
 <VAR $sqlSportName=strtolower(convertForSQL($sportName))>
 
+###YEARCHECK###
 ###here is where we enter the season start and end dates for each sport###
-
 <?PHP $strNow = time() ?>
 <IFTRUE $sportName == "Football">
-<VAR $myTime = strtotime("03 December 2013")>
-<VAR $seasonStart = strtotime("24 August 2013")>
+<VAR $myTime = strtotime("03 December 2014")>
+<VAR $seasonStart = strtotime("24 August 2014")>
 </IFTRUE>
 
 <IFTRUE $sportName == "Softball">
-###<VAR $myTime = strtotime("31 October 2013")>###
-<VAR $softballSeasonStart = strtotime("19 August 2013")>
+###<VAR $myTime = strtotime("31 October 2014")>###
+<VAR $softballSeasonStart = strtotime("19 August 2014")>
 </IFTRUE>
 
 <IFTRUE $sportName == "Baseball">
 ###<VAR $myTime = strtotime("31 October 2011")>###
-<VAR $baseballSeasonStart = strtotime("08 March 2014")>
+<VAR $baseballSeasonStart = strtotime("08 March 2015")>
 </IFTRUE>
 
 
-###<IFTRUE $sportName == "Boys Soccer">###
+<IFTRUE $sportName == "Boys Soccer">
 ###<?PHP $strNow = time() ?>###
-###<VAR $seasonStart = strtotime("24 August 2012")>###
-###</IFTRUE>###
+<VAR $seasonStart = strtotime("24 August 2014")>
+</IFTRUE>
 
 ###<IFTRUE $sportName == "Girls Soccer">###
 ###<?PHP $strNow = time() ?>###
-###<VAR $seasonStart = strtotime("7 March 2013")>###
+###<VAR $seasonStart = strtotime("7 March 2014")>###
 ###</IFTRUE>###
 
 <IFTRUE $sportName == "Field Hockey">
 <?PHP $strNow = time() ?>
-<VAR $seasonStart = strtotime("29 August 2013")>
+<VAR $seasonStart = strtotime("29 August 2014")>
 </IFTRUE>
 
 <IFTRUE $sportName == "Boys Basketball">
-<VAR $seasonStart = strtotime("2 December 2013")>
+<VAR $seasonStart = strtotime("2 December 2014")>
 </IFTRUE>
 
 <IFTRUE $sportName == "Girls Basketball">
-<VAR $seasonStart = strtotime("2 December 2013")>
+<VAR $seasonStart = strtotime("2 December 2014")>
 </IFTRUE>
 
 ###<IFTRUE $sportName == "Boys Lacrosse">###
-###<VAR $seasonStart = strtotime("7 March 2013")>###
+###<VAR $seasonStart = strtotime("7 March 2014")>###
 ###</IFTRUE>###
 ###<IFTRUE $sportName == "Girls Lacrosse">###
-###<VAR $seasonStart = strtotime("7 March 2013")>###
+###<VAR $seasonStart = strtotime("7 March 2014")>###
 ###</IFTRUE>###
 
 

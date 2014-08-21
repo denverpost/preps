@@ -6,7 +6,7 @@
 <VAR $form_Sport = intval($form_Sport)>
 <?PHP
 if ( isset($form_class_slug) ) $form_ClassID = class_id($form_class_slug, TRUE);
-if ( isset($form_sportslug) ) $form_SportID = sport_id($form_sportslug, TRUE);
+if ( isset($form_sportslug) ) $form_Sport = sport_id($form_sportslug, TRUE);
 ?>
 
 <IFEMPTY $form_Sport>
@@ -21,7 +21,8 @@ if ( isset($form_sportslug) ) $form_SportID = sport_id($form_sportslug, TRUE);
 <h1>Colorado Prep Sport Classes</h1>
 <h2>
 <RESULTS list=Classes_rows prefix=Class>
-<a href="{$externalURL}site=default&tpl=Class&ClassID={$Class_ClassID}" title="Colorado {$Class_ClassName} Class">{$Class_ClassName}</a> {$rightSingleQuote} 
+<?PHP $class_slug = class_id($Class_ClassID); ?>
+<a href="{$domainURL}/classes/{$class_slug}/" title="Colorado {$Class_ClassName} High School Sports">{$Class_ClassName}</a> {$rightSingleQuote} 
 </RESULTS>
 </h2>
 
