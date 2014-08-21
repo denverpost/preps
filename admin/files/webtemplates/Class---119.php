@@ -26,6 +26,10 @@
 <ELSE>
 ### Class Detail view ###
 ### This template displays when we've got a ClassID but no SportID ###
+<?PHP
+if ( isset($form_class_slug) ) $form_ClassID = class_id($form_class_slug, TRUE);
+if ( isset($form_sportslug) ) $form_SportID = sport_id($form_sportslug, TRUE);
+?>
 <QUERY name=Class prefix=Class CLASSID=$form_ClassID>
 <?PHP $sportslug = sport_id($form_Sport); ?>
 <div id="breadcrumbs">
@@ -42,9 +46,9 @@ SportsForClass query: {$SportsForClass_query}
 <RESULTS list=SportsForClass_rows prefix=Sport>
 <?PHP
 $sportslug = sport_id($Sport_SportID);
-$classslug = class_id($Class_ClassID);
+$class_slug = class_id($Class_ClassID);
 ?>
-<h2 class="list"><a href="{$domainURL}/classes/{$classslug}/{$sportslug}/site=default&tpl=Class&ClassID={$Class_ClassID}&Sport={$Sport_SportID}" title="{$Class_ClassName} Prep {$Sport_SportName} leaders"><span>{$Class_ClassName} Prep</span> {$Sport_SportName} leaders</a></h2>
+<h2 class="list"><a href="{$domainURL}/classes/{$class_slug}/{$sportslug}/" title="{$Class_ClassName} Prep {$Sport_SportName} leaders"><span>{$Class_ClassName} Prep</span> {$Sport_SportName} leaders</a></h2>
 
 
 </RESULTS>
