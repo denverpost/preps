@@ -6,7 +6,7 @@
 <VAR $form_Sport = intval($form_Sport)>
 <?PHP
 if ( isset($form_class_slug) ) $form_ClassID = class_id($form_class_slug, TRUE);
-if ( isset($form_sportslug) ) $form_Sport = sport_id($form_sportslug, TRUE);
+if ( isset($form_sport_slug) ) $form_Sport = sport_id($form_sport_slug, TRUE);
 ?>
 
 <IFEMPTY $form_Sport>
@@ -32,11 +32,9 @@ if ( isset($form_sportslug) ) $form_Sport = sport_id($form_sportslug, TRUE);
 ### Class Detail view ###
 ### This template displays when we've got a ClassID but no SportID ###
 <QUERY name=Class prefix=Class CLASSID=$form_ClassID>
-<?PHP $sportslug = sport_id($form_Sport); ?>
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
     {$rightSingleQuote} <a href="{$domainURL}/classes/">Classes</a>
-    {$rightSingleQuote} <a href="{$domainURL}/sports/{$sportslug}/">{$Sport_SportName}</a>
 </div>
 
 <h1>Class {$Class_ClassName} Colorado High School Sports</h1>
@@ -45,11 +43,8 @@ if ( isset($form_sportslug) ) $form_Sport = sport_id($form_sportslug, TRUE);
 SportsForClass query: {$SportsForClass_query}
 </IFNOTEMPTY>
 <RESULTS list=SportsForClass_rows prefix=Sport>
-<?PHP
-$sportslug = sport_id($Sport_SportID);
-$class_slug = class_id($Class_ClassID);
-?>
-<h2 class="list"><a href="{$domainURL}/classes/{$class_slug}/{$sportslug}/" title="{$Class_ClassName} Prep {$Sport_SportName} leaders"><span>{$Class_ClassName} Prep</span> {$Sport_SportName} leaders</a></h2>
+<?PHP $sport_slug = slugify($Sport_SportName); ?>
+<h2 class="list"><a href="{$domainURL}/classes/{$class_slug}/{$sport_slug}/" title="{$Class_ClassName} Prep {$Sport_SportName} leaders"><span>{$Class_ClassName} Prep</span> {$Sport_SportName} leaders</a></h2>
 
 
 </RESULTS>
@@ -57,6 +52,10 @@ $class_slug = class_id($Class_ClassID);
 <ELSE>
 ### ClassForSport Detail view ###
 ### This template displays when we've got a ClassID and a SportID ###
+<?PHP
+$sport_slug = sport_id($Sport_SportID);
+$class_slug = class_id($Class_ClassID);
+?>
 
 <QUERY name=Class prefix=Class CLASSID=$form_ClassID>
 <QUERY name=Sport prefix=Sport SPORTID=$form_Sport>
@@ -65,7 +64,7 @@ $class_slug = class_id($Class_ClassID);
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
     {$rightSingleQuote} <a href="{$domainURL}/classes/">Classes</a>
     {$rightSingleQuote} <a href="{$domainURL}/classes/{$class_slug}/">{$Class_ClassName}</a>
-    {$rightSingleQuote} <a href="{$domainURL}/sports/{$sportslug}/">{$Sport_SportName}</a>
+    {$rightSingleQuote} <a href="{$domainURL}/sports/{$sport_slug}/">{$Sport_SportName}</a>
 </div>
 <IFEQUAL $Sport_SportName "Ice Hockey">
 <h1>Colorado ###Class {$Class_ClassName}### Prep {$Sport_SportName} Leaders</h1>

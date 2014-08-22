@@ -138,9 +138,13 @@
 <a name="class"></a>
 <h2>Prep {$Sport_SportName} Leaders, By Class</h2>
 <QUERY name=ClassesForSport SPORTID=$form_Sport>
+<?PHP
+$class_slug = class_id($Class_ClassID);
+$sport_slug = sport_id($form_Sport);
+?>
 <ul>
 <RESULTS list=ClassesForSport_rows prefix=Class>
-<li><a href="{$externalURL}site=default&tpl=Class&Sport={$form_Sport}&ClassID={$Class_ClassID}">{$Class_ClassName} {$Sport_SportName} leaders</a></li></RESULTS>
+<li><a href="{$domainURL}/classes/{$class_slug}/{$sport_slug}/">{$Class_ClassName} {$Sport_SportName} leaders</a></li></RESULTS>
 </ul>
 <ELSE>
 </IFTRUE>

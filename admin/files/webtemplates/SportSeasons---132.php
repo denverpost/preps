@@ -17,7 +17,7 @@ function class_id($id, $flip=FALSE)
                 6 => '8-man',
                 7 => '6-man');
         $flipped = array_flip($lookup);
-        if ( $flip == FALSE ) return $lookup[intval($id)]; 
+        if ( $flip === FALSE ) return $lookup[intval($id)]; 
         return $flipped[$id];
 }
 
@@ -49,7 +49,7 @@ function sport_id($id, $flip=FALSE)
                 35 => 'boys-lacrosse',
                 36 => 'girls-lacrosse');
         $flipped = array_flip($lookup);
-        if ( $flip == FALSE ) return $lookup[intval($id)]; 
+        if ( $flip === FALSE ) return $lookup[intval($id)]; 
         return $flipped[$id];
 }
 ?>
