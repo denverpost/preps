@@ -41,16 +41,17 @@
 {$Player_PlayerWeight}
 </IFGREATER>
 
-<h2 class="list">
+<p class="list" style="margin-top:10px;">
 <IFGREATER $teamCount 0>
 <strong>Sports Played:</strong><br>
 <RESULTS list=PlayerTeams_rows prefix=PlayerTeams>
-<A HREF="{$externalURL}site=default&tpl=Team&TeamID={$PlayerTeams_TeamRosterTeamID}">
+<?PHP $sport_slug = slugify($PlayerTeams_SportName); ?>
+<A HREF="{$domainURL}/schools/{$school_slug}/{$sport_slug}/{$PlayerTeams_TeamRosterTeamID}/">
 {$PlayerTeams_SportName}</A> <IFEMPTY $PlayerTeams_TeamRosterPosition> <ELSE>{$dash}  <IFNOTEMPTY $PlayerTeams_TeamRosterAdditionalPositions>
 <strong>Positions:</strong> <ELSE> <strong>Position: </strong></IFNOTEMPTY>{$PlayerTeams_TeamRosterPosition}<IFNOTEMPTY $PlayerTeams_TeamRosterAdditionalPositions>, {$PlayerTeams_TeamRosterAdditionalPositions}</IFEMPTY>###</IFNOTEMPTY>###</IFNOTEMPTY><IFGREATER $teamCount 1> </IFGREATER><br>
 </RESULTS>
 </IFGREATER>
-</h2><!-- SCHOOLQUERY -->
+</p><!-- SCHOOLQUERY -->
 
 <QUERY name=PlayerPhoto ID=$form_ID>
 <IFNOTEMPTY $PlayerPhoto_UploadFile>
@@ -73,7 +74,7 @@
 </div>
 
 
-<div class="clear"></div>
+<div class="clear" style="margin-bottom:20px;"></div>
 
 <RESULTS list=PlayerTeams_rows prefix=PlayerTeams>
 
