@@ -22,7 +22,7 @@
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
     {$rightSingleQuote} <a href="{$domainURL}/sport/{$sport_slug}/">{$sportName}</a>
     {$rightSingleQuote} <a href="{$domainURL}/schools/{$school_slug}/{$Player_SchoolID}/">{$Player_SchoolName}</a>
-    {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerTeams_TeamRosterTeamID}">{$PlayerTeams_SchoolName} {$sportName} Roster</a>
+    {$rightSingleQuote} <a href="{$domainURL}/schools/{$school_slug}/{$sport_slug}/{$PlayerTeams_TeamRosterTeamID}/">{$PlayerTeams_SchoolName} {$sportName} Roster</a>
 </div>
 
 <div id="preps-section-player">
