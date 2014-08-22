@@ -2,6 +2,7 @@
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <VAR $webURL = "http://denver-tpweb.newsengin.com/web/graphics/player/">
 <VAR $rightSingleQuote = chr(38)."rsaquo;">
+<INCLUDE site=default tpl=SportSeasons>
 <VAR $dash = chr(151)>
 <QUERY name=Player ID=$form_ID>
 <QUERY name=PlayerTeams ID=$form_ID>
@@ -10,18 +11,18 @@
 <VAR $secondaryColor = $Player_SchoolSecondaryColor>
 <IFEMPTY $primaryColor> <VAR $primaryColor = "#FF883D"> </IFEMPTY>
 <IFEMPTY $secondaryColor> <VAR $secondaryColor = "#333399"> </IFEMPTY>
+<?PHP $school_slug = slugify($Player_SchoolName); ?>
 
 <RESULTS list=PlayerTeams_rows prefix=PlayerTeams>
 <VAR $sportName = $PlayerTeams_SportName>
+<?PHP $sport_slug = slugify($PlayerTeams_SportName); ?>
 </RESULTS>
 
 <div id="breadcrumbs" style="width: 500px">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
-    {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Sport&Sport={$PlayerTeams_SportID}">{$sportName}</a>
-    {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=School&School={$Player_SchoolID}">{$Player_SchoolName}</a>
-    {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerTeams_TeamRosterTeamID}">{$PlayerTeams_SchoolName} 
-
-{$sportName} Roster</a>
+    {$rightSingleQuote} <a href="{$domainURL}/sport/{$sport_slug}/">{$sportName}</a>
+    {$rightSingleQuote} <a href="{$domainURL}/schools/{$school_slug}/{$Player_SchoolID}/">{$Player_SchoolName}</a>
+    {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Team&TeamID={$PlayerTeams_TeamRosterTeamID}">{$PlayerTeams_SchoolName} {$sportName} Roster</a>
 </div>
 
 <div id="preps-section-player">
@@ -33,15 +34,13 @@
 <ELSE>
 <VAR $inchWord = "inch">
 </IFGREATER>
-<strong>Height:</strong> <IFGREATER $Player_PlayerHeightFeet 0>{$Player_PlayerHeightFeet} feet<IFGREATER $Player_PlayerHeightInches 0>, {$Player_PlayerHeightInches} {$inchWord}.
+<IFGREATER $Player_PlayerHeightFeet 0><strong>Height:</strong> {$Player_PlayerHeightFeet} feet<IFGREATER $Player_PlayerHeightInches 0>, {$Player_PlayerHeightInches} {$inchWord}.
 </IFGREATER>
-<ELSE>N/A
 </IFGREATER>
-<strong> Weight: </strong><IFGREATER $Player_PlayerWeight 0>
+<IFGREATER $Player_PlayerWeight 0><strong> Weight: </strong>
 {$Player_PlayerWeight}
-<ELSE>
-N/A
 </IFGREATER>
+
 <h2 class="list">
 <IFGREATER $teamCount 0>
 <strong>Sports Played:</strong><br>
@@ -54,20 +53,12 @@ N/A
 </h2><!-- SCHOOLQUERY -->
 
 <QUERY name=PlayerPhoto ID=$form_ID>
-<div id="player_photo" class="photo">
 <IFNOTEMPTY $PlayerPhoto_UploadFile>
+<div id="player_photo" class="photo">
     ### {$PlayerPhoto_UploadPathFolderFetch}/ ###
     <img src="{$webURL}{$PlayerPhoto_UploadFile}" alt="{$Player_PlayerFirstName} {$Player_PlayerLastName}" />
-<ELSE>
-<IFEQUAL $sportName "Football">
-    <img src="http://denver-tpweb.newsengin.com/web/graphics/nophotofootball.jpg" alt="" />
-<ELSE>
-    <div style="width:190px; height:150px; overflow:hidden;"><img src="http://denver-tpweb.newsengin.com/web/graphics/nophoto.jpg" 
-
-alt="" style="margin-top:-20px;"/></div>
-</IFEQUAL>
-</IFNOTEMPTY>
 </div>
+</IFNOTEMPTY>
 
 <div id="player_info" class="info" style="display:none;">
     <div>
