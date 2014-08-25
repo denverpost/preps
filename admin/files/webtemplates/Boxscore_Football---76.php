@@ -1,6 +1,7 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <IFTRUE $sqlSportName == "football">
-<VAR $sportYear = "2013">
+###YEARCHECK###
+<VAR $sportYear = "2014">
 <ELSE>
 </IFTRUE>
 
@@ -37,14 +38,14 @@
 
 <IFEQUAL $Game_preview_GameStatStatus 0>
 <h1>
-{$Game_preview_AwayTeamName} at {$Game_preview_HomeTeamName}
+{$Game_preview_AwayTeamName} at {$Game_preview_HomeTeamName} Football Game
 </h1>
 <ELSE>
 <h1>
 <IFGREATER $Home_TotalPoints $Away_TotalPoints>
-{$Home_TeamName} {$Home_TotalPoints}, {$Away_TeamName} {$Away_TotalPoints}<br>
+{$Home_TeamName} {$Home_TotalPoints}, {$Away_TeamName} {$Away_TotalPoints} Football Game Score<br>
 <ELSE>
-{$Away_TeamName} {$Away_TotalPoints}, {$Home_TeamName} {$Home_TotalPoints}<br>
+{$Away_TeamName} {$Away_TotalPoints}, {$Home_TeamName} {$Home_TotalPoints} Football Game Score<br>
 </h1>
 </IFGREATER>
 </IFEQUAL>
@@ -116,11 +117,16 @@
 </h3>
 <VAR $Away_TeamName = $Game_preview_AwayTeamName>
 <VAR $Home_TeamName = $Game_preview_HomeTeamName>
+<?PHP 
+$away_slug = slugify($Away_TeamName);
+$home_slug = slugify($Home_TeamName);
+$sport_slug = 'football';
+?>
 
 <table class="boxscoreStatTable deluxe" cellpadding="0" cellspacing="0">
          <tbody>
 	<tr>
-		<td><b><a href="{$externalURL}site=default&tpl=Team&TeamID={$Away_TeamID}">{$Away_TeamName}</a></b></td>
+		<td><b><a href="{$domainURL}/schools/{$away_slug}/{$sport_slug}/{$Away_TeamID}/">{$Away_TeamName}</a></b></td>
          <IFEMPTY $awayOverallWins>
                 <VAR $awayOverallWins = 0>
           </IFEMPTY>
@@ -149,7 +155,7 @@
                 <VAR $homeConfLosses = 0>
                 </IFEMPTY>
 <tr class="trAlt">
-		<td><b><a href="{$externalURL}site=default&tpl=Team&TeamID={$Home_TeamID}">{$Home_TeamName}</a></b></td>
+		<td><b><a href="{$domainURL}/schools/{$home_slug}/{$sport_slug}/{$Home_TeamID}/">{$Home_TeamName}</a></b></td>
 		<td>Overall: {$homeOverallWins}-{$homeOverallLosses} </td>
 		<td>Conference: {$homeConfWins}-{$homeConfLosses}</td>
 	</tr>
@@ -179,7 +185,7 @@
 </IFGREATER>        </tr>
         <tr>
             <td>
-                <a href="{$externalURL}site=default&tpl=Team&TeamID={$Away_TeamID}">
+		        <a href="{$domainURL}/schools/{$away_slug}/{$sport_slug}/{$Away_TeamID}/">
                 <strong>{$Away_TeamName}</strong></a></td>
             <td align="center">{$Away_FirstQuarterPoints}</td>
             <td align="center">{$Away_SecondQuarterPoints}</td>
@@ -195,7 +201,7 @@
         <tr>
         <tr class="trAlt">
         <td>
-                <a href="{$externalURL}site=default&tpl=Team&TeamID={$Home_TeamID}">
+		        <a href="{$domainURL}/schools/{$home_slug}/{$sport_slug}/{$Home_TeamID}/">
                 <strong>{$Home_TeamName}</strong></a></td>
             <td align="center">{$Home_FirstQuarterPoints}</td>
             <td align="center">{$Home_SecondQuarterPoints}</td>
