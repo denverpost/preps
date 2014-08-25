@@ -1,10 +1,10 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <VAR $sportYear = "2014"> ### YEARCHECK ###
+<INCLUDE site=default tpl=SportSeasons>
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <VAR $webURL = "http://denver-tpweb.newsengin.com/web/graphics/team/">
 <VAR $rightSingleQuote = chr(38)."rsaquo;">
 <VAR $gt = chr(62)>
-<INCLUDE site=default tpl=SportSeasons>
 <?PHP 
 $sport_slug = sport_id($Team_TeamSportID);
 $school_slug = slugify($Team_SchoolName);
@@ -33,7 +33,7 @@ $school_slug = slugify($Team_SchoolName);
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
     {$rightSingleQuote} <a href="{$domainURL}/schools/">Schools</a>
-    {$rightSingleQuote} <a href="{$domainURL}/schools/{$school_slug/{$sport_slug}/{$Team_SchoolID}/">{$Team_SchoolName}</a>
+    {$rightSingleQuote} <a href="{$domainURL}/schools/{$school_slug}/{$sport_slug}/{$Team_SchoolID}/">{$Team_SchoolName}</a>
     {$rightSingleQuote} <a href="{$domainURL}/sport/{$sport_slug}/">{$sportName}</a>
 </div>
 
