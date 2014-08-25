@@ -75,14 +75,14 @@ h1#prepphoto { background-image:url(http://extras.mnginteractive.com/live/media/
 <ul class="subnav">
 <!--   <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=13" title="Prep Boys Cross Country in Colorado">Boys Cross Country</a></li> -->
 <!--    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=14" title="Prep Girls Cross Country in Colorado">Girls Cross Country</a></li> -->
-    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=32" title="Prep Field Hockey in Colorado">Field Hockey</a></li>
-    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=1" title="Prep Football in Colorado">Football</a></li>
+    <li><a href="http://preps.denverpost.com/sport/field-hockey/" title="Prep Field Hockey in Colorado">Field Hockey</a></li>
+    <li><a href="http://preps.denverpost.com/sport/football/" title="Prep Football in Colorado">Football</a></li>
 <!--    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=18" title="Prep Boys Golf in Colorado">Boys Golf</a></li> -->
-    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=33" title="Prep Girls Gymnastics in Colorado">Girls Gymnastics</a></li>
-    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=12" title="Prep Boys Soccer in Colorado">Boys Soccer</a></li>
-    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=30" title="Prep Softball in Colorado">Softball</a></li>
+    <li><a href="http://preps.denverpost.com/sport/girls-gymnastics/" title="Prep Girls Gymnastics in Colorado">Girls Gymnastics</a></li>
+    <li><a href="http://preps.denverpost.com/sport/boys-soccer/" title="Prep Boys Soccer in Colorado">Boys Soccer</a></li>
+    <li><a href="http://preps.denverpost.com/sport/softball" title="Prep Softball in Colorado">Softball</a></li>
 <!--    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=27" title="Prep Boys Tennis in Colorado">Boys Tennis</a></li>  -->
-    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=11" title="Prep Girls Volleyball in Colorado">Girls Volleyball</a></li>
+    <li><a href="http://preps.denverpost.com/sport/girls-volleyball/" title="Prep Girls Volleyball in Colorado">Girls Volleyball</a></li>
 </ul>
 </IFGREATER>
 </IFGREATER>
