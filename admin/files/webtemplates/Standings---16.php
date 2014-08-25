@@ -8,50 +8,50 @@
 
 <IFEQUAL $sportName "Baseball">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2013">
+<VAR $standingSeason = "2014">
 <ELSE>
 <VAR $winPct = "WinPercentage">
-<VAR $standingSeason = "2013">
+<VAR $standingSeason = "2014">
 </IFEQUAL>
 <IFEQUAL $sportName "Football">
-<VAR $standingSeason = "2013">
+<VAR $standingSeason = "2014">
 </IFEQUAL>
 <IFEQUAL $sportName "Girls Lacrosse">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2013">
+<VAR $standingSeason = "2014">
 </IFEQUAL>
 <IFEQUAL $sportName "Boys Lacrosse">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2013">
+<VAR $standingSeason = "2014">
 </IFEQUAL>
 <IFEQUAL $sportName "Girls Soccer">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2013">
+<VAR $standingSeason = "2014">
 </IFEQUAL>
 <IFEQUAL $sportName "Softball">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2013">
+<VAR $standingSeason = "2014">
 </IFEQUAL>
 <IFEQUAL $sportName "Boys Soccer">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2013">
+<VAR $standingSeason = "2014">
 </IFEQUAL>
 <IFEQUAL $sportName "Girls Volleyball">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2013">
+<VAR $standingSeason = "2014">
 </IFEQUAL>
 <IFEQUAL $sportName "Field Hockey">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2013">
+<VAR $standingSeason = "2014">
 </IFEQUAL>
 <IFEQUAL $sportName "Boys Basketball">
-<VAR $standingSeason = "2013">
+<VAR $standingSeason = "2014">
 </IFEQUAL>
 <IFEQUAL $sportName "Girls Basketball">
-<VAR $standingSeason = "2013">
+<VAR $standingSeason = "2014">
 </IFEQUAL>
 <IFEQUAL $sportName "Ice Hockey">
-<VAR $standingSeason = "2013">
+<VAR $standingSeason = "2014">
 </IFEQUAL>
 
 ### If $standingSeason is empty, then we don't have a sport we can compute standings on. ###

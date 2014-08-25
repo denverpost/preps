@@ -12,7 +12,8 @@ conf.Win as ConfWin,conf.Loss as ConfLoss,conf.WinPercentage as ConfPct,home.Win
 <VAR $joinClause = "LEFT JOIN seasonteam".$sqlSportName." AS conf ON conf.SeasonTeamTeamID = q_team.TeamID AND conf.SeasonTeamCategory = \"conf\"
 LEFT JOIN seasonteam".$sqlSportName." AS home ON home.SeasonTeamTeamID = q_team.TeamID AND home.SeasonTeamCategory = \"home\"
 LEFT JOIN seasonteam".$sqlSportName." AS away ON away.SeasonTeamTeamID = q_team.TeamID AND away.SeasonTeamCategory = \"away\"">
-<VAR $whereClause = " AND seasonteam".$sqlSportName.".SeasonTeamSeason = 2013 AND conf.SeasonTeamSeason = 2013 AND home.SeasonTeamSeason = 2013 AND away.SeasonTeamSeason = 2013">
+###YEARCHECK###
+<VAR $whereClause = " AND seasonteam".$sqlSportName.".SeasonTeamSeason = 2014 AND conf.SeasonTeamSeason = 2014 AND home.SeasonTeamSeason = 2014 AND away.SeasonTeamSeason = 2014">
 <VAR $showStandings=true>
 <IFEMPTY $form_Sport><VAR $showStandings=false></IFEMPTY>
 <IFTRUE $showStandings>

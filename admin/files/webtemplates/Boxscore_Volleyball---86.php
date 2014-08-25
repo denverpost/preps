@@ -1,7 +1,6 @@
 <VAR $domainURL = "http://preps.denverpost.com">
-###<VAR $sportYear = 2010>###
 <VAR $statType = "conf">
-<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2013>
+<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
 <VAR $homeConfWins = $TeamSeasonStats_Win>
 <VAR $homeConfLosses = $TeamSeasonStats_Loss>
 
