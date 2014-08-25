@@ -4,6 +4,11 @@
 <VAR $webURL = "http://denver-tpweb.newsengin.com/web/graphics/team/">
 <VAR $rightSingleQuote = chr(38)."rsaquo;">
 <VAR $gt = chr(62)>
+<INCLUDE site=default tpl=SportSeasons>
+<?PHP 
+$sport_slug = sport_id($Team_TeamSportID);
+$school_slug = slugify($Team_SchoolName);
+?>
 
 <IFEMPTY $form_TeamID>
 <font class="pageText">Please select a team in the search box above. </font>
@@ -28,8 +33,8 @@
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
     {$rightSingleQuote} <a href="{$domainURL}/schools/">Schools</a>
-    {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=School&School={$Team_SchoolID}">{$Team_SchoolName}</a>
-    {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Sport&Sport={$Team_SportID}">{$sportName}</a>
+    {$rightSingleQuote} <a href="{$domainURL}/schools/{$school_slug/{$sport_slug}/{$Team_SchoolID}/">{$Team_SchoolName}</a>
+    {$rightSingleQuote} <a href="{$domainURL}/sport/{$sport_slug}/">{$sportName}</a>
 </div>
 
 <IFEMPTY $Team_TeamID>
@@ -53,7 +58,7 @@
 <VAR $Team_TeamAssistantCoaches = fixApostrophes($Team_TeamAssistantCoaches)>
 
 
-<h1>{$Team_TeamName} {$Team_TeamNickname} Prep {$Team_SportName} </h1>
+<h1>{$Team_TeamName} {$Team_TeamNickname} High School {$Team_SportName} </h1>
 <IFNOTEMPTY $Team_TeamHeadCoach><h3>{$Team_TeamName} Head coach: {$Team_TeamHeadCoach}</h3></IFNOTEMPTY>
 <IFNOTEMPTY $Team_TeamAssistantCoaches>
 <VAR $assistantCoaches = str_replace("\r\n",", ",trim($Team_TeamAssistantCoaches))>
@@ -77,7 +82,7 @@
     <div>
         <dl>
             <dt>Sport:</dt>
-            <dd><a href="{$externalURL}site=default&tpl=Sport&Sport={$Team_TeamSportID}">{$Team_SportName}</a></dd>
+            <dd><a href="{$domainURL}/sport/{$sport_slug}/">{$Team_SportName}</a></dd>
         <IFNOTEMPTY $Team_ClassName>
             <dt>Class:</dt>
             <dd><a href="{$externalURL}site=default&tpl=Class&Sport={$Team_TeamSportID}&ClassID={$Team_TeamClassID}">{$Team_ClassName}</a></dd>
@@ -462,6 +467,7 @@
 <IFNOTEQUAL $sportType 1>            <td>{$Roster_TeamRosterPlayerNumber}</td></IFNOTEQUAL>
             <td>
 <VAR $playerName = fixApostrophes($Roster_PlayerFirstName." ".$Roster_PlayerLastName)>
+<?PHP $player_slug = slugify($playerName); ?>
                 <a href="/home.html?site=default&tpl=Player&ID={$Roster_PlayerID}">{$playerName}</a></td>
             <td><IFNOTEQUAL $Roster_PlayerHeightFeet 0>{$Roster_PlayerHeightFeet}'</IFNOTEQUAL>
 <IFNOTEQUAL $Roster_PlayerHeightInches 0>{$Roster_PlayerHeightInches}"</IFNOTEQUAL>
