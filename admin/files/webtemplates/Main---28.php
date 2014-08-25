@@ -29,10 +29,8 @@ h1#prepphoto { background-image:url(http://extras.mnginteractive.com/live/media/
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
 </div>
 
-<h1 class="prepheader" id="prepphoto">Stats for Colorado High School Sports</h1>
-<!--<h1>Stats for Colorado High School Sports</h1>-->
-
-<h2>Schedules, results, standings, leaders and more.</h2>
+<h1 class="prepheader" id="prepphoto">Colorado High School Sports Scores and Statistics</h1>
+<h2>Schedules, scores, results, standings, leaders and more.</h2>
 
 <ul class="subnav">
     <li><a href="{$externalURL}site=default&tpl=About">Read our welcome announcement</a></li>
@@ -44,24 +42,24 @@ h1#prepphoto { background-image:url(http://extras.mnginteractive.com/live/media/
 <IFGREATER $strNow $springTime>
 <h2>Spring Sports</h2>
 <ul class="subnav">
- <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=29" title="Prep Baseball in Colorado">Baseball</a></li>
- <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=35" title="Prep Boys Lacrosse">Boys Lacrosse</a></li>
- <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=16" title="Prep Boys Swimming and Diving in Colorado">Boys Swimming and Diving</a></li>
- <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=25" title="Prep Girls Tennis in Colorado">Boys Track and Field</a></li>
+ <li><a href="http://preps.denverpost.com/sport/baseball/" title="Prep Baseball in Colorado">Baseball</a></li>
+ <li><a href="http://preps.denverpost.com/sport/boys-lacrosse/" title="Prep Boys Lacrosse">Boys Lacrosse</a></li>
+ <li><a href="http://preps.denverpost.com/sport/boys-swimming-diving/" title="Prep Boys Swimming and Diving in Colorado">Boys Swimming and Diving</a></li>
+ <li><a href="http://preps.denverpost.com/sport/girls-tennis/" title="Prep Girls Tennis in Colorado">Boys Track and Field</a></li>
 <!--  <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=19" title="Prep Girls Golf in Colorado">Girls Golf</a></li>  -->
- <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=36" title="Prep Girls Lacrosse in Colorado">Girls Lacrosse</a></li>
- <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=15" title="Prep Girls Soccer in Colorado">Girls Soccer</a></li>
+ <li><a href="http://preps.denverpost.com/sport/girls-lacrosse/" title="Prep Girls Lacrosse in Colorado">Girls Lacrosse</a></li>
+ <li><a href="http://preps.denverpost.com/sport/girls-soccer/" title="Prep Girls Soccer in Colorado">Girls Soccer</a></li>
 <!-- <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=31" title="Prep Girls Tennis in Colorado">Girls Tennis</a></li> -->
- <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=28" title="Prep Girls Track and Field in Colorado">Girls Track and Field</a></li>
+ <li><a href="http://preps.denverpost.com/sport/girls-track/" title="Prep Girls Track and Field in Colorado">Girls Track and Field</a></li>
 </ul>
 <ELSE>
 <IFGREATER $strNow  $winterTime>
 <h2>Winter Sports</h2>
 <ul class="subnav">
-    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=6" title="Prep Boys Basketball in Colorado">Boys Basketball</a></li>
-    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=21" title="Prep Girls Basketball in Colorado">Girls Basketball</a></li>
-    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=17" title="Prep Girls Swimming and Diving in Colorado">Girls Swimming and Diving</a></li>
-    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=34" title="Prep Ice Hockey in Colorado">Ice Hockey</a></li>
+    <li><a href="http://preps.denverpost.com/sport/boys-basketball/" title="Prep Boys Basketball in Colorado">Boys Basketball</a></li>
+    <li><a href="http://preps.denverpost.com/sport/girls-basketball/" title="Prep Girls Basketball in Colorado">Girls Basketball</a></li>
+    <li><a href="http://preps.denverpost.com/sport/girls-swimming-diving/" title="Prep Girls Swimming and Diving in Colorado">Girls Swimming and Diving</a></li>
+    <li><a href="http://preps.denverpost.com/sport/ice-hockey/" title="Prep Ice Hockey in Colorado">Ice Hockey</a></li>
 <!--    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=23" title="Prep Wrestling in Colorado">Wrestling</a></li>  -->
 </ul>
 <ELSE>
@@ -80,7 +78,7 @@ h1#prepphoto { background-image:url(http://extras.mnginteractive.com/live/media/
 <!--    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=18" title="Prep Boys Golf in Colorado">Boys Golf</a></li> -->
     <li><a href="http://preps.denverpost.com/sport/girls-gymnastics/" title="Prep Girls Gymnastics in Colorado">Girls Gymnastics</a></li>
     <li><a href="http://preps.denverpost.com/sport/boys-soccer/" title="Prep Boys Soccer in Colorado">Boys Soccer</a></li>
-    <li><a href="http://preps.denverpost.com/sport/softball" title="Prep Softball in Colorado">Softball</a></li>
+    <li><a href="http://preps.denverpost.com/sport/softball/" title="Prep Softball in Colorado">Softball</a></li>
 <!--    <li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=27" title="Prep Boys Tennis in Colorado">Boys Tennis</a></li>  -->
     <li><a href="http://preps.denverpost.com/sport/girls-volleyball/" title="Prep Girls Volleyball in Colorado">Girls Volleyball</a></li>
 </ul>
