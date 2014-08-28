@@ -5,10 +5,6 @@
 <VAR $webURL = "http://denver-tpweb.newsengin.com/web/graphics/team/">
 <VAR $rightSingleQuote = chr(38)."rsaquo;">
 <VAR $gt = chr(62)>
-<?PHP 
-$sport_slug = sport_id($Team_TeamSportID);
-$school_slug = slugify($Team_SchoolName);
-?>
 
 <IFEMPTY $form_TeamID>
 <font class="pageText">Please select a team in the search box above. </font>
@@ -23,7 +19,10 @@ $school_slug = slugify($Team_SchoolName);
 <VAR $sportType = $Team_SportType>
 <VAR $Team_TeamName = fixApostrophes($Team_TeamName)>
 <VAR $sqlSportName = strtolower(convertForSQL($sportName))>
-
+<?PHP 
+$sport_slug = sport_id($Team_TeamSportID);
+$school_slug = slugify($Team_SchoolName);
+?>
 
 <VAR $primaryColor = $Team_SchoolPrimaryColor>
 <VAR $secondaryColor = $Team_SchoolSecondaryColor>
