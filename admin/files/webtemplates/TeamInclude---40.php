@@ -284,7 +284,7 @@ No
 $player_name = $Roster_PlayerFirstName . ' ' . $Roster_PlayerLastName;
 $player_slug = slugify($player_name);
 ?>
-        <a href="{$domainURL}/players/{$player_slug}/{$Roster_PlayerID}">{$player_name}</a></td>
+        <a href="{$domainURL}/players/{$player_slug}/{$Roster_PlayerID}/">{$player_name}</a></td>
 	<td><IFNOTEQUAL $Roster_PlayerHeightFeet 0>{$Roster_PlayerHeightFeet}'</IFNOTEQUAL>
 	<IFNOTEQUAL $Roster_PlayerHeightInches 0>{$Roster_PlayerHeightInches}"</IFNOTEQUAL>
 	</td>
