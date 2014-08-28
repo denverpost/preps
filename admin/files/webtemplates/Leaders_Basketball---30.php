@@ -1,4 +1,5 @@
 <VAR $domainURL = "http://preps.denverpost.com">
+<INCLUDE site=default tpl=SportSeasons>
 <VAR $whereClause = " AND FreeThrowsAttempted AND FieldGoalsMade ".chr(62)." 0">
 <IFEMPTY $form_sort>
 <VAR $form_sort = "PointsPerGame">

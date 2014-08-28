@@ -53,6 +53,7 @@ function sport_id($id, $flip=FALSE)
         return $flipped[$id];
 }
 ?>
+<?PHP $seasonStart = array(); $seasonEnd = array(); ?>
 <VAR $seasonStart["Football"] = "08/13">
 <VAR $seasonEnd["Football"] = "12/19">
 

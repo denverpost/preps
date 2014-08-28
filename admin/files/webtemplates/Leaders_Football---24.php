@@ -1,5 +1,6 @@
 <VAR $domainURL = "http://preps.denverpost.com">
-<h2>Colorado Prep Football Leaders</h2>
+<INCLUDE site=default tpl=SportSeasons>
+<h2>Colorado High School Football Leaders</h2>
 <?PHP $strNow = time() ?>
 ###YEARCHECK###
 <VAR $seasonStart = strtotime("02 September 2014")>
@@ -371,7 +372,7 @@ MINIMUM Punt greater than: {$minPuntsGreaterThan} <br>###
 $player_name = $Punting_PlayerFirstName . ' ' . $Punting_PlayerLastName;
 $player_slug = slugify($player_name);
 ?>
-                <a href="{$domainURL}/players/${player_slug}/{$Punting_PlayerID}/" class="leadersNameLink">
+                <a href="{$domainURL}/players/{$player_slug}/{$Punting_PlayerID}/" class="leadersNameLink">
                     {$player_name}</a></td>
             <td>
                 <a href="{$externalURL}site=default&tpl=Team&TeamID={$Punting_TeamID}" class="leadersTeamLink">
@@ -431,7 +432,7 @@ $player_slug = slugify($player_name);
 $player_name = $Placekicking_PlayerFirstName . ' ' . $Placekicking_PlayerLastName;
 $player_slug = slugify($player_name);
 ?>
-                <a href="{$domainURL}/players/${player_slug}/{$Placekicking_PlayerID}/" class="leadersNameLink">
+                <a href="{$domainURL}/players/{$player_slug}/{$Placekicking_PlayerID}/" class="leadersNameLink">
                     {$player_name}</a></td>
             <td>
                 <a href="{$externalURL}site=default&tpl=Team&TeamID={$Placekicking_TeamID}" class="leadersTeamLink">

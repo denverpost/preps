@@ -1,4 +1,5 @@
 <VAR $domainURL = "http://preps.denverpost.com">
+<INCLUDE site=default tpl=SportSeasons>
 <VAR $resultNum = 500>
 <VAR $tpl = "Leaders">
 <IFNOTEMPTY $form_ConferenceID>

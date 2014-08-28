@@ -1,6 +1,6 @@
 <VAR $domainURL = "http://preps.denverpost.com">
+<INCLUDE site=default tpl=SportSeasons>
 ###this was replaced on 3-16-2012 to include fielding leaders###
-###FORMSPORT: {$form_Sport}###
 
 
 <h2>Colorado High School {$sportName} Leaders</h2>
@@ -24,7 +24,7 @@
 <VAR $seasonStart = strtotime("08 March 2012")>
 </IFTRUE>
 
-<?PHP $difference = $strNow - $seasonStart ?>
+<?PHP $difference = $strNow - $seasonStart[$sportName] ?>
 <?PHP $difference = ($difference / 604800) ?>
 
 <?PHP $minPlateAppearances = round(($difference * 3)-1) ?>

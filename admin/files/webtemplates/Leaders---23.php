@@ -1,4 +1,5 @@
 <VAR $domainURL = "http://preps.denverpost.com">
+<INCLUDE site=default tpl=SportSeasons>
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <VAR $rightSingleQuote = chr(38)."rsaquo;">
 <IFNOTEMPTY $form_Sport>
@@ -21,18 +22,15 @@
 </IFTRUE>
 
 <IFTRUE $sportName == "Softball">
-###<VAR $myTime = strtotime("31 October 2014")>###
 <VAR $softballSeasonStart = strtotime("19 August 2014")>
 </IFTRUE>
 
 <IFTRUE $sportName == "Baseball">
-###<VAR $myTime = strtotime("31 October 2011")>###
 <VAR $baseballSeasonStart = strtotime("08 March 2015")>
 </IFTRUE>
 
 
 <IFTRUE $sportName == "Boys Soccer">
-###<?PHP $strNow = time() ?>###
 <VAR $seasonStart = strtotime("24 August 2014")>
 </IFTRUE>
 

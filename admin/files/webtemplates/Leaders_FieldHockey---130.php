@@ -1,4 +1,5 @@
 <VAR $domainURL = "http://preps.denverpost.com">
+<INCLUDE site=default tpl=SportSeasons>
 <h2>{$Player_PlayerFirstName} {$Player_PlayerLastName}'s {$sportName} Season Stats</h2>
 
 <table cellpadding="0" cellspacing="0" class="schedTable deluxe wide500">
