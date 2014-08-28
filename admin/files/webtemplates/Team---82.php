@@ -32,7 +32,7 @@ $school_slug = slugify($Team_SchoolName);
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
     {$rightSingleQuote} <a href="{$domainURL}/schools/">Schools</a>
-    {$rightSingleQuote} <a href="{$domainURL}/schools/{$school_slug}/{$sport_slug}/{$Team_SchoolID}/">{$Team_SchoolName}</a>
+    {$rightSingleQuote} <a href="{$domainURL}/schools/{$school_slug}/{$Team_SchoolID}/">{$Team_SchoolName}</a>
     {$rightSingleQuote} <a href="{$domainURL}/sport/{$sport_slug}/">{$sportName}</a>
 </div>
 
