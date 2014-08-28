@@ -112,7 +112,10 @@
 {$Game_SportName}
 </td>
 <td valign="top">
-<a href="{$externalURL}site=default&tpl=Team&TeamID={$Game_AwayTeamID}&SearchType=Teams">
+<?PHP
+//$school_slug = slugify($Game_AwaySchoolName);
+?>
+<a href="{$externalURL}site=default&tpl=Team&TeamID={$Game_AwayTeamID}">
 {$Game_AwayTeamName}
 </A>
 </TD>
@@ -120,7 +123,10 @@
 {$Game_AwayTeamPoints}
 </TD>
 <TD VALIGN=TOP>
-<A HREF="{$externalURL}site=default&tpl=Team&TeamID={$Game_HomeTeamID}&SearchType=Teams">
+<?PHP
+$school_slug = slugify($Game_SchoolName);
+?>
+<A HREF="{$externalURL}site=default&tpl=Team&TeamID={$Game_HomeTeamID}">
 {$Game_HomeTeamName}
 </a>
 <IFNOTEQUAL $Game_GameLocation $Game_HomeTeamID>

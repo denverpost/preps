@@ -15,7 +15,6 @@
 <input type="hidden" name="tpl" id="tpl" value="{$form_tpl}" />
 <input type="hidden" name="site" id="site" value="{$form_site}" />
 <input type="hidden" name="Sport" id="Sport" value="{$form_Sport}" />
-<input type="hidden" name="SearchType" id="SearchType" value="Leaders" />
 <input type="hidden" name="ConferenceID" id="ConferenceID" value="{$form_ConferenceID}" />
 <input type="hidden" name="ClassID" id="ClassID" value="{$form_ClassID}" />
 <table cellpadding="0" cellspacing="0" class="leadersTable" width="100%">

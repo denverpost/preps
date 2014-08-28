@@ -15,7 +15,7 @@
 <IFEMPTY $form_sort>
 <VAR $form_sort = "TotalStrokes">
 </IFEMPTY>
-<VAR $beginLink = "index.php?site=default&tpl=Leaders&Sport=".$form_Sport."&ConferenceID=".$form_ConferenceID."&SearchType=".$form_SearchType."&sort=">
+<VAR $beginLink = "index.php?site=default&tpl=Leaders&Sport=".$form_Sport."&ConferenceID=".$form_ConferenceID."&sort=">
 <VAR $sortClause = $form_sort." ASC">
 <QUERY name=Leaders SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause>
 <!-- query: {$Leaders_query} -->

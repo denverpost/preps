@@ -19,7 +19,7 @@
 <VAR $form_sort = "Kills">
 </IFEMPTY>
 <VAR  $sortClauseLeaders = $form_sort."+0 DESC" >
-<VAR $beginLink = $externalURL."site=default&tpl=Leaders&Sport=".$form_Sport."&DistrictID=".$form_DistrictID."&ConferenceID=".$form_ConferenceID."&SearchType=".$form_SearchType>
+<VAR $beginLink = $externalURL."site=default&tpl=Leaders&Sport=".$form_Sport."&DistrictID=".$form_DistrictID."&ConferenceID=".$form_ConferenceID>
 
 <VAR $beginLink = "home.html?site=default&tpl=".$tpl."&Sport=".$form_Sport.$selector."&sort=">
 <!-- BeginLink: {$beginLink} -->
@@ -51,8 +51,8 @@
   <VAR $rowClass="leadersRow trRow">
   <RESULTS list=Leaders_rows prefix=Leader>
   <tr class="{$rowClass}">
-    <td><a href="{$externalURL}site=default&tpl=Player&Season={$form_Season}&ID={$Leader_PlayerID}&TeamID={$Leader_TeamID}&SearchType=Teams&Sport={$form_Sport}" CLASS="leadersNameLink"><?php echo fixApostrophes( $Leader_PlayerFirstName . " " . $Leader_PlayerLastName ); ?></a></td>
-    <td><a href="{$externalURL}site=default&tpl=Team&Season={$form_Season}&TeamID={$Leader_TeamID}&SearchType=Teams&Sport={$form_Sport}" CLASS="leadersTeamLink">
+    <td><a href="{$externalURL}site=default&tpl=Player&Season={$form_Season}&ID={$Leader_PlayerID}&TeamID={$Leader_TeamID}&Sport={$form_Sport}" CLASS="leadersNameLink"><?php echo fixApostrophes( $Leader_PlayerFirstName . " " . $Leader_PlayerLastName ); ?></a></td>
+    <td><a href="{$externalURL}site=default&tpl=Team&Season={$form_Season}&TeamID={$Leader_TeamID}&Sport={$form_Sport}" CLASS="leadersTeamLink">
 <?php echo fixApostrophes($Leader_TeamName) ?></a></td>
     <?php $ppg = sprintf( "%01.2f", $Leader_PointsPerGame ); ?>
     <ROW NAME=LeaderBBallCol STATFIELD="Kills" STAT=$Leader_Kills>

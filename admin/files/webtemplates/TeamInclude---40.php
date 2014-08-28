@@ -94,7 +94,7 @@ $Team_SchoolAddress_Map_daddr = str_replace(".", "", $Team_SchoolAddress_Map);
  <span class="teamLeftBoxText">Fax: {$Team_SchoolFax}</span>
 </IFNOTEMPTY><br />
 
-<span class="teamLeftBoxText" id="TeamConference"><a href="{$externalURL}site=default&tpl=Standings&SearchType=Standings&Sport={$Team_TeamSportID}&ConferenceID={$Team_TeamConferenceID}">{$Team_ConferenceName} Conference</a></span>
+<span class="teamLeftBoxText" id="TeamConference"><a href="{$externalURL}site=default&tpl=Standings&Sport={$Team_TeamSportID}&ConferenceID={$Team_TeamConferenceID}">{$Team_ConferenceName} Conference</a></span>
 <span class="teamLeftBoxText" id="TeamClass">Class {$Team_ClassName}</span>
 <IFNOTEMPTY $Team_DistrictName>
 <br /><span class="teamLeftBoxText">District {$Team_DistrictName}</span>
@@ -104,13 +104,13 @@ $Team_SchoolAddress_Map_daddr = str_replace(".", "", $Team_SchoolAddress_Map);
 
 <p class="teamLeftBoxText"><br />
 Current record: <?PHP if ($overallWins != "" && $overallLosses != "") { ?>
-<a href="{$externalURL}site=default&tpl=Standings&SearchType=Standings&Sport={$Team_TeamSportID}&ConferenceID={$Team_TeamConferenceID}">
+<a href="{$externalURL}site=default&tpl=Standings&Sport={$Team_TeamSportID}&ConferenceID={$Team_TeamConferenceID}">
 {$overallWins}-{$overallLosses}
 </a>
 <?PHP } ?>
 <?PHP if ($confWins != "" && $confLosses != "") { ?>
  (Conference: 
-<a href="{$externalURL}site=default&tpl=Standings&SearchType=Standings&Sport={$Team_TeamSportID}&ConferenceID={$Team_TeamConferenceID}">
+<a href="{$externalURL}site=default&tpl=Standings&Sport={$Team_TeamSportID}&ConferenceID={$Team_TeamConferenceID}">
 {$confWins}-{$confLosses}</a>)
 <?PHP } ?>
 </p>
@@ -196,7 +196,7 @@ Assistant coaches: {$assistantCoaches}
 </th>
 <td valign="top">
 <IFNOTEQUAL $Game_AwayTeamID $form_TeamID>
-<A HREF="{$externalURL}site=default&tpl=Team&TeamID={$Game_AwayTeamID}&Sport={$form_Sport}&SearchType=Teams">
+<A HREF="{$externalURL}site=default&tpl=Team&TeamID={$Game_AwayTeamID}&Sport={$form_Sport}">
 </IFNOTEQUAL>
 <?PHP if ($Game_GameStatStatus == "3") { ?>
 <IFGREATER $Game_AwayTeamPoints $Game_HomeTeamPoints>
@@ -216,7 +216,7 @@ Assistant coaches: {$assistantCoaches}
 </td>
 <td valign="top">
 <IFNOTEQUAL $Game_HomeTeamID $form_TeamID>
-<A HREF="{$externalURL}site=default&tpl=Team&TeamID={$Game_HomeTeamID}&SearchType=Teams">
+<A HREF="{$externalURL}site=default&tpl=Team&TeamID={$Game_HomeTeamID}">
 </IFNOTEQUAL>
 <?PHP if ($Game_GameStatStatus == "3") { ?>
 <IFGREATER $Game_HomeTeamPoints $Game_AwayTeamPoints>

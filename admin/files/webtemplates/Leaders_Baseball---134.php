@@ -88,7 +88,7 @@
 <VAR $isBoxScorePage = false>
 <VAR $isTeamPage = false>
 <VAR $oneTeam = false>
-<VAR $beginLink = $externalURL."site=default&tpl=Leaders&Sport=".$form_Sport."&DistrictID=".$form_DistrictID."&ConferenceID=".$form_ConferenceID."&SearchType=".$form_SearchType>
+<VAR $beginLink = $externalURL."site=default&tpl=Leaders&Sport=".$form_Sport."&DistrictID=".$form_DistrictID."&ConferenceID=".$form_ConferenceID>
 <IFNOTEMPTY $form_ClassID>
 <VAR $selector = "&ClassID=".$form_ClassID>
 <VAR $tpl = "Class">
@@ -273,7 +273,7 @@ if( true !== $oneTeam ) { ?>
   <tr class="{$rowClass}">
 <?php 
 if( true !== $isPlayerPage ) { ?>
-    <td><a href="{$externalURL}site=default&tpl=Player&ID={$Leader_PlayerID}&TeamID={$Leader_TeamID}&SearchType=Teams&Sport={$form_Sport}" CLASS="leadersNameLink"><?php echo fixApostrophes( $Leader_PlayerFirstName . " " . $Leader_PlayerLastName ); ?></a>
+    <td><a href="{$externalURL}site=default&tpl=Player&ID={$Leader_PlayerID}&TeamID={$Leader_TeamID}&Sport={$form_Sport}" CLASS="leadersNameLink"><?php echo fixApostrophes( $Leader_PlayerFirstName . " " . $Leader_PlayerLastName ); ?></a>
 <IFNOTEMPTY $form_debug>
  <br />(PlayerID: {$Leader_PlayerID})
  <br />Season: {$Leader_SeasonPlyrSeason}
@@ -282,7 +282,7 @@ if( true !== $isPlayerPage ) { ?>
 <?php 
 }
 if( true !== $oneTeam ) { ?>
-    <td><a href="{$externalURL}site=default&tpl=Team&Season={$form_Season}&TeamID={$Leader_TeamID}&SearchType=Teams&Sport={$form_Sport}" CLASS="leadersTeamLink">
+    <td><a href="{$externalURL}site=default&tpl=Team&Season={$form_Season}&TeamID={$Leader_TeamID}&Sport={$form_Sport}" CLASS="leadersTeamLink">
 <?php echo fixApostrophes( $Leader_TeamName ); ?></a></td>
 <?php 
 } ?>
@@ -454,7 +454,7 @@ if( true !== $oneTeam ) { ?>
   <tr class="{$rowClass}">
 <?php 
 if( true !== $isPlayerPage ) { ?>
-    <td><a href="{$externalURL}site=default&tpl=Player&ID={$Leader_PlayerID}&TeamID={$Leader_TeamID}&SearchType=Teams&Sport={$form_Sport}" CLASS="leadersNameLink"><?php echo fixApostrophes( $Leader_PlayerFirstName . " " . $Leader_PlayerLastName ); ?> 
+    <td><a href="{$externalURL}site=default&tpl=Player&ID={$Leader_PlayerID}&TeamID={$Leader_TeamID}&Sport={$form_Sport}" CLASS="leadersNameLink"><?php echo fixApostrophes( $Leader_PlayerFirstName . " " . $Leader_PlayerLastName ); ?> 
 <IFTRUE $isBoxscorePage> (<IFEQUAL $Leader_Win 1>W</IFEQUAL><IFEQUAL $Leader_Loss 1>L</IFEQUAL><IFEQUAL $Leader_Save 1>S</IFEQUAL>)</IFTRUE></a>
 <IFNOTEMPTY $form_debug>
  <br />(PlayerID: {$Leader_PlayerID})
@@ -464,7 +464,7 @@ if( true !== $isPlayerPage ) { ?>
 <?php 
 }
 if( true !== $oneTeam ) { ?>
-    <td><a href="{$externalURL}site=default&tpl=Team&TeamID={$Leader_TeamID}&SearchType=Teams&Sport={$form_Sport}" CLASS="leadersTeamLink">
+    <td><a href="{$externalURL}site=default&tpl=Team&TeamID={$Leader_TeamID}&Sport={$form_Sport}" CLASS="leadersTeamLink">
 <?php echo fixApostrophes( $Leader_TeamName ); ?></a></td>
 <?php 
 } ?>

@@ -20,7 +20,7 @@
 <IFEMPTY $form_sort>
 <VAR $form_sort = "PlayerFirstName">
 </IFEMPTY>
-<VAR $beginLink = "home.html?site=default&tpl=Leaders&Sport=".$form_Sport."&ConferenceID=".$form_ConferenceID."&SearchType=".$form_SearchType."&sort=">
+<VAR $beginLink = "home.html?site=default&tpl=Leaders&Sport=".$form_Sport."&ConferenceID=".$form_ConferenceID."&sort=">
 <VAR $sortClause = $form_sort." DESC">
 <!-- {$whereClause} -->
 <QUERY name=Leaders SPORTNAME=$sqlSportName SORT=$sortClause> <!-- <WHERECLAUSE=$whereClause> -->
