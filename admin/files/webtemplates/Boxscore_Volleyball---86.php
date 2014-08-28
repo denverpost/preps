@@ -255,7 +255,9 @@ In progress
 </IFGREATER>
         <tr class="{$rowClass}">
             <td width="120">
-                <a href="{$externalURL}site=default&tpl=Player&ID={$PlayerStats_PlayerID}"><VAR $playerName = fixApostrophes($PlayerStats_PlayerLastName.", ".$PlayerStats_PlayerFirstName)>{$playerName}</a>
+<VAR $playerName = fixApostrophes($PlayerStats_PlayerLastName.", ".$PlayerStats_PlayerFirstName)>
+<?PHP $player_slug = slugify($playerName); ?>
+                <a href="{$domainURL}/players/{$player_slug}/{$PlayerStats_PlayerID}">{$playerName}</a>
             </td>
             <td align="center">{$PlayerStats_GamesPlayed}</td>
             <td align="center">{$PlayerStats_Kills}</td>
@@ -342,7 +344,9 @@ In progress
 </IFGREATER>
         <tr class="{$rowClass}">
             <td width="120">
-                <a href="{$externalURL}site=default&tpl=Player&ID={$PlayerStats_PlayerID}"><VAR $playerName = fixApostrophes($PlayerStats_PlayerLastName.", ".$PlayerStats_PlayerFirstName)>{$playerName}</a>
+<VAR $playerName = fixApostrophes($PlayerStats_PlayerLastName.", ".$PlayerStats_PlayerFirstName)>
+<?PHP $player_slug = slugify($playerName); ?>
+                <a href="{$domainURL}/players/{$player_slug}/{$PlayerStats_PlayerID}">{$playerName}</a>
             </td>
             <td align="center">{$PlayerStats_GamesPlayed}</td>
             <td align="center">{$PlayerStats_Kills}</td>

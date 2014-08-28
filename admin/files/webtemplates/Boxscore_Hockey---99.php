@@ -270,9 +270,10 @@
 <IFTRUE $Scoring_Goals != 0 || $Scoring_Assists != 0  || $Scoring_Points != 0 || $Scoring_GoalsAllowed != 0 || $Scoring_Saves != 0 || $Scoring_ShotsAgainst != 0 || $Scoring_GoalkeeperMinutes != 0>
         <tr class="{$rowClass}">
             <td width="120">
-                <a href="{$externalURL}site=default&tpl=Player&ID={$Scoring_PlayerID}">
 <VAR $LastName = fixApostrophes($Scoring_PlayerLastName)>
-                    {$Scoring_PlayerFirstName} {$LastName}
+<?PHP $player_name = $Scoring_PlayerFirstName . ' ' . $LastName; ?>
+                <a href="{$domainURL}/players/<?PHP echo slugify($player_name); ?>/{$Scoring_PlayerID}/">
+                    {$player_name}
 <IFTRUE $Scoring_GoalieWin != 0>
 (W)
 <ELSE>

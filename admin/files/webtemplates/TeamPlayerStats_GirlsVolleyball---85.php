@@ -25,9 +25,14 @@
 <RESULTS list=TeamPlayerStats_rows prefix=Player>
         <tr class="{$rowClass}">
             <td>
-                <a href="home.html?site=default&tpl=Player&ID={$Player_PlayerID}" class="leadersNameLink"> <VAR $Player_PlayerFirstName = fixApostrophes($Player_PlayerFirstName)>
-<VAR $Player_PlayerLastName = fixApostrophes($Player_PlayerLastName)>
-                    {$Player_PlayerFirstName} {$Player_PlayerLastName}</a></td>
+<VAR $first = fixApostrophes($Player_PlayerFirstName)>
+<VAR $last = fixApostrophes($Player_PlayerLastName)>
+<?PHP
+$player_name = $first . ' ' . $last;
+$player_slug = slugify($player_name);
+?>
+                <a href="{$domainURL}/players/{$player_slug}/{$Player_PlayerID}/" class="leadersNameLink">
+                    {$player_name}</a></td>
             <td align="center">{$Player_Points}</td>
             <td align="center">{$Player_Kills}</td>
             <td align="center">{$Player_Assists}</td>

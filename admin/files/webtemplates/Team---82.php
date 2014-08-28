@@ -49,7 +49,7 @@ $school_slug = slugify($Team_SchoolName);
 
 <VAR $statType = "overall">
 <VAR $TeamSeasonStats_query = "">
-<QUERY name=TeamSeasonStats ID=$form_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType>
+<QUERY name=TeamSeasonStats ID=$form_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR=$sportYear>
 <VAR $overallWins = $TeamSeasonStats_Win>
 <VAR $overallLosses = $TeamSeasonStats_Loss>
 <VAR $overallTies = $TeamSeasonStats_Tie>
@@ -468,7 +468,7 @@ $school_slug = slugify($Team_SchoolName);
             <td>
 <VAR $playerName = fixApostrophes($Roster_PlayerFirstName." ".$Roster_PlayerLastName)>
 <?PHP $player_slug = slugify($playerName); ?>
-                <a href="/home.html?site=default&tpl=Player&ID={$Roster_PlayerID}">{$playerName}</a></td>
+                <a href="{$domainURL}/players/{$player_slug}/{$Roster_PlayerID}/">{$playerName}</a></td>
             <td><IFNOTEQUAL $Roster_PlayerHeightFeet 0>{$Roster_PlayerHeightFeet}'</IFNOTEQUAL>
 <IFNOTEQUAL $Roster_PlayerHeightInches 0>{$Roster_PlayerHeightInches}"</IFNOTEQUAL>
             </td>

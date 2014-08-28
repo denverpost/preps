@@ -317,9 +317,9 @@ $sport_slug = 'football';
 <IFGREATER $Passing_PassAttempts 0>
         <tr class="{$rowClass}">
             <td width="120">
-                <a href="{$externalURL}site=default&tpl=Player&ID={$Passing_PlayerID}">
-<VAR $passingLastName = fixApostrophes($Passing_PlayerLastName)>
-                    {$Passing_PlayerFirstName} {$passingLastName}
+<VAR $lastName = fixApostrophes($Passing_PlayerLastName)>
+                <a href="{$domainURL}/players/<?PHP echo slugify($Passing_PlayerFirstName . ' ' . $lastName); ?>/{$Passing_PlayerID}/">
+                    {$Passing_PlayerFirstName} {$lastName}
                 </a>
             </td>
             <td align="center">{$Passing_PassCompletions}</td>
@@ -358,9 +358,9 @@ $sport_slug = 'football';
 <IFGREATER $Rushing_RushingAttempts 0>
         <tr class="{$rowClass}">
             <td width="120">
-                <a href="{$externalURL}site=default&tpl=Player&ID={$Rushing_PlayerID}">
-<VAR $rushingLastName = fixApostrophes($Rushing_PlayerLastName)>
-                    {$Rushing_PlayerFirstName} {$rushingLastName}
+<VAR $lastName = fixApostrophes($Rushing_PlayerLastName)>
+            <a href="{$domainURL}/players/<?PHP echo slugify($Rushing_PlayerFirstName . ' ' . $lastName); ?>/{$Rushing_PlayerID}/">
+                    {$Rushing_PlayerFirstName} {$lastName}
                 </a>
             </td>
             <td align="center">{$Rushing_RushingAttempts}</td>
@@ -396,15 +396,13 @@ $sport_slug = 'football';
 <VAR $rowClass = "boxscoreRow trRow">
 <RESULTS list=GamePlayerStats_rows prefix=Receiving>
 <IFGREATER $Receiving_Receptions 0>
-<tr class="{$rowClass}">
-<td width="120">
-<a href="{$externalURL}site=default&tpl=Player&ID={$Receiving_PlayerID}">
-
-<VAR $recLastName = fixApostrophes($Receiving_PlayerLastName)>
-
-{$Receiving_PlayerFirstName} {$recLastName}
-</a>
-</td>
+    <tr class="{$rowClass}">
+        <td width="120">
+            <VAR $lastName = fixApostrophes($Receiving_PlayerLastName)>
+            <a href="{$domainURL}/players/<?PHP echo slugify($Receiving_PlayerFirstName . ' ' . $lastName); ?>/{$Receiving_PlayerID}/">
+                {$Receiving_PlayerFirstName} {$lastName}
+            </a>
+            </td>
 <td align="center">{$Receiving_Receptions}</td>
 <td align="center">{$Receiving_ReceivingYards}</td>
 <VAR $yardsCatch = round($Receiving_YardsPerCatch,1)>
@@ -438,9 +436,9 @@ $sport_slug = 'football';
 <IFTRUE $Placekicking_FieldGoalsAttempted != 0 || $Placekicking_PointAfterTouchdownAttempts != 0 >
 <tr class="{$rowClass}">
 <td width="120">
-          <a href="{$externalURL}site=default&tpl=Player&ID={$Placekicking_PlayerID}">
-<VAR $placekickingLastName = fixApostrophes($Placekicking_PlayerLastName)>
-                    {$PlaceKicking_PlayerFirstName} {$placekickingLastName}
+<VAR $lastName = fixApostrophes($Placekicking_PlayerLastName)>
+           <a href="{$domainURL}/players/<?PHP echo slugify($Placekicking_PlayerFirstName . ' ' . $lastName); ?>/{$Placekicking_PlayerID}/">
+                    {$PlaceKicking_PlayerFirstName} {$lastName}
                 </a>
             <td align="center">{$Placekicking_PointAfterTouchdown}</td>
             <td align="center">{$Placekicking_PointAfterTouchdownAttempts}</td>
@@ -467,8 +465,8 @@ $sport_slug = 'football';
 <IFTRUE $Punting_Punts != 0>
 <tr class="{$rowClass}">
 <td width="120">
-          <a href="{$externalURL}site=default&tpl=Player&ID={$Punting_PlayerID}">
 <VAR $puntingLastName = fixApostrophes($Punting_PlayerLastName)>
+           <a href="{$domainURL}/players/<?PHP echo slugify($Punting_PlayerFirstName . ' ' . $puntinglastName); ?>/{$Punting_PlayerID}/">
                     {$Punting_PlayerFirstName} {$puntingLastName}
                 </a>
            <td align="center">{$Punting_Punts}</td>
@@ -502,9 +500,9 @@ $sport_slug = 'football';
 <VAR $lastName = fixApostrophes($Defense_PlayerLastName)>
   <tr class="{$rowClass}">
     <td width="120">
-                <a href="home.html?site=default&tpl=Player&ID={$Defense_PlayerID}">
-                    {$Defense_PlayerFirstName}  {$lastName}
-         </a>
+           <a href="{$domainURL}/players/<?PHP echo slugify($Defense_PlayerFirstName . ' ' . $lastName); ?>/{$Defense_PlayerID}/">
+            {$Defense_PlayerFirstName}  {$lastName}
+           </a>
            <td align="center">{$Defense_DefensiveInterceptions}</td>
            <td align="center">{$Defense_InterceptionYards}</td>
            <td align="center">{$Defense_FumbleRecoveries}</td>

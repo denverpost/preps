@@ -37,8 +37,12 @@
 <RESULTS list=Leaders_Wrestling_rows prefix=Plyr>
 <tr class="{$rowClass}">
 <td>
-<a href="{$externalURL}site=default&tpl=Player&ID={$Plyr_PlayerID}" class="leadersNameLink">
-{$Plyr_PlayerFirstName} {$Plyr_PlayerLastName}</a></td>
+<?PHP
+$player_name = $Plyr_PlayerFirstName . ' ' . $Plyr_PlayerLastName;
+$player_slug = slugify($player_name);
+?>
+<a href="{$domainURL}/players/{$player_slug}/{$Plyr_PlayerID}/" class="leadersNameLink">
+{$player_name}</a></td>
 <td>
 <a href="{$externalURL}site=default&tpl=Team&TeamID={$Plyr_TeamID}" class="leadersTeamLink">
 {$Plyr_TeamName}</a></td>

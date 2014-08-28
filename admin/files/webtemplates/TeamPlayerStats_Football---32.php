@@ -80,11 +80,14 @@ query: {$TeamPlayerStats_query}
 <IFGREATER ($Passing_PassAttempts) 0>
 ###here###
 
- <VAR $lastName = fixApostrophes($Passing_PlayerLastName)>
 <tr class="{$rowClass}">
 <td scope="row" abbr="Player Name" align="left">
-<a href="home.html?site=default&tpl=Player&ID={$Passing_PlayerID}" class="leadersNameLink">### target="_blank">###
-{$Passing_PlayerFirstName} {$lastName}</a></td>
+<VAR $lastName = fixApostrophes($Passing_PlayerLastName)>
+<?PHP
+$player_name = $Passing_PlayerFirstName . ' ' . $lastName;
+$player_slug = slugify($player_name);
+?>
+<a href="{$domainURL}/players/{$player_slug}/{$Passing_PlayerID}/" class="leadersNameLink">{$player_name}</a></td>
 <VAR $compPct = round($Passing_PassCompletionPercentage,1)>
 <? $compPct = sprintf("%.1f", $compPct) ?>
 <ROW NAME=LeaderFootballCol STATFIELD="PassCompletions" STAT=$Passing_PassCompletions>
@@ -146,8 +149,11 @@ query: {$TeamPlayerStats_query}
 <VAR $lastName = fixApostrophes($Rushing_PlayerLastName)>
 <tr class="{$rowClass}">
 <td scope="row" abbr="Player Name" align="left">
-<a href="home.html?site=default&tpl=Player&ID={$Rushing_PlayerID}" class="leadersNameLink">
-{$Rushing_PlayerFirstName} {$lastName}</a></td>
+<?PHP
+$player_name = $Rushing_PlayerFirstName . ' ' . $lastName;
+$player_slug = slugify($player_name);
+?>
+<a href="{$domainURL}/players/{$player_slug}/{$Rushing_PlayerID}/" class="leadersNameLink">{$player_name}</a></td>
 <VAR $yardsAtt = round($Rushing_RushingYardsPerAttempt,1)>
 <? $yardsAtt = sprintf("%.1f", $yardsAtt) ?>
 <ROW NAME=LeaderFootballCol STATFIELD="RushingAttempts" STAT=$Rushing_RushingAttempts>
@@ -208,8 +214,11 @@ query: {$TeamPlayerStats_query}
  <VAR $lastName = fixApostrophes($Receiving_PlayerLastName)>
 <tr class="{$rowClass}">
 <td scope="row" abbr="Player Name" align="left">
-<a href="home.html?site=default&tpl=Player&ID={$Receiving_PlayerID}" class="leadersNameLink">
-{$Receiving_PlayerFirstName} {$lastName}</a></td>
+<?PHP
+$player_name = $Receiving_PlayerFirstName . ' ' . $lastName;
+$player_slug = slugify($player_name);
+?>
+<a href="{$domainURL}/players/{$player_slug}/{$Receiving_PlayerID}/" class="leadersNameLink">{$player_name}</a></td>
 ###<VAR $yardsCatch = round($Receiving_YardsPerCatch)>###
 <ROW NAME=LeaderFootballCol STATFIELD="Receptions" STAT=$Receiving_Receptions>
 <?php
@@ -271,8 +280,12 @@ query: {$TeamPlayerStats_query}
 <VAR $lastName = fixApostrophes($Placekicking_PlayerLastName)>
         <tr class="{$rowClass}">
             <td scope="row" abbr="Player Name" align="left">
-                <a href="home.html?site=default&tpl=Player&ID={$Placekicking_PlayerID}" class="leadersNameLink">
-                    {$Placekicking_PlayerFirstName} {$lastName}</a></td>
+<?PHP
+$player_name = $Placekicking_PlayerFirstName . ' ' . $lastName;
+$player_slug = slugify($player_name);
+?>
+                <a href="{$domainURL}/players/{$player_slug}/{$Placekicking_PlayerID}/" class="leadersNameLink">
+                    {$player_name}</a></td>
 <ROW NAME=LeaderFootballCol STATFIELD="PointAfterTouchdown" STAT=$Placekicking_PointAfterTouchdown>
 <ROW NAME=LeaderFootballCol STATFIELD="PointAfterTouchdownAttempts" STAT=$Placekicking_PointAfterTouchdownAttempts>
 <ROW NAME=LeaderFootballCol STATFIELD="FieldGoalsMade" STAT=$Placekicking_FieldGoalsMade>
@@ -326,8 +339,12 @@ query: {$TeamPlayerStats_query}
 <VAR $lastName = fixApostrophes($Punting_PlayerLastName)>
         <tr class="{$rowClass}">
             <td scope="row" abbr="Player Name" align="left">
-                <a href="home.html?site=default&tpl=Player&ID={$Punting_PlayerID}" class="leadersNameLink">
-                    {$Punting_PlayerFirstName} {$lastName}</a></td>
+<?PHP
+$player_name = $Punting_PlayerFirstName . ' ' . $lastName;
+$player_slug = slugify($player_name);
+?>
+                <a href="{$domainURL}/players/{$player_slug}/{$Punting_PlayerID}/" class="leadersNameLink">
+                    {$player_name}</a></td>
 <ROW NAME=LeaderFootballCol STATFIELD="Punts" STAT=$Punting_Punts>
 <VAR $puntAvg = round($Punting_PuntingAverage,1)>
 <? $puntAvg = sprintf("%.1f", $puntAvg) ?>
@@ -388,8 +405,12 @@ query: {$TeamPlayerStats_query}
 <VAR $lastName = fixApostrophes($Defense_PlayerLastName)>
         <tr class="{$rowClass}">
             <td scope="row" abbr="Player Name" align="left">
-                <a href="home.html?site=default&tpl=Player&ID={$Defense_PlayerID}" class="leadersNameLink">
-                    {$Defense_PlayerFirstName}  {$lastName}</a></td>
+<?PHP
+$player_name = $Defense_PlayerFirstName . ' ' . $lastName;
+$player_slug = slugify($player_name);
+?>
+                <a href="{$domainURL}/players/{$player_slug}/{$Defense_PlayerID}/" class="leadersNameLink">
+                    {$player_name}</a></td>
 <ROW NAME=LeaderFootballCol STATFIELD="DefensiveInterceptions" STAT=$Defense_DefensiveInterceptions>
 <ROW NAME=LeaderFootballCol STATFIELD="InterceptionYards" STAT=$Defense_InterceptionYards>
 <ROW NAME=LeaderFootballCol STATFIELD="FumbleRecoveries" STAT=$Defense_FumbleRecoveries>

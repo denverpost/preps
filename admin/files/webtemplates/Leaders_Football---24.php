@@ -167,8 +167,12 @@ MINIMUM PASS greater than: {$minPassGreaterThan} <br>###
 <RESULTS list=Leaders_rows prefix=Passing>
         <tr class="{$rowClass}">
             <td>
-                <a href="{$externalURL}site=default&tpl=Player&ID={$Passing_PlayerID}" class="leadersNameLink">
-                    {$Passing_PlayerFirstName} {$Passing_PlayerLastName}</a></td>
+<?PHP
+$player_name = $Passing_PlayerFirstName . ' ' . $Passing_PlayerLastName;
+$player_slug = slugify($player_name);
+?>
+                <a href="{$domainURL}/players/{$player_slug}/{$Passing_PlayerID}/" class="leadersNameLink">
+                    {$player_name}</a></td>
             <td>
                 <a href="{$externalURL}site=default&tpl=Team&TeamID={$Passing_TeamID}" class="leadersTeamLink">
                     {$Passing_TeamName}</a></td>
@@ -220,8 +224,12 @@ MINIMUM PASS greater than: {$minPassGreaterThan} <br>###
 <RESULTS list=Leaders_rows prefix=Rushing>
         <tr class="{$rowClass}">
             <td>
-                <a href="{$externalURL}site=default&tpl=Player&ID={$Rushing_PlayerID}" class="leadersNameLink">
-                    {$Rushing_PlayerFirstName} {$Rushing_PlayerLastName}</a></td>
+<?PHP
+$player_name = $Rushing_PlayerFirstName . ' ' . $Rushing_PlayerLastName;
+$player_slug = slugify($player_name);
+?>
+                <a href="{$domainURL}/players/{$player_slug}/{$Rushing_PlayerID}/" class="leadersNameLink">
+                    {$player_name}</a></td>
             <td>
                 <a href="{$externalURL}site=default&tpl=Team&TeamID={$Rushing_TeamID}" class="leadersTeamLink">
                     {$Rushing_TeamName}</a></td>
@@ -273,8 +281,12 @@ MINIMUM PASS greater than: {$minPassGreaterThan} <br>###
 <RESULTS list=Leaders_rows prefix=Receiving>
         <tr class="{$rowClass}">
             <td>
-                <a href="{$externalURL}site=default&tpl=Player&ID={$Receiving_PlayerID}" class="leadersNameLink">
-                    {$Receiving_PlayerFirstName} {$Receiving_PlayerLastName}</a></td>
+<?PHP
+$player_name = $Receiving_PlayerFirstName . ' ' . $Receiving_PlayerLastName;
+$player_slug = slugify($player_name);
+?>
+                <a href="{$domainURL}/players/{$player_slug}/{$Receiving_PlayerID}/" class="leadersNameLink">
+                    {$player_name}</a></td>
             <td>
                 <a href="{$externalURL}site=default&tpl=Team&TeamID={$Receiving_TeamID}" class="leadersTeamLink">
                     {$Receiving_TeamName}</a></td>
@@ -355,8 +367,12 @@ MINIMUM Punt greater than: {$minPuntsGreaterThan} <br>###
 <RESULTS list=Leaders_rows prefix=Punting>
         <tr class="{$rowClass}">
             <td>
-                <a href="{$externalURL}site=default&tpl=Player&ID={$Punting_PlayerID}" class="leadersNameLink">
-                    {$Punting_PlayerFirstName} {$Punting_PlayerLastName}</a></td>
+<?PHP
+$player_name = $Punting_PlayerFirstName . ' ' . $Punting_PlayerLastName;
+$player_slug = slugify($player_name);
+?>
+                <a href="{$domainURL}/players/${player_slug}/{$Punting_PlayerID}/" class="leadersNameLink">
+                    {$player_name}</a></td>
             <td>
                 <a href="{$externalURL}site=default&tpl=Team&TeamID={$Punting_TeamID}" class="leadersTeamLink">
                     {$Punting_TeamName}</a></td>
@@ -411,8 +427,12 @@ MINIMUM Punt greater than: {$minPuntsGreaterThan} <br>###
 <RESULTS list=Leaders_rows prefix=Placekicking>
         <tr class="{$rowClass}">
             <td>
-                <a href="{$externalURL}site=default&tpl=Player&ID={$Placekicking_PlayerID}" class="leadersNameLink">
-                    {$Placekicking_PlayerFirstName} {$Placekicking_PlayerLastName}</a></td>
+<?PHP
+$player_name = $Placekicking_PlayerFirstName . ' ' . $Placekicking_PlayerLastName;
+$player_slug = slugify($player_name);
+?>
+                <a href="{$domainURL}/players/${player_slug}/{$Placekicking_PlayerID}/" class="leadersNameLink">
+                    {$player_name}</a></td>
             <td>
                 <a href="{$externalURL}site=default&tpl=Team&TeamID={$Placekicking_TeamID}" class="leadersTeamLink">
                     {$Placekicking_TeamName}</a></td>
@@ -473,8 +493,12 @@ MINIMUM Punt greater than: {$minPuntsGreaterThan} <br>###
 <RESULTS list=Leaders_rows prefix=Defensive>
         <tr class="{$rowClass}">
             <td>
-                <a href="{$externalURL}site=default&tpl=Player&ID={$Defensive_PlayerID}" class="leadersNameLink">
-                    {$Defensive_PlayerFirstName} {$Defensive_PlayerLastName}</a></td>
+<?PHP
+$player_name = $Defensive_PlayerFirstName . ' ' . $Defensive_PlayerLastName;
+$player_slug = slugify($player_name);
+?>
+                <a href="{$domainURL}/players/{$player_slug}/{$Defensive_PlayerID}/" class="leadersNameLink">
+                    {$player_name}</a></td>
             <td>
                 <a href="{$externalURL}site=default&tpl=Team&TeamID={$Defensive_TeamID}" class="leadersTeamLink">
                     {$Defensive_TeamName}</a></td>

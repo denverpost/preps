@@ -14,9 +14,9 @@
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
 </div>
-<h1>Prep Sport Results + Schedules in Colorado</h1>
+<h1>High School Sport Results + Schedules in Colorado</h1>
 
-<h2>Fall Prep Sports in Colorado</h2>
+<h2>Fall High School Sports in Colorado</h2>
 <h3 class="list"><a href="http://preps.denverpost.com/sport/boys-cross-country/" title="Prep Boys Cross Country in Colorado">Boys Cross Country</a></h3>
 <h3 class="list"><a href="http://preps.denverpost.com/sport/girls-cross-country/" title="Prep Girls Cross Country in Colorado">Girls Cross Country</a></h3>
 <h3 class="list"><a href="http://preps.denverpost.com/sport/field-hockey/" title="Prep Field Hockey in Colorado">Field Hockey</a></h3>
@@ -28,7 +28,7 @@
 <h3 class="list"><a href="http://preps.denverpost.com/sport/boys-tennis/" title="Prep Boys Tennis in Colorado">Boys Tennis</a></h3>
 <h3 class="list"><a href="http://preps.denverpost.com/sport/girls-volleyball/" title="Prep Girls Volleyball in Colorado">Girls Volleyball</a></h3>
 
-<h2>Winter Prep Sports in Colorado</h2>
+<h2>Winter High School Sports in Colorado</h2>
 <h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=6" title="Prep Boys Basketball in Colorado">Boys Basketball</a></h3>
 <h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=21" title="Prep Girls Basketball in Colorado">Girls Basketball</a></h3>
 <h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=34" title="Prep Ice Hockey in Colorado">Ice Hockey</a></h3>
@@ -36,7 +36,7 @@
 <h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=23" title="Prep Wrestling in Colorado">Wrestling</a></h3>
 
 
-<h2>Spring Prep Sports in Colorado</h2>
+<h2>Spring High School Sports in Colorado</h2>
 <h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=29" title="Prep Baseball in Colorado">Baseball</a></h3>
 <h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=19" title="Prep Girls Golf in Colorado">Girls Golf</a></h3>
 <h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=35" title="Prep Boys Lacrosse in Colorado">Boys Lacrosse</a></h3>
@@ -58,21 +58,21 @@
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
     {$rightSingleQuote} <a href="{$domainURL}/sport/" title="Prep Scores">Sport Results</a>
 </div>
-<h1>Prep {$Sport_SportName} Scores</h1>
+<h1>High School {$Sport_SportName} Scores</h1>
 <ul id="subnav">
-	<li><a href="#results">Prep {$Sport_SportName} recent results</a></li>
-	<li><a href="#games">Prep {$Sport_SportName} schedule</a></li>
+	<li><a href="#results">{$Sport_SportName} recent results</a></li>
+	<li><a href="#games">{$Sport_SportName} schedule</a></li>
 ### Only show the leader subnav for sports that have leaders ###
 <IFTRUE $Sport_SportName == "Football" || $Sport_SportName == "Boys Basketball" || $Sport_SportName == "Girls Basketball"|| $Sport_SportName == "Wrestling" || $Sport_SportName == "Boys Swimming and Diving" || $Sport_SportName == "Girls Swimming and Diving" || $Sport_SportName == "Girls Volleyball" || $Sport_SportName == "Softball" || $Sport_SportName == "Boys Golf" || $Sport_SportName == "Girls Golf" || $Sport_SportName == "Boys Soccer" || $Sport_SportName == "Girls Soccer" || $Sport_SportName == "Field Hockey" || $Sport_SportName == "Boys Cross Country" || $Sport_SportName == "Girls Cross Country" || $Sport_SportName == "Boys Tennis" || $Sport_SportName == "Girls Tennis" || $Sport_SportName == "Ice Hockey" || $Sport_SportName == "Boys Lacrosse"  || $Sport_SportName == "Girls Lacrosse" || $Sport_SportName == "Baseball" || $Sport_SportName == "Boys Track and Field" || $Sport_SportName == "Girls Track and Field">
 <VAR $show_leaders = "1">
-	<li><a href="#leaders">Prep {$Sport_SportName} leaders</a></li>
+	<li><a href="#leaders">{$Sport_SportName} leaders</a></li>
 </IFTRUE>
-	<li><a href="#conference">Prep {$Sport_SportName}, by conference</a></li>
-	<li><a href="#school">Prep {$Sport_SportName}, by school</a></li>
+	<li><a href="#conference">{$Sport_SportName}, by conference</a></li>
+	<li><a href="#school">{$Sport_SportName}, by school</a></li>
 </ul>
 
 <a name="results"></a>
-<h2>Recent Prep {$Sport_SportName} Results</h2>
+<h2>Recent {$Sport_SportName} Results</h2>
 <VAR $form_SearchDate>
 <IFEMPTY $form_SearchDateEnd><VAR $form_SearchDateEnd = date("m/d/Y")></IFEMPTY>
 <VAR $schedule_type = "results">
@@ -85,7 +85,7 @@
 <VAR $contestTerm = "games">
 </IFTRUE>
 <a name="games"></a>
-<h2>This week's Prep {$Sport_SportName} {$contestTerm}</h2>
+<h2>This week's High School {$Sport_SportName} {$contestTerm}</h2>
 
 <VAR $form_count = 500>
 <VAR $count = $form_count>
@@ -170,7 +170,7 @@ $saturday_date = strtotime("+$days_until_saturday days");
 ###<IFTRUE $show_leaders == "1">###
 ###
 <a name="class"></a>
-<h2>Prep {$Sport_SportName} Leaders, By Class</h2>
+<h2>High School {$Sport_SportName} Leaders, By Class</h2>
 <QUERY name=ClassesForSport SPORTID=$form_Sport>
 <ul>
 <RESULTS list=ClassesForSport_rows prefix=Class>

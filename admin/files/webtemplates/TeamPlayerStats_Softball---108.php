@@ -86,7 +86,10 @@ query: {$TeamPlayerStats_query}
         <tr class="{$rowClass}">
             <td>
 <VAR $playerName = fixApostrophes($Offense_PlayerFirstName." ".$Offense_PlayerLastName)>
-<a href="home.html?site=default&tpl=Player&ID={$Offense_PlayerID}" class="leadersNameLink">### target="_blank">###
+<?PHP
+$player_slug = slugify($playerName);
+?>
+<a href="{$domainURL}/players/{$player_slug}/{$Offense_PlayerID}/" class="leadersNameLink">
 {$playerName}</a></td>
 <VAR $batAvg = trailingZeroes(round($Offense_BattingAverage,3),3,true)>
 <VAR $slPct = trailingZeroes(round($Offense_SluggingPercentage,3),3,true)>
@@ -214,7 +217,10 @@ query: {$TeamPlayerStats_query}
 <tr class="{$rowClass}">
 <td>
 <VAR $playerName = fixApostrophes($Pitching_PlayerFirstName." ".$Pitching_PlayerLastName)>
-                <a href="home.html?site=default&tpl=Player&ID={$Pitching_PlayerID}" class="leadersNameLink">
+<?PHP
+$player_slug = slugify($playerName);
+?>
+                <a href="{$domainURL}/players/{$player_slug}/{$Pitching_PlayerID}/" class="leadersNameLink">
 {$playerName}</a></td>
 <VAR $era = trailingZeroes(round($Pitching_EarnedRunAverage,2),2,true)>
 <VAR $ip = round($Pitching_InningsPitched,2)>
@@ -289,7 +295,10 @@ query: {$TeamPlayerStats_query}
         <tr class="{$rowClass}">
             <td>
 <VAR $playerName = fixApostrophes($Fielding_PlayerFirstName." ".$Fielding_PlayerLastName)>
-                <a href="home.html?site=default&tpl=Player&ID={$Fielding_PlayerID}" class="leadersNameLink">
+<?PHP
+$player_slug = slugify($playerName);
+?>
+                <a href="{$domainURL}/players/{$player_slug}/{$Fielding_PlayerID}/" class="leadersNameLink">
 {$playerName}</a></td>
 
 <ROW NAME=LeaderFootballCol STATFIELD="TotalChances" STAT=$Fielding_TotalChances>

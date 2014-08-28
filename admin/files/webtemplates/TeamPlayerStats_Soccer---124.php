@@ -36,7 +36,10 @@
 <VAR $playerName = fixApostrophes($Offensive_PlayerFirstName." ".$Offensive_PlayerLastName)>
 		<tr class="{$rowClass}">
 			<td>
-				<a href="{$externalURL}site=default&tpl=Player&ID={$Offensive_PlayerID}" class="leadersNameLink" target="_blank">
+<?PHP
+$player_slug = slugify($playerName);
+?>
+				<a href="{$domainURL}/players/{$player_slug}/{$Offensive_PlayerID}/" class="leadersNameLink">
 {$playerName}</a></td>
 
 <ROW NAME=LeaderCol STATFIELD="Goals" STAT=$Offensive_Goals>
@@ -79,7 +82,10 @@
 <VAR $playerName = fixApostrophes($Goalkeeping_PlayerFirstName." ".$Goalkeeping_PlayerLastName)>
 		<tr class="{$rowClass}">
 			<td>
-				<a href="{$externalURL}site=default&tpl=Player&ID={$Goalkeeping_PlayerID}" class="leadersNameLink" target="_blank">
+<?PHP
+$player_slug = slugify($playerName);
+?>
+				<a href="{$domainURL}/players/{$player_slug}/{$Goalkeeping_PlayerID}/" class="leadersNameLink">
 				{$playerName}</a></td>
 <ROW NAME=LeaderCol STATFIELD="W" STAT=$Goalkeeping_GoalieWin>
 <ROW NAME=LeaderCol STATFIELD="L" STAT=$Goalkeeping_GoalieLoss>

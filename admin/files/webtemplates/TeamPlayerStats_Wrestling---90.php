@@ -41,7 +41,10 @@
 <IFEMPTY $plyrLossesEvent><VAR $plyrLossesEvent = 0></IFEMPTY>
 <td>
 ###here###
-<a href="home.html?site=default&tpl=Player&ID={$ID_PlayerID}" class="leadersNameLink"> ###TARGET="_blank">###
+<?PHP
+$player_slug = slugify($playerName);
+?>
+<a href="{$domainURL}/players/{$player_slug}/{$ID_PlayerID}/" class="leadersNameLink">
 {$playerName}</a></td>
 <td>
 {$eventNames[$eventID]}

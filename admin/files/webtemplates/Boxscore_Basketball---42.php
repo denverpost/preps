@@ -161,9 +161,10 @@
 <IFTRUE $Scoring_FieldGoalsAttempted != 0 || $Scoring_ThreePointersAttempted != 0  || $Scoring_FreeThrowsAttempted != 0 || $Scoring_Assists != 0 || $Scoring_PersonalFouls != 0 || $Scoring_Technicals != 0 || $Scoring_TotalRebounds != 0 || $Scoring_Steals != 0 || $Scoring_BlockedShots != 0 || $Scoring_Turnovers != 0 || $Scoring_Played !=0 || $Scoring_Points !=0> 
         <tr class="{$rowClass}">
             <td width="120">
-                <a href="{$externalURL}site=default&tpl=Player&ID={$Scoring_PlayerID}">
 <VAR $LastName = fixApostrophes($Scoring_PlayerLastName)>
-                    {$Scoring_PlayerFirstName} {$LastName}
+<?PHP $player_name = $Scoring_PlayerFirstName . ' ' . $LastName; ?>
+                <a href="{$domainURL}/players/<?PHP echo slugify($player_name); ?>/{$Scoring_PlayerID}/">
+                    {$player_name}
                 </a>
             </td>
             <td align="right">{$Scoring_Points}</td>

@@ -3,7 +3,7 @@
 ###FORMSPORT: {$form_Sport}###
 
 
-<h2>Colorado Prep {$sportName} Leaders</h2>
+<h2>Colorado High School {$sportName} Leaders</h2>
 <VAR $resultNum = 25>
 <VAR $resultNum1 = 25>
 <VAR $tpl = "Leaders">

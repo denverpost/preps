@@ -1,6 +1,7 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <VAR $form_Query = htmlentities($form_Query)>
+<INCLUDE site=default tpl=SportSeasons>
 <IFEMPTY $form_Query><var $form_Query="nothing"></IFEMPTY>
 
 ### ------------------------------------------------------------------------ ###
@@ -253,7 +254,11 @@ if ( $total_count == 0 && isset($query_one) )
 
 <ol>
 <RESULTS list=SearchPlayer_rows prefix=Player>
-	<li><a href="{$externalURL}site=default&tpl=Player&ID={$Player_PlayerID}">{$Player_PlayerFirstName} {$Player_PlayerLastName}</a>
+<?PHP
+$player_name = $Player_PlayerFirstName . ' ' . $Player_PlayerLastName;
+$player_slug = slugify($player_name);
+?>
+	<li><a href="{$domainURL}/players/{$player_slug}/{$Player_PlayerID}/">{$player_name}</a>
 <QUERY name=PlayerTeams ID=$Player_PlayerID>
 <IFGREATER count($PlayerTeams_rows) 0>
 		<span>(

@@ -279,7 +279,12 @@ No
 <RESULTS list=TeamRoster_rows prefix=Roster>
 	<tr class="{$rowClass}">
 	<td>{$Roster_TeamRosterPlayerNumber}</td>
-	<th scope="row" abbr="{$Roster_PlayerFirstName} {$Roster_PlayerLastName}"><a href="{$externalURL}site=default&tpl=Player&ID={$Roster_PlayerID}">{$Roster_PlayerFirstName} {$Roster_PlayerLastName}</a></td>
+	<th scope="row" abbr="{$Roster_PlayerFirstName} {$Roster_PlayerLastName}">
+<?PHP
+$player_name = $Roster_PlayerFirstName . ' ' . $Roster_PlayerLastName;
+$player_slug = slugify($player_name);
+?>
+        <a href="{$domainURL}/players/{$player_slug}/{$Roster_PlayerID}">{$player_name}</a></td>
 	<td><IFNOTEQUAL $Roster_PlayerHeightFeet 0>{$Roster_PlayerHeightFeet}'</IFNOTEQUAL>
 	<IFNOTEQUAL $Roster_PlayerHeightInches 0>{$Roster_PlayerHeightInches}"</IFNOTEQUAL>
 	</td>

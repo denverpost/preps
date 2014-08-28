@@ -93,10 +93,14 @@
 <RESULTS list=Leaders_hockeypoints_rows prefix=Leader>
         <tr class="{$rowClass}">
             <td>
-                <a href="{$externalURL}site=default&tpl=Player&ID={$Leader_PlayerID}" CLASS="leadersNameLink">
 <VAR $Leader_PlayerFirstName = fixApostrophes($Leader_PlayerFirstName)>
 <VAR $Leader_PlayerLastName = fixApostrophes($Leader_PlayerLastName)>
-                    {$Leader_PlayerLastName}</a></td>
+<?PHP
+$player_name = $Leader_PlayerFirstName . ' ' . $Leader_PlayerLastName;
+$player_slug = slugify($player_name);
+?>
+                <a href="{$domainURL}/players/{$player_slug}/{$Leader_PlayerID}/" CLASS="leadersNameLink">
+                    {$player_name}</a></td>
             <td>
                 <a href="{$externalURL}site=default&tpl=Team&TeamID={$Leader_TeamID}" CLASS="leadersTeamLink">
                     {$Leader_TeamName}</a></td>
@@ -167,10 +171,14 @@
 <RESULTS list=Leaders_goalies_rows prefix=Leader>
         <tr class="{$rowClass}" >
             <td>
-                <a href="{$externalURL}site=default&tpl=Player&ID={$Leader_PlayerID}" CLASS="leadersNameLink">
 <VAR $Leader_PlayerFirstName = fixApostrophes($Leader_PlayerFirstName)>
 <VAR $Leader_PlayerLastName = fixApostrophes($Leader_PlayerLastName)>
-                    {$Leader_PlayerLastName}</a></td>
+<?PHP
+$player_name = $Leader_PlayerFirstName . ' ' . $Leader_PlayerLastName;
+$player_slug = slugify($player_name);
+?>
+                <a href="{$domainURL}/players/{$player_slug}/{$Leader_PlayerID}/" CLASS="leadersNameLink">
+                    {$player_name}</a></td>
             <td>
                 <a href="{$externalURL}site=default&tpl=Team&TeamID={$Leader_TeamID}" CLASS="leadersTeamLink">
                     {$Leader_TeamName}</a></td>

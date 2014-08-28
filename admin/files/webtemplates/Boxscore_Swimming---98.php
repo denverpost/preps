@@ -6,8 +6,6 @@
 <VAR $Away_TeamID = $Game_preview_GameAwayTeamID>
 
 
-
-
 <VAR $gameHour = date("g",strtotime($Game_GameTime))>
 <VAR $gameMinute = date("i",strtotime($Game_GameTime))>
 <VAR $gameSecond = date("s",strtotime($Game_GameTime))>
@@ -172,7 +170,8 @@
 <EACH list=playerTimes prefix=PT>
 <tr class="{$rowClass}">
 <td>
-<a href="{$externalURL}site=default&tpl=Player&ID={$playerIDs[$PTkey]}">{$playerFirstNames[$PTkey]} {$playerNames[$PTkey]}</a>
+<?PHP $player_name = $playerFirstNames[$PTkey] . ' ' . $playerNames[$PTkey]; ?>
+<a href="{$domainURL}/players/<?PHP echo slugify($player_name); ?>/{$playerIDs[$PTkey]}/">{$player_name}</a>
 </td>
 <td align="left">
 <a href="{$externalURL}site=default&tpl=Team&TeamID={$teamIDs[$PTkey]}">{$teamNames[$PTkey]}</a>

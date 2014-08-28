@@ -68,14 +68,15 @@
 <IFGREATER count($TeamPlayerStats_rows) 0>
 <VAR $rowClass="leadersRow trRow">
 <RESULTS list=TeamPlayerStats_rows prefix=Scoring>
-
 <IFGREATER ($Scoring_Games) 0>
-
- <VAR $lastName = fixApostrophes($Scoring_PlayerLastName)>
 <tr class="{$rowClass}">
 <td scope="row" abbr="Player Name">
-<a href="home.html?site=default&tpl=Player&ID={$Scoring_PlayerID}" class="leadersNameLink">### target="_blank">###
-{$Scoring_PlayerFirstName} {$lastName}</a></td>
+<VAR $lastName = fixApostrophes($Scoring_PlayerLastName)>
+<?PHP
+$player_name = $Scoring_PlayerFirstName . ' ' . $lastName;
+$player_slug = slugify($player_name);
+?>
+<a href="{$domainURL}/players/{$player_slug}/{$Scoring_PlayerID}/" class="leadersNameLink">{$player_name}</a></td>
 <? $pPG = sprintf("%.1f", $Scoring_PointsPerGame) ?>
 <ROW NAME=LeaderFootballCol STATFIELD="Games" STAT=$Scoring_Games>
 <ROW NAME=LeaderFootballCol STATFIELD="Points" STAT=$Scoring_Points>
@@ -126,11 +127,14 @@
 
 <IFGREATER ($Other_Games) 0>
 
-<VAR $lastName = fixApostrophes($Other_PlayerLastName)>
 <tr class="{$rowClass}">
 <td scope="row" abbr="Player Name">
-<a href="home.html?site=default&tpl=Player&ID={$Other_PlayerID}" class="leadersNameLink">
-{$Other_PlayerFirstName} {$lastName}</a></td>
+<VAR $lastName = fixApostrophes($Other_PlayerLastName)>
+<?PHP
+$player_name = $Other_PlayerFirstName . ' ' . $lastName;
+$player_slug = slugify($player_name);
+?>
+<a href="{$domainURL}/players/{$player_slug}/{$Other_PlayerID}/" class="leadersNameLink">{$player_name}</a></td>
 <VAR $rPG = ($Other_TotalRebounds/$Other_Games)>
 <? $rbPG = sprintf("%.1f", $rPG) ?>
 <ROW NAME=LeaderFootballCol STATFIELD="Rebounds" STAT=$Other_TotalRebounds>

@@ -37,13 +37,15 @@
 <RESULTS list=TeamPlayerStats_rows prefix=Scoring>
 
 <IFGREATER ($Scoring_Points) 0>
-###here###
- <VAR $lastName = fixApostrophes($Scoring_PlayerLastName)>
- <VAR $firstName = fixApostrophes($Scoring_PlayerFirstName)>
 <tr class="{$rowClass}">
 <td scope="row" abbr="Player Name">
-<a href="home.html?site=default&tpl=Player&ID={$Scoring_PlayerID}" class="leadersNameLink">### target="_blank">###
-{$firstName} {$lastName}</a></td>
+<VAR $lastName = fixApostrophes($Scoring_PlayerLastName)>
+<VAR $firstName = fixApostrophes($Scoring_PlayerFirstName)>
+<?PHP
+$player_name = $firstName . ' ' . $lastName;
+$player_slug = slugify($player_name);
+?>
+<a href="{$domainURL}/players/{$player_slug}/{$Scoring_PlayerID}/" class="leadersNameLink">{$player_name}</a></td>
 <ROW NAME=LeaderCol STATFIELD="Goals" STAT=$Scoring_Goals>
 <ROW NAME=LeaderCol STATFIELD="Assists" STAT=$Scoring_Assists>
 <ROW NAME=LeaderCol STATFIELD="Points" STAT=$Scoring_Points>
@@ -89,12 +91,15 @@
 
 
 
-<VAR $lastName = fixApostrophes($Goalie_PlayerLastName)>
-<VAR $firstName = fixApostrophes($Goalie_PlayerFirstName)>
 <tr class="{$rowClass}">
 <td scope="row" abbr="Player Name">
-<a href="home.html?site=default&tpl=Player&ID={$Goalie_PlayerID}" class="leadersNameLink">
-{$firstName} {$lastName}</a></td>
+<VAR $lastName = fixApostrophes($Goalie_PlayerLastName)>
+<VAR $firstName = fixApostrophes($Goalie_PlayerFirstName)>
+<?PHP
+$player_name = $firstName . ' ' . $lastName;
+$player_slug = slugify($player_name);
+?>
+<a href="{$domainURL}/players/{$player_slug}/{$Goalie_PlayerID}/" class="leadersNameLink">{$player_name}</a></td>
 <ROW NAME=LeaderCol STATFIELD="ShotsOnGoal" STAT=$Goalie_ShotsOnGoal>
 <ROW NAME=LeaderCol STATFIELD="Saves" STAT=$Goalie_Saves>
 <ROW NAME=LeaderCol STATFIELD="Goals Allowed" STAT=$Goalie_GoalsAllowed>
