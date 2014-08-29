@@ -1,5 +1,5 @@
-<?PHP function tryit() { echo 'tried!'; } ?>
 <?PHP 
+if ( !function_exists('slugify') ):
 function slugify($value) 
 { 
     $value = str_replace('and ', '', $value);
@@ -236,4 +236,6 @@ function sportInSeason($sportName,$dateToCheck) {
 	}
 	return $inSeason;
 }
+
+endif;
 ?>
