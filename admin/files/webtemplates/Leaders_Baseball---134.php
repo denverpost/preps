@@ -19,9 +19,9 @@
 
 <?PHP $strNow = time() ?>
 <IFTRUE $sportName == "Softball">
-<VAR $seasonStart = strtotime("19 August 2011")>
+<VAR $seasonStart = strtotime("19 August 2014")>
 <ELSE>
-<VAR $seasonStart = strtotime("08 March 2012")>
+<VAR $seasonStart = strtotime("08 March 2015")>
 </IFTRUE>
 
 <?PHP $difference = $strNow - $seasonStart[$sportName] ?>

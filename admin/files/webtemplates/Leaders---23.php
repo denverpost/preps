@@ -65,7 +65,10 @@
 <IFTRUE $tpl == "Leaders">
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
-    {$rightSingleQuote} <a href="{$externalURL}site=default&tpl=Sport&Sport={$form_Sport}">{$Sport_SportName}</a>
+<?PHP
+$sport_slug = sport_id($form_Sport);
+?>
+    {$rightSingleQuote} <a href="{$domainURL}/sport/{$sport_slug}/">{$Sport_SportName}</a>
 </div>
     <h1>Overall Colorado Prep {$sportName} Leaders</h1>
 </IFTRUE>

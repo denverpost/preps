@@ -53,8 +53,8 @@ SportsForClass query: {$SportsForClass_query}
 ### ClassForSport Detail view ###
 ### This template displays when we've got a ClassID and a SportID ###
 <?PHP
-$sport_slug = sport_id($Sport_SportID);
-$class_slug = class_id($Class_ClassID);
+$sport_slug = sport_id($form_Sport);
+$class_slug = class_id($form_ClassID);
 ?>
 
 <QUERY name=Class prefix=Class CLASSID=$form_ClassID>
