@@ -199,7 +199,10 @@
 <tr class="{$rowClass}">
 <td width="120">
 <VAR $playerName = fixApostrophes($Offense_PlayerFirstName." ".$Offense_PlayerLastName)>
-<a href="{$externalURL}site=default&tpl=Player&ID={$Offense_PlayerID}">
+<?PHP
+$player_slug = slugify($playerName);
+?>
+<a href="{$domainURL}/players/{$player_slug}/{$Offense_PlayerID}/">
 {$playerName}
 </a>
 </td>
@@ -295,7 +298,10 @@
 <tr class="{$rowClass}">
 <td width="120">
 <VAR $playerName = fixApostrophes($Pitching_PlayerFirstName." ".$Pitching_PlayerLastName)>
-<a href="{$externalURL}site=default&tpl=Player&ID={$Pitching_PlayerID}">
+<?PHP
+$player_slug = slugify($playerName);
+?>
+<a href="{$domainURL}/players/{$player_slug}/{$Pitching_PlayerID}/">
 {$playerName}
 </a>
 <IFEQUAL $Pitching_Win 1> (W) </IFEQUAL>
@@ -380,7 +386,10 @@
 <tr class="{$rowClass}">
 <td width="120">
 <VAR $playerName = fixApostrophes($Fielding_PlayerFirstName." ".$Fielding_PlayerLastName)>
-<a href="{$externalURL}site=default&tpl=Player&ID={$Fielding_PlayerID}">
+<?PHP
+$player_slug = slugify($playerName);
+?>
+<a href="{$domainURL}/players/{$player_slug}/{$Fielding_PlayerID}/">
 {$playerName}
 </a>
 </td>
