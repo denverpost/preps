@@ -1,5 +1,6 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
+<INCLUDE site=default tpl=SportSeasons>
 
 <VAR $todayUnixDate = time(now)>
 <VAR $todayMonth = date("F",strtotime(now))>
@@ -444,9 +445,10 @@ echo $nav["day"];
 ### ------------------------------------------------------------------------ ###
 <IFEMPTY $form_Sport>
     <IFNOTEQUAL $SportIDCurrent $Game_SportID>
+        <?PHP $sport_slug = sport_id($Game_SportID); ?>
         <div class="clear"></div>
         <a name="sport{$Game_SportID}"></a>
-        <h3 style="margin-top:25px; font-size:36px; border-top:10px solid #ccc;"><a href="{$externalURL}site=default&tpl=Sport&Sport={$Game_SportID}">{$Game_SportName} </a></h3>
+        <h3 style="margin-top:25px; font-size:36px; border-top:10px solid #ccc;"><a href="{$domainURL}/sport/{$sport_slug}/">{$Game_SportName}</a></h3>
         <VAR $SportIDCurrent = $Game_SportID>
     </IFNOTEQUAL>
 </IFEMPTY>
@@ -485,8 +487,7 @@ echo $nav["day"];
 <VAR $classWord = "Class ">
 </IFTRUE>
 
-<a href="{$externalURL}site=default&tpl=Class&ClassID={$Class_ClassID}&Sport={$Game_SportID}" title="{$Class_ClassName} Prep {$Sport_SportName}">{$classWord} 
- {$Class_ClassName}</a>
+<a href="{$externalURL}site=default&tpl=Class&ClassID={$Class_ClassID}&Sport={$Game_SportID}" title="{$Class_ClassName} Prep {$Sport_SportName}">{$classWord} {$Class_ClassName}</a>
 
 <IFTRUE $Sport_SportName == "Boys Basketball" || $SportIDCurrent == "6">
 <VAR $myTerm = "Tournament">
@@ -645,7 +646,6 @@ State {$myTerm}
 </IFEQUAL>
 
 
-###GO HERE###
 <IFEQUAL $sportName "Boys Basketball">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myLateBasketballTime>

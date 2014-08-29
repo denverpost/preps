@@ -1,5 +1,9 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
+<INCLUDE site=default tpl=SportSeasons>
+<?PHP
+$sport_slug = sport_id($form_Sport);
+?>
 
 <IFNOTEMPTY $form_ConferenceID>
 <QUERY name=Conference prefix=Conference CONFERENCEID=$form_ConferenceID>
@@ -9,7 +13,7 @@
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
     › <a href="{$domainURL}/sport/">Sports</a>
-    › <a href="{$externalURL}site=default&tpl=Sport&Sport={$form_Sport}">{$Sport_SportName}</a>
+    › <a href="{$domainURL}/sport/{$sport_slug}/">{$Sport_SportName}</a>
 <IFNOTEMPTY $form_ConferenceID>    › <a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$form_ConferenceID}">{$Conference_ConferenceName} Conference</a></IFNOTEMPTY>
 </div>
 <h1>

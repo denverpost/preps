@@ -1,5 +1,6 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
+<INCLUDE site=default tpl=SportSeasons>
 <?PHP unset($_REQUEST["SearchDate"]); unset($_REQUEST["SearchDateEnd"]);  ?>
 <?PHP $strPastStart = time()-(28 * 24 * 60 * 60) ?>
 <IFEMPTY $form_SearchDate><VAR $form_SearchDate = date("m/d/Y", $strPastStart)></IFEMPTY>
@@ -348,7 +349,10 @@ echo $nav["day"];
 {$myTime}
 ###GAMETIMEHERE###
             </td>
-<IFEMPTY $form_Sport>            <td valign="top"><a href="{$externalURL}site=default&tpl=Sport&Sport={$Game_SportID}">{$Game_SportName}</a></td></IFEMPTY>
+<IFEMPTY $form_Sport>
+        <?PHP $sport_slug = sport_id($Game_SportID); ?>
+            <td valign="top"><a href="{$domainURL}/sport/{$sport_slug}/">{$Game_SportName}</a></td>
+</IFEMPTY>
 <?PHP if ($sportType == "1") { ?>
             <td valign="top" colspan="4">
                 <a href="{$domainURL}/boxscores/{$Game_GameID}/">{$Game_GameMeetName}</a>
