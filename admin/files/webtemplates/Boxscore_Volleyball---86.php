@@ -18,7 +18,7 @@
 ###new stuff begins here###
 
 
-<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2010>
+<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
 <VAR $homeConfWins = $TeamSeasonStats_Win>
 <VAR $homeConfLosses = $TeamSeasonStats_Loss>
 <VAR $Home_TeamName = fixApostrophes($Home_TeamName)>
@@ -27,19 +27,19 @@
 ###query:{$TeamSeasonStats_query}###
 
 <VAR $statType = "conf">
-<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2010>
+<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
 <VAR $awayConfWins = $TeamSeasonStats_Win>
 <VAR $awayConfLosses = $TeamSeasonStats_Loss>
 
 <VAR $statType = "overall">
-<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2010>
+<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
 <VAR $homeOverallWins = $TeamSeasonStats_Win>
 <VAR $homeOverallLosses = $TeamSeasonStats_Loss>
 
 ###query: {$TeamSeasonStats_query}###
 
 <VAR $statType = "overall">
-<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2010>
+<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
 <VAR $awayOverallWins = $TeamSeasonStats_Win>
 <VAR $awayOverallLosses = $TeamSeasonStats_Loss>
 
@@ -90,7 +90,7 @@
 
 <VAR $TeamSeasonStats_query = "TeamSeasonStats">
 <VAR $statType = "conf">
-<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2010>
+<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
 <VAR $awayConfWins = $TeamSeasonStats_Win>
 <VAR $awayConfLosses = $TeamSeasonStats_Loss>
 
@@ -98,13 +98,13 @@
 
 <VAR $TeamSeasonStats_query = "">
 <VAR $statType = "overall">
-<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2010>
+<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
 <VAR $homeOverallWins = $TeamSeasonStats_Win>
 <VAR $homeOverallLosses = $TeamSeasonStats_Loss>
 
 <VAR $TeamSeasonStats_query = "">
 <VAR $statType = "overall">
-<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2010>
+<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
 <VAR $awayOverallWins = $TeamSeasonStats_Win>
 <VAR $awayOverallLosses = $TeamSeasonStats_Loss>
 
@@ -184,7 +184,12 @@ In progress
         </tr>
         <tr>
             <td>
-<a href="{$externalURL}site=default&tpl=Team&TeamID={$Away_TeamID}">
+<?PHP 
+$away_slug = slugify($Away_TeamName);
+$home_slug = slugify($Home_TeamName);
+$sport_slug = 'girls-volleyball';
+?>
+<a href="{$domainURL}/schools/{$away_slug}/{$sport_slug}/{$Away_TeamID}/">
 <strong>{$Away_TeamName}</strong></a></td>
 <td align="center">{$Away_Game1Points}</td>
 <td align="center">{$Away_Game2Points}</td>
@@ -201,7 +206,7 @@ In progress
 </tr>
 <tr>
 <td>
-<a href="{$externalURL}site=default&tpl=Team&TeamID={$Home_TeamID}">
+<a href="{$domainURL}/schools/{$home_slug}/{$sport_slug}/{$Home_TeamID}">
 <strong>{$Home_TeamName}</strong></a></td>
 <td align="center">{$Home_Game1Points}</td>
 <td align="center">{$Home_Game2Points}</td>

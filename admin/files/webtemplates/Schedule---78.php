@@ -17,6 +17,7 @@ $sport_slug = sport_id($form_Sport);
 <IFNOTEMPTY $form_ConferenceID>    › <a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$form_ConferenceID}">{$Conference_ConferenceName} Conference</a></IFNOTEMPTY>
 </div>
 <h1>
+High School 
 <IFNOTEMPTY $form_ConferenceID>    {$Conference_ConferenceName}</IFNOTEMPTY>
     {$Sport_SportName} Schedule<IFNOTEMPTY $form_Week>, Week {$form_Week}</IFNOTEMPTY><IFNOTEMPTY $form_Day>, Day {$form_Day}</IFNOTEMPTY>
 </h1>
@@ -29,7 +30,7 @@ $sport_slug = sport_id($form_Sport);
 <IFTRUE $Sport_SportName == "Girls Swimming and Diving" || $Sport_SportName == "Field Hockey">
 <ELSE>
 <IFEMPTY $form_ConferenceID>
-<h2>View {$Sport_SportName} schedules by conference</h2>
+<h2>{$Sport_SportName} schedules by conference</h2>
 <QUERY name=ConferencesForSport SPORTID=$Sport_SportID>
 <RESULTS list=ConferencesForSport_rows prefix=Conf>
 ### This string substitution removes redundancies in the conference names, ###

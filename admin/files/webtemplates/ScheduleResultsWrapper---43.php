@@ -66,7 +66,6 @@
 ### Week-by-week schedule pagination functions ###
 <?PHP
 // Configure the variables for the week generator
-
 function week_generate_r($game_timestamp)
 {
     $saturday = 6;
@@ -78,7 +77,7 @@ function week_generate_r($game_timestamp)
 }
 
 
-function season_by_week_r($season_start, $season_end, $type="schedule", $sport_id=1, $week_current=0, $conference_id=0, $day_current=0)
+function season_by_week_r($season_start, $season_end, $type="schedule", $sport_id=1, $week_current=-1, $conference_id=0, $day_current=0)
 {
     /*
      Generates pagination-style navigation for a particular sport's schedule.
@@ -93,7 +92,7 @@ function season_by_week_r($season_start, $season_end, $type="schedule", $sport_i
     $season_end = strtotime($season_end);
     $seconds_in_a_week = 604800;
     $seconds_in_a_day = 86400;
-        
+
     // How many weeks are in a season?
     $season_weeks = round(( $season_end - $season_start ) / $seconds_in_a_week);
     
@@ -114,7 +113,7 @@ function season_by_week_r($season_start, $season_end, $type="schedule", $sport_i
             $week_start = 0;
             break;
     }
-
+    if ( $sport_id == 1 ) --$week_start;
 
     //echo "<dd>Weeks: $season_weeks</dd>";
     //echo "<dd>This week: $this_week</dd>";
@@ -132,15 +131,13 @@ function season_by_week_r($season_start, $season_end, $type="schedule", $sport_i
     for ( $i = $week_start; $i <= $season_weeks; $i ++ )
     {
         $week_display = $i + 1;
+        //if ( $sport_id == 1 ) --$week_display;
         $timestamp = $season_start + ( $seconds_in_a_week * $i );
         $week[$i] = week_generate_r($timestamp);
         $week_start_timestamp = $week[$i][0];
         $week_end_timestamp = $week[$i][1];
         
 
-        
-        
-        
         if ( $week_current == $week_display )
         {
             $return["week"] .= $week_display . " ";
@@ -352,6 +349,8 @@ echo $nav["day"];
 <IFEMPTY $form_Sport>
         <?PHP $sport_slug = sport_id($Game_SportID); ?>
             <td valign="top"><a href="{$domainURL}/sport/{$sport_slug}/">{$Game_SportName}</a></td>
+<ELSE>
+<?PHP $sport_slug = sport_id($form_Sport); ?>
 </IFEMPTY>
 <?PHP if ($sportType == "1") { ?>
             <td valign="top" colspan="4">
@@ -383,8 +382,11 @@ $Map_Address = str_replace(" ", "+", trim($Game_SchoolAddress) . "&csz=" . trim(
 </IFNOTEMPTY>
             </td>
 <ELSE>
+<?PHP
+$team_slug = slugify($Game_AwayTeamName);
+?>
             <td valign="top">
-                <a href="{$externalURL}site=default&tpl=Team&TeamID={$Game_AwayTeamID}">
+                <a href="{$domainURL}/schools/{$team_slug}/{$sport_slug}/{$Game_AwayTeamID}/">
                 {$Game_AwayTeamName}
                 </a></td>
             <td valign="top">
@@ -393,7 +395,10 @@ $Map_Address = str_replace(" ", "+", trim($Game_SchoolAddress) . "&csz=" . trim(
 </IFGREATER>
             </td>
             <td valign="top">
-                <a href="{$externalURL}site=default&tpl=Team&TeamID={$Game_HomeTeamID}">
+<?PHP
+$team_slug = slugify($Game_HomeTeamName);
+?>
+                <a href="{$domainURL}/schools/{$team_slug}/{$sport_slug}/{$Game_HomeTeamID}/">
                 {$Game_HomeTeamName}
                 </a>
             <td valign="top">

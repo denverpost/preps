@@ -8,8 +8,8 @@
 <VAR $homeConfLosses = $TeamSeasonStats_softball_Loss>
 <VAR $Home_TeamName = fixApostrophes($Home_TeamName)>
 <VAR $Away_TeamName = fixApostrophes($Away_TeamName)>
-<?PHP $schoolslug_home = slugify($Home_TeamName); ?>
-<?PHP $schoolslug_away = slugify($Away_TeamName); ?>
+<?PHP $home_slug = slugify($Home_TeamName); ?>
+<?PHP $away_slug = slugify($Away_TeamName); ?>
 
 <VAR $TeamSeasonStats_softball_query = "">
 <VAR $statType = "conf">
@@ -43,14 +43,14 @@
 
 ###<VAR $dateTimeDisplay = date("l F j, Y",strtotime($Game_GameDate))." ".date("g:ia",strtotime($Game_GameTime))>###
 <h2 class="list">{$dateTimeDisplay}</h2>
-
+<?PHP
+$sport_slug = 'softball';
+?>
 <table class="boxscoreStatTable" cellpadding="0" cellspacing="0">
-<tr><td><b><a href="{$externalURL}site=default&tpl=Team&TeamID={$Away_TeamID}">
-{$Away_TeamName}</b></td>
+<tr><td><b><a href="{$domainURL}/schools/{$away_slug}/{$sport_slug}/{$Away_TeamID}/">{$Away_TeamName}</b></td>
 <td><b>Overall:</b> {$awayOverallWins}-{$awayOverallLosses} </td>
 <td><b>Conference:</b> {$awayConfWins}-{$awayConfLosses}</td></tr>
-<tr><td><a href="{$externalURL}site=default&tpl=Team&TeamID={$Home_TeamID}">
-<b>{$Home_TeamName}</b></td>
+<tr><td><a href="{$domainURL}/schools/{$home_slug}/{$sport_slug}/{$Home_TeamID}/"><b>{$Home_TeamName}</b></td>
 <td><b>Overall:</b> {$homeOverallWins}-{$homeOverallLosses} </td>
 <td><b>Conference:</b> {$homeConfWins}-{$homeConfLosses}</td></tr>
 </table>
@@ -93,7 +93,7 @@
             <th scope="col" abbr="Errors" align="right"><strong>E</strong></th>
         </tr>
         <tr>
-            <td><a href="{$domainURL}/schools/{$schoolslug_away}/{$sportslug}/{$Away_TeamID}/"><b>{$Away_TeamName}</b></a></td>
+            <td><a href="{$domainURL}/schools/{$away_slug}/{$sport_slug}/{$Away_TeamID}/"><b>{$Away_TeamName}</b></a></td>
 <td align="right">{$Away_Inning1}</td>
 <td align="right">{$Away_Inning2}</td>
 <td align="right">{$Away_Inning3}</td>
@@ -126,7 +126,7 @@
 <td align="right">{$Away_Errors}</td>
 </tr>
 <tr>
-            <td><a href="{$domainURL}/schools/{$schoolslug_home}/{$sportslug}/{$Home_TeamID}/"><b>{$Home_TeamName}</b></a></td>
+            <td><a href="{$domainURL}/schools/{$home_slug}/{$sport_slug}/{$Home_TeamID}/"><b>{$Home_TeamName}</b></a></td>
 <td align="right">{$Home_Inning1}</td>
 <td align="right">{$Home_Inning2}</td>
 <td align="right">{$Home_Inning3}</td>

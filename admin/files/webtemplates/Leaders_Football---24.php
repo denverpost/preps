@@ -1,11 +1,14 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <INCLUDE site=default tpl=SportSeasons>
 <h2>Colorado High School Football Leaders</h2>
-<?PHP $strNow = time() ?>
 ###YEARCHECK###
 <VAR $seasonStart = strtotime("02 September 2014")>
-<?PHP $difference = $strNow - $seasonStart ?>
-<?PHP $difference = round($difference / 604800) ?>
+<?PHP 
+$strNow = time();
+$difference = $strNow - $seasonStart;
+$difference = round($difference / 604800);
+$sport_slug = 'football'
+?>
 
 <VAR $tpl = "Leaders">
 <IFNOTEMPTY $form_ConferenceID>
@@ -175,7 +178,10 @@ $player_slug = slugify($player_name);
                 <a href="{$domainURL}/players/{$player_slug}/{$Passing_PlayerID}/" class="leadersNameLink">
                     {$player_name}</a></td>
             <td>
-                <a href="{$externalURL}site=default&tpl=Team&TeamID={$Passing_TeamID}" class="leadersTeamLink">
+<?PHP
+$team_slug = slugify($Passing_TeamName);
+?>
+                <a href="{$domainURL}/schools/{$team_slug}/{$sport_slug}/{$Passing_TeamID}/" class="leadersTeamLink">
                     {$Passing_TeamName}</a></td>
 <VAR $compPct = round($Passing_PassCompletionPercentage,2)>
 <ROW NAME=LeaderFootballCol STATFIELD="PassCompletions" STAT=$Passing_PassCompletions>

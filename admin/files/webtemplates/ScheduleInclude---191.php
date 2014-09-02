@@ -142,6 +142,9 @@ function season_by_week($season_start, $season_end, $type="schedule", $sport_id=
             break;
     }
 
+    // Football Week Zero logic
+    if ( $sport_id == 1 ) --$week_start;
+
  //echo "<dd>Weeks: $season_weeks</dd>";
     //echo "<dd>This week: $this_week</dd>";
     //echo "<dd>Week start: $week_start</dd>";
@@ -158,6 +161,7 @@ function season_by_week($season_start, $season_end, $type="schedule", $sport_id=
     for ( $i = $week_start; $i <= $season_weeks; $i ++ )
     {
         $week_display = $i + 1;
+        //if ( $sport_id == 1 ) --$week_display;
         $timestamp = $season_start + ( $seconds_in_a_week * $i );
         $week[$i] = week_generate($timestamp);
         $week_start_timestamp = $week[$i][0];
@@ -240,7 +244,7 @@ function season_by_week($season_start, $season_end, $type="schedule", $sport_id=
 </IFTRUE>
 <h3>
     <span class="color grey">{$total_Schedule} prep <?PHP echo strtolower($sportName) ?> {$contestTerm}<IFNOTEQUAL $total_Schedule 1>s</IFNOTEQUAL> for</span> <IFNOTEMPTY $form_Week> Week {$form_Week}, </IFNOTEMPTY>{$strDateDisplay}
-    ### <IFNOTEQUAL $total_Schedule $form_count>( <a href="{$externalURL}site=default&tpl=Schedule">view all games</a> )</IFNOTEQUAL> ###
+    ### <IFNOTEQUAL $total_Schedule $form_count>( <a href="{$domainURL}/schedule/">view all games</a> )</IFNOTEQUAL> ###
 </h3>
 
 
@@ -264,10 +268,7 @@ Pages:
 </IFGREATER>
 
 <IFTRUE $showPrevPageLink>
-<a href="{$beginPrevNextURL}
-&start={$form_start-$form_count}
-&count={$form_count}
-&sort={$form_sort}" class="pageNumberLink">Previous</a>
+<a href="{$beginPrevNextURL}&start={$form_start-$form_count}&count={$form_count}&sort={$form_sort}" class="pageNumberLink">Previous</a>
 </IFTRUE>
 
 <IFGREATER 501 $total_Schedule>
@@ -275,19 +276,13 @@ Pages:
 <IFEQUAL $i*$form_count $form_start>
 <span>{$i+1}</span>
 <ELSE>
-<a href="{$beginPrevNextURL}
-&start={$i*$form_count}
-&count={$form_count}
-&sort={$strReqSort}" class="pageNumberLink">{$i+1}</a>
+<a href="{$beginPrevNextURL}&start={$i*$form_count}&count={$form_count}&sort={$strReqSort}" class="pageNumberLink">{$i+1}</a>
 </IFEQUAL>
 </LOOP>
 </IFGREATER>
 
 <IFTRUE $showNextPageLink>
-<a href="{$beginPrevNextURL}
-&start={$form_start+$form_count}
-&count={$form_count}
-&sort={$form_sort}" class="pageNumberLink">Next</a>
+<a href="{$beginPrevNextURL}&start={$form_start+$form_count}&count={$form_count}&sort={$form_sort}" class="pageNumberLink">Next</a>
 </IFTRUE>
 
 </IFGREATER>
@@ -348,7 +343,7 @@ echo $nav["day"];
 
 ### Query: {$Class_query} ###
 
-        <li><a href="#class{$Class_ClassName}"> Class {$Class_ClassName} Schedule</a></li>
+        <li><a href="#class{$Class_ClassName}">Class {$Class_ClassName} Schedule</a></li>
         <VAR $ClassIDCurrent = $Subnav_TeamClassID>
     </IFNOTEQUAL>
     </IFGREATER>
@@ -451,6 +446,8 @@ echo $nav["day"];
         <h3 style="margin-top:25px; font-size:36px; border-top:10px solid #ccc;"><a href="{$domainURL}/sport/{$sport_slug}/">{$Game_SportName}</a></h3>
         <VAR $SportIDCurrent = $Game_SportID>
     </IFNOTEQUAL>
+<ELSE>
+<?PHP $sport_slug = sport_id($form_Sport); ?>
 </IFEMPTY>
 
 
@@ -987,12 +984,17 @@ $Map_Address = str_replace(" ", "+", trim($Game_SchoolAddress) . "&csz=" . trim(
 <ELSE>
 <VAR $Game_AwayTeamName = trim($Game_AwayTeamName)>
 <VAR $Game_HomeTeamName = trim($Game_HomeTeamName)>
-
-                <a href="{$externalURL}site=default&tpl=Team&TeamID={$Game_AwayTeamID}">
+<?PHP
+$team_slug = slugify($Game_AwayTeamName);
+?>
+                <a href="{$domainURL}/schools/{$team_slug}/{$sport_slug}/{$Game_AwayTeamID}/">
                 {$Game_AwayTeamName}</a><IFGREATER $Game_GameStatStatus 1>: {$Game_AwayTeamPoints}
 </IFGREATER>
+<?PHP
+$team_slug = slugify($Game_HomeTeamName);
+?>
                 at
-                <a href="{$externalURL}site=default&tpl=Team&TeamID={$Game_HomeTeamID}">
+                <a href="{$domainURL}/schools/{$team_slug}/{$sport_slug}/{$Game_HomeTeamID}/">
                 {$Game_HomeTeamName}</a><IFGREATER $Game_GameStatStatus 1>: {$Game_HomeTeamPoints}
 </IFGREATER>
 <IFNOTEQUAL $Game_GameLocation $Game_HomeTeamID>
