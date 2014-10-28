@@ -30,7 +30,7 @@ High School
 <IFTRUE $Sport_SportName == "Girls Swimming and Diving" || $Sport_SportName == "Field Hockey">
 <ELSE>
 <IFEMPTY $form_ConferenceID>
-<h2>{$Sport_SportName} schedules by conference</h2>
+<h2>View {$Sport_SportName} schedules by conference</h2>
 <QUERY name=ConferencesForSport SPORTID=$Sport_SportID>
 <RESULTS list=ConferencesForSport_rows prefix=Conf>
 ### This string substitution removes redundancies in the conference names, ###

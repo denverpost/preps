@@ -1,5 +1,4 @@
 <VAR $domainURL = "http://preps.denverpost.com">
-<INCLUDE site=default tpl=SportSeasons>
 <h2>Colorado Prep Volleyball Leaders</h2>
 
 <VAR $tpl = "Leaders">
