@@ -77,7 +77,7 @@ function week_generate_r($game_timestamp)
 }
 
 
-function season_by_week_r($season_start, $season_end, $type="schedule", $sport_id=1, $week_current=-1, $conference_id=0, $day_current=0)
+function season_by_week_r($season_start, $season_end, $type="schedule", $sport_id=1, $week_current=-9, $conference_id=0, $day_current=0)
 {
     /*
      Generates pagination-style navigation for a particular sport's schedule.
