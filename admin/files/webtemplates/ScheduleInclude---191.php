@@ -11,8 +11,8 @@
 <?PHP $defaultDate = $todayDate.$space.$todayMonth.$space.$todayYear;?>
 
 ### YEARCHECK these variables need to be re-set every year. they are the times that various### ###tournaments start###
-<VAR $myEarlyFootballPlayoffTime = strtotime("1 November 2014")>
-<VAR $myLateFootballPlayoffTime = strtotime("8 November 2014")>
+<VAR $myEarlyFootballPlayoffTime = strtotime("27 October 2014")>
+<VAR $myLateFootballPlayoffTime = strtotime("4 November 2014")>
 <VAR $mySoftballTime = strtotime("11 October 2014")>
 <VAR $myBoysSoccerTime = strtotime("22 October 2014")>
 <VAR $myFieldHockeyTime = strtotime("17 October 2014")>
@@ -557,7 +557,6 @@ State {$myTerm}
 </IFEQUAL>
 </IFEQUAL>
 
-###HELLO###
 <IFEMPTY $Game_GameDate>
 <VAR $Game_GameDate = $defaultDate>
 <ELSE>
@@ -595,7 +594,7 @@ State {$myTerm}
 <IFEQUAL $sportName "Football">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 4>
-<IFGREATER $testTime $myLateFootballPlayoffTime>
+<IFGREATER $testTime $myEarlyFootballPlayoffTime>
 State {$myTerm}
 <ELSE>
 </IFGREATER>
