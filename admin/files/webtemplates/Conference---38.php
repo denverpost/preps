@@ -26,10 +26,10 @@
 <a href="{$externalURL}site=default&tpl=Conference&ConferenceID" Conferences</a>
 </div>
 
-<h1>{$Conference_ConferenceName} Sports</h1>
+<h1>{$Conference_ConferenceName} Conference Sports</h1>
 <QUERY name=SportsForConference CONFERENCEID=$form_ConferenceID>
 <RESULTS list=SportsForConference_rows prefix=Sport>
-<h2 class="list"><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Sport_SportID}" &amp;#62; {$Sport_SportName}</a></h2>
+<h2 class="list"><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Sport_SportID}" &#8250; {$Sport_SportName}</a></h2>
 </RESULTS>
 
 </IFEMPTY>
@@ -62,8 +62,8 @@ $confName = preg_replace("/(\w+)\s(\(Girls lacrosse\))/", "$1", "$Conference_Con
 
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
-    &amp;#62; <a href="{$externalURL}site=default&tpl=Conference&ConferenceID">Conferences</a>
-&amp;#62; <a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$form_ConferenceID}"> {$confName}</a>
+    &#8250; <a href="{$externalURL}site=default&tpl=Conference&ConferenceID">Conferences</a>
+&#8250; <a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$form_ConferenceID}"> {$confName}</a>
 </div>
 <h1>{$confName} {$Sport_SportName} Schedule and Standings</h1>
 <ul id="subnav">

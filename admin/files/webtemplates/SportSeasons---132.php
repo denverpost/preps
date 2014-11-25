@@ -53,7 +53,10 @@ function sport_id($id, $flip=FALSE)
         return $flipped[$id];
 }
 ?>
-<?PHP $seasonStart = array(); $seasonEnd = array(); ?>
+<?PHP 
+$seasonStart = array(); $seasonEnd = array(); 
+###YEARCHECK### everything below.
+?>
 <VAR $seasonStart["Football"] = "08/13">
 <VAR $seasonEnd["Football"] = "12/19">
 
