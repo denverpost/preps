@@ -69,10 +69,10 @@ function sport_id($id, $flip=FALSE)
 <VAR $seasonStart["Baseball"] = "02/25">
 <VAR $seasonEnd["Baseball"] = "06/05">
 
-<VAR $seasonStart["Boys Basketball"] = "11/09">
+<VAR $seasonStart["Boys Basketball"] = "12/01">
 <VAR $seasonEnd["Boys Basketball"] = "03/20">
 
-<VAR $seasonStart["Girls Basketball"] = "11/09">
+<VAR $seasonStart["Girls Basketball"] = "12/01">
 <VAR $seasonEnd["Girls Basketball"] = "03/20">
 
 <VAR $seasonStart["Boys Soccer"] = "08/13">
