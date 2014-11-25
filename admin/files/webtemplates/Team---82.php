@@ -57,7 +57,7 @@ $school_slug = slugify($Team_SchoolName);
 <VAR $Team_TeamAssistantCoaches = fixApostrophes($Team_TeamAssistantCoaches)>
 
 
-<h1>{$Team_TeamName} {$Team_TeamNickname} High School {$Team_SportName} </h1>
+<h1>{$Team_TeamName} High School {$Team_SportName} </h1>
 <IFNOTEMPTY $Team_TeamHeadCoach><h3>{$Team_TeamName} Head coach: {$Team_TeamHeadCoach}</h3></IFNOTEMPTY>
 <IFNOTEMPTY $Team_TeamAssistantCoaches>
 <VAR $assistantCoaches = str_replace("\r\n",", ",trim($Team_TeamAssistantCoaches))>
