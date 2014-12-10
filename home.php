@@ -296,11 +296,9 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 <body style="margin-top:0;text-align:left!important;"><a name="top"></a>
 
 <script type="text/javascript">
-<!--
 function switchMenu(obj) {var el = document.getElementById(obj); if ( el.style.display != "none" ) {el.style.display = 'none';} else {el.style.display = '';}}
 function pointercursor(){document.body.style.cursor = "move";}
 function unpointercursor(){document.body.style.cursor="";}
-//-->
 </script>
 
 <div id="dfmHeader"><!--Header Goes Here automatically--></div>
@@ -311,14 +309,13 @@ function unpointercursor(){document.body.style.cursor="";}
 <!-- SiteCatalyst code version: H.1.
 Copyright 1997-2005 Omniture, Inc. More info available at
 http://www.omniture.com -->
-<script><!--//
-            /* Specify the Report Suite ID(s) to track here */
-            var s_account="denverpost";
-            //--></script>
+<script>
+/* Specify the Report Suite ID(s) to track here */
+var s_account="denverpost";
+</script>
 <script src="http://extras.mnginteractive.com/live/js/omniture/SiteCatalystCode_H_1.js"></script>
 <script src="http://extras.mnginteractive.com/live/js/omniture/OmnitureHelper.js"></script>
-<script><!--
-//http://preps.denverpost.com/home.html?site=default&tpl=Schedule&SearchType=Schedules&Sport=1&TeamID=&ConferenceID=&SearchDate=08%2F20%2F07&SearchDateEnd=08%2F26%2F07
+<script>
 var q = document.location.search;
 getParam = function(arg)
 {
@@ -360,9 +357,9 @@ s.campaign=getCiQueryString("EADID")+getCiQueryString("CREF")
 s.eVar4=s.pageName
 /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
 var s_code=s.t();if(s_code)document.write(s_code)//--></script>
-<script><!--
+<script>
 if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
-//--></script><noscript><img
+</script><noscript><img
 src="http://denverpost.112.2O7.net/b/ss/denverpost/1/H.1--NS/0"
 height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
 <!-- End SiteCatalyst code version: H.1. -->
@@ -552,7 +549,10 @@ unset($cache_lite);
 -->
             <p><strong>Attention: Coaches, parents, athletes: If you spot an error</strong>, please click on the "Contact us" link below and let us know what it is. Also, click on the "Contact us" link below to get an account for your team. 
 
-Statistics from the 2014-15 season will appear once games begin being played.</p>
+<!--
+Statistics from the 2014-15 season will appear once games begin being played.
+-->
+</p>
                <ul class="contentblock">
 					<li><strong>Coaches:</strong> <a href="http://denver-tpext.newsengin.com/">Log in</a></li>
 					<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Contact<?
