@@ -282,8 +282,6 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 <!-- Sports: Preps: Wrestling -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Wrestling"  href="http://feeds.denverpost.com/dp-sports-preps-wrestling"   title="Denver Post Prep Wrestling" text="Denver Post Prep Wrestling"/>
 
 <link type="text/css" rel="stylesheet" href="http://extras.mnginteractive.com/live/css/site36/redesign_default.css">
-<link type="text/css" rel="stylesheet" href="http://extras.mnginteractive.com/live/css/1024_-_2_Column_Multi-Region.css">
-<link type="text/css" rel="stylesheet" href="http://extras.mnginteractive.com/live/css/site36/redesign_topNav.css">
 <link rel="stylesheet" type="text/css" href="http://extras.mnginteractive.com/live/css/site36/newsengin.css">
 
 <script type="text/javascript" src="http://extras.denverpost.com/media/js/jquery-min.js"></script>
