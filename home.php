@@ -286,17 +286,12 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 <link type="text/css" rel="stylesheet" href="http://extras.mnginteractive.com/live/css/site36/redesign_topNav.css">
 <link rel="stylesheet" type="text/css" href="http://extras.mnginteractive.com/live/css/site36/newsengin.css">
 
-<script type="text/javascript" src="http://an.tacoda.net/an/12503/slf.js"></script>
-<script type="text/javascript" src="http://extras.mnginteractive.com/live/js/tacoda/DartInclude.js"></script>
-<script type="text/javascript" src="http://extras.mnginteractive.com/live/js/tacoda/AccipiterInclude.js"></script>
-<script type="text/javascript" src="http://extras.mnginteractive.com/live/js/otherinc/otherinc.js"></script>
-
 <script type="text/javascript" src="http://extras.denverpost.com/media/js/jquery-min.js"></script>
 
-<script type="text/JavaScript" src="http://denver-tpweb.newsengin.com/web/js/calendar.js"></script>
-<script type="text/JavaScript" src="http://denver-tpweb.newsengin.com/web/js/header.js"></script>
-<script type="text/JavaScript" src="http://denver-tpweb.newsengin.com/web/js/prototype.js"></script>
-<script type="text/JavaScript" src="http://denver-tpweb.newsengin.com/web/js/gateway.js"></script>
+<script type="text/javascript" src="http://denver-tpweb.newsengin.com/web/js/calendar.js"></script>
+<script type="text/javascript" src="http://denver-tpweb.newsengin.com/web/js/header.js"></script>
+<script type="text/javascript" src="http://denver-tpweb.newsengin.com/web/js/prototype.js"></script>
+<script type="text/javascript" src="http://denver-tpweb.newsengin.com/web/js/gateway.js"></script>
 <script type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script>
 
 </head>
@@ -694,7 +689,7 @@ unset($cache_lite);
 </div>
 <script src="http://denver-tpweb.newsengin.com/web/js/header.js"></script>
 <script src="http://denver-tpweb.newsengin.com/web/js/prototype.js"></script>
-<script type="text/JavaScript">
+<script type="text/javascript">
         webPath="http://denver-tpweb.newsengin.com/web/";
         document.write('<script type="text/javascript" src="'+webPath+'gateway.php?site=default&tpl=Calendar&divID=calendar&origQueryString='+escape(location.search)+'&webPath='+escape(webPath)+'"><\/script>');
 </script>
