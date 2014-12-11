@@ -403,65 +403,60 @@ unset($cache_lite);
 </script>
 
 
-
+<style type="text/css">
+/*
+#prepswrapper { border: 1px solid red; }
+.mainSection { border: 1px solid yellow; }
+#sidebar { border: 1px solid blue; }
+#prep-sports-blogs-and-news { border: 1px solid green; }
+.row { border: 2px dotted slateblue; }
+.columns { border: 2px dotted yellowgreen; }
+*/
+</style>
 
 <div id="preps">
     <div id="prepswrapper">
-        <div class="mainSection">
+        <div class="row">
+            <div class="large-8 medium-8 small-12 columns">
+                <div class="mainSection">
 <?
 //
 // Main Content
-// Will be cached according to determine_cache_time()
 //
 $include_url = 'http://denver-tpweb.newsengin.com/web/gateway.php?' . $query_string . '&divID=middleContent&webPath=http%3A//denver-tpweb.newsengin.com/web/';
-$cache_config['lifeTime'] = $cache_time;
-/*
-$cache_lite = new Cache_Lite($cache_config);
-if ( $data = $cache_lite->get($cache_id['content']) )
-{
-    echo $data;
-}
-else
-{
-*/
     $data = clean_content($include_url);
     // Error checking
     if ( strpos($data['main'], 'error ') > 0 && strpos($data['main'], 'Terror ') == 0 &&  $_SERVER['REMOTE_ADDR'] != "72.165.229.187" && $_SERVER['HTTP_REFERER'] != "" )
     {
         mail('jmurphy@denverpost.com', '[Preps] Error: 404 - ' . $_SERVER['REMOTE_ADDR'], 'http://preps.denverpost.com' . $_SERVER['REQUEST_URI'] . "\n Referer: " . $_SERVER['HTTP_REFERER'] . "\n\n" . $data['main']);
     }
-    //elseif ( strpos($data['main'], 'error ') > 0 && strpos($data['main'], "tp_denver.seasonteam") > 0 )
-    //{
-    //    header("Location: http://preps.denverpost.com/home.html?site=default&tpl=Main", TRUE, 404);
-    //}
     echo $data['main'];
-    ////$cache_lite->save($data['main']);
-////}
-
 ?>
 
 
 
 
 <!-- [preps] article footer -->
-<hr noshade>
-            <div id="prep-sports-blogs-and-news">
-                <div class="leftcol region4">
+                    <hr noshade>
+                    <div class="row">
+                        <div id="prep-sports-blogs-and-news">
+                            <div class="leftcol region4">
 <?
 // Content include
 include('freeforms/video.html');
 ?>
-                </div>
-                <div class="rightcol region5">
+                            </div>
+                            <div class="rightcol region5">
 <?
 // Content include
 include('freeforms/blogs.html');
 ?>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="sidebar">
+                            </div>
+                        </div>
+                    </div> <!-- CLOSE .ROW -->
+                </div> <!-- CLOSE .MAINSECTION -->
+            </div> <!-- CLOSE .COLUMNS -->
+            <div class="large-4 medium-4 small-12 columns">
 
 <!-- Begin DFP Premium ad uniqueId: dfp-20 -->
 <div id='dfp-20' style="margin-bottom:10px;">
@@ -477,28 +472,16 @@ include('freeforms/blogs.html');
 <?
 //
 // Page-Specific Sidebar Content
-// If it exists, it will be cached 6 hours
 //
-$cache_config['lifeTime'] = 21600;
-/*
-if ( $data_sidebar = $cache_lite->get($cache_id['sidebar']) )
-{
-    echo $data_sidebar;
-}
-elseif ( $data['sidebar'] != '' )
-{
-*/
     echo $data['sidebar'];
-    ////$cache_lite->save($data['sidebar']);
-////}
 
 unset($data);
 unset($cache_lite);
 ?>
 
 
-        <div class="boxblue">
-			<div class="contentblock">
+                <div class="boxblue">
+                    <div class="contentblock">
 			 <!--
   <p><strong>We are experiencing problems with our TeamPlayer stats-entry software. If you have problems logging in, please try again later. Or if you can log in find that the application is slow, save your data frequently while entering it.</p> 
  <p>These problems are currently being addressed, but just when they will be resolved is not yet known.</strong></p> 
@@ -520,33 +503,11 @@ if ( strpos($_SERVER['REQUEST_URI'], 'tpl=Contact') == FALSE )
 ?>"><strong>See an error?</strong> Contact us.</a></li>
 
 					<li><a href="javascript:bookmark_us('http://preps.denverpost.com<?= $_SERVER['REQUEST_URI'] ?>','Preps: [PAGENAME]')">Add this page to your favorites</a></li>
-
-
-
 <?php
 //
 // Sport-specific sidebar
-// Will be cached for 6 hours
 //
-
-$cache_config['lifeTime'] = 21600;
-//$cache_config['lifeTime'] = 1;
-/*
-$cache_lite = new Cache_Lite($cache_config);
-if ( $data = $cache_lite->get($cache_id['sportsidebar']) )
-{
-    echo $data;
-}
-else
-{
-*/
 	ob_start();
-?>
-
-
-<?
-
-
 if ( isset($related['sport']['twitter']) )
 {
     echo '<li><a href="http://twitter.com/' . $related['sport']['twitter'] . '">Follow @' . $related['sport']['twitter'] . ' on Twitter</a></li>';
@@ -555,12 +516,10 @@ else
 {
     echo '<li><a href="http://twitter.com/PostPreps">Follow @PostPreps on Twitter</a></li>';
 }
-
 ?>
 				</ul>
-			</div>
-		</div>
-
+                    </div>
+                </div>
 
                     <h2><a href="http://www.denverpost.com/preps" title="Colorado Prep <?= $related['sport']['title'] ?> News">Colorado Prep <?= $related['sport']['title'] ?> News</a></h2>
                     <div class="boxblue">
@@ -573,9 +532,9 @@ if ( isset($related['sport']['slug']) )
 {
     echo '_' . $related['sport']['slug'];
 }
-echo '.js"></script></div></div>';
-
+echo '.js"></script></div>';
 ?>
+                    </div>
 
 <script type="text/javascript">
 function bookmark_us(url, title)
@@ -602,15 +561,6 @@ function bookmark_us(url, title)
 }
 </script>
 
-<!--
-        <div class="boxblue">
-			<div class="contentblock">
-				<ul class="contentblock">
-				</ul>
-			</div>
-		</div>
--->
-
 <a href="http://www.maxpreps.com/state/colorado.htm"><img src="http://extras.mnginteractive.com/live/media/site36/2011/1025/20111025_124623_maxpreps.gif" width="224" height="79" style="margin:0;"></a>
 
 <!-- Begin DFP Premium ad uniqueId: dfp-21 -->
@@ -628,16 +578,13 @@ function bookmark_us(url, title)
 // Content include
 //include('freeforms/photo.html');
 
-
-?>
-
-<?
     $data['sportsidebar'] = ob_get_flush();
-    ////$cache_lite->save($data['sportsidebar']);
-////}
 unset($data);
 unset($cache_lite);
 ?>
+            </div> <!-- CLOSE .COLUMNS -->
+        </div> <!-- CLOSE .ROW -->
+    </div> <!-- CLOSE #PREPSWRAPPER -->
 
         </div>
 </div>
@@ -656,7 +603,6 @@ unset($cache_lite);
 </div>
 
 <div id="dfmFooter" style="margin-top:10px;"><!--Footer Goes Here--></div>
-	
 	<script type="text/javascript" src="http://local.denverpost.com/common/dfm/dfm-nav/dfm-nav-core.js"></script>
 	<!-- You'll need to change the pageTitle in the script below. leaderboard|true displays a banner ad at the top -->
 	<script>
@@ -664,7 +610,6 @@ unset($cache_lite);
 	</script>
 
 </body>
-
 <?
 // Close out the whole-page caching.
 
