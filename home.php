@@ -253,6 +253,7 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 <title><?= $related['sport']['titletag'] ?>Denver Post High School Sport Results</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="stylesheet" type="text/css" href="http://extras.denverpost.com/stateofhope/css/foundation.min.css">
 <link rel="icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
 
@@ -444,51 +445,6 @@ else
 
 <!-- [preps] article footer -->
 <hr noshade>
-<!-- <div style="margin-left:15px; margin-top:10px;">
-<h5><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Main&amp;source=preparticle-stats">More Denver Post Preps</a></h5>
-<ul class="boxwhite">
-	<li><a href="http://preps.denverpost.com/home.html?site=default&tpl=Main">Colorado Prep Game Results</a></li><br><br>
-		
-	<ul>
-		<strong>Winter Sports</strong>
-
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=6&amp;source=preparticle-stats" title="Prep Boys Basketball in Colorado">Boys Basketball</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=21&amp;source=preparticle-stats" title="Prep Girls Basketball in Colorado">Girls Basketball</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=17&amp;source=preparticle-stats" title="Prep Girls Swimming and Diving in Colorado">Girls Swimming and Diving</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=34&amp;source=preparticle-stats" title="Prep Ice Hockey in Colorado">Ice Hockey</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=23&amp;source=preparticle-stats" title="Prep Wrestling in Colorado">Wrestling</a></li><br><br>
-	</ul>
-	
-	<ul>	
-		<strong>Fall Sports</strong>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=13&amp;source=preparticle-stats" title="Prep Boys Cross Country in Colorado">Boys Cross Country</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=14&amp;source=preparticle-stats" title="Prep Girls Cross Country in Colorado">Girls Cross Country</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=32&amp;source=preparticle-stats" title="Prep Field Hockey in Colorado">Field Hockey</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=1&amp;source=preparticle-stats" title="Prep Football in Colorado">Football</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=18&amp;source=preparticle-stats" title="Prep Boys Golf in Colorado">Boys Golf</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=33&amp;source=preparticle-stats" title="Prep Girls Gymnastics in Colorado">Girls Gymnastics</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=12&amp;source=preparticle-stats" title="Prep Boys Soccer in Colorado">Boys Soccer</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=30&amp;source=preparticle-stats" title="Prep Softball in Colorado">Softball</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=27&amp;source=preparticle-stats" title="Prep Boys Tennis in Colorado">Boys Tennis</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=11&amp;source=preparticle-stats" title="Prep Girls Volleyball in Colorado">Girls Volleyball</a></li><br><br>
-	</ul>
-
-	<ul>
-		<strong>Spring Sports</strong>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=29&amp;source=preparticle-stats" title="Prep Boys Baseball in Colorado">Boys Baseball</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=35&amp;source=preparticle-stats" title="Prep Boys Lacrosse in Colorado">Boys Lacrosse</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=16&amp;source=preparticle-stats" title="Prep Boys Swimming and Diving in Colorado">Boys Swimming and Diving</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=25&amp;source=preparticle-stats" title="Prep Girls Track and Field in Colorado">Boys Track and Field</a></li>
-	<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=19&amp;source=preparticle-stats" title="Prep Girls Golf in Colorado">Girls Golf</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=36&amp;source=preparticle-stats" title="Prep Girls Lacrosse in Colorado">Girls Lacrosse</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=15&amp;source=preparticle-stats" title="Prep Girls Soccer in Colorado">Girls Soccer</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=31&amp;source=preparticle-stats" title="Prep Girls Tennis in Colorado">Girls Tennis</a></li>
-		<li><a href="http://preps.denverpost.com/home.html?site=default&amp;tpl=Sport&amp;Sport=28&amp;source=preparticle-stats" title="Prep Girls Track and Field in Colorado">Girls Track and Field</a></li>
-	</ul>
-</ul>
-</div>-->
-
-
             <div id="prep-sports-blogs-and-news">
                 <div class="leftcol region4">
 <?
