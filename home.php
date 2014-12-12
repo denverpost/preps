@@ -298,15 +298,27 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 @media only screen and (max-width: 1004px) 
 {
     #dfmHeader div.foot, #dfmHeader div.sub-navigation, #dfmHeader #dfmMasthead #dfmPageTitle, #dfmHeader #dfmMasthead #dfmSearch, #dfmHeader #dfmMasthead #weatherBoxReal, #dfmHeader #dfmLeaderboardAd { display:none; }
+    #prepswrapper { border: 0px none; }
+    /* Prep nav adjustments */
+    #prepsnavwrapper { background-image: none; }
+    #prepsnav
+    {
+        background: url(http://extras.mnginteractive.com/live/media/site36/2009/0904/20090904_025325_preps_nav_bg.gif) no-repeat scroll 5px 5px;
+    }
+    #page { width: 100%; }
+    #navclasses, #navhome { display: none; }
 }
 @media only screen and (max-width: 768px) 
 {
-    /* Kill the nav */
+    /* Kill the main nav */
     #dfmHeader #dfmMasthead h3 { margin-left:.5em; }
     #dfmHeader div.page-head div.body { background:none; border:none; }
     #dfmHeader div.page-head div.body div.margin { width:100%; }
     #wrapper { width:100%; overflow:hidden; }
     #top_leaderboard_wrap { display: none; }
+
+    /* Prep nav adjust */
+    #navconferences { display: none; }
 
     /* Adjust the layout */
     .adElement { width: 100%!important; }
@@ -314,6 +326,10 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
     body h3 { font-size: 1em; }
     body h1, body h2, body h3, body h4, body h5, body h6 { line-height: 1; }
     body h1 { width: 80%!important; }
+}
+@media only screen and (max-width: 728px) 
+{
+    #navnews, #leaderboard { display: none; }
 }
 ul, ol, dl { line-height: auto; }
 table tr th
