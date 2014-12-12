@@ -293,6 +293,35 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 <script type="text/javascript" src="http://denver-tpweb.newsengin.com/web/js/gateway.js"></script>
 <script type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script>
 
+<style type="text/css">
+/* Foundation overrides */
+@media only screen and (max-width: 1004px) 
+{
+    #dfmHeader div.foot, #dfmHeader div.sub-navigation, #dfmHeader #dfmMasthead #dfmPageTitle, #dfmHeader #dfmMasthead #dfmSearch, #dfmHeader #dfmMasthead #weatherBoxReal, #dfmHeader #dfmLeaderboardAd { display:none; }
+}
+@media only screen and (max-width: 768px) 
+{
+    /* Kill the nav */
+    #dfmHeader #dfmMasthead h3 { margin-left:.5em; }
+    #dfmHeader div.page-head div.body { background:none; border:none; }
+    #dfmHeader div.page-head div.body div.margin { width:100%; }
+    #wrapper { width:100%; overflow:hidden; }
+    #top_leaderboard_wrap { display: none; }
+
+    /* Adjust the layout */
+    .adElement { width: 100%!important; }
+    .row .maincol, #wrapper .row .sidebarcol { float: none!important; }
+    body h3 { font-size: 1em; }
+    body h1, body h2, body h3, body h4, body h5, body h6 { line-height: 1; }
+    body h1 { width: 80%!important; }
+}
+ul, ol, dl { line-height: auto; }
+table tr th
+{
+    padding: 5px 2px 4px 2px;
+    color: white;
+}
+</style>
 </head>
 <body style="margin-top:0;text-align:left!important;"><a name="top"></a>
 
