@@ -307,6 +307,12 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
     }
     #page { width: 100%; }
     #navclasses, #navhome { display: none; }
+
+    /* Page content adjustments */
+    table.deluxe { width: 100%; }
+    table.wide300 { width: 50%; }
+    div.info { width: 80%; }
+    div.mainSection { width: auto!important; }
 }
 @media only screen and (max-width: 768px) 
 {
@@ -326,16 +332,22 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
     body h3 { font-size: 1em; }
     body h1, body h2, body h3, body h4, body h5, body h6 { line-height: 1; }
     body h1 { width: 80%!important; }
+
 }
 @media only screen and (max-width: 728px) 
 {
-    #navnews, #leaderboard { display: none; }
+    #navnews, #leaderBoardAd { display: none; }
 }
 ul, ol, dl { line-height: auto; }
 table tr th
 {
     padding: 5px 2px 4px 2px;
     color: white;
+}
+#prepswrapper 
+{
+    max-width: 1000px;
+    width: 100%;
 }
 </style>
 </head>
