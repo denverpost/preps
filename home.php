@@ -312,7 +312,7 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
     table.deluxe { width: 100%; }
     table.wide300 { width: 50%; }
     div.info { width: 80%; }
-    div.mainSection { width: auto!important; }
+    div.region4, div.region5, h4.prepsub, h3#prepblogs, div.mainSection { width: auto!important; }
 }
 @media only screen and (max-width: 768px) 
 {
