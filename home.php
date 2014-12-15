@@ -337,8 +337,9 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 {
     #navnews, #leaderBoardAd { display: none; }
 
-    /* Hide extraneous text on searchbar */
-    #prepssearchbox span { display:none; }
+    /* Hide label text on searchbar */
+    #prepssearchbox h5 { display: none; }
+    #prepssearchbox { width: 100%; }
 }
 ul, ol, dl { line-height: auto; }
 table tr th
@@ -460,18 +461,6 @@ unset($cache_lite);
         });
 //-->
 </script>
-
-
-<style type="text/css">
-/*
-#prepswrapper { border: 1px solid red; }
-.mainSection { border: 1px solid yellow; }
-#sidebar { border: 1px solid blue; }
-#prep-sports-blogs-and-news { border: 1px solid green; }
-.row { border: 2px dotted slateblue; }
-.columns { border: 2px dotted yellowgreen; }
-*/
-</style>
 
 <div id="preps">
     <div id="prepswrapper">
