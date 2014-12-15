@@ -180,7 +180,7 @@
 <div id="prepssearchbox" align="center" style="margin-top:40px!important;">
 <h5>
 <!-- <a href="http://preps.denverpost.com/home.html?site=default&tpl=scoreboard">LIVE FOOTBALL SCORES</a> || 
--->Search Player, School and Team Names</h5>
+-->Search <span>Player, School and Team Names</span></h5>
 <form action="http://preps.denverpost.com/home.html" method="get">
 	<input name="Query" value="" type="text">
 	<input name="site" value="default" type="hidden">

@@ -7,6 +7,9 @@
 <IFEMPTY $form_SearchDateEnd><VAR $form_SearchDateEnd = date("m/d/Y")></IFEMPTY>
 <IFEMPTY $sort><VAR $sort="GameDate DESC, GameTime DESC"></IFEMPTY>
 <VAR $FinishedGames=TRUE>
+### ###
+
+
 
 ### Set default values for start and count ###
 <IFEMPTY $form_start><VAR $form_start = 0></IFEMPTY>

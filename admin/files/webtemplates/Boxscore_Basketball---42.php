@@ -81,19 +81,19 @@
             <td align="right">{$Away_ThirdQuarterPoints}</td>
             <td align="right">{$Away_FourthQuarterPoints}</td>
 <IFEMPTY $Away_OvertimePoints>
-<$VAR $Away_OvertimePoints = 0>
+<VAR $Away_OvertimePoints = 0>
 <ELSE>
 </IFEMPTY>
 <IFEMPTY $Away_Overtime2Points>
-<$VAR $Away_Overtime2Points = 0>
+<VAR $Away_Overtime2Points = 0>
 <ELSE>
 </IFEMPTY>
 <IFEMPTY $Home_OvertimePoints>
-<$VAR $Home_OvertimePoints = 0>
+<VAR $Home_OvertimePoints = 0>
 <ELSE>
 </IFEMPTY>
 <IFEMPTY $Home_Overtime2Points>
-<$VAR $Home_Overtime2Points = 0>
+<VAR $Home_Overtime2Points = 0>
 <ELSE>
 </IFEMPTY>
 <IFTRUE $Away_OvertimePoints != 0 || $Home_OvertimePoints !=0>
