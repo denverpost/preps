@@ -496,14 +496,14 @@ $include_url = 'http://denver-tpweb.newsengin.com/web/gateway.php?' . $query_str
 <!-- [preps] article footer -->
                     <hr noshade>
                     <div class="row">
-                        <div id="prep-sports-blogs-and-news">
+                        <div id="prep-sports-blogs-and-news large-6 medium-12 small-12 columns">
                             <div class="leftcol region4">
 <?
 // Content include
 include('freeforms/video.html');
 ?>
                             </div>
-                            <div class="rightcol region5">
+                            <div class="rightcol region5 large-6 medium-12 small-12 columns">
 <?
 // Content include
 include('freeforms/blogs.html');
