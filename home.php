@@ -332,11 +332,13 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
     body h3 { font-size: 1em; }
     body h1, body h2, body h3, body h4, body h5, body h6 { line-height: 1; }
     body h1 { width: 80%!important; }
-
 }
 @media only screen and (max-width: 728px) 
 {
     #navnews, #leaderBoardAd { display: none; }
+
+    /* Hide extraneous text on searchbar */
+    #prepssearchbox span { display:none; }
 }
 ul, ol, dl { line-height: auto; }
 table tr th
@@ -474,7 +476,7 @@ unset($cache_lite);
 <div id="preps">
     <div id="prepswrapper">
         <div class="row">
-            <div class="large-8 medium-8 small-12 columns">
+            <div class="large-8 medium-12 small-12 columns">
                 <div class="mainSection">
 <?
 //
@@ -513,7 +515,7 @@ include('freeforms/blogs.html');
                     </div> <!-- CLOSE .ROW -->
                 </div> <!-- CLOSE .MAINSECTION -->
             </div> <!-- CLOSE .COLUMNS -->
-            <div class="large-4 medium-4 small-12 columns">
+            <div class="large-4 medium-12 small-12 columns">
 
 <!-- Begin DFP Premium ad uniqueId: dfp-20 -->
 <div id='dfp-20' style="margin-bottom:10px;">
