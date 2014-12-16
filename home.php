@@ -251,6 +251,7 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 <html lang="en">
 <head>
 <title><?= $related['sport']['titletag'] ?>Denver Post High School Sport Results</title>
+<meta name="viewport" content="width=device-width">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <link rel="stylesheet" type="text/css" href="http://extras.denverpost.com/stateofhope/css/foundation.min.css">
@@ -341,6 +342,15 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
     #prepssearchbox h5 { display: none; }
     #prepssearchbox { width: 100%; }
 }
+@media only screen and (max-width: 655px)
+{
+    #preps h1#prepphoto
+    {
+        background-image: none;
+        text-indent: 0;
+    }
+}
+
 ul, ol, dl { line-height: auto; }
 table tr th
 {
