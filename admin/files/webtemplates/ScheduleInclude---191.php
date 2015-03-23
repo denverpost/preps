@@ -10,7 +10,7 @@
 <VAR $hyphen = "-">
 <?PHP $defaultDate = $todayDate.$space.$todayMonth.$space.$todayYear;?>
 
-### YEARCHECK these variables need to be re-set every year. they are the times that various### ###tournaments start###
+### YEARCHECK these variables need to be re-set every year. they are the times that various tournaments start###
 <VAR $myEarlyFootballPlayoffTime = strtotime("27 October 2014")>
 <VAR $myLateFootballPlayoffTime = strtotime("4 November 2014")>
 <VAR $mySoftballTime = strtotime("11 October 2014")>
@@ -22,6 +22,8 @@
 <VAR $myEarlyBaseballTime = strtotime("9 May 2015")>
 <VAR $myLateBaseballTime = strtotime("9 May 2015")>
 <VAR $myGirlsSoccerTime = strtotime("5 May 2015")>
+<VAR $myBoysLacrosseTime = strtotime("2 May 2015")>
+<VAR $myGirlsLacrosseTime = strtotime("2 May 2015")>
 
 
 <VAR $myDefaulttime = strtotime("$defaultDate")>
