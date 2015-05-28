@@ -246,11 +246,11 @@ SportTeams_dev query: {$SportTeams_dev_query}
 </div>
 <div class="" style="width:200px; float:left;">
 <ul class="namelist">	<!-- Tier 3 -->
-		<li><a name="teams-{$newIndexLetter}" href="#teams-{$newIndexLetter}" title="Prep {$Sport_SportName} teams in Colorado with names that start with the letter {$newIndexLetter}">{$newIndexLetter}</a>
+		<li><a name="teams-{$newIndexLetter}" id="teams-{$newIndexLetter}" href="#teams-{$newIndexLetter}" title="Prep {$Sport_SportName} teams in Colorado with names that start with the letter {$newIndexLetter}">{$newIndexLetter}</a>
 			<ul>	<!-- Tier 4 -->
                         <ELSE>
 		</ul></li>	<!-- /Tier 4 -->
-		<li><a name="teams-{$newIndexLetter}" href="#teams-{$newIndexLetter}" title="Prep {$Sport_SportName} teams in Colorado with names that start with the letter {$newIndexLetter}">{$newIndexLetter}</a>
+		<li><a name="teams-{$newIndexLetter}" id="teams-{$newIndexLetter}" href="#teams-{$newIndexLetter}" title="Prep {$Sport_SportName} teams in Colorado with names that start with the letter {$newIndexLetter}">{$newIndexLetter}</a>
 			<ul>	<!-- Tier 4 -->
                         </IFEQUAL>
 					</IFNOTEQUAL>
@@ -258,7 +258,11 @@ SportTeams_dev query: {$SportTeams_dev_query}
 				</IFNOTEQUAL>
 
 
-				<li><a href="{$externalURL}site=default&tpl=Team&Sport={$Sport_SportID}&TeamID={$Team_TeamID}" title="{$Team_TeamName} prep {$Sport_SportName} team and player stats, schedule and standings.">{$Team_TeamName}</a></li>
+<?PHP
+$team_slug = slugify($Team_TeamName);
+$sport_slug = sport_id($Sport_SportID);
+?>
+				<li><a href="/schools/{$team_slug}/{$sport_slug}/{$Team_TeamID}/" title="{$Team_TeamName} prep {$Sport_SportName} team and player stats, schedule and standings.">{$Team_TeamName}</a></li>
 
 			</RESULTS>
 
