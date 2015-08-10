@@ -16,40 +16,34 @@
 ###YEARCHECK###
 ###here is where we enter the season start and end dates for each sport###
 <?PHP $strNow = time() ?>
-<IFTRUE $sportName == "Football">
-<VAR $myTime = strtotime("03 December 2014")>
-<VAR $seasonStart = strtotime("24 August 2014")>
-</IFTRUE>
-
-<IFTRUE $sportName == "Softball">
-<VAR $softballSeasonStart = strtotime("19 August 2014")>
-</IFTRUE>
-
-<IFTRUE $sportName == "Baseball">
-<VAR $baseballSeasonStart = strtotime("08 March 2015")>
-</IFTRUE>
-
-
-<IFTRUE $sportName == "Boys Soccer">
-<VAR $seasonStart = strtotime("24 August 2014")>
-</IFTRUE>
-
-###<IFTRUE $sportName == "Girls Soccer">###
-###<?PHP $strNow = time() ?>###
-###<VAR $seasonStart = strtotime("7 March 2014")>###
-###</IFTRUE>###
-
-<IFTRUE $sportName == "Field Hockey">
-<?PHP $strNow = time() ?>
-<VAR $seasonStart = strtotime("29 August 2014")>
-</IFTRUE>
-
-<IFTRUE $sportName == "Boys Basketball">
-<VAR $seasonStart = strtotime("2 December 2014")>
-</IFTRUE>
-
-<IFTRUE $sportName == "Girls Basketball">
-<VAR $seasonStart = strtotime("2 December 2014")>
+<IFTRUE $sportName == "Football">^M
+<VAR $seasonStart = strtotime("03 September 2015")>^M
+</IFTRUE>^M
+^M
+<IFTRUE $sportName == "Softball">^M
+<VAR $softballSeasonStart = strtotime("21 August 2015")>^M
+</IFTRUE>^M
+^M
+<IFTRUE $sportName == "Baseball">^M
+<VAR $baseballSeasonStart = strtotime("10 March 2016")>^M
+</IFTRUE>^M
+^M
+^M
+<IFTRUE $sportName == "Boys Soccer">^M
+<VAR $seasonStart = strtotime("27 August 2015")>^M
+</IFTRUE>^M
+^M
+<IFTRUE $sportName == "Field Hockey">^M
+<?PHP $strNow = time() ?>^M
+<VAR $seasonStart = strtotime("27 August 2015")>^M
+</IFTRUE>^M
+^M
+<IFTRUE $sportName == "Boys Basketball">^M
+<VAR $seasonStart = strtotime("1 December 2015")>^M
+</IFTRUE>^M
+^M
+<IFTRUE $sportName == "Girls Basketball">^M
+<VAR $seasonStart = strtotime("1 December 2015")>^M
 </IFTRUE>
 
 ###<IFTRUE $sportName == "Boys Lacrosse">###
