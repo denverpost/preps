@@ -1,5 +1,5 @@
 <VAR $domainURL = "http://preps.denverpost.com">
-<VAR $sportYear = "2014"> ### YEARCHECK ###
+<VAR $sportYear = "2015"> ### YEARCHECK ###
 <INCLUDE site=default tpl=SportSeasons>
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 <VAR $webURL = "http://denver-tpweb.newsengin.com/web/graphics/team/">

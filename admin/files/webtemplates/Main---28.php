@@ -1,10 +1,10 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <?PHP $strNow = time() ?>
 ###YEARCHECK###
-<VAR $fallTime = strtotime("10 August 2014")>
-<VAR $midNovemberTime = strtotime("15 November 2014")>
-<VAR $winterTime = strtotime("1 December 2014")>
-<VAR $springTime = strtotime("5 March 2015")>
+<VAR $fallTime = strtotime("10 August 2015")>
+<VAR $midNovemberTime = strtotime("15 November 2015")>
+<VAR $winterTime = strtotime("1 December 2015")>
+<VAR $springTime = strtotime("5 March 2016")>
 
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 
