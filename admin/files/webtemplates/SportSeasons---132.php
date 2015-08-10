@@ -54,41 +54,41 @@ function sport_id($id, $flip=FALSE)
 }
 ?>
 <?PHP $seasonStart = array(); $seasonEnd = array(); ?>
-<VAR $seasonStart["Football"] = "08/13">
-<VAR $seasonEnd["Football"] = "12/19">
+<VAR $seasonStart["Football"] = "09/03">
+<VAR $seasonEnd["Football"] = "12/05">
 
-<VAR $seasonStart["Girls Cross Country"] = "08/13">
-<VAR $seasonEnd["Girls Cross Country"] = "10/30">
+<VAR $seasonStart["Girls Cross Country"] = "08/27">
+<VAR $seasonEnd["Girls Cross Country"] = "10/31">
 
-<VAR $seasonStart["Boys Cross Country"] = "08/13">
-<VAR $seasonEnd["Boys Cross Country"] = "10/30">
+<VAR $seasonStart["Boys Cross Country"] = "08/27">
+<VAR $seasonEnd["Boys Cross Country"] = "10/31">
 
-<VAR $seasonStart["Girls Volleyball"] = "08/13">
-<VAR $seasonEnd["Girls Volleyball"] = "11/15">
+<VAR $seasonStart["Girls Volleyball"] = "08/27">
+<VAR $seasonEnd["Girls Volleyball"] = "11/14">
 
-<VAR $seasonStart["Baseball"] = "02/25">
-<VAR $seasonEnd["Baseball"] = "06/05">
+<VAR $seasonStart["Baseball"] = "03/10">
+<VAR $seasonEnd["Baseball"] = "05/28">
 
 <VAR $seasonStart["Boys Basketball"] = "12/01">
-<VAR $seasonEnd["Boys Basketball"] = "03/20">
+<VAR $seasonEnd["Boys Basketball"] = "03/12">
 
 <VAR $seasonStart["Girls Basketball"] = "12/01">
-<VAR $seasonEnd["Girls Basketball"] = "03/20">
+<VAR $seasonEnd["Girls Basketball"] = "03/12">
 
-<VAR $seasonStart["Boys Soccer"] = "08/13">
-<VAR $seasonEnd["Boys Soccer"] = "11/15">
+<VAR $seasonStart["Boys Soccer"] = "08/27">
+<VAR $seasonEnd["Boys Soccer"] = "11/14">
 
-<VAR $seasonStart["Girls Soccer"] = "02/25">
+<VAR $seasonStart["Girls Soccer"] = "03/10">
 <VAR $seasonEnd["Girls Soccer"] = "05/25">
 
-<VAR $seasonStart["Softball"] = "08/13">
-<VAR $seasonEnd["Softball"] = "10/22">
+<VAR $seasonStart["Softball"] = "08/21">
+<VAR $seasonEnd["Softball"] = "10/24">
 
-<VAR $seasonStart["Boys Track and Field"] = "02/25">
-<VAR $seasonEnd["Boys Track and Field"] = "05/20">
+<VAR $seasonStart["Boys Track and Field"] = "03/10">
+<VAR $seasonEnd["Boys Track and Field"] = "05/21">
 
-<VAR $seasonStart["Girls Track and Field"] = "02/25">
-<VAR $seasonEnd["Girls Track and Field"] = "05/20">
+<VAR $seasonStart["Girls Track and Field"] = "03/10">
+<VAR $seasonEnd["Girls Track and Field"] = "05/21">
 
 <?PHP 
 function sportInSeasonOrig($sportName,$dateToCheck) {
