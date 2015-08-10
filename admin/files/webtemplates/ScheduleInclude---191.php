@@ -11,26 +11,26 @@
 <?PHP $defaultDate = $todayDate.$space.$todayMonth.$space.$todayYear;?>
 
 ### YEARCHECK these variables need to be re-set every year. they are the times that various tournaments start###
-<VAR $myEarlyFootballPlayoffTime = strtotime("27 October 2014")>
-<VAR $myLateFootballPlayoffTime = strtotime("4 November 2014")>
-<VAR $mySoftballTime = strtotime("11 October 2014")>
-<VAR $myBoysSoccerTime = strtotime("22 October 2014")>
-<VAR $myFieldHockeyTime = strtotime("17 October 2014")>
-<VAR $myBasketballTime = strtotime("24 February 2015")> ###both boys and girls###
-<VAR $myLateBasketballTime = strtotime("25 February 2015")> ###both boys and girls###
-<VAR $myIceHockeyTime = strtotime("27 February 2015")>
-<VAR $myEarlyBaseballTime = strtotime("9 May 2015")>
-<VAR $myLateBaseballTime = strtotime("9 May 2015")>
-<VAR $myGirlsSoccerTime = strtotime("5 May 2015")>
-<VAR $myBoysLacrosseTime = strtotime("2 May 2015")>
-<VAR $myGirlsLacrosseTime = strtotime("2 May 2015")>
+<VAR $myEarlyFootballPlayoffTime = strtotime("07 November 2015")>
+<VAR $myLateFootballPlayoffTime = strtotime("14 November 2015")>
+<VAR $mySoftballTime = strtotime("17 October 2015")>
+<VAR $myBoysSoccerTime = strtotime("28 October 2015")>
+<VAR $myFieldHockeyTime = strtotime("28 October 2015")>
+<VAR $myBasketballTime = strtotime("21 February 2016")> ###both boys and girls###
+<VAR $myLateBasketballTime = strtotime("27 February 2016")> ###both boys and girls###
+<VAR $myIceHockeyTime = strtotime("26 February 2016")>
+<VAR $myEarlyBaseballTime = strtotime("7 May 2016")>
+<VAR $myLateBaseballTime = strtotime("20 May 2016")>
+<VAR $myGirlsSoccerTime = strtotime("10 May 2016")>
+<VAR $myBoysLacrosseTime = strtotime("10 May 2016")>
+<VAR $myGirlsLacrosseTime = strtotime("11 May 2016")>
 
 
 <VAR $myDefaulttime = strtotime("$defaultDate")>
 
 ###this is the start of the fall sports season###
 ### YEARCHECK this one too. ###
-<VAR $seasonStart = strtotime("13 August 2014")>
+<VAR $seasonStart = strtotime("13 August 2015")>
 <?PHP $difference = $strNow - $seasonStart ?>
 <?PHP $difference = ($difference / 604800) ?>
 
