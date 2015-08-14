@@ -2,7 +2,7 @@
 <INCLUDE site=default tpl=SportSeasons>
 <h2>Colorado High School Football Leaders</h2>
 ###YEARCHECK###
-<VAR $seasonStart = strtotime("02 September 2014")>
+<VAR $seasonStart = strtotime("03 September 2015")>
 <?PHP 
 $strNow = time();
 $difference = $strNow - $seasonStart;

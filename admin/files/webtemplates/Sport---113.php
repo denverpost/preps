@@ -29,16 +29,16 @@
 <h3 class="list"><a href="http://preps.denverpost.com/sport/girls-volleyball/" title="Prep Girls Volleyball in Colorado">Girls Volleyball</a></h3>
 
 <h2>Winter High School Sports in Colorado</h2>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=6" title="Prep Boys Basketball in Colorado">Boys Basketball</a></h3>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=21" title="Prep Girls Basketball in Colorado">Girls Basketball</a></h3>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=34" title="Prep Ice Hockey in Colorado">Ice Hockey</a></h3>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=17" title="Prep Girls Swimming and Diving in Colorado">Girls Swimming and Diving</a></h3>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=23" title="Prep Wrestling in Colorado">Wrestling</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/boys-basketball/" title="Prep Boys Basketball in Colorado">Boys Basketball</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/girls-basketball/" title="Prep Girls Basketball in Colorado">Girls Basketball</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/ice-hockey/" title="Prep Ice Hockey in Colorado">Ice Hockey</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/girls-swimming-diving/" title="Prep Girls Swimming and Diving in Colorado">Girls Swimming and Diving</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/wrestling/" title="Prep Wrestling in Colorado">Wrestling</a></h3>
 
 
 <h2>Spring High School Sports in Colorado</h2>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=29" title="Prep Baseball in Colorado">Baseball</a></h3>
-<h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=19" title="Prep Girls Golf in Colorado">Girls Golf</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/baseball/" title="Prep Baseball in Colorado">Baseball</a></h3>
+<h3 class="list"><a href="http://preps.denverpost.com/sport/girls-golf/" title="Prep Girls Golf in Colorado">Girls Golf</a></h3>
 <h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=35" title="Prep Boys Lacrosse in Colorado">Boys Lacrosse</a></h3>
 <h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=36" title="Prep Girls Lacrosse in Colorado">Girls Lacrosse</a></h3>
 <h3 class="list"><a href="http://preps.denverpost.com/home.html?site=default&tpl=Sport&Sport=15" title="Prep Girls Soccer in Colorado">Girls Soccer</a></h3>
@@ -85,7 +85,7 @@
 <VAR $contestTerm = "games">
 </IFTRUE>
 <a name="games"></a>
-<h2>This week's High School {$Sport_SportName} {$contestTerm}</h2>
+<h2>This week's Prep {$Sport_SportName} {$contestTerm}</h2>
 
 <VAR $form_count = 500>
 <VAR $count = $form_count>
@@ -103,8 +103,6 @@ $saturday_date = strtotime("+$days_until_saturday days");
 <INCLUDE site=default tpl=ScheduleInclude>
 
 <a name="leaders"></a>
-<VAR $externalURL = "http://preps.denverpost.com/home.html?">
-
 <QUERY name=Sport SPORTID=$form_Sport>
 <VAR $sportName=$Sport_SportName>
 <VAR $sqlSportName=strtolower(convertForSQL($sportName))>

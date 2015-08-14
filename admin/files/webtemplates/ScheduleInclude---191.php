@@ -30,7 +30,7 @@
 
 ###this is the start of the fall sports season###
 ### YEARCHECK this one too. ###
-<VAR $seasonStart = strtotime("13 August 2015")>
+<VAR $seasonStart = strtotime("3 September 2015")>
 <?PHP $difference = $strNow - $seasonStart ?>
 <?PHP $difference = ($difference / 604800) ?>
 
@@ -93,9 +93,6 @@
 
 ### Week-by-week schedule pagination functions ###
 <?PHP
-// Configure the variables for the week generator
-
-
 function week_generate($game_timestamp)
 {
     $saturday = 6;
@@ -139,7 +136,6 @@ function season_by_week($season_start, $season_end, $type="schedule", $sport_id=
             $season_weeks = $this_week;
             break;
         default:
-
             $week_start = 0;
             break;
     }
