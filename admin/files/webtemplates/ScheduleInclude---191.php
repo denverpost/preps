@@ -140,13 +140,15 @@ function season_by_week($season_start, $season_end, $type="schedule", $sport_id=
             break;
     }
 
-    // Football Week Zero logic
+    // Football WeekZero logic
     if ( $sport_id == 1 ) --$week_start;
+    if ( $sport_id == 1 ) --$week_display;
 
- //echo "<dd>Weeks: $season_weeks</dd>";
+    //echo "<dd>Weeks: $season_weeks</dd>";
     //echo "<dd>This week: $this_week</dd>";
     //echo "<dd>Week start: $week_start</dd>";
 
+    $conference_link = "";
     if ( $conference_id > 0 )
     {
         $conference_link = "&ConferenceID=$conference_id";
@@ -159,7 +161,6 @@ function season_by_week($season_start, $season_end, $type="schedule", $sport_id=
     for ( $i = $week_start; $i <= $season_weeks; $i ++ )
     {
         $week_display = $i + 1;
-        //if ( $sport_id == 1 ) --$week_display;
         $timestamp = $season_start + ( $seconds_in_a_week * $i );
         $week[$i] = week_generate($timestamp);
         $week_start_timestamp = $week[$i][0];
@@ -235,10 +236,9 @@ function season_by_week($season_start, $season_end, $type="schedule", $sport_id=
 <RUN $beginPrevNextURL .= "&Sport=".$form_Sport>
 <RUN $beginPrevNextURL .= "&SearchDate=".$form_SearchDate>
 <RUN $beginPrevNextURL .= "&SearchDateEnd=".$form_SearchDateEnd>
+<VAR $contestTerm = "game">
 <IFTRUE $sportName == "Girls Swimming and Diving" || $sportName =="Wrestling" || $sportName == "Boys Swimming and Diving" || $sportName  == "Boys Cross Country" || $sportName  == "Girls Cross Country" || $sportName  == "Boys Tennis" || $sportName  == "Girls Tennis" || $sportName  == "Boys Golf" || $sportName  == "Girls Golf" || $sportName  == "Girls Track and Field" || $sportName  == "Boys Track and Field">
 <VAR $contestTerm = "meet">
-<ELSE>
-<VAR $contestTerm = "game">
 </IFTRUE>
 <h3>
     <span class="color grey">{$total_Schedule} prep <?PHP echo strtolower($sportName) ?> {$contestTerm}<IFNOTEQUAL $total_Schedule 1>s</IFNOTEQUAL> for</span> <IFNOTEMPTY $form_Week> Week {$form_Week}, </IFNOTEMPTY>{$strDateDisplay}

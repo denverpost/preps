@@ -29,12 +29,12 @@ Prep
 <IFTRUE $Sport_SportName == "Girls Swimming and Diving" || $Sport_SportName == "Field Hockey">
 <ELSE>
 <IFEMPTY $form_ConferenceID>
-<h2>View {$Sport_SportName} schedules by conference</h2>
+<h2>{$Sport_SportName} schedules by conference</h2>
 <QUERY name=ConferencesForSport SPORTID=$Sport_SportID>
 <RESULTS list=ConferencesForSport_rows prefix=Conf>
 ### This string substitution removes redundancies in the conference names, ###
 ### many of which also include the sport name, which we already know. ###
-<h2 class="list twocolumns"><a href="<?PHP echo $_SERVER["HTTP_REFERER"]; ?>&ConferenceID={$Conf_ConferenceID}"><?PHP $name = str_replace(" ($Sport_SportName)", "", $Conf_ConferenceName); $name = preg_replace("|\(? ?$Sport_SportName\)?|i", "", $name); echo $name; ?></a></h2>
+<h3 class="list twocolumns"><a href="<?PHP echo $_SERVER["HTTP_REFERER"]; ?>&ConferenceID={$Conf_ConferenceID}"><?PHP $name = str_replace(" ($Sport_SportName)", "", $Conf_ConferenceName); $name = preg_replace("|\(? ?$Sport_SportName\)?|i", "", $name); echo $name; ?></a></h3>
 </RESULTS>
 </IFEMPTY>
 </IFTRUE>
