@@ -17,11 +17,10 @@ $sport_slug = sport_id($form_Sport);
 <IFNOTEMPTY $form_ConferenceID>    › <a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$form_ConferenceID}">{$Conference_ConferenceName} Conference</a></IFNOTEMPTY>
 </div>
 <h1>
-High School 
+Prep
 <IFNOTEMPTY $form_ConferenceID>    {$Conference_ConferenceName}</IFNOTEMPTY>
     {$Sport_SportName} Schedule<IFNOTEMPTY $form_Week>, Week {$form_Week}</IFNOTEMPTY><IFNOTEMPTY $form_Day>, Day {$form_Day}</IFNOTEMPTY>
 </h1>
-
 
 
 
