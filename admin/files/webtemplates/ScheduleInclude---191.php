@@ -141,8 +141,7 @@ function season_by_week($season_start, $season_end, $type="schedule", $sport_id=
     }
 
     // Football WeekZero logic
-    if ( $sport_id == 1 ) --$week_start;
-    if ( $sport_id == 1 ) --$week_display;
+    //if ( $sport_id == 1 ) --$week_start;
 
     //echo "<dd>Weeks: $season_weeks</dd>";
     //echo "<dd>This week: $this_week</dd>";
@@ -161,6 +160,11 @@ function season_by_week($season_start, $season_end, $type="schedule", $sport_id=
     for ( $i = $week_start; $i <= $season_weeks; $i ++ )
     {
         $week_display = $i + 1;
+
+        // WEEKZERO football logic:
+        if ( $sport_id == 1 ) --$week_display;
+        //if ( $sport_id == 1 ) --$i;
+
         $timestamp = $season_start + ( $seconds_in_a_week * $i );
         $week[$i] = week_generate($timestamp);
         $week_start_timestamp = $week[$i][0];
