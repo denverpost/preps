@@ -169,10 +169,9 @@
 					<li><a href="http://www.denverpost.com/preps">News</a></li>
 					<li><a href="http://www.denverpost.com/prepathletes">Athletes of the Week</a></li>
 					<li><a href="http://blogs.denverpost.com/preps/">Prep Blog</a></li>
-					<li><a href="http://www.denverpost.com/preps/ci_6813914?">Prep Bulletin Board</a></li>
-					<li><a href="http://neighbors.denverpost.com/viewforum.php?f=193">Prep Discussion Board</a></li>
+					<li><a href="http://www.denverpost.com/preps/ci_6813914">Prep Bulletin Board</a></li>
 					<li><a href="http://www.denverpost.com/prepsvideos">Prep Videos</a></li>
-					<li><a href="http://photos.denverpost.com/photogalleries/prepimages/">Prep Photo Galleries</a></li>
+					<li><a href="http://photos.denverpost.com/category/preps/">Prep Photo Galleries</a></li>
 				</ul></li>	<!-- /Tier 2 -->
 		</ul>	<!-- /Tier 1 -->
 	</div>
