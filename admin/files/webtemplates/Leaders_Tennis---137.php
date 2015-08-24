@@ -12,7 +12,7 @@
 </IFNOTEMPTY>
 
 <IFEQUAL $form_ConferenceID "all"><VAR $ConferenceID = ""></IFEQUAL>  
-<form name="leaderForm" action="home.html" method="get">
+<form name="leaderForm" action="/home.html" method="get">
 <input type="hidden" name="tpl" id="tpl" value="{$form_tpl}" />
 <input type="hidden" name="site" id="site" value="{$form_site}" />
 <input type="hidden" name="Sport" id="Sport" value="{$form_Sport}" />
@@ -20,7 +20,7 @@
 <IFEMPTY $form_sort>
 <VAR $form_sort = "PlayerFirstName">
 </IFEMPTY>
-<VAR $beginLink = "home.html?site=default&tpl=Leaders&Sport=".$form_Sport."&ConferenceID=".$form_ConferenceID."&sort=">
+<VAR $beginLink = "/home.html?site=default&tpl=Leaders&Sport=".$form_Sport."&ConferenceID=".$form_ConferenceID."&sort=">
 <VAR $sortClause = $form_sort." DESC">
 <!-- {$whereClause} -->
 <QUERY name=Leaders SPORTNAME=$sqlSportName SORT=$sortClause> <!-- <WHERECLAUSE=$whereClause> -->

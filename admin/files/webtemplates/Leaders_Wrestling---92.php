@@ -1,6 +1,6 @@
 <VAR $domainURL = "http://preps.denverpost.com">
-<VAR $beginLink = "home.html?site=default&tpl=Leaders&Sport=".$form_Sport."&ConferenceID=".$form_ConferenceID."&leadersType=".$form_leadersType."&sort=">
-<form name="leaderForm" action="home.html" method="get">
+<VAR $beginLink = "/home.html?site=default&tpl=Leaders&Sport=".$form_Sport."&ConferenceID=".$form_ConferenceID."&leadersType=".$form_leadersType."&sort=">
+<form name="leaderForm" action="/home.html" method="get">
 <input type="hidden" name="tpl" id="tpl" value="{$form_tpl}" />
 <input type="hidden" name="site" id="site" value="{$form_site}" />
 <input type="hidden" name="Sport" id="Sport" value="{$form_Sport}" />

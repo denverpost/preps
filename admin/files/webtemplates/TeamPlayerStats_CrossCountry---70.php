@@ -31,7 +31,7 @@
         <tr class="{$rowClass}">
             <td>
 <VAR $playerName = fixApostrophes($Player_PlayerFirstName." ".$Player_PlayerLastName)>
-                <a href="home.html?site=default&tpl=Player&ID={$Player_PlayerID}" class="leadersNameLink">
+                <a href="/home.html?site=default&tpl=Player&ID={$Player_PlayerID}" class="leadersNameLink">
                     {$playerName}</a></td>
             <td align="right">
                 {$bestDispTime}

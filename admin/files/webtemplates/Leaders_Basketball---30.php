@@ -4,7 +4,7 @@
 <IFEMPTY $form_sort>
 <VAR $form_sort = "PointsPerGame">
 </IFEMPTY>
-<VAR $beginLink = "home.html?site=default&tpl=Leaders&Sport=".$form_Sport."&ConferenceID=".$form_ConferenceID."&sort=">
+<VAR $beginLink = "/home.html?site=default&tpl=Leaders&Sport=".$form_Sport."&ConferenceID=".$form_ConferenceID."&sort=">
 <VAR $sortClause = $form_sort." DESC">
 <QUERY name=Leaders SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause>
 <table cellpadding="0" cellspacing="0" class="leadersTable">

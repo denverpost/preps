@@ -1,6 +1,6 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <VAR $whereClause = " AND Points ".chr(62)." 0">
-<VAR $beginLink = "home.html?site=default&tpl=Leaders&Sport=".$form_Sport."&ConferenceID=".$form_ConferenceID."&sort=">
+<VAR $beginLink = "/home.html?site=default&tpl=Leaders&Sport=".$form_Sport."&ConferenceID=".$form_ConferenceID."&sort=">
 <VAR $sortClause = "PlayerLastName,PlayerFirstName">
 <QUERY name=TeamPlayerStats SPORTNAME=$sqlSportName SORT=$sortClause WHERECLAUSE=$whereClause TEAMID=$form_TeamID SPORTYEAR=$sportYear>
 <!-- query: {$TeamPlayerStats_query} -->

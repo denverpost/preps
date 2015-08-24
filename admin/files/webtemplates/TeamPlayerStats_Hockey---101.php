@@ -28,7 +28,7 @@
  <VAR $firstName = fixApostrophes($Scoring_PlayerFirstName)>
 <tr class="{$rowClass}">
 <td scope="row" abbr="Player Name">
-<a href="home.html?site=default&tpl=Player&ID={$Scoring_PlayerID}" class="leadersNameLink">### target="_blank">###
+<a href="/home.html?site=default&tpl=Player&ID={$Scoring_PlayerID}" class="leadersNameLink">### target="_blank">###
 {$firstName} {$lastName}</a></td>
 <ROW NAME=LeaderFootballCol STATFIELD="Goals" STAT=$Scoring_Goals>
 <ROW NAME=LeaderFootballCol STATFIELD="Assists" STAT=$Scoring_Assists>
@@ -74,7 +74,7 @@
 <VAR $firstName = fixApostrophes($Goalie_PlayerFirstName)>
 <tr class="{$rowClass}">
 <td scope="row" abbr="Player Name">
-<a href="home.html?site=default&tpl=Player&ID={$Goalie_PlayerID}" class="leadersNameLink">
+<a href="/home.html?site=default&tpl=Player&ID={$Goalie_PlayerID}" class="leadersNameLink">
 {$firstName} {$lastName}</a></td>
 <VAR $shotsOnGoal = $Goalie_GoalsAllowed + $Goalie_Saves>
 <VAR $savePct = round($Goalie_SavePercentage,3)>

@@ -36,7 +36,7 @@
 <ELSE>
 <VAR $sortClause = $form_sort." DESC">
 </IFEMPTY>
-<VAR $beginLink = "home.html?site=default&tpl=".$tpl."&Sport=".$form_Sport.$selector."&sort=">
+<VAR $beginLink = "/home.html?site=default&tpl=".$tpl."&Sport=".$form_Sport.$selector."&sort=">
 <VAR $sortClause = $form_sort." DESC">
 <!-- {$whereClause} -->
 
@@ -121,12 +121,12 @@ $player_slug = slugify($player_name);
 </table>
 
 <IFEQUAL $form_ConferenceID "all"><VAR $ConferenceID = ""></IFEQUAL>
-<form name="leaderForm" action="home.html" method="get">
+<form name="leaderForm" action="/home.html" method="get">
 <input type="hidden" name="tpl" id="tpl" value="{$form_tpl}" />
 <input type="hidden" name="site" id="site" value="{$form_site}" />
 <input type="hidden" name="Sport" id="Sport" value="{$form_Sport}" />
 <input type="hidden" name="ConferenceID" id="ConferenceID" value="{$form_ConferenceID}" />
-<VAR $beginLink = "home.html?site=default&tpl=Leaders&Sport=".$form_Sport."&ConferenceID=".$form_ConferenceID."&sort=">
+<VAR $beginLink = "/home.html?site=default&tpl=Leaders&Sport=".$form_Sport."&ConferenceID=".$form_ConferenceID."&sort=">
 
 <IFEQUAL $form_sort "GoalsAllowed">
   <VAR $sortClauseGoalies = "GoalsAllowed ASC">

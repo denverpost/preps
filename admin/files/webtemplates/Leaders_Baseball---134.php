@@ -63,7 +63,7 @@
 <IFNOTEMPTY $form_res>
 <VAR $selector = $selector."&res=".$form_res>
 </IFNOTEMPTY>
-<VAR $beginLink = "home.html?site=default&tpl=".$tpl."&Sport=".$form_Sport.$selector."&sort=">
+<VAR $beginLink = "/home.html?site=default&tpl=".$tpl."&Sport=".$form_Sport.$selector."&sort=">
 <IFEMPTY $form_res>
 <VAR $resultNum=25>
 <ELSE>
@@ -73,7 +73,7 @@
 <IFNOTEMPTY $form_res1>
 <VAR $selector = $selector."&res1=".$form_res1>
 </IFNOTEMPTY>
-<VAR $beginLink = "home.html?site=default&tpl=".$tpl."&Sport=".$form_Sport.$selector."&sort=">
+<VAR $beginLink = "/home.html?site=default&tpl=".$tpl."&Sport=".$form_Sport.$selector."&sort=">
 <IFEMPTY $form_res1>
 <VAR $resultNum1=25>
 <ELSE>
@@ -94,8 +94,8 @@
 <VAR $tpl = "Class">
 </IFNOTEMPTY>
 
-<VAR $beginLink = "home.html?site=default&tpl=".$tpl."&Sport=".$form_Sport.$selector>
-<form name="leaderForm" action="home.html" method="get">
+<VAR $beginLink = "/home.html?site=default&tpl=".$tpl."&Sport=".$form_Sport.$selector>
+<form name="leaderForm" action="/home.html" method="get">
 <input type="hidden" name="tpl" id="tpl" value="{$form_tpl}" />
 <input type="hidden" name="site" id="site" value="{$form_site}" />
 <input type="hidden" name="Sport" id="Sport" value="{$form_Sport}" />
