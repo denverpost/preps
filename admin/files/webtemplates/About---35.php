@@ -5,7 +5,7 @@
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
 </div>
 
-<h1>About Post Preps</h1>
+<h1>About Denver Post's Prep Stats</h1>
 <h2>Welcome!</h2>
 <p>
 <strong>Welcome to The Denver Post's Post Preps section.</strong> Our goal is to make Post Preps the first site Colorado high school sports fans go to for stories, photos, video and statistics from all high school sports.
@@ -13,19 +13,21 @@
 
 <h2>What's here and what's new</h2>
 <p>
-Use the navigation area at the top of the page to find information on:
+Use the navigation at the top of the page to find information on:
 </p>
 <ul class="subnav">
 	<li><a href="{$domainURL}/schools/">Prep teams, by schools</a>,</li>
 	<li><a href="{$externalURL}site=default&tpl=Conference&ConferenceID">Colorado prep sports by conference</a>,</li>
 	<li><a href="http://www.denverpost.com/preps">Colorado prep sports news</a>,</li>
 	<li><a href="http://blogs.denverpost.com/preps/">Neil Devlin's All Things Colorado Preps blog</a>,</li>
+<!--
 	<li><a href="http://photos.denverpost.com/photogalleries/prepimages/">Our Colorado prep photos</a>,</li>
+-->
 	<li> and more. </li>
 </ul>
 
 <p>
-We've added a lot to our prep sports offerings. Here is some of what's new:
+We've added a lot to our prep sports offerings. Here is some of that:
 </p>
 <ul class="subnav">
 	<li><a href="{$externalURL}Query=Denver&site=default&tpl=SearchResults">Our new search by player name, school name and team name functionality</a></li>
