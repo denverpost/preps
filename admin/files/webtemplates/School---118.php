@@ -15,9 +15,11 @@
 <div id="breadcrumbs">
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
 </div>
-<h1>Schools</h1>
+<h1>High Schools</h1>
+<p>A list of the high schools we have prep sports scores and stats for.</p>
+
 <div style="width:300px; float:left;">
-<h2>By School Name</h2>
+<h2>By High School Name</h2>
 <p>
     <a href="#schools-A">A</a> <a href="#schools-B">B</a> <a href="#schools-C">C</a> <a href="#schools-D">D</a> <a href="#schools-E">E</a> <a href="#schools-F">F</a> <a href="#schools-G">G</a> <a href="#schools-H">H</a> <a href="#schools-I">I</a> <a href="#schools-J">J</a> <a href="#schools-K">K</a> <a href="#schools-L">L</a><br> <a href="#schools-M">M</a> <a href="#schools-N">N</a>  <a href="#schools-O">O</a>  <a href="#schools-P">P</a>  <a href="#schools-R">R</a>  <a href="#schools-S">S</a>  <a href="#schools-T">T</a>  <a href="#schools-U">U</a> <a href="#schools-V">V</a>  <a href="#schools-W">W</a>  <a href="#schools-Y">Y</a>
 </p>
