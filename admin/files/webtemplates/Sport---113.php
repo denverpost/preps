@@ -15,6 +15,7 @@
     <INCLUDE site=default tpl=TemplateBreadcrumbs>
 </div>
 <h1>High School Sport Results + Schedules in Colorado</h1>
+<p>Here's a list of the Colorado prep sports we have results and stats for.</p>
 
 <h2>Fall High School Sports in Colorado</h2>
 <h3 class="list"><a href="http://preps.denverpost.com/sport/boys-cross-country/" title="Prep Boys Cross Country in Colorado">Boys Cross Country</a></h3>
