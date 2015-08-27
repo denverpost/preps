@@ -70,7 +70,7 @@
 <h1>
     {$School_SchoolName}
     <IFNOTEMPTY $School_SchoolCity>
-    <IFNOTEQUAL $School_SchoolName $School_SchoolCity>({$School_SchoolCity}, {$School_SchoolState})
+    <IFNOTEQUAL $School_SchoolName $School_SchoolCity>({$School_SchoolCity}<IFNOTEMPTY $School_SchoolState>, {$School_SchoolState}</IFNOTEMPTY>)
     <ELSE>
     ({$School_SchoolCity}<IFNOTEMPTY $School_SchoolState>, {$School_SchoolState}</IFNOTEMPTY>) 
     </IFNOTEQUAL>
