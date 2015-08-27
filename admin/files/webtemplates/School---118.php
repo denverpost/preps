@@ -72,13 +72,13 @@
     <IFNOTEMPTY $School_SchoolCity>
     <IFNOTEQUAL $School_SchoolName $School_SchoolCity>({$School_SchoolCity}, {$School_SchoolState})
     <ELSE>
-    ({$School_SchoolCity}, {$School_SchoolState}) 
+    ({$School_SchoolCity}<IFNOTEMPTY $School_SchoolState>, {$School_SchoolState}</IFNOTEMPTY>) 
     </IFNOTEQUAL>
     </IFNOTEMPTY>
-    Prep Sports
+    Sports
 </h1>
 
-<h2>{$School_SchoolName} location and contact info</h2>
+<h2>{$School_SchoolName} address<IFNOTEMPTY $School_SchoolPhone> and contact info</IFNOTEMPTY></h2>
 <QUERY name=SchoolTeams SCHOOLID=$form_School>
 <RESULTS list=SchoolTeams_rows prefix=Team></RESULTS>
 
@@ -91,10 +91,12 @@
 
 <h3>Address</h3>
 <p>
-{$School_SchoolAddress}<br>
+{$School_SchoolAddress}<IFNOTEMPTY $School_SchoolAddress><br></IFNOTEMPTY>
 <IFNOTEMPTY $School_SchoolAddressLine2>{$School_SchoolAddressLine2}<br></IFNOTEMPTY>
-{$School_SchoolCity}, {$School_SchoolState} {$School_SchoolZip}<br>
+{$School_SchoolCity}<IFNOTEMPTY $School_SchoolState>,</IFNOTEMPTY> {$School_SchoolState} {$School_SchoolZip}
 </p>
+
+<IFNOTEMPTY $School_SchoolPhone>
 <h3>Contact</h3>
 <dl>
 <IFNOTEMPTY $School_SchoolPhone>
@@ -120,6 +122,7 @@
     <dd>{$School_SchoolCapacity}</dd>
 </IFNOTEMPTY>
 </dl>
+</IFNOTEMPTY>
 
 
 <h2>{$School_SchoolName} team links</h2>
@@ -131,7 +134,7 @@
 <table cellpadding="0" cellspacing="0" class="schedTable deluxe wide300" style="float:left;">
     <tbody>
         <tr id="header-sub" class="resultsText">
-            <th scope="col" abbr="">Boys Prep Sports</th>
+            <th scope="col" abbr="">{$School_SchoolName} Boys</th>
 <VAR $priorSeason = "">
 <VAR $seasonCheck = "">
 <RESULTS list=SportBySeasonAndGender_rows prefix=Sport>
@@ -156,7 +159,7 @@
 <table cellpadding="0" cellspacing="0" class="schedTable deluxe wide300" >
     <tbody>
         <tr id="header-sub" class="resultsText">
-            <th scope="col" abbr="">Girls Prep Sports</th>
+            <th scope="col" abbr="">{$School_SchoolName} Girls</th>
 <VAR $priorSeason = "">
 <VAR $seasonCheck = "">
 <RESULTS list=SportBySeasonAndGender_rows prefix=Sport>
