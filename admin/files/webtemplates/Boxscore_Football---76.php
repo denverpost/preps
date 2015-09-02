@@ -1,7 +1,7 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <IFTRUE $sqlSportName == "football">
 ###YEARCHECK###
-<VAR $sportYear = "2014">
+<VAR $sportYear = "2015">
 <ELSE>
 </IFTRUE>
 

@@ -1,5 +1,4 @@
 <VAR $domainURL = "http://preps.denverpost.com">
-###<VAR $sportYear = "2012">###
 <h3>Player Stats</h3>
 
 <table cellpadding="0" cellspacing="0" class="<table cellpadding="0" cellspacing="0" width="550px">
