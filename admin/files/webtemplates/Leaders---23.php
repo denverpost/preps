@@ -47,10 +47,10 @@
 </IFTRUE>
 
 ###<IFTRUE $sportName == "Boys Lacrosse">###
-###<VAR $seasonStart = strtotime("7 March 2014")>###
+###<VAR $seasonStart = strtotime("7 March 2015")>###
 ###</IFTRUE>###
 ###<IFTRUE $sportName == "Girls Lacrosse">###
-###<VAR $seasonStart = strtotime("7 March 2014")>###
+###<VAR $seasonStart = strtotime("7 March 2015")>###
 ###</IFTRUE>###
 
 

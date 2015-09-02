@@ -27,20 +27,20 @@
 
 
 ###<IFEQUAL $sqlSportName baseball || $sqlSportName Girls Soccer || $sqlSportName Girls Lacrosse || $sqlSportName Boys Lacrosse || $sqlSportName Boys Swimming and Diving || $sqlSportName Girls Tennis>
-<VAR $sportyear = 2009>
+<VAR $sportYear = 2009>
 <ELSE>
-<VAR $sportyear = 2009>
+<VAR $sportYear = 2009>
 </IFEQUAL>###
 
 <?PHP if ($sqlSportName=="baseball" || $sqlSportName=="girlssoccer" || $sqlSportName=="girlslacrosse" || $sqlSportName=="boyslacrosse" || $sqlSportName=="boysswimminganddiving" || $sqlSportName=="girlstennis" ||  $sqlSportName=="girlsgymnastics")
 { ?>
-<VAR $sportyear = 2009>
+<VAR $sportYear = 2009>
 <?PHP } else { ?>
-<VAR $sportyear = 2009>
+<VAR $sportYear = 2009>
 <?PHP }  ?>
 
 <VAR $statType = "conf">
-<QUERY name=TeamSeasonStats ID=$form_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportyear>
+<QUERY name=TeamSeasonStats ID=$form_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 ###<!--query: {$TeamSeasonStats_query} -->###
 <VAR $confWins = $TeamSeasonStats_Win>
 <VAR $confLosses = $TeamSeasonStats_Loss>
@@ -50,7 +50,7 @@
 
 <VAR $statType = "overall">
 <VAR $TeamSeasonStats_query = "">
-<QUERY name=TeamSeasonStats ID=$form_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportyear>
+<QUERY name=TeamSeasonStats ID=$form_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $overallWins = $TeamSeasonStats_Win>
 <VAR $overallLosses = $TeamSeasonStats_Loss>
     
@@ -58,7 +58,7 @@
 <VAR $Team_TeamAssistantCoaches = fixApostrophes($Team_TeamAssistantCoaches)>
 
 
-<h1>{$Team_TeamName} {$Team_TeamNickname} Prep {$Team_SportName} {$sportyear}</h1>
+<h1>{$Team_TeamName} {$Team_TeamNickname} Prep {$Team_SportName} {$sportYear}</h1>
 <IFNOTEMPTY $Team_TeamHeadCoach><h3>Head coach {$Team_TeamHeadCoach}</h3></IFNOTEMPTY>
 <IFNOTEMPTY $Team_TeamAssistantCoaches>
 <VAR $assistantCoaches = str_replace("\r\n",", ",trim($Team_TeamAssistantCoaches))>

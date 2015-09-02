@@ -1,6 +1,7 @@
 <VAR $domainURL = "http://preps.denverpost.com">
+<VAR $sportYear = "2015"> ###YEARCHECK###
 <VAR $statType = "conf">
-<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
+<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $homeConfWins = $TeamSeasonStats_Win>
 <VAR $homeConfLosses = $TeamSeasonStats_Loss>
 
@@ -18,7 +19,7 @@
 ###new stuff begins here###
 
 
-<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
+<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $homeConfWins = $TeamSeasonStats_Win>
 <VAR $homeConfLosses = $TeamSeasonStats_Loss>
 <VAR $Home_TeamName = fixApostrophes($Home_TeamName)>
@@ -27,19 +28,19 @@
 ###query:{$TeamSeasonStats_query}###
 
 <VAR $statType = "conf">
-<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
+<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $awayConfWins = $TeamSeasonStats_Win>
 <VAR $awayConfLosses = $TeamSeasonStats_Loss>
 
 <VAR $statType = "overall">
-<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
+<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $homeOverallWins = $TeamSeasonStats_Win>
 <VAR $homeOverallLosses = $TeamSeasonStats_Loss>
 
 ###query: {$TeamSeasonStats_query}###
 
 <VAR $statType = "overall">
-<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
+<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $awayOverallWins = $TeamSeasonStats_Win>
 <VAR $awayOverallLosses = $TeamSeasonStats_Loss>
 
@@ -90,7 +91,7 @@
 
 <VAR $TeamSeasonStats_query = "TeamSeasonStats">
 <VAR $statType = "conf">
-<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
+<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $awayConfWins = $TeamSeasonStats_Win>
 <VAR $awayConfLosses = $TeamSeasonStats_Loss>
 
@@ -98,13 +99,13 @@
 
 <VAR $TeamSeasonStats_query = "">
 <VAR $statType = "overall">
-<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
+<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $homeOverallWins = $TeamSeasonStats_Win>
 <VAR $homeOverallLosses = $TeamSeasonStats_Loss>
 
 <VAR $TeamSeasonStats_query = "">
 <VAR $statType = "overall">
-<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = 2014>
+<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $awayOverallWins = $TeamSeasonStats_Win>
 <VAR $awayOverallLosses = $TeamSeasonStats_Loss>
 

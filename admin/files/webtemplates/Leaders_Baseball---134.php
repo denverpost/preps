@@ -19,7 +19,7 @@
 
 <?PHP $strNow = time() ?>
 <IFTRUE $sportName == "Softball">
-<VAR $seasonStart = strtotime("19 August 2014")>
+<VAR $seasonStart = strtotime("19 August 2015")>
 <ELSE>
 <VAR $seasonStart = strtotime("08 March 2015")>
 </IFTRUE>

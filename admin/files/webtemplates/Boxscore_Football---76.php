@@ -13,24 +13,24 @@
 
 <VAR $statType = "conf">
 <IFEQUAL $Game_preview_GameStatStatus 0>
-<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportyear>
+<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $homeConfWins = $TeamSeasonStats_Win>
 <VAR $homeConfLosses = $TeamSeasonStats_Loss>
 <VAR $Home_TeamName = fixApostrophes($Home_TeamName)>
 
 <VAR $statType = "conf">
-<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportyear>
+<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $awayConfWins = $TeamSeasonStats_Win>
 <VAR $awayConfLosses = $TeamSeasonStats_Loss>
 <VAR $Away_TeamName = fixApostrophes($Away_TeamName)>
 
 <VAR $statType = "overall">
-<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportyear>
+<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $homeOverallWins = $TeamSeasonStats_Win>
 <VAR $homeOverallLosses = $TeamSeasonStats_Loss>
 
 <VAR $statType = "overall">
-<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportyear>
+<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $awayOverallWins = $TeamSeasonStats_Win>
 <VAR $awayOverallLosses = $TeamSeasonStats_Loss>
 <ELSE>

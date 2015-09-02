@@ -1,9 +1,9 @@
 <VAR $domainURL = "http://preps.denverpost.com">
-###YEARCHECK###
-<VAR $sportyear = 2014>
+<VAR $sportYear = 2015> ###YEARCHECK###
+
 
 <VAR $statType = "conf">
-<QUERY name=TeamSeasonStats_softball ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportyear>
+<QUERY name=TeamSeasonStats_softball ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $homeConfWins = $TeamSeasonStats_softball_Win>
 <VAR $homeConfLosses = $TeamSeasonStats_softball_Loss>
 <VAR $Home_TeamName = fixApostrophes($Home_TeamName)>
@@ -13,19 +13,19 @@
 
 <VAR $TeamSeasonStats_softball_query = "">
 <VAR $statType = "conf">
-<QUERY name=TeamSeasonStats_softball ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportyear>
+<QUERY name=TeamSeasonStats_softball ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $awayConfWins = $TeamSeasonStats_softball_Win>
 <VAR $awayConfLosses = $TeamSeasonStats_softball_Loss>
 
 <VAR $TeamSeasonStats_softball_query = "">
 <VAR $statType = "overall">
-<QUERY name=TeamSeasonStats_softball ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportyear>
+<QUERY name=TeamSeasonStats_softball ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $homeOverallWins = $TeamSeasonStats_softball_Win>
 <VAR $homeOverallLosses = $TeamSeasonStats_softball_Loss>
 
 <VAR $TeamSeasonStats_softball_query = "">
 <VAR $statType = "overall">
-<QUERY name=TeamSeasonStats_softball ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportyear>
+<QUERY name=TeamSeasonStats_softball ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR = $sportYear>
 <VAR $awayOverallWins = $TeamSeasonStats_softball_Win>
 <VAR $awayOverallLosses = $TeamSeasonStats_softball_Loss>
 

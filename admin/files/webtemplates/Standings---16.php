@@ -1,5 +1,6 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
+<VAR $sportYear = 2015> ###YEARCHECK###
 <IFNOTEMPTY $form_Sport>
 <QUERY name=Sport SPORTID=$form_Sport>
 <VAR $sportName=$Sport_SportName>
@@ -8,50 +9,50 @@
 
 <IFEQUAL $sportName "Baseball">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2014">
+<VAR $standingSeason = $sportYear>
 <ELSE>
 <VAR $winPct = "WinPercentage">
-<VAR $standingSeason = "2014">
+<VAR $standingSeason = $sportYear>
 </IFEQUAL>
 <IFEQUAL $sportName "Football">
-<VAR $standingSeason = "2014">
+<VAR $standingSeason = $sportYear>
 </IFEQUAL>
 <IFEQUAL $sportName "Girls Lacrosse">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2014">
+<VAR $standingSeason = $sportYear>
 </IFEQUAL>
 <IFEQUAL $sportName "Boys Lacrosse">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2014">
+<VAR $standingSeason = $sportYear>
 </IFEQUAL>
 <IFEQUAL $sportName "Girls Soccer">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2014">
+<VAR $standingSeason = $sportYear>
 </IFEQUAL>
 <IFEQUAL $sportName "Softball">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2014">
+<VAR $standingSeason = $sportYear>
 </IFEQUAL>
 <IFEQUAL $sportName "Boys Soccer">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2014">
+<VAR $standingSeason = $sportYear>
 </IFEQUAL>
 <IFEQUAL $sportName "Girls Volleyball">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2014">
+<VAR $standingSeason = $sportYear>
 </IFEQUAL>
 <IFEQUAL $sportName "Field Hockey">
 <VAR $winPct = "WinningPercentage">
-<VAR $standingSeason = "2014">
+<VAR $standingSeason = $sportYear>
 </IFEQUAL>
 <IFEQUAL $sportName "Boys Basketball">
-<VAR $standingSeason = "2014">
+<VAR $standingSeason = $sportYear>
 </IFEQUAL>
 <IFEQUAL $sportName "Girls Basketball">
-<VAR $standingSeason = "2014">
+<VAR $standingSeason = $sportYear>
 </IFEQUAL>
 <IFEQUAL $sportName "Ice Hockey">
-<VAR $standingSeason = "2014">
+<VAR $standingSeason = $sportYear>
 </IFEQUAL>
 
 ### If $standingSeason is empty, then we don't have a sport we can compute standings on. ###
