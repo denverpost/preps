@@ -9,9 +9,30 @@ var lookup = {
 }
 
 var matcher = {
-    'regex': new RegExp(/\b([A-Z][a-z]+)\s(([A-Z][a-z]+)\s?)+\b/gm),
-    'init': function () {
-        $.getScript("http://extras.denverpost.com/app/preps/prep_lookup.js", function()
+    config: {
+        file: 'http://extras.denverpost.com/app/preps/prep_lookup.js'
+        //section: ''
+    },
+    update_config: function (config) {
+        // Take an external config object and update this config object.
+        for ( var key in config )
+        {
+            if ( config.hasOwnProperty(key) )
+            {
+                this.config[key] = config[key];
+            }
+        }
+    },
+    regex: new RegExp(/\b([A-Z][a-z]+)\s(([A-Z][a-z]+)\s?)+\b/gm),
+    init: function () {
+
+        // Config handling. External config objects must be named matcher_config
+        if ( typeof window.matcher_config !== 'undefined' )
+        {
+            this.update_config(matcher_config);
+        }
+
+        $.getScript(this.config.file, function()
         {
             $('#articleBody p').each( function() { 
               var results = $(this).text().match(this.regex);
