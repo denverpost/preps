@@ -10,7 +10,9 @@ var lookup = {
 
 var matcher = {
     config: {
-        file: 'http://extras.denverpost.com/app/preps/prep_lookup.js'
+        file: 'http://extras.denverpost.com/app/preps/prep_lookup.js',
+        file: 'http://localhost/work/preps/site/prep_lookup.js',
+        lookup_object: 'preps_schools'
         //section: ''
     },
     update_config: function (config) {
@@ -34,7 +36,8 @@ var matcher = {
 
         $.getScript(this.config.file, function()
         {
-            $('#articleBody p').each( function() { 
+            $('#articleBody p, #articleBody td').each( function() { 
+                //console.log($(this).text());
               var results = $(this).text().match(this.regex);
 
               if ( results !== null )
@@ -43,12 +46,12 @@ var matcher = {
                 var count = results.length;
                 for ( var i = 0; i < count; i++ )
                 {
-                  if ( lookup.hasOwnProperty(results[i]) )
+                  if ( preps_schools.hasOwnProperty(results[i]) )
                   {
                     // Replace the first instance of the text with the linked text,
                     // then remove the lookup from the object so we don't link it again.
-                    $(this).html($(this).html().replace(results[i], '<a href="' + lookup[results[i]] + '">' + results[i] + '</a>'));
-                    delete(lookup[results[i]]);
+                    $(this).html($(this).html().replace(results[i], '<a href="' + preps_schools[results[i]] + '">' + results[i] + '</a>'));
+                    delete(preps_schools[results[i]]);
                   }
                 }
               }
