@@ -42,17 +42,19 @@ var matcher = {
               {
                 
                 var count = results.length;
+                var item;
                 for ( var i = 0; i < count; i++ )
                 {
-                  if ( preps_schools.hasOwnProperty(results[i]) )
+                    item = results[i].trim()
+                  if ( preps_schools.hasOwnProperty(item) )
                   {
                     // Replace the first instance of the text with the linked text,
                     // then remove the lookup from the object so we don't link it again.
-                    $(this).html($(this).html().replace(results[i], '<a href="' + preps_schools[results[i]] + '">' + results[i] + '</a>'));
+                    $(this).html($(this).html().replace(item, '<a href="' + preps_schools[item] + '">' + item + '</a>'));
 
                     // We only want to link the name once,
                     // so we remove it from the lookup when we're done.
-                    delete(preps_schools[results[i]]);
+                    delete(preps_schools[item]);
                   }
                 }
               }
