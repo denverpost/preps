@@ -39,11 +39,11 @@
 </IFTRUE>^M
 ^M
 <IFTRUE $sportName == "Boys Basketball">^M
-<VAR $seasonStart = strtotime("1 December 2015")>^M
+<VAR $seasonStart = strtotime("30 November 2015")>^M
 </IFTRUE>^M
 ^M
 <IFTRUE $sportName == "Girls Basketball">^M
-<VAR $seasonStart = strtotime("1 December 2015")>^M
+<VAR $seasonStart = strtotime("30 November 2015")>^M
 </IFTRUE>
 
 ###<IFTRUE $sportName == "Boys Lacrosse">###
