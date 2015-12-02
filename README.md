@@ -16,9 +16,11 @@ These files should be updated at the beginning of each school year. As early in 
 ## Seasonal
 
 ### Before each season, do this:
-1 Log in to NewsEngin's TeamPlayer CMS, http://denver.newsengin.com/teamplayer/
-1 Make sure there aren't any games from the previous year's season still in there for that sport.
-1 Make sure there are games for the current year's season in there. If there aren't, contact MaxPreps as well as NewsEngin.
+1. Log in to NewsEngin's TeamPlayer CMS, http://denver.newsengin.com/teamplayer/
+1. Make sure there aren't any games from the previous year's season still in there for that sport (see screenshot of interface below).
+1. Make sure there are games for the current year's season in there. If there aren't, contact MaxPreps as well as NewsEngin.
+
+![An example search for games](https://cloud.githubusercontent.com/assets/125554/11539189/1e7df52e-98e3-11e5-8ca8-d73079a1ee29.png)
 
 # Dev-specific
 These are commands I used regularly for certain tasks.
