@@ -4,11 +4,17 @@ Here lies the preps template files, and the means of uploading / retrieving them
 The files live here because editing code in a textarea sucks.
 
 # Yearly / Seasonal Updates
-# Yearly
+## Yearly
+### Before each new school year, do this:
 These files should be updated at the beginning of each school year. As early in August as possible. Look for the "###YEARCHECK###" in the files below.
 - ScheduleInclude
 - Main
 - Team
+## Seasonal
+### Before each season, do this:
+1 Log in to NewsEngin's TeamPlayer CMS, http://denver.newsengin.com/teamplayer/
+1 Make sure there aren't any games from the previous year's season still in there for that sport.
+1 Make sure there are games for the current year's season in there. If there aren't, contact MaxPreps as well as NewsEngin.
 
 # Dev-specific
 These are commands I used regularly for certain tasks.
