@@ -1,4 +1,5 @@
-#! /bin/bash
+#!/bin/bash
+# Update local files from what's on production
 
 # Log me in
 wget \

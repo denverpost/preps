@@ -32,7 +32,7 @@ Upload all the templates to the server:
 ` cd admin; ./login.bash; for FILE in ``ls files/webtemplates/*.php``; do ./upload.bash ./$FILE; done `
 
 # License
-   Copyright 2014-2015 The Denver Post
+   Copyright 2007-2016 The Denver Post
    
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.

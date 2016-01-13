@@ -2,25 +2,25 @@
 <VAR $statType = "conf">
 <VAR $dash = chr(151)>
 <VAR $period = ".">
-<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType>
+<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR=2015>
 <VAR $homeConfWins = $TeamSeasonStats_Win>
 <VAR $homeConfLosses = $TeamSeasonStats_Loss>
 
 <VAR $TeamSeasonStats_query = "TeamSeasonStats">
 <VAR $statType = "conf">
 
-<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType>
+<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR=2015>
 <VAR $awayConfWins = $TeamSeasonStats_Win>
 <VAR $awayConfLosses = $TeamSeasonStats_Loss>
 <VAR $TeamSeasonStats_query = "">
 <VAR $statType = "overall">
-<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType>
+<QUERY name=TeamSeasonStats ID=$Home_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR=2015>
 <VAR $homeOverallWins = $TeamSeasonStats_Win>
 <VAR $homeOverallLosses = $TeamSeasonStats_Loss>
 
 <VAR $TeamSeasonStats_query = "">
 <VAR $statType = "overall">
-<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType>
+<QUERY name=TeamSeasonStats ID=$Away_TeamID SPORTNAME=$sqlSportName CATEGORY=$statType SPORTYEAR=2015>
 <VAR $awayOverallWins = $TeamSeasonStats_Win>
 <VAR $awayOverallLosses = $TeamSeasonStats_Loss>
 
