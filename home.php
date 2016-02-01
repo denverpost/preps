@@ -661,7 +661,7 @@ unset($cache_lite);
 </div>
 
 <div id="dfmFooter" style="margin-top:10px;"><!--Footer Goes Here--></div>
-	<script type="text/javascript" src="http://local.denverpost.com/common/dfm/dfm-nav/dfm-nav-core.js"></script>
+	<script type="text/javascript" src="http://local.denverpost.com/common/dfm/dfm-nav/dfm-nav-core-1.4.7.js"></script>
 	<!-- You'll need to change the pageTitle in the script below. leaderboard|true displays a banner ad at the top -->
 	<script>
 		var waitingforGodot = setTimeout(function(){dfmNav.initParams("mode|article", "site|denverpost", "pageTitle|Colorado Prep Sports", "leaderboard|true", "thirdParty|true", "domain|denverpost")},1000);
