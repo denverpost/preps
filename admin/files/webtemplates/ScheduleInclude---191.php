@@ -473,7 +473,7 @@ echo $nav["day"];
 ###THIS IS WHERE THE CLASS NAME AND SPORT ARE DISPLAYED###
 
 <IFEQUAL $Sport_SportName "Field Hockey">
-<VAR $myTerm = "Tournament">
+<VAR $playoffTerm = "Tournament">
 <ELSE>
 </IFEQUAL>
 
@@ -489,42 +489,42 @@ echo $nav["day"];
 <a href="{$externalURL}site=default&tpl=Class&ClassID={$Class_ClassID}&Sport={$Game_SportID}" title="{$Class_ClassName} Prep {$Sport_SportName}">{$classWord} {$Class_ClassName}</a>
 
 <IFTRUE $Sport_SportName == "Boys Basketball" || $SportIDCurrent == "6">
-<VAR $myTerm = "Tournament">
+<VAR $playoffTerm = "Tournament">
 </IFTRUE>
 <IFTRUE $Sport_SportName == "Girls Basketball" || $SportIDCurrent == "21">
-<VAR $myTerm = "Tournament">
+<VAR $playoffTerm = "Tournament">
 </IFTRUE>
 <IFTRUE $Sport_SportName == "Ice Hockey" || $SportIDCurrent == "34">
-<VAR $myTerm = "Playoffs">
+<VAR $playoffTerm = "Playoffs">
 </IFTRUE>
 <IFEQUAL $Sport_SportName "Field Hockey">
-<VAR $myTerm = "Tournament">
+<VAR $playoffTerm = "Tournament">
 </IFEQUAL>
 <IFEQUAL $Sport_SportName "Boys Soccer">
-<VAR $myTerm = "Tournament">
+<VAR $playoffTerm = "Tournament">
 </IFEQUAL>
 <IFEQUAL $Sport_SportName "Girls Soccer">
-<VAR $myTerm = "Playoffs">
+<VAR $playoffTerm = "Playoffs">
 </IFEQUAL>
 <IFTRUE $Sport_SportName == "Football" || $Subnav_SportName == "Football">
-<VAR $myTerm = "Playoffs">
+<VAR $playoffTerm = "Playoffs">
 </IFTRUE>
 <IFEQUAL $Sport_SportName "Softball">
-<VAR $myTerm = "Tournament">
+<VAR $playoffTerm = "Tournament">
 </IFEQUAL>
 <IFEQUAL $Sport_SportName "Baseball">
-<VAR $myTerm = "Championship Series">
+<VAR $playoffTerm = "Championship Series">
 </IFEQUAL>
 <IFEQUAL $Sport_SportName "Field Hockey">
-<VAR $myTerm = "Tournament">
+<VAR $playoffTerm = "Tournament">
 <ELSE>
 </IFEQUAL>
 <IFEQUAL $Sport_SportName "Boys Lacrosse">
-<VAR $myTerm = "Playoffs">
+<VAR $playoffTerm = "Playoffs">
 <ELSE>
 </IFEQUAL>
 <IFEQUAL $Sport_SportName "Girls Lacrosse">
-<VAR $myTerm = "Playoffs">
+<VAR $playoffTerm = "Playoffs">
 <ELSE>
 </IFEQUAL>
 
@@ -533,7 +533,7 @@ echo $nav["day"];
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 2>
 <IFGREATER $testTime $myEarlyFootballPlayoffTime>
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -543,7 +543,7 @@ State {$myTerm}
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 5>
 <IFGREATER $testTime $myEarlyFootballPlayoffTime>
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -553,7 +553,7 @@ State {$myTerm}
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 6>
 <IFGREATER $testTime $myEarlyFootballPlayoffTime >
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -567,7 +567,7 @@ State {$myTerm}
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 7>
 <IFGREATER $testTime $myEarlyFootballPlayoffTime >
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -577,7 +577,7 @@ State {$myTerm}
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 1>
 <IFGREATER $testTime $myLateFootballPlayoffTime>
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -587,7 +587,7 @@ State {$myTerm}
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 3>
 <IFGREATER $testTime $myLateFootballPlayoffTime>
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -597,7 +597,7 @@ State {$myTerm}
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 4>
 <IFGREATER $testTime $myEarlyFootballPlayoffTime>
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -606,14 +606,14 @@ State {$myTerm}
 <IFEQUAL $sportName "Softball">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $mySoftballTime>
-Championship {$myTerm}
+Championship {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
 <IFEQUAL $sportName "Boys Soccer">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myBoysSoccerTime>
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -621,16 +621,15 @@ State {$myTerm}
 <IFEQUAL $sportName "Girls Soccer">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myGirlsSoccerTime>
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
 
-
 <IFEQUAL $sportName "Field Hockey">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myFieldHockeyTime>
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -638,7 +637,7 @@ State {$myTerm}
 <IFEQUAL $sportName "Ice Hockey">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myIceHockeyTime>
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -647,7 +646,7 @@ State {$myTerm}
 <IFEQUAL $sportName "Boys Basketball">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myLateBasketballTime>
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 <IFGREATER $testTime $myBasketballTime>
 <IFGREATER $Class_ClassID 3>
@@ -656,7 +655,7 @@ District playoffs
 <IFGREATER $Class_ClassID 2>
 Conference Playoffs
 <ELSE>
-State {$myTerm}
+State {$playoffTerm}
 </IFGREATER>
 </IFGREATER>
 <ELSE>
@@ -668,7 +667,7 @@ State {$myTerm}
 <IFEQUAL $sportName "Girls Basketball">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myLateBasketballTime>
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 <IFGREATER $testTime $myBasketballTime>
 <IFGREATER $Class_ClassID 3>
@@ -677,7 +676,7 @@ District playoffs
 <IFGREATER $Class_ClassID 2>
 Conference Playoffs
 <ELSE>
-State {$myTerm}
+State {$playoffTerm}
 </IFGREATER>
 </IFGREATER>
 <ELSE>
@@ -688,7 +687,7 @@ State {$myTerm}
 <IFEQUAL $sportName "Boys Lacrosse">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myBoysLacrosseTime>
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -696,33 +695,32 @@ State {$myTerm}
 <IFEQUAL $sportName "Girls Lacrosse">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myGirlsLacrosseTime>
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
 
 <IFEQUAL $sportName "Baseball">
 <VAR $testTime = strtotime($Game_GameDate)>
-<IFGREATER $Class_ClassID 3>
+<IFGREATER $Class_ClassID 0>
 <IFGREATER $testTime $myEarlyBaseballTime >
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFGREATER>
 </IFGREATER>
 </IFEQUAL>
 
+###
 <IFEQUAL $sportName "Baseball">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFTRUE $Class_ClassID == 1 || $Class_ClassID == 2 || $Class_ClassID == 3>
 <IFGREATER $testTime $myLateBaseballTime >
-State {$myTerm}
+State {$playoffTerm}
 <ELSE>
 </IFTRUE>
 </IFGREATER>
 </IFEQUAL>
-
-
-
+###
 </h3>
             <VAR $ClassIDCurrent = $Game_TeamClassID>
             <VAR $DayCurrent = 0>
@@ -738,78 +736,73 @@ State {$myTerm}
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$Conference_ConferenceName} Conference</a></h4>
 </IFTRUE>
 
-### the following block of code decides whether to include conference names in the football schedule, depending on whether the class in question is in the tournament/playoff phase of the season###
+### This block of code decides whether to include conference names in the football schedule, depending on whether the class in question is in the tournament/playoff phase of the season. The repeated logic exists so we publish the schedule in order of the classes. The classes were not created in order which is why the class ID does not line up with what the class actually is. ###
 <IFTRUE $sportName == "Football" || $SportIDCurrent =="1">
-<VAR $testTime = strtotime($Game_GameDate)>
+<VAR $gameTime = strtotime($Game_GameDate)>
 ###Class 5A football###
 <IFTRUE $Class_ClassID == 2>
 <?php
 $confName = preg_replace("/(\w+)\s(\(\d\w\))/", "$1", "$Conference_ConferenceName");
-?>
-<IFGREATER $myEarlyFootballPlayoffTime $testTime>
+?><IFGREATER $myEarlyFootballPlayoffTime $gameTime>
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$confName} Conference</a></h4>
-</IFGREATER>
-</IFTRUE>
+</IFGREATER></IFTRUE>
 ###Class 4A football###
 <IFTRUE $Class_ClassID == 1>
 <?php
 $confName = preg_replace("/(\w+)\s(\(\d\w\))/", "$1", "$Conference_ConferenceName");
-?>
-<IFGREATER $myLateFootballPlayoffTime $testTime>
+?><IFGREATER $myLateFootballPlayoffTime $gameTime>
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$confName} Conference</a></h4>
-</IFGREATER>
-</IFTRUE>
+</IFGREATER></IFTRUE>
 ###Class 3A football###
 <IFTRUE $Class_ClassID == 3>
 <?php
 $confName = preg_replace("/(\w+)\s(\(\d\w\))/", "$1", "$Conference_ConferenceName");
 ?>
-<IFGREATER $myLateFootballPlayoffTime $testTime>
+<IFGREATER $myLateFootballPlayoffTime $gameTime>
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$confName} Conference</a></h4>
-</IFGREATER>
-</IFTRUE>
+</IFGREATER></IFTRUE>
 ###Class 2A football###
 <IFTRUE $Class_ClassID == 4>
 <?php
 $confName = preg_replace("/(\w+)\s(\(\d\w\))/", "$1", "$Conference_ConferenceName");
 ?>
-<VAR $testTime = strtotime($Game_GameDate)>
-<IFGREATER $myLateFootballPlayoffTime $testTime>
+<VAR $gameTime = strtotime($Game_GameDate)>
+<IFGREATER $myLateFootballPlayoffTime $gameTime>
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$confName} Conference</a></h4>
-</IFGREATER>
-</IFTRUE>
+</IFGREATER></IFTRUE>
 ###Class 1A football###
 <IFTRUE $Class_ClassID == 5>
 <?php
 $confName = preg_replace("/(\w+)\s(\(\d\w\))/", "$1", "$Conference_ConferenceName");
 ?>
-<IFGREATER $myEarlyFootballPlayoffTime $testTime>
+<IFGREATER $myEarlyFootballPlayoffTime $gameTime>
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$confName} Conference</a></h4>
-</IFGREATER>
-</IFTRUE>
+</IFGREATER></IFTRUE>
 ###Class 8-man football###
 <IFTRUE $Class_ClassID == 6>
 <?php
 $confName = preg_replace("/(\w+)\s(\(8\-man\))/", "$1", "$confName");
 ?>
-###<?php
-$divisionName = preg_replace("/(\w+)\s(\w.*)/", "$1", "$confName");
-?>###
-
-<IFGREATER $myEarlyFootballPlayoffTime $testTime>
+<IFGREATER $myEarlyFootballPlayoffTime $gameTime>
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{} Conference">{$Conference_ConferenceName} Conference</a></h4>
-</IFGREATER>
-</IFTRUE>
+</IFGREATER></IFTRUE>
 ###Class 6-man football###
 <IFTRUE $Class_ClassID == 7>
 <?php
 $confName = preg_replace("/(\w+)\s(\(6\-man\))/", "$1", "$Conference_ConferenceName");
 ?>
-<IFGREATER $myEarlyFootballPlayoffTime $testTime>
+<IFGREATER $myEarlyFootballPlayoffTime $gameTime>
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$confName} Conference</a></h4>
-</IFGREATER>
-</IFTRUE>
+</IFGREATER></IFTRUE>
 </IFTRUE> ###closes <IFTRUE $sportName == "Football">###
+
+### the following block of code decides whether to include conference names in the baseball  schedule, depending on whether or not the class in question is in the tournament/playoff phase of the season###
+
+<IFTRUE $sportName == "Baseball">
+<VAR $testTime = strtotime($Game_GameDate)>
+<IFGREATER $myEarlyBaseballTime $testTime>
+<h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$Conference_ConferenceName} Conference</a></h4>
+</IFGREATER></IFTRUE>
 
 ### the following block of code decides whether to include conference names in the softball schedule, depending on whether or not the class in question is in the tournament/playoff phase of the season###
 
@@ -817,8 +810,7 @@ $confName = preg_replace("/(\w+)\s(\(6\-man\))/", "$1", "$Conference_ConferenceN
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $mySoftballTime $testTime>
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$Conference_ConferenceName} Conference</a></h4>
-</IFGREATER>
-</IFTRUE>
+</IFGREATER></IFTRUE>
 
 ### the following block of code decides whether to include conference names in the boys soccer schedule, depending on whether or not the class in question is in the tournament/playoff phase of the season###
 
@@ -826,8 +818,7 @@ $confName = preg_replace("/(\w+)\s(\(6\-man\))/", "$1", "$Conference_ConferenceN
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $myBoysSoccerTime $testTime>
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$Conference_ConferenceName} Conference</a></h4>
-</IFGREATER>
-</IFTRUE>
+</IFGREATER></IFTRUE>
 
 ### the following block of code decides whether to include conference names in the boys and girls basketball schedule, depending on whether or not the class in question is in the tournament/playoff phase of the season###
 
@@ -836,16 +827,11 @@ $confName = preg_replace("/(\w+)\s(\(6\-man\))/", "$1", "$Conference_ConferenceN
 <?php
 $confName = preg_replace("/(\(\d\w\))/", "", "$Conference_ConferenceName");
 ?>
-###GO HERE###
 <VAR $testTime = strtotime($Game_GameDate)>
-<IFGREATER $myBasketballTime $testTime>
-<IFTRUE $Class_ClassID == 1 || $Class_ClassID == 2>
+<IFGREATER $myBasketballTime $testTime><IFTRUE $Class_ClassID == 1 || $Class_ClassID == 2>
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$confName} Conference</a></h4>
 ###confname: {$confName}<br>###
-<ELSE>
-</IFTRUE>
-</IFGREATER>
-</IFTRUE>
+<ELSE></IFTRUE></IFGREATER></IFTRUE>
 
 ### the following block of code decides whether to include conference names in the ice hockey schedule, depending on whether or not the class in question is in the tournament/playoff phase of the season###
 
@@ -856,8 +842,7 @@ $confName = preg_replace("/(\w+)\s(\(Ice hockey\))/", "$1", "$Conference_Confere
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $myIceHockeyTime $testTime>
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$confName} Conference</a></h4>
-</IFGREATER>
-</IFTRUE>
+</IFGREATER></IFTRUE>
 
 ### the following block of code decides whether to include conference names in the boys lacrosse schedule, depending on whether or not the class in question is in the tournament/playoff phase of the season###
 
@@ -866,11 +851,9 @@ $confName = preg_replace("/(\w+)\s(\(Ice hockey\))/", "$1", "$Conference_Confere
 $confName = preg_replace("/(\w+)\s(\(Boys lacrosse\))/", "$1", "$Conference_ConferenceName");
 ?>
 <VAR $testTime = strtotime($Game_GameDate)>
-
 <IFGREATER $myBoysLacrosseTime $testTime>
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$confName} Conference</a></h4>
-</IFGREATER>
-</IFTRUE>
+</IFGREATER></IFTRUE>
 
 ### the following block of code decides whether to include conference names in the girls lacrosse schedule, depending on whether or not the class in question is in the tournament/playoff phase of the season###
 
@@ -881,8 +864,7 @@ $confName = preg_replace("/(\w+)\s(\(Girls lacrosse\))/", "$1", "$Conference_Con
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $myGirlsLacrosseTime $testTime>
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$confName} Conference</a></h4>
-</IFGREATER>
-</IFTRUE>
+</IFGREATER></IFTRUE>
 
 ### the following block of code decides whether to include conference names in the girls soccer schedule, depending on whether or not the class in question is in the tournament/playoff phase of the season###
 
@@ -890,15 +872,7 @@ $confName = preg_replace("/(\w+)\s(\(Girls lacrosse\))/", "$1", "$Conference_Con
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $myGirlsSoccerTime $testTime>
 <h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$Conference_ConferenceName} Conference</a></h4>
-</IFGREATER>
-</IFTRUE>
-
-<IFTRUE $sportName == "Baseball" || $SportIDCurrent == "29">
-<VAR $testTime = strtotime($Game_GameDate)>
-<IFGREATER $myLateBaseballTime $testTime>
-<h4><a href="{$externalURL}site=default&tpl=Conference&ConferenceID={$Conference_ConferenceID}&Sport={$Game_SportID}" title="{$Conference_ConferenceName} Conference">{$Conference_ConferenceName} Conference</a></h4>
-</IFGREATER>
-</IFTRUE>
+</IFGREATER></IFTRUE>
 
             <VAR $ConferenceIDCurrent = $Game_TeamConferenceID>
             <VAR $DayCurrent = 0>
