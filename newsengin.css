@@ -1,5 +1,5 @@
 body { font-size:14px; }
-#page { width:1000px; margin:10px auto; }
+#wrapper { width:1000px; margin:10px auto; }
 
 .searchTable {
      BACKGROUND-COLOR: #D5D5E6;
@@ -1253,13 +1253,6 @@ ul#subnav, ul.subnav
     margin:10px 0 10px 10px;
 }
 
-ul#subnav li, ul.subnav li, ul.namelist li ul li
-{
-    background: transparent url(http://extras.mnginteractive.com/live/media/site36/2008/0303/20080303_101049_bullet_gray.gif) no-repeat scroll 0 5px;
-    margin:0 0 5px 0;
-    padding:0 0 0 14px;
-}
-
 ul.namelist li ul
 {
     margin-left:10px;
@@ -1479,9 +1472,9 @@ ul.namelist li ul li
     margin:5px auto;
     _margin-left:275px;
     text-align:center;
-    width:460px;
-top:-35px;
-position:relative;
+    width:700px;
+    top:-35px;
+    position:relative;
 }
     #prepssearchbox h5
     {
@@ -1549,7 +1542,7 @@ ul#navinterface li
 float:left;
 margin-left:25px;
 }
-    ul#navinterface li#navhome { width:5em; }
+ul#navinterface li#navhome { width:5em; }
 ul#navinterface li ul li
 {
 float:left;
@@ -1569,3 +1562,9 @@ ul.MenuBarHorizontal ul.dropDown ul.doubleDrop a:link
 /*******************************************************************************
 
 #preps #preps-section-player table { margin-left: 15px; margin-bottom: 15px; }
+
+*/
+
+/* Styles to make the mason CSS work */
+.body-copy ul,
+.body-copy ol { margin-left: 1em; }

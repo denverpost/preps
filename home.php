@@ -246,8 +246,7 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 */
 
 
-?>
-<!DOCTYPE HTML>
+?><!DOCTYPE HTML>
 <html lang="en">
 <head>
 <title><?= $related['sport']['titletag'] ?>Denver Post High School Sport Results</title>
@@ -283,7 +282,6 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 <!-- Sports: Preps: Volleyball -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Volleyball"  href="http://feeds.denverpost.com/dp-sports-preps-volleyball"   title="Denver Post Prep Volleyball" text="Denver Post Prep Volleyball"/>
 <!-- Sports: Preps: Wrestling -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Wrestling"  href="http://feeds.denverpost.com/dp-sports-preps-wrestling"   title="Denver Post Prep Wrestling" text="Denver Post Prep Wrestling"/>
 
-<link type="text/css" rel="stylesheet" href="http://extras.mnginteractive.com/live/css/site36/redesign_default.css">
 <link rel="stylesheet" type="text/css" href="http://extras.mnginteractive.com/live/css/site36/newsengin.css">
 
 <script type="text/javascript" src="http://extras.denverpost.com/media/js/jquery-min.js"></script>
@@ -362,6 +360,7 @@ table tr th
     max-width: 1000px;
     width: 100%;
 }
+
 </style>
 </head>
 <body style="margin-top:0;text-align:left!important;"><a name="top"></a>
@@ -374,7 +373,7 @@ function unpointercursor(){document.body.style.cursor="";}
 
 <div id="dfmHeader"><!--Header Goes Here automatically--></div>
 
-      <div id="page">
+      <div id="wrapper">
 
 <div id="omniture" style="display:none;">
 <!-- SiteCatalyst code version: H.1.
