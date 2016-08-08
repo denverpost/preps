@@ -249,48 +249,50 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 ?><!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title><?= $related['sport']['titletag'] ?>Denver Post High School Sport Results</title>
-<meta name="viewport" content="width=device-width">
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<link rel="stylesheet" type="text/css" href="http://extras.denverpost.com/stateofhope/css/foundation.min.css">
-<link rel="icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <title><?= $related['sport']['titletag'] ?>Denver Post High School Sport Results</title>
+    <meta name="description" content="Colorado Preps Results" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <link rel="stylesheet" type="text/css" href="http://extras.denverpost.com/stateofhope/css/foundation.min.css">
+    <link rel="icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
 
-<!-- Sports: Preps -->	<link rel="alternate" type="application/rss+xml"  description="Sports: Preps"  href="http://feeds.denverpost.com/dp-sports-preps"   title="Sports: Preps" text="Sports: Preps"/>
-<!-- Sports: Preps: Blogs: All Things Colorado Preps -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Blogs: All Things Colorado Preps"  href="http://feeds.denverpost.com/dp-sports-preps-blog"   title="Denver Post Prep Blogs: All Things Colorado Preps" text="Denver Post Prep Blogs: All Things Colorado Preps"/>
-<!-- Sports: Preps: Bulletin Board -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Bulletin Board"  href="http://feeds.denverpost.com/dp-sports-preps-bulletin_board"   title="Denver Post Prep Bulletin Board" text="Denver Post Prep Bulletin Board"/>
-<!-- Sports: Preps: Athletes -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Athletes"  href="http://feeds.denverpost.com/dp-sports-preps-athletesoftheweek"   title="Denver Post Prep Athletes" text="Denver Post Prep Athletes"/>
-<!-- Sports: Preps: Baseball -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Baseball"  href="http://feeds.denverpost.com/dp-sports-preps-baseball"   title="Denver Post Prep Baseball" text="Denver Post Prep Baseball"/>
-<!-- Sports: Preps: Basketball: Boys -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Basketball: Boys"  href="http://feeds.denverpost.com/dp-sports-preps-basketball-boys"   title="Denver Post Prep Basketball: Boys" text="Denver Post Prep Basketball: Boys"/>
-<!-- Sports: Preps: Basketball: Girls -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Basketball: Girls"  href="http://feeds.denverpost.com/dp-sports-preps-basketball-girls"   title="Denver Post Prep Basketball: Girls" text="Denver Post Prep Basketball: Girls"/>
-<!-- Sports: Preps: Cross Country -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Cross Country"  href="http://feeds.denverpost.com/dp-sports-preps-cross_country"   title="Denver Post Prep Cross Country" text="Denver Post Prep Cross Country"/>
-<!-- Sports: Preps: Field Hockey -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Field Hockey"  href="http://feeds.denverpost.com/dp-sports-preps-field_hockey"   title="Denver Post Prep Field Hockey" text="Denver Post Prep Field Hockey"/>
-<!-- Sports: Preps: Football -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Football"  href="http://feeds.denverpost.com/dp-sports-preps-football"   title="Denver Post Prep Football" text="Denver Post Prep Football"/>
-<!-- Sports: Preps: Golf -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Golf"  href="http://feeds.denverpost.com/dp-sports-preps-golf"   title="Denver Post Prep Golf" text="Denver Post Prep Golf"/>
-<!-- Sports: Preps: Gymnastics -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Gymnastics"  href="http://feeds.denverpost.com/dp-sports-preps-gymnastics"   title="Denver Post Prep Gymnastics" text="Denver Post Prep Gymnastics"/>
-<!-- Sports: Preps: Ice Hockey -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Ice Hockey"  href="http://feeds.denverpost.com/dp-sports-preps-icehockey"   title="Denver Post Prep Ice Hockey" text="Denver Post Prep Ice Hockey"/>
-<!-- Sports: Preps: Lacrosse -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Lacrosse"  href="http://feeds.denverpost.com/dp-sports-preps-lacrosse"   title="Denver Post Prep Lacrosse" text="Denver Post Prep Lacrosse"/>
-<!-- Sports: Preps: Showcase -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Showcase"  href="http://feeds.denverpost.com/dp-sports-preps-showcase"   title="Denver Post Prep Showcase" text="Denver Post Prep Showcase"/>
-<!-- Sports: Preps: Skiing -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Skiing"  href="http://feeds.denverpost.com/dp-sports-preps-skiing"   title="Denver Post Prep Skiing" text="Denver Post Prep Skiing"/>
-<!-- Sports: Preps: Soccer -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Soccer"  href="http://feeds.denverpost.com/dp-sports-preps-soccer"   title="Denver Post Prep Soccer" text="Denver Post Prep Soccer"/>
-<!-- Sports: Preps: Softball -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Softball"  href="http://feeds.denverpost.com/dp-sports-preps-softball"   title="Denver Post Prep Softball" text="Denver Post Prep Softball"/>
-<!-- Sports: Preps: Stats -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Stats"  href="http://feeds.denverpost.com/dp-sports-preps-prep_stats"   title="Denver Post Prep Stats" text="Denver Post Prep Stats"/>
-<!-- Sports: Preps: Swimming -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Swimming"  href="http://feeds.denverpost.com/dp-sports-preps-swimming"   title="Denver Post Prep Swimming" text="Denver Post Prep Swimming"/>
-<!-- Sports: Preps: Tennis -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Tennis"  href="http://feeds.denverpost.com/dp-sports-preps-tennis"   title="Denver Post Prep Tennis" text="Denver Post Prep Tennis"/>
-<!-- Sports: Preps: Track -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Track"  href="http://feeds.denverpost.com/dp-sports-preps-track"   title="Denver Post Prep Track" text="Denver Post Prep Track"/>
-<!-- Sports: Preps: Volleyball -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Volleyball"  href="http://feeds.denverpost.com/dp-sports-preps-volleyball"   title="Denver Post Prep Volleyball" text="Denver Post Prep Volleyball"/>
-<!-- Sports: Preps: Wrestling -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Wrestling"  href="http://feeds.denverpost.com/dp-sports-preps-wrestling"   title="Denver Post Prep Wrestling" text="Denver Post Prep Wrestling"/>
+    <!-- Sports: Preps -->	<link rel="alternate" type="application/rss+xml"  description="Sports: Preps"  href="http://feeds.denverpost.com/dp-sports-preps"   title="Sports: Preps" text="Sports: Preps"/>
+    <!-- Sports: Preps: Blogs: All Things Colorado Preps -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Blogs: All Things Colorado Preps"  href="http://feeds.denverpost.com/dp-sports-preps-blog"   title="Denver Post Prep Blogs: All Things Colorado Preps" text="Denver Post Prep Blogs: All Things Colorado Preps"/>
+    <!-- Sports: Preps: Bulletin Board -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Bulletin Board"  href="http://feeds.denverpost.com/dp-sports-preps-bulletin_board"   title="Denver Post Prep Bulletin Board" text="Denver Post Prep Bulletin Board"/>
+    <!-- Sports: Preps: Athletes -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Athletes"  href="http://feeds.denverpost.com/dp-sports-preps-athletesoftheweek"   title="Denver Post Prep Athletes" text="Denver Post Prep Athletes"/>
+    <!-- Sports: Preps: Baseball -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Baseball"  href="http://feeds.denverpost.com/dp-sports-preps-baseball"   title="Denver Post Prep Baseball" text="Denver Post Prep Baseball"/>
+    <!-- Sports: Preps: Basketball: Boys -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Basketball: Boys"  href="http://feeds.denverpost.com/dp-sports-preps-basketball-boys"   title="Denver Post Prep Basketball: Boys" text="Denver Post Prep Basketball: Boys"/>
+    <!-- Sports: Preps: Basketball: Girls -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Basketball: Girls"  href="http://feeds.denverpost.com/dp-sports-preps-basketball-girls"   title="Denver Post Prep Basketball: Girls" text="Denver Post Prep Basketball: Girls"/>
+    <!-- Sports: Preps: Cross Country -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Cross Country"  href="http://feeds.denverpost.com/dp-sports-preps-cross_country"   title="Denver Post Prep Cross Country" text="Denver Post Prep Cross Country"/>
+    <!-- Sports: Preps: Field Hockey -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Field Hockey"  href="http://feeds.denverpost.com/dp-sports-preps-field_hockey"   title="Denver Post Prep Field Hockey" text="Denver Post Prep Field Hockey"/>
+    <!-- Sports: Preps: Football -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Football"  href="http://feeds.denverpost.com/dp-sports-preps-football"   title="Denver Post Prep Football" text="Denver Post Prep Football"/>
+    <!-- Sports: Preps: Golf -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Golf"  href="http://feeds.denverpost.com/dp-sports-preps-golf"   title="Denver Post Prep Golf" text="Denver Post Prep Golf"/>
+    <!-- Sports: Preps: Gymnastics -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Gymnastics"  href="http://feeds.denverpost.com/dp-sports-preps-gymnastics"   title="Denver Post Prep Gymnastics" text="Denver Post Prep Gymnastics"/>
+    <!-- Sports: Preps: Ice Hockey -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Ice Hockey"  href="http://feeds.denverpost.com/dp-sports-preps-icehockey"   title="Denver Post Prep Ice Hockey" text="Denver Post Prep Ice Hockey"/>
+    <!-- Sports: Preps: Lacrosse -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Lacrosse"  href="http://feeds.denverpost.com/dp-sports-preps-lacrosse"   title="Denver Post Prep Lacrosse" text="Denver Post Prep Lacrosse"/>
+    <!-- Sports: Preps: Showcase -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Showcase"  href="http://feeds.denverpost.com/dp-sports-preps-showcase"   title="Denver Post Prep Showcase" text="Denver Post Prep Showcase"/>
+    <!-- Sports: Preps: Skiing -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Skiing"  href="http://feeds.denverpost.com/dp-sports-preps-skiing"   title="Denver Post Prep Skiing" text="Denver Post Prep Skiing"/>
+    <!-- Sports: Preps: Soccer -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Soccer"  href="http://feeds.denverpost.com/dp-sports-preps-soccer"   title="Denver Post Prep Soccer" text="Denver Post Prep Soccer"/>
+    <!-- Sports: Preps: Softball -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Softball"  href="http://feeds.denverpost.com/dp-sports-preps-softball"   title="Denver Post Prep Softball" text="Denver Post Prep Softball"/>
+    <!-- Sports: Preps: Stats -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Stats"  href="http://feeds.denverpost.com/dp-sports-preps-prep_stats"   title="Denver Post Prep Stats" text="Denver Post Prep Stats"/>
+    <!-- Sports: Preps: Swimming -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Swimming"  href="http://feeds.denverpost.com/dp-sports-preps-swimming"   title="Denver Post Prep Swimming" text="Denver Post Prep Swimming"/>
+    <!-- Sports: Preps: Tennis -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Tennis"  href="http://feeds.denverpost.com/dp-sports-preps-tennis"   title="Denver Post Prep Tennis" text="Denver Post Prep Tennis"/>
+    <!-- Sports: Preps: Track -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Track"  href="http://feeds.denverpost.com/dp-sports-preps-track"   title="Denver Post Prep Track" text="Denver Post Prep Track"/>
+    <!-- Sports: Preps: Volleyball -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Volleyball"  href="http://feeds.denverpost.com/dp-sports-preps-volleyball"   title="Denver Post Prep Volleyball" text="Denver Post Prep Volleyball"/>
+    <!-- Sports: Preps: Wrestling -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Wrestling"  href="http://feeds.denverpost.com/dp-sports-preps-wrestling"   title="Denver Post Prep Wrestling" text="Denver Post Prep Wrestling"/>
 
-<link rel="stylesheet" type="text/css" href="http://extras.mnginteractive.com/live/css/site36/newsengin.css">
+    <link rel="stylesheet" type="text/css" href="http://extras.denverpost.com/media/css/newsengin.css">
 
-<script type="text/javascript" src="http://extras.denverpost.com/media/js/jquery-min.js"></script>
+    <script src="http://extras.denverpost.com/media/js/jquery-min.js"></script>
 
-<script type="text/javascript" src="http://denver-tpweb.newsengin.com/web/js/calendar.js"></script>
-<script type="text/javascript" src="http://denver-tpweb.newsengin.com/web/js/header.js"></script>
-<script type="text/javascript" src="http://denver-tpweb.newsengin.com/web/js/prototype.js"></script>
-<script type="text/javascript" src="http://denver-tpweb.newsengin.com/web/js/gateway.js"></script>
-<script type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script src="http://denver-tpweb.newsengin.com/web/js/calendar.js"></script>
+    <script src="http://denver-tpweb.newsengin.com/web/js/header.js"></script>
+    <script src="http://denver-tpweb.newsengin.com/web/js/prototype.js"></script>
+    <script src="http://denver-tpweb.newsengin.com/web/js/gateway.js"></script>
+    <script src="http://www.googletagservices.com/tag/js/gpt.js"></script>
 
 <style type="text/css">
 /* Foundation overrides */
