@@ -377,66 +377,6 @@ function unpointercursor(){document.body.style.cursor="";}
 
       <div id="wrapper">
 
-<div id="omniture" style="display:none;">
-<!-- SiteCatalyst code version: H.1.
-Copyright 1997-2005 Omniture, Inc. More info available at
-http://www.omniture.com -->
-<script>
-/* Specify the Report Suite ID(s) to track here */
-var s_account="denverpost";
-</script>
-<script src="http://extras.mnginteractive.com/live/js/omniture/SiteCatalystCode_H_1.js"></script>
-<script src="http://extras.mnginteractive.com/live/js/omniture/OmnitureHelper.js"></script>
-<script>
-var q = document.location.search;
-getParam = function(arg)
-{
-	if (q.indexOf(arg) >= 0)
-	{
-		var pntr = q.indexOf(arg) + arg.length + 1;
-		if (q.indexOf("&", pntr) >= 0)
-		{
-			return q.substring(pntr, q.indexOf("&", pntr));
-		}
-		else
-		{
-			return q.substring(pntr, q.length);
-		}
-	}
-	else
-	{
-	return '';
-	}
-}
-var tpl = getParam('tpl');
-//var SearchQuery = getParam('Query');
-//var SportID = getParam('Sport');
-//var TeamID = getParam('TeamID');
-/* You may give each page an identifying name, server, and channel on
-the next lines. */
-s.pageName="Prep Sports Stats / " + tpl + " / [PAGENAME]"
-s.channel="SPORTS"
-s.prop1="SPORTS"
-s.prop2="SPORTS / Prep Sports"
-s.prop3="SPORTS / Preps / Stats"
-s.prop4="SPORTS / Preps / Stats / " + tpl
-s.prop5="SPORTS / Preps / Stats / <?= $related['sport']['title'] ?>"
-s.prop26="Newsengin"
-s.prop9=getCiQueryString("SOURCE")
-s.eVar2=getCiQueryString("SOURCE")
-/* E-commerce Variables */
-s.campaign=getCiQueryString("EADID")+getCiQueryString("CREF")
-s.eVar4=s.pageName
-/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
-var s_code=s.t();if(s_code)document.write(s_code)//--></script>
-<script>
-if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
-</script><noscript><img
-src="http://denverpost.112.2O7.net/b/ss/denverpost/1/H.1--NS/0"
-height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
-<!-- End SiteCatalyst code version: H.1. -->
-</div>
-
 <div style="width:100%; margin-top:11px;">
 <script type="text/javascript" src="http://extras.denverpost.com/media/js/Spry/SpryMenuBar.js"></script>
 <div>
