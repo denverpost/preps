@@ -8,10 +8,23 @@ The files live here because editing code in a textarea sucks.
 ## Yearly
 
 ### Before each new school year, do this:
-These files should be updated at the beginning of each school year. As early in August as possible. Look for the "###YEARCHECK###" in the files below.
-- ScheduleInclude
+
+These files should be updated at the beginning of each school year. As early in August as possible. Look for the "###YEARCHECK###" in the files below. This is a job for a developer, or if a developer's not available, you'll have to go through each of the files below in NewsEngin and make this change yourself.
+- Boxscore_Baseball
+- Boxscore_Football
+- Boxscore_Hockey
+- Boxscore_Soccer
+- Boxscore_Volleyball
+- Boxscore_softball
+- Leaders
+- Leaders_Football
 - Main
+- ScheduleInclude
+- Standings
+- StandingsConferencesAll
 - Team
+- TeamPlayerStats_Football
+- TeamPlayerStats_Softball
 
 ## Seasonal
 
