@@ -11,26 +11,26 @@
 <?PHP $defaultDate = $todayDate.$space.$todayMonth.$space.$todayYear;?>
 
 ### YEARCHECK these variables need to be re-set every year. they are the times that various tournaments start###
-<VAR $myEarlyFootballPlayoffTime = strtotime("07 November 2015")>
-<VAR $myLateFootballPlayoffTime = strtotime("14 November 2015")>
-<VAR $mySoftballTime = strtotime("17 October 2015")>
-<VAR $myBoysSoccerTime = strtotime("28 October 2015")>
-<VAR $myFieldHockeyTime = strtotime("28 October 2015")>
-<VAR $myBasketballTime = strtotime("21 February 2016")> ###both boys and girls###
-<VAR $myLateBasketballTime = strtotime("27 February 2016")> ###both boys and girls###
-<VAR $myIceHockeyTime = strtotime("26 February 2016")>
-<VAR $myEarlyBaseballTime = strtotime("7 May 2016")>
-<VAR $myLateBaseballTime = strtotime("20 May 2016")>
-<VAR $myGirlsSoccerTime = strtotime("10 May 2016")>
-<VAR $myBoysLacrosseTime = strtotime("10 May 2016")>
-<VAR $myGirlsLacrosseTime = strtotime("11 May 2016")>
+<VAR $myEarlyFootballPlayoffTime = strtotime("07 November 2016")>
+<VAR $myLateFootballPlayoffTime = strtotime("14 November 2016")>
+<VAR $mySoftballTime = strtotime("17 October 2016")>
+<VAR $myBoysSoccerTime = strtotime("28 October 2016")>
+<VAR $myFieldHockeyTime = strtotime("28 October 2016")>
+<VAR $myBasketballTime = strtotime("21 February 2017")> ###both boys and girls###
+<VAR $myLateBasketballTime = strtotime("27 February 2017")> ###both boys and girls###
+<VAR $myIceHockeyTime = strtotime("26 February 2017")>
+<VAR $myEarlyBaseballTime = strtotime("7 May 2017")>
+<VAR $myLateBaseballTime = strtotime("20 May 2017")>
+<VAR $myGirlsSoccerTime = strtotime("10 May 2017")>
+<VAR $myBoysLacrosseTime = strtotime("10 May 2017")>
+<VAR $myGirlsLacrosseTime = strtotime("11 May 2017")>
 
 
 <VAR $myDefaulttime = strtotime("$defaultDate")>
 
 ###this is the start of the fall sports season###
 ### YEARCHECK this one too. ###
-<VAR $seasonStart = strtotime("3 September 2015")>
+<VAR $seasonStart = strtotime("3 September 2016")>
 <?PHP $difference = $strNow - $seasonStart ?>
 <?PHP $difference = ($difference / 604800) ?>
 
@@ -473,7 +473,7 @@ echo $nav["day"];
 ###THIS IS WHERE THE CLASS NAME AND SPORT ARE DISPLAYED###
 
 <IFEQUAL $Sport_SportName "Field Hockey">
-<VAR $playoffTerm = "Tournament">
+<VAR $myTerm = "Tournament">
 <ELSE>
 </IFEQUAL>
 
@@ -489,42 +489,42 @@ echo $nav["day"];
 <a href="{$externalURL}site=default&tpl=Class&ClassID={$Class_ClassID}&Sport={$Game_SportID}" title="{$Class_ClassName} Prep {$Sport_SportName}">{$classWord} {$Class_ClassName}</a>
 
 <IFTRUE $Sport_SportName == "Boys Basketball" || $SportIDCurrent == "6">
-<VAR $playoffTerm = "Tournament">
+<VAR $myTerm = "Tournament">
 </IFTRUE>
 <IFTRUE $Sport_SportName == "Girls Basketball" || $SportIDCurrent == "21">
-<VAR $playoffTerm = "Tournament">
+<VAR $myTerm = "Tournament">
 </IFTRUE>
 <IFTRUE $Sport_SportName == "Ice Hockey" || $SportIDCurrent == "34">
-<VAR $playoffTerm = "Playoffs">
+<VAR $myTerm = "Playoffs">
 </IFTRUE>
 <IFEQUAL $Sport_SportName "Field Hockey">
-<VAR $playoffTerm = "Tournament">
+<VAR $myTerm = "Tournament">
 </IFEQUAL>
 <IFEQUAL $Sport_SportName "Boys Soccer">
-<VAR $playoffTerm = "Tournament">
+<VAR $myTerm = "Tournament">
 </IFEQUAL>
 <IFEQUAL $Sport_SportName "Girls Soccer">
-<VAR $playoffTerm = "Playoffs">
+<VAR $myTerm = "Playoffs">
 </IFEQUAL>
 <IFTRUE $Sport_SportName == "Football" || $Subnav_SportName == "Football">
-<VAR $playoffTerm = "Playoffs">
+<VAR $myTerm = "Playoffs">
 </IFTRUE>
 <IFEQUAL $Sport_SportName "Softball">
-<VAR $playoffTerm = "Tournament">
+<VAR $myTerm = "Tournament">
 </IFEQUAL>
 <IFEQUAL $Sport_SportName "Baseball">
-<VAR $playoffTerm = "Championship Series">
+<VAR $myTerm = "Championship Series">
 </IFEQUAL>
 <IFEQUAL $Sport_SportName "Field Hockey">
-<VAR $playoffTerm = "Tournament">
+<VAR $myTerm = "Tournament">
 <ELSE>
 </IFEQUAL>
 <IFEQUAL $Sport_SportName "Boys Lacrosse">
-<VAR $playoffTerm = "Playoffs">
+<VAR $myTerm = "Playoffs">
 <ELSE>
 </IFEQUAL>
 <IFEQUAL $Sport_SportName "Girls Lacrosse">
-<VAR $playoffTerm = "Playoffs">
+<VAR $myTerm = "Playoffs">
 <ELSE>
 </IFEQUAL>
 
@@ -533,7 +533,7 @@ echo $nav["day"];
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 2>
 <IFGREATER $testTime $myEarlyFootballPlayoffTime>
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -543,7 +543,7 @@ State {$playoffTerm}
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 5>
 <IFGREATER $testTime $myEarlyFootballPlayoffTime>
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -553,7 +553,7 @@ State {$playoffTerm}
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 6>
 <IFGREATER $testTime $myEarlyFootballPlayoffTime >
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -567,7 +567,7 @@ State {$playoffTerm}
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 7>
 <IFGREATER $testTime $myEarlyFootballPlayoffTime >
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -577,7 +577,7 @@ State {$playoffTerm}
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 1>
 <IFGREATER $testTime $myLateFootballPlayoffTime>
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -587,7 +587,7 @@ State {$playoffTerm}
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 3>
 <IFGREATER $testTime $myLateFootballPlayoffTime>
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -597,7 +597,7 @@ State {$playoffTerm}
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFEQUAL $Class_ClassID 4>
 <IFGREATER $testTime $myEarlyFootballPlayoffTime>
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -606,14 +606,14 @@ State {$playoffTerm}
 <IFEQUAL $sportName "Softball">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $mySoftballTime>
-Championship {$playoffTerm}
+Championship {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
 <IFEQUAL $sportName "Boys Soccer">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myBoysSoccerTime>
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -621,7 +621,7 @@ State {$playoffTerm}
 <IFEQUAL $sportName "Girls Soccer">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myGirlsSoccerTime>
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -629,7 +629,7 @@ State {$playoffTerm}
 <IFEQUAL $sportName "Field Hockey">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myFieldHockeyTime>
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -637,7 +637,7 @@ State {$playoffTerm}
 <IFEQUAL $sportName "Ice Hockey">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myIceHockeyTime>
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -646,7 +646,7 @@ State {$playoffTerm}
 <IFEQUAL $sportName "Boys Basketball">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myLateBasketballTime>
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 <IFGREATER $testTime $myBasketballTime>
 <IFGREATER $Class_ClassID 3>
@@ -655,7 +655,7 @@ District playoffs
 <IFGREATER $Class_ClassID 2>
 Conference Playoffs
 <ELSE>
-State {$playoffTerm}
+State {$myTerm}
 </IFGREATER>
 </IFGREATER>
 <ELSE>
@@ -667,7 +667,7 @@ State {$playoffTerm}
 <IFEQUAL $sportName "Girls Basketball">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myLateBasketballTime>
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 <IFGREATER $testTime $myBasketballTime>
 <IFGREATER $Class_ClassID 3>
@@ -676,7 +676,7 @@ District playoffs
 <IFGREATER $Class_ClassID 2>
 Conference Playoffs
 <ELSE>
-State {$playoffTerm}
+State {$myTerm}
 </IFGREATER>
 </IFGREATER>
 <ELSE>
@@ -687,7 +687,7 @@ State {$playoffTerm}
 <IFEQUAL $sportName "Boys Lacrosse">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myBoysLacrosseTime>
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -695,7 +695,7 @@ State {$playoffTerm}
 <IFEQUAL $sportName "Girls Lacrosse">
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $testTime $myGirlsLacrosseTime>
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFEQUAL>
@@ -704,7 +704,7 @@ State {$playoffTerm}
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFGREATER $Class_ClassID 0>
 <IFGREATER $testTime $myEarlyBaseballTime >
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFGREATER>
 </IFGREATER>
@@ -715,7 +715,7 @@ State {$playoffTerm}
 <VAR $testTime = strtotime($Game_GameDate)>
 <IFTRUE $Class_ClassID == 1 || $Class_ClassID == 2 || $Class_ClassID == 3>
 <IFGREATER $testTime $myLateBaseballTime >
-State {$playoffTerm}
+State {$myTerm}
 <ELSE>
 </IFTRUE>
 </IFGREATER>

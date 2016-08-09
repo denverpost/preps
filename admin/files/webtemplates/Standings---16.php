@@ -1,6 +1,6 @@
 <VAR $domainURL = "http://preps.denverpost.com">
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
-<VAR $sportYear = 2015> ###YEARCHECK###
+<VAR $sportYear = 2016> ###YEARCHECK###
 <IFNOTEMPTY $form_Sport>
 <QUERY name=Sport SPORTID=$form_Sport>
 <VAR $sportName=$Sport_SportName>

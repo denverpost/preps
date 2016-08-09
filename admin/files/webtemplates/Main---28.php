@@ -4,7 +4,7 @@
 <VAR $fallTime = strtotime("10 August 2015")>
 <VAR $midNovemberTime = strtotime("15 November 2015")>
 <VAR $winterTime = strtotime("30 November 2015")>
-<VAR $springTime = strtotime("5 March 2016")>
+<VAR $springTime = strtotime("5 March 2017")>
 
 <VAR $externalURL = "http://preps.denverpost.com/home.html?">
 

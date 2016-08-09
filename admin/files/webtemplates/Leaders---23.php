@@ -17,40 +17,40 @@
 ###here is where we enter the season start and end dates for each sport###
 <?PHP $strNow = time() ?>
 <IFTRUE $sportName == "Football">^M
-<VAR $seasonStart = strtotime("03 September 2015")>^M
+<VAR $seasonStart = strtotime("03 September 2016")>^M
 </IFTRUE>^M
 ^M
 <IFTRUE $sportName == "Softball">^M
-<VAR $softballSeasonStart = strtotime("21 August 2015")>^M
+<VAR $softballSeasonStart = strtotime("21 August 2016")>^M
 </IFTRUE>^M
 ^M
 <IFTRUE $sportName == "Baseball">^M
-<VAR $baseballSeasonStart = strtotime("10 March 2016")>^M
+<VAR $baseballSeasonStart = strtotime("10 March 2017")>^M
 </IFTRUE>^M
 ^M
 ^M
 <IFTRUE $sportName == "Boys Soccer">^M
-<VAR $seasonStart = strtotime("27 August 2015")>^M
+<VAR $seasonStart = strtotime("27 August 2016")>^M
 </IFTRUE>^M
 ^M
 <IFTRUE $sportName == "Field Hockey">^M
 <?PHP $strNow = time() ?>^M
-<VAR $seasonStart = strtotime("27 August 2015")>^M
+<VAR $seasonStart = strtotime("27 August 2016")>^M
 </IFTRUE>^M
 ^M
 <IFTRUE $sportName == "Boys Basketball">^M
-<VAR $seasonStart = strtotime("30 November 2015")>^M
+<VAR $seasonStart = strtotime("30 November 2016")>^M
 </IFTRUE>^M
 ^M
 <IFTRUE $sportName == "Girls Basketball">^M
-<VAR $seasonStart = strtotime("30 November 2015")>^M
+<VAR $seasonStart = strtotime("30 November 2016")>^M
 </IFTRUE>
 
 ###<IFTRUE $sportName == "Boys Lacrosse">###
-###<VAR $seasonStart = strtotime("7 March 2015")>###
+###<VAR $seasonStart = strtotime("7 March 2016")>###
 ###</IFTRUE>###
 ###<IFTRUE $sportName == "Girls Lacrosse">###
-###<VAR $seasonStart = strtotime("7 March 2015")>###
+###<VAR $seasonStart = strtotime("7 March 2016")>###
 ###</IFTRUE>###
 
 

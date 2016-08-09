@@ -4,7 +4,7 @@
 <VAR $dash = chr(151)>
 <VAR $period = ".">
 <VAR $statType = "conf">
-<VAR $sportYear = "2015"> ###YEARCHECK###
+<VAR $sportYear = "2016"> ###YEARCHECK###
 
 <QUERY name=Game_preview GAMEID=$form_ID>
 <VAR $Home_TeamID = $Game_preview_GameHomeTeamID>
