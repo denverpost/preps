@@ -24,7 +24,7 @@ Submitted from: {$form_referer}</IFNOTEMPTY>
 <?PHP echo "</text" . "area>"; ?>
 	<input type="hidden" value="goof111" name="keebler" />
 	<input type="hidden" name="goof111" value="TRUE" />
-	<input type="hidden" name="redirect" value="http://www.denverpost.com/preps/ci_13207187" />
+	<input type="hidden" name="redirect" value="http://www.denverpost.com/2016/08/10/denver-post-preps-contact/" />
 	<input type="hidden" name="id" value="prepscontact" />
 	<input type="text" name="name_first" value="Humans: Do Not Use" style="display:none;" />
 	<p><strong>If you would like a reply, please include your email address.</strong>
