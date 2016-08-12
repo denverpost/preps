@@ -19,8 +19,6 @@ Use the navigation at the top of the page to find information on:
 	<li><a href="{$domainURL}/schools/">Prep teams, by schools</a>,</li>
 	<li><a href="{$externalURL}site=default&tpl=Conference&ConferenceID">Colorado prep sports by conference</a>,</li>
 	<li><a href="http://www.denverpost.com/preps">Colorado prep sports news</a>,</li>
-	<li><a href="http://blogs.denverpost.com/preps/">Neil Devlin's All Things Colorado Preps blog</a>,</li>
-	<li><a href="http://photos.denverpost.com/category/preps/">Our Colorado prep photos</a>,</li>
 	<li> and more. </li>
 </ul>
 
