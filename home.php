@@ -703,7 +703,7 @@ unset($cache_lite);
     _sf_async_config.title = document.title;
     _sf_async_config.uid = 2671;
     _sf_async_config.domain = "denverpost.com";
-    _sf_async_config.sections = "data,sports,prep sports,vendor,";
+    _sf_async_config.sections = "data,sports,preps,vendor,";
     /** CONFIGURATION END **/
     (function(){
       function loadChartbeat() {
