@@ -251,13 +251,12 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 */
 
 
-?>
-<!DOCTYPE HTML>
+?><!DOCTYPE HTML>
 <html lang="en">
 	<head>
 	<title><?= $related['sport']['titletag'] ?>Denver Post High School Sport Results</title>
 	<meta name="viewport" content="width=device-width">
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="Content-Style-Type" content="text/css">
 	<script>
 	if ( document.location.search === '?site=default&tpl=Main' ) document.location.replace('http://preps.denverpost.com/');
@@ -292,7 +291,6 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 	<!-- Sports: Preps: Volleyball -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Volleyball"  href="http://feeds.denverpost.com/dp-sports-preps-volleyball"   title="Denver Post Prep Volleyball" text="Denver Post Prep Volleyball"/>
 	<!-- Sports: Preps: Wrestling -->	<link rel="alternate" type="application/rss+xml"  description="Denver Post Prep Wrestling"  href="http://feeds.denverpost.com/dp-sports-preps-wrestling"   title="Denver Post Prep Wrestling" text="Denver Post Prep Wrestling"/>
 
-	<link type="text/css" rel="stylesheet" href="http://extras.mnginteractive.com/live/css/site36/redesign_default.css">
 	<link rel="stylesheet" type="text/css" href="http://extras.mnginteractive.com/live/css/site36/newsengin.css">
 
 	<script src="http://extras.denverpost.com/media/js/jquery-min.js"></script>
@@ -378,8 +376,22 @@ table tr th
 var _sf_startpt=(new Date()).getTime();
 var _sf_async_config={};
 </script>
+    <link rel="stylesheet" href="https://assets.digitalfirstmedia.com/prod/static/css/denverpost.css?ver=1.0" type="text/css" />
+    <link rel='stylesheet' id='all-css-0' href='http://www.denverpost.com/wp-content/plugins/site-denverpost/static/css/screen.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='mason-fonts-css'  href='https://fonts.googleapis.com/css?family=Source+Serif+Pro%3A400%2C400italic%2C600%2C600italic%2C700%2C700italic%7CSource+Sans+Pro%3A400%2C400italic%2C600%2C600italic%2C700%2C400italic&#038;ver=4.6' type='text/css' media='all' />
 </head>
 <body style="margin-top:0;text-align:left!important;"><a name="top"></a>
+<div id="page" class="hfeed site">
+    <header class="site-header default headroom--top headroom">
+        <div class="nav-wrapper">
+            <div class="nav-primary">
+                <div class="navigation-inner">
+                    <div class="logo"><a href="http://www.denverpost.com">The Denver Post</a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
 
 <script>
 function switchMenu(obj) {var el = document.getElementById(obj); if ( el.style.display != "none" ) {el.style.display = 'none';} else {el.style.display = '';}}
@@ -692,10 +704,11 @@ unset($cache_lite);
 </div>
 
 <div id="dfmFooter" style="margin-top:10px;"><!--Footer Goes Here--></div>
+	<!-- 
 	<script src="http://local.denverpost.com/common/dfm/dfm-nav/dfm-nav-core.js"></script>
-	<!-- You'll need to change the pageTitle in the script below. leaderboard|true displays a banner ad at the top -->
+    -->
 	<script>
-		var waitingforGodot = setTimeout(function(){dfmNav.initParams("mode|article", "site|denverpost", "pageTitle|Colorado Prep Sports", "leaderboard|true", "thirdParty|true", "domain|denverpost")},1000);
+		//var waitingforGodot = setTimeout(function(){dfmNav.initParams("mode|article", "site|denverpost", "pageTitle|Colorado Prep Sports", "leaderboard|true", "thirdParty|true", "domain|denverpost")},1000);
 	</script>
     <script>
     var _sf_async_config={};
@@ -718,6 +731,76 @@ unset($cache_lite);
     })();
     </script>
 
+<footer class="site-footer">
+                    <header class="footer-header">
+            <div class="footer-header-wrapper">
+                <ul id="primary-menu" class="footer-links"><li id="menu-item-351" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-351"><a href="https://www.denverpostmemberservices.com/">Member Services</a></li>
+<li id="menu-item-352" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-352"><a href="http://dpo.st/alerts">News Alerts</a></li>
+</ul>    <ul class="sharing">
+                        <li>
+                    <a href="https://facebook.com/denverpost" target="self" class="icon-facebook">
+                        <span class="label">Facebook</span>
+                    </a>
+                </li>
+                                <li>
+                    <a href="https://twitter.com/denverpost" target="self" class="icon-twitter">
+                        <span class="label">Twitter</span>
+                    </a>
+                </li>
+                                <li>
+                    <a href="https://instagram.com/denverpost" target="self" class="icon-instagram">
+                        <span class="label">Instagram</span>
+                    </a>
+                </li>
+                                <li>
+                    <a href="http://www.denverpost.com/feed/" target="self" class="icon-feed">
+                        <span class="label">RSS</span>
+                    </a>
+                </li>
+                    </ul>
+            </div>
+        </header>
+        <ul id="primary-menu" class="footer-menus"><li id="menu-item-28409" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28409"><a href="https://www.denverpostmemberservices.com/">Subscribe</a><span class="expander"><a href="#" class="icon-plus"></a></span>
+<ul class="footer-menu">
+    <li id="menu-item-28410" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28410"><a href="https://www.denverpostmemberservices.com/">Become a Member / Subscribe</a></li>
+    <li id="menu-item-5522" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5522"><a href="https://www.denverpostmemberservices.com/login.aspx?ReturnUrl=%2fSecurePage%2fVacationStop.aspx">Place a Hold</a></li>
+    <li id="menu-item-5523" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5523"><a href="http://www.denverpoststore.com/">Denver Post Store</a></li>
+    <li id="menu-item-2020994" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2020994"><a href="https://www.denverpostmemberservices.com/access.aspx">Digital Replica Edition</a></li>
+</ul>
+</li>
+<li id="menu-item-5518" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5518"><a href="http://www.denverpost.com/classifieds/">Classifieds</a><span class="expander"><a href="#" class="icon-plus"></a></span>
+<ul class="footer-menu">
+    <li id="menu-item-5524" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5524"><a href="http://www.coloradodrives.com/">Autos</a></li>
+    <li id="menu-item-5525" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5525"><a href="http://www.dphomes.today/">Real Estate</a></li>
+    <li id="menu-item-28412" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28412"><a href="http://www.denverpost.com/jobs/">Jobs</a></li>
+    <li id="menu-item-5527" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5527"><a href="http://ads.denverpost.com/">Today’s Ads</a></li>
+    <li id="menu-item-28415" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28415"><a href="http://www.denverpost.com/weekly-ads/">Weekly Ads</a></li>
+    <li id="menu-item-5529" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5529"><a href="http://ads.denverpost.com/">Daily Ads</a></li>
+    <li id="menu-item-5530" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5530"><a href="http://marketplaceshopping.denverpost.com/SS/Tiles.aspx?ex=specialfeatures&amp;source=SubNav_Special_Sections">Special Sections</a></li>
+</ul>
+</li>
+<li id="menu-item-5519" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5519"><a href="http://www.denverpost.com/contact-us/">Contact Us</a><span class="expander"><a href="#" class="icon-plus"></a></span>
+<ul class="footer-menu">
+    <li id="menu-item-28418" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28418"><a href="http://www.denverpost.com/news-tips/">Submit a News Tip</a></li>
+    <li id="menu-item-5534" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5534"><a href="https://www.denverpostmemberservices.com/">Member Services</a></li>
+    <li id="menu-item-5535" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5535"><a href="http://mediakit.denverpost.com/">Advertise With Us</a></li>
+    <li id="menu-item-5536" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5536"><a href="http://www.digitalfirstmedia.com/careers">Careers</a></li>
+    <li id="menu-item-28449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28449"><a href="http://www.denverpost.com/how-to-place-obituary-denver-post/">Place an Obituary</a></li>
+</ul>
+</li>
+<li id="menu-item-29026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-29026"><a href="http://www.denverpost.com/front-pages/">Today’s Front Page</a><span class="expander"><a href="#" class="icon-plus"></a></span>
+
+<ul class="footer-menu">
+    <li id="menu-item-29100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29100"><a href="http://www.denverpost.com/back-issues/">Back Issues</a></li>
+    <li id="menu-item-2021001" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2021001"><a href="http://www.denverpost.com/archives/">Archives</a></li>
+    <li id="menu-item-5539" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5539"><a href="http://extras.denverpost.com/mobile/index.html">Mobile Apps</a></li> </ul> </li> </ul>
+            <div class="colophon">
+                <ul id="primary-menu" class="menu"><li id="menu-item-101640" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-101640"><a href="http://digitalfirstmedia.com">Copyright © 2016 Digital First Media</a></li>
+<li id="menu-item-174580" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174580"><a href="http://www.denverpost.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-174622" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-174622"><a href="/sitemap.xml">Site Map</a></li>
+<li id="menu-item-174608" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-174608"><a href="http://www.denverpost.com/ethics-policy/">Ethics Policy</a></li>
+</ul>            </div>
+        </footer>
 </body>
 <?
 // Close out the whole-page caching.
