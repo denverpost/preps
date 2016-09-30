@@ -536,13 +536,6 @@ unset($cache_lite);
 </div>
 </div>
 
-<div id="dfmFooter" style="margin-top:10px;"><!--Footer Goes Here--></div>
-	<!-- 
-	<script src="http://local.denverpost.com/common/dfm/dfm-nav/dfm-nav-core.js"></script>
-    -->
-	<script>
-		//var waitingforGodot = setTimeout(function(){dfmNav.initParams("mode|article", "site|denverpost", "pageTitle|Colorado Prep Sports", "leaderboard|true", "thirdParty|true", "domain|denverpost")},1000);
-	</script>
     <script>
     var _sf_async_config={};
     /** CONFIGURATION START **/
