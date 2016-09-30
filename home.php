@@ -51,7 +51,18 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 	if ( document.location.search === '?site=default&tpl=Main' ) document.location.replace('http://preps.denverpost.com/');
 	</script>
 
-	<link rel="stylesheet" type="text/css" href="http://extras.denverpost.com/stateofhope/css/foundation.min.css">
+    <script>
+        // Only load foundation.css on handheld devices
+        if ( window.screen.availWidth < 769 || window.innerWidth < 769 )
+        {
+            var link = document.createElement( "link" );
+            link.href = "http://cdn.foundation5.zurb.com/foundation.css";
+            link.type = "text/css";
+            link.rel = "stylesheet";
+            link.media = "screen,print";
+            document.getElementsByTagName("head")[0].appendChild(link);
+        }
+    </script>
 	<link rel="icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
 	<link rel="shortcut icon" href="http://extras.mnginteractive.com/live/media/favIcon/dpo/favicon.ico" type="image/x-icon" />
 
@@ -173,8 +184,8 @@ var _sf_startpt=(new Date()).getTime();
 var _sf_async_config={};
 </script>
     <link rel="stylesheet" href="https://assets.digitalfirstmedia.com/prod/static/css/denverpost.css?ver=1.0" type="text/css" />
-    <link rel='stylesheet' id='all-css-0' href='http://www.denverpost.com/wp-content/plugins/site-denverpost/static/css/screen.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='mason-fonts-css'  href='https://fonts.googleapis.com/css?family=Source+Serif+Pro%3A400%2C400italic%2C600%2C600italic%2C700%2C700italic%7CSource+Sans+Pro%3A400%2C400italic%2C600%2C600italic%2C700%2C400italic&#038;ver=4.6' type='text/css' media='all' />
+    <link rel="stylesheet" id="all-css-0" href="http://www.denverpost.com/wp-content/plugins/site-denverpost/static/css/screen.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" id="mason-fonts-css"  href="https://fonts.googleapis.com/css?family=Source+Serif+Pro%3A400%2C400italic%2C600%2C600italic%2C700%2C700italic%7CSource+Sans+Pro%3A400%2C400italic%2C600%2C600italic%2C700%2C400italic&#038;ver=4.6" type="text/css" media="all" />
 </head>
 <body><a name="top"></a>
 <div id="page" class="hfeed site">
