@@ -164,7 +164,8 @@ table tr th
     max-width: 1000px;
     width: 100%;
 }
-body #page {
+body #page { margin-top: 0; }
+body #page-dp {
     margin-top: 0;
     padding-top: 10px;
 }
@@ -210,7 +211,7 @@ body #prepswrapper { margin-top: -18px; }
     </script>
 </head>
 <body><a name="top"></a>
-<div id="page" class="hfeed site">
+<div id="page-dp" class="hfeed site">
     <header class="site-header default headroom--top headroom">
         <div class="nav-wrapper">
             <div class="nav-primary">
@@ -326,12 +327,8 @@ the next lines. */
 (window,document,'script','dataLayer','GTM-TLFP4R');
 </script><!-- End Google Tag Manager -->
 
-<div id="dfmHeader"><!--Header Goes Here automatically--></div>
-
       <div id="page">
-
-
-<div style="width:100%; margin-top:11px;">
+            <div style="width:100%;">
 <script src="http://extras.denverpost.com/media/js/Spry/SpryMenuBar.js"></script>
 <div>
 <?php
@@ -371,7 +368,7 @@ unset($cache_lite);
     <div id="prepswrapper">
         <div class="row">
             <div class="large-8 medium-12 small-12 columns">
-                <div class="mainSection">
+                <div class="mainSection body-copy">
 <?
 //
 // Main Content
