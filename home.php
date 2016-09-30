@@ -106,7 +106,6 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 /* Foundation overrides */
 @media only screen and (max-width: 1004px) 
 {
-    #dfmHeader div.foot, #dfmHeader div.sub-navigation, #dfmHeader #dfmMasthead #dfmPageTitle, #dfmHeader #dfmMasthead #dfmSearch, #dfmHeader #dfmMasthead #weatherBoxReal, #dfmHeader #dfmLeaderboardAd { display:none; }
     #prepswrapper { border: 0px none; }
     /* Prep nav adjustments */
     #prepsnavwrapper { background-image: none; }
@@ -126,11 +125,7 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 @media only screen and (max-width: 768px) 
 {
     /* Kill the main nav */
-    #dfmHeader #dfmMasthead h3 { margin-left:.5em; }
-    #dfmHeader div.page-head div.body { background:none; border:none; }
-    #dfmHeader div.page-head div.body div.margin { width:100%; }
     #wrapper { width:100%; overflow:hidden; }
-    #top_leaderboard_wrap { display: none; }
 
     /* Prep nav adjust */
     #navconferences { display: none; }
@@ -144,7 +139,6 @@ if ( $cache_id['sportsidebar'] == '' ) $cache_id['sportsidebar'] = 'basic';
 }
 @media only screen and (max-width: 728px) 
 {
-    #navnews, #leaderBoardAd { display: none; }
 
     /* Hide label text on searchbar */
     #prepssearchbox h5 { display: none; }
