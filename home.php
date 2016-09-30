@@ -175,14 +175,36 @@ body #prepssearchbox { width: 640px; }
 body #prepssearchbox h5 { margin-top: 10px; }
 body #prepswrapper { margin-top: -28px; }
 </style>
-<script>
-//Chartbeat startup
-var _sf_startpt=(new Date()).getTime();
-var _sf_async_config={};
-</script>
+    <script>
+        //Chartbeat startup
+        var _sf_startpt=(new Date()).getTime();
+        var _sf_async_config={};
+    </script>
     <link rel="stylesheet" href="https://assets.digitalfirstmedia.com/prod/static/css/denverpost.css?ver=1.0" type="text/css" />
     <link rel="stylesheet" id="all-css-0" href="http://www.denverpost.com/wp-content/plugins/site-denverpost/static/css/screen.min.css" type="text/css" media="all" />
     <link rel="stylesheet" id="mason-fonts-css"  href="https://fonts.googleapis.com/css?family=Source+Serif+Pro%3A400%2C400italic%2C600%2C600italic%2C700%2C700italic%7CSource+Sans+Pro%3A400%2C400italic%2C600%2C600italic%2C700%2C400italic&#038;ver=4.6" type="text/css" media="all" />
+        <script>
+      if ( typeof googletag !== "undefined" )
+      {
+        googletag.defineSlot('/8013/denverpost.com/News',[[300,250],[300,600],[160,600],[300,1050]], 'dfp-20').addService(googletag.pubads()).setTargeting('pos',['Cube1_RRail_ATF']).setTargeting('kv','politics');                                          
+        googletag.defineSlot('/8013/denverpost.com/News',[[300,250]], 'dfp-21').addService(googletag.pubads()).setTargeting('pos',['Cube2_RRail_mid']).setTargeting('kv','politics');
+        googletag.defineSlot('/8013/denverpost.com/News',[[300,250]], 'dfp-22').addService(googletag.pubads()).setTargeting('pos',['Cube3_RRail_lower']).setTargeting('kv','politics');
+        var dfpBuiltMappings = {};
+        var ranNum = Math.floor(Math.random()*101);
+        var ranRPN = ranNum.toString();
+        dfpBuiltMappings["top_leaderboard"] = googletag.sizeMapping().addSize([1000,200],[[728,90],[970,90],[970,250],[970,30]]).addSize([750,200],[[728,90]]).addSize([300,400],[[300,50],[320,50],[320,100]]).build();
+        dfpBuiltMappings["Cube1_RRail_ATF"] = googletag.sizeMapping().addSize([1000,200],[[300,250],[300,600],[300,1050]]).addSize([750,200],[[300,250]]).addSize([300,400],[[300,250]]).build();
+        dfpBuiltMappings["Cube2_RRail_mid"] = googletag.sizeMapping().addSize([1000,200],[[300,250]]).addSize([750,200],[[300,250]]).addSize([300,400],[[300,250]]).build();
+        dfpBuiltMappings["Cube3_RRail_lower"] = googletag.sizeMapping().addSize([1000,200],[[300,250]]).addSize([750,200],[[300,250]]).addSize([300,400],[[300,250]]).build();
+        dfpBuiltMappings["bottom_leaderboard"] = googletag.sizeMapping().addSize([1000,200],[[728,90],[970,250],[970,90]]).addSize([750,200],[[728,90]]).addSize([300,400],[[320,100],[320,50]]).build();
+        googletag.defineSlot("\/8013\/denverpost.com\/politics\/colorado-legislature",[728,90],"div-gpt-ad-top_leaderboard").defineSizeMapping(dfpBuiltMappings["top_leaderboard"]).setTargeting("POS",["top_leaderboard"]).setTargeting("kv","colorado-legislature").setTargeting("page",["section"]).setTargeting("RPN", ranRPN).addService(googletag.pubads());
+        googletag.defineSlot("\/8013\/denverpost.com\/politics\/colorado-legislature",[300,250],"div-gpt-ad-Cube1_RRail_ATF").defineSizeMapping(dfpBuiltMappings["Cube1_RRail_ATF"]).setTargeting("POS",["Cube1_RRail_ATF"]).setTargeting("kv","colorado-legislature").setTargeting("page",["section"]).setTargeting("RPN", ranRPN).addService(googletag.pubads());
+        googletag.defineSlot("\/8013\/denverpost.com\/politics\/colorado-legislature",[300,250],"div-gpt-ad-Cube2_RRail_mid").defineSizeMapping(dfpBuiltMappings["Cube2_RRail_mid"]).setTargeting("POS",["Cube2_RRail_mid"]).setTargeting("kv","colorado-legislature").setTargeting("page",["section"]).setTargeting("RPN", ranRPN).addService(googletag.pubads());
+        googletag.defineSlot("\/8013\/denverpost.com\/politics\/colorado-legislature",[728,90],"div-gpt-ad-bottom_leaderboard").defineSizeMapping(dfpBuiltMappings["bottom_leaderboard"]).setTargeting("POS",["bottom_leaderboard"]).setTargeting("kv","colorado-legislature").setTargeting("page",["section"]).setTargeting("RPN", ranRPN).addService(googletag.pubads());
+        googletag.pubads().enableSyncRendering();
+        googletag.enableServices();
+      }
+    </script>
 </head>
 <body><a name="top"></a>
 <div id="page" class="hfeed site">
@@ -196,6 +218,13 @@ var _sf_async_config={};
         </div>
     </header>
 </div>
+    <div id="div-gpt-ad-top_leaderboard" class="dfp-ad dfp-top_leaderboard" data-ad-unit="top_leaderboard">
+        <script>
+            if ( "undefined" !== typeof googletag ) {
+                googletag.cmd.push( function() { googletag.display("div-gpt-ad-top_leaderboard"); } );
+            }
+        </script>
+    </div>
 
 <script>
 function switchMenu(obj) {var el = document.getElementById(obj); if ( el.style.display != "none" ) {el.style.display = 'none';} else {el.style.display = '';}}
@@ -274,7 +303,7 @@ the next lines. */
         'Slug':'',
         'Content ID':'',
         'Page Type':'section',
-        'Publisher State':'CO',
+        'Publisher State':'COLORADO',
         'Byline':'',
         'Content Title':'',
         'URL':'',
