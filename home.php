@@ -522,8 +522,6 @@ unset($cache_lite);
 
         </div>
 </div>
-<script src="http://denver-tpweb.newsengin.com/web/js/header.js"></script>
-<script src="http://denver-tpweb.newsengin.com/web/js/prototype.js"></script>
 <script>
         webPath="http://denver-tpweb.newsengin.com/web/";
         document.write('<script src="'+webPath+'gateway.php?site=default&tpl=Calendar&divID=calendar&origQueryString='+escape(location.search)+'&webPath='+escape(webPath)+'"><\/script>');
