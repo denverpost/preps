@@ -171,9 +171,12 @@ body #page {
 html body {
     text-align: left!important;
 }
-body #prepssearchbox { width: 640px; }
+html body #prepssearchbox { 
+    width: 640px;
+    margin-top: 30px!important;
+}
 body #prepssearchbox h5 { margin-top: 10px; }
-body #prepswrapper { margin-top: -28px; }
+body #prepswrapper { margin-top: -18px; }
 </style>
     <script>
         //Chartbeat startup
