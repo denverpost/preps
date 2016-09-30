@@ -564,6 +564,14 @@ unset($cache_lite);
     })();
     </script>
 
+
+    <div id="div-gpt-ad-bottom_leaderboard" class="dfp-ad dfp-bottom_leaderboard" data-ad-unit="bottom_leaderboard">
+        <script>
+            if ( "undefined" !== typeof googletag ) {
+                googletag.cmd.push( function() { googletag.display("div-gpt-ad-bottom_leaderboard"); } );
+            }
+        </script>
+    </div>
 <footer class="site-footer">
                     <header class="footer-header">
             <div class="footer-header-wrapper">
