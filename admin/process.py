@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 # Take a list of id's and filename slugs, 
 # rename, move and parse out the appropriate text in the ids.
 import os
@@ -16,6 +16,7 @@ try:
         id, slug = line.split('\t')
         file_out = open('./' + id)
         file_content = file_out.read()
+        file_content_parsed = ''
 
         # We know the content we want is between textarea tags,
         # and we know there's only one set of textarea tags.
@@ -25,12 +26,12 @@ try:
 
             # Write the content, delete the source file.
             fn = './%s/%s---%s.php' % (dir, slug.strip(), id)
-            print fn
-            file_new = open(fn, 'wb')
+            print(fn)
+            file_new = open(fn, 'w')
             file_new.write(file_content_parsed)
             file_new.close()
         except:
-            print 'Could not parse out text of %s---%s' % (slug.strip(), id)
+            print('Could not parse out text of %s---%s' % (slug.strip(), id))
         
         file_out.close()
         os.remove('./' + id)

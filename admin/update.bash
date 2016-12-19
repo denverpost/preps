@@ -26,7 +26,7 @@ done
 #
 # We do this with python because running multi-line regexes with
 # bash is unnecessarily difficult.
-python process.py
+./process.py
 
 # update the last time we saved timestamp
 date +%s > webtemplate.latest.txt
