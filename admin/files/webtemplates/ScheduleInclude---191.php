@@ -409,7 +409,7 @@ echo $nav["day"];
 </IFGREATER>
 </IFTRUE>
 
-<IFTRUE  $Sport_SportName == "Boys Basketball" || $Sport_SportName == "Girls  Basketball">
+<IFTRUE  $Sport_SportName == "Boys Basketball" || $Sport_SportName == "Girls Basketball">
 ###GAMEDATE: {$Game_GameDate}<br>###
 <IFGREATER $Game_GameDate $myBasketballTime>
 <VAR $mySkedNote = "">
