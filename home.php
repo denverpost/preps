@@ -650,7 +650,7 @@ function bookmark_us(url, title)
 }
 </script>
 
-<a href="http://www.maxpreps.com/state/colorado.htm"><img src="http://extras.mnginteractive.com/live/media/site36/2011/1025/20111025_124623_maxpreps.gif" width="224" height="79" style="margin:0;"></a>
+<a href="https://www.maxpreps.com/state/colorado.htm"><img src="http://extras.mnginteractive.com/live/media/site36/2011/1025/20111025_124623_maxpreps.gif" width="224" height="79" style="margin:0;"></a>
 
 <!-- Begin DFP Premium ad uniqueId: dfp-21 -->
 <div id='dfp-21' style="margin-bottom:10px;">
