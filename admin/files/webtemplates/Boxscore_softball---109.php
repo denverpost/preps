@@ -1,5 +1,5 @@
 <VAR $domainURL = "http://preps.denverpost.com">
-<VAR $sportYear = 2017> ###YEARCHECK###
+<VAR $sportYear = 2018> ###YEARCHECK###
 
 
 <VAR $statType = "conf">
