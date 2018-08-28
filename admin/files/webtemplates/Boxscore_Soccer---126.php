@@ -1,5 +1,5 @@
 <VAR $domainURL = "http://preps.denverpost.com">
-<VAR $seasonYear = "2016"> ###YEARCHECK###
+<VAR $seasonYear = "2017"> ###YEARCHECK###
 
 
 <QUERY name=Game_preview GAMEID=$form_ID>

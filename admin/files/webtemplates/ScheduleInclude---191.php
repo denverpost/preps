@@ -11,26 +11,26 @@
 <?PHP $defaultDate = $todayDate.$space.$todayMonth.$space.$todayYear;?>
 
 ### YEARCHECK these variables need to be re-set every year. they are the times that various tournaments start###
-<VAR $myEarlyFootballPlayoffTime = strtotime("07 November 2016")>
-<VAR $myLateFootballPlayoffTime = strtotime("14 November 2016")>
-<VAR $mySoftballTime = strtotime("17 October 2016")>
-<VAR $myBoysSoccerTime = strtotime("28 October 2016")>
-<VAR $myFieldHockeyTime = strtotime("28 October 2016")>
-<VAR $myBasketballTime = strtotime("21 February 2017")> ###both boys and girls###
-<VAR $myLateBasketballTime = strtotime("27 February 2017")> ###both boys and girls###
-<VAR $myIceHockeyTime = strtotime("26 February 2017")>
-<VAR $myEarlyBaseballTime = strtotime("7 May 2017")>
-<VAR $myLateBaseballTime = strtotime("20 May 2017")>
-<VAR $myGirlsSoccerTime = strtotime("10 May 2017")>
-<VAR $myBoysLacrosseTime = strtotime("10 May 2017")>
-<VAR $myGirlsLacrosseTime = strtotime("11 May 2017")>
+<VAR $myEarlyFootballPlayoffTime = strtotime("07 November 2017")>
+<VAR $myLateFootballPlayoffTime = strtotime("14 November 2017")>
+<VAR $mySoftballTime = strtotime("17 October 2017")>
+<VAR $myBoysSoccerTime = strtotime("28 October 2017")>
+<VAR $myFieldHockeyTime = strtotime("28 October 2017")>
+<VAR $myBasketballTime = strtotime("21 February 2018")> ###both boys and girls###
+<VAR $myLateBasketballTime = strtotime("27 February 2018")> ###both boys and girls###
+<VAR $myIceHockeyTime = strtotime("26 February 2018")>
+<VAR $myEarlyBaseballTime = strtotime("7 May 2018")>
+<VAR $myLateBaseballTime = strtotime("20 May 2018")>
+<VAR $myGirlsSoccerTime = strtotime("10 May 2018")>
+<VAR $myBoysLacrosseTime = strtotime("10 May 2018")>
+<VAR $myGirlsLacrosseTime = strtotime("11 May 2018")>
 
 
 <VAR $myDefaulttime = strtotime("$defaultDate")>
 
 ###this is the start of the fall sports season###
 ### YEARCHECK this one too. ###
-<VAR $seasonStart = strtotime("3 September 2016")>
+<VAR $seasonStart = strtotime("23 August 2017")>
 <?PHP $difference = $strNow - $seasonStart ?>
 <?PHP $difference = ($difference / 604800) ?>
 
@@ -409,7 +409,7 @@ echo $nav["day"];
 </IFGREATER>
 </IFTRUE>
 
-<IFTRUE  $Sport_SportName == "Boys Basketball" || $Sport_SportName == "Girls  Basketball">
+<IFTRUE  $Sport_SportName == "Boys Basketball" || $Sport_SportName == "Girls Basketball">
 ###GAMEDATE: {$Game_GameDate}<br>###
 <IFGREATER $Game_GameDate $myBasketballTime>
 <VAR $mySkedNote = "">
